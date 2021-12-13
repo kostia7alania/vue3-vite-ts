@@ -33,3 +33,5 @@ export const HTTPRequest = (
     },
   });
 };
+
+export const POST = HTTPClient.post;

@@ -2,6 +2,7 @@
   <nav class="nav">
     <router-link to="/" class="dm-link">Home</router-link> |
     <router-link to="/about" class="dm-link">About</router-link>
+    <router-link to="/login" class="dm-link">Login</router-link>
   </nav>
   <router-view></router-view>
 </template>
@@ -22,23 +23,23 @@ export default defineComponent({
 @tailwind utilities;
 
 #app {
-  @apply p-0 m-0;
+  @apply tw-p-0 tw-m-0;
 }
 
 .dm-link {
-  @apply text-green-600;
+  @apply tw-text-green-600;
 }
 
 .nav {
-  @apply text-center;
+  @apply tw-text-center;
 }
 
 .nav a {
-  @apply mx-2;
+  @apply tw-mx-2;
 }
 
 .home {
-  @apply mx-auto w-52 h-52;
-  @apply flex justify-center items-center;
+  @apply: tw-mx-auto tw-w-52 tw-h-52;
+  @apply: tw-flex tw-justify-center tw-items-center;
 }
 </style>
