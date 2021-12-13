@@ -36,6 +36,15 @@ module.exports = {
         indigo: colors.indigo,
         purple: colors.violet,
         pink: colors.pink,
+        // customs
+        'primary-1': '#3772FF',
+        'gray-1': '#FDFDFD',
+        'gray-2': '#95999F',
+        'gray-3': '#E8E7EA',
+        'orange-1': '#FF6939',
+        'black-1': '#21242C',
+        'blue-1': '#3772FF',
+
         // custom color aliases
         // 'white-1': '#F7F9FB',
         // 'white-2': 'rgba(247, 249, 251, 0.2)',

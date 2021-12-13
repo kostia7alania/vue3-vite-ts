@@ -8,7 +8,8 @@ import {
 
 import { isPROD } from '@/runtimeEnv';
 
-import { auth } from './modules/auth';
+// import { auth } from './modules/auth';
+import { settings } from './modules/settings';
 
 export interface IRootState {
   count?: number;
@@ -19,7 +20,7 @@ export const key: InjectionKey<Store<IRootState>> = Symbol();
 export const store = createStore<IRootState>({
   strict: !isPROD,
   modules: {
-    auth,
+    settings,
   },
   state: {},
   getters: {},

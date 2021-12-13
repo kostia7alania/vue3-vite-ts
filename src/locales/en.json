@@ -1,0 +1,13 @@
+{
+  "menu": {
+    "services": "Services",
+    "company": "Company",
+    "team": "Team",
+    "careers": "Careers",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "button": {
+    "financing": "Financing"
+  }
+}

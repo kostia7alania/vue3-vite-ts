@@ -1,11 +1,11 @@
 <template>
-  <div class="about">About1</div>
+  <div>Team</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'About',
+  name: 'Team',
 });
 </script>

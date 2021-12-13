@@ -1,13 +1,45 @@
 import { RouteRecordRaw } from 'vue-router';
 
+const MainLayout = () => import('@/layouts/MainLayout.vue');
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('@/views/Home.vue'),
-  },
-  {
-    path: '/about',
-    component: () => import('@/views/About.vue'),
+    name: 'main',
+    component: MainLayout,
+    redirect: { name: 'services' },
+    children: [
+      {
+        name: 'services',
+        path: '/services',
+        component: () => import('@/views/Services.vue'),
+      },
+      {
+        name: 'company',
+        path: '/company',
+        component: () => import('@/views/Company.vue'),
+      },
+      {
+        name: 'team',
+        path: '/team',
+        component: () => import('@/views/Team.vue'),
+      },
+      {
+        name: 'careers',
+        path: '/careers',
+        component: () => import('@/views/Careers.vue'),
+      },
+      {
+        name: 'articles',
+        path: '/articles',
+        component: () => import('@/views/Articles.vue'),
+      },
+      {
+        name: 'contact',
+        path: '/contact',
+        component: () => import('@/views/Contact.vue'),
+      },
+    ],
   },
   {
     path: '/login',

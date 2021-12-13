@@ -1,38 +1,27 @@
 <template>
   <div class="tw-flex tw-justify-center tw-items-center tw-h-96">
     <div class="sm:tw-w-60">
-      <img
+      <!--
+        <img
         class="tw-w-full"
         src="@/assets/img/logo-alertix.png"
         alt="Alertix Logo"
-      />
+        />
+      -->
       <div class="tw-mt-10">
         <div>Username or email</div>
-        <input
-          v-model="form.username"
-          class="tw-w-full tw-border-2 tw-border-indigo-100"
-        />
+        <input v-model="form.username" class="tw-w-full tw-border-2 tw-border-indigo-100" />
       </div>
       <div>
         <div>Password</div>
-        <input
-          v-model="form.password"
-          class="tw-w-full tw-border-2 tw-border-indigo-100"
-        />
+        <input v-model="form.password" class="tw-w-full tw-border-2 tw-border-indigo-100" />
       </div>
       <div class="tw-mt-4">
         <button
           :disabled="isLoading"
-          class="
-            tw-py-3 tw-w-full tw-rounded-md tw-bg-green-500
-            hover:tw-bg-red-100
-            tw-text-white
-            hover:tw-text-black
-          "
+          class="tw-py-3 tw-w-full tw-rounded-md tw-bg-green-500 hover:tw-bg-red-100 tw-text-white hover:tw-text-black"
           @click="submit"
-        >
-          Login
-        </button>
+        >Login</button>
       </div>
     </div>
   </div>
