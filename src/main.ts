@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { START_LOCATION } from 'vue-router';
 
-import { router } from './router';
+import { router } from './router/router';
 import { store, key } from './store/store';
 
 import App from '@/App.vue';
