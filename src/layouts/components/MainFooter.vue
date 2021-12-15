@@ -114,7 +114,7 @@ import { defineAsyncComponent, defineComponent } from 'vue';
 export default defineComponent({
   name: 'MainFooter',
   components: {
-    BgPattern: defineAsyncComponent(() => import('@/assets/images/bgPattern.vue')),
+    BgPattern: defineAsyncComponent(() => import('@/components/patterns/BgPattern.vue')),
     Logo: defineAsyncComponent(() => import('./Logo.vue'))
   },
   setup(/* _, ctx: SetupContext */) {

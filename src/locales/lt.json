@@ -8,6 +8,13 @@
     "contact": "Contact"
   },
   "button": {
-    "financing": "Finansavimas"
+    "financing": "Finansavimas",
+    "read more": "Skaityti daugiau"
+  },
+  "services": {
+    "our origin": "Mūsų kilmė",
+    "our story": "Mūsų istorija",
+    "our approach": "Mūsų požiūris",
+    "our news": "Mūsų naujienos"
   }
 }

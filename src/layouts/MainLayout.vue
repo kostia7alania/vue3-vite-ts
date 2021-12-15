@@ -45,7 +45,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .max-layout-width {
-  max-width: 1920px;
+  max-width: 1440px;
+  overflow: hidden;
 }
 
 $header-lg: 80px;

@@ -11,7 +11,7 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
+/* #app {
   @apply tw-p-0 tw-m-0;
 }
 
@@ -30,5 +30,5 @@ export default defineComponent({
 .home {
   @apply: tw-mx-auto tw-w-52 tw-h-52;
   @apply: tw-flex tw-justify-center tw-items-center;
-}
+} */
 </style>

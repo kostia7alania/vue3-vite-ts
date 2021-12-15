@@ -8,6 +8,13 @@
     "contact": "Contact"
   },
   "button": {
-    "financing": "Financing"
+    "financing": "Financing",
+    "read more": "Read more"
+  },
+  "services": {
+    "our story": "Our story",
+    "our origin": "Our origin",
+    "our approach": "Our approach",
+    "our news": "Our news"
   }
 }
