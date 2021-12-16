@@ -185,36 +185,22 @@
     <section class="tw-my-30">
       <div class="tw-flex tw-flex-wrap tw-gap-x-6 tw-gap-y-10 tw-mx-20">
         <!-- card #1 -->
-        <div class="basis-333px tw-grow-1 tw-bg-orange-1 tw-text-white tw-p-8 tw-rounded-3xl">
-          <div class="tw-font-semibold tw-text-2xl tw-leading-6">Students and graduates</div>
-          <div
-            class="tw-mt-4 tw-text-sm tw-leading-6"
-          >We are always looking for young talents from our local markets who want to develop professionally by doing meaningful projects in their home countries and internationally. If you are a student or a recent graduate, we offer various internship and entry-level positions that will best suit your needs.</div>
-          <VButton
-            class="tw-mt-9 w-244px"
-            text="Apply now"
-            variant="orange-2"
-            width="100%"
-            height="48px"
+        <div class="basis-333px w-444px">
+          <CardInfoAnim
+            title="Students and graduates"
+            description="We are always looking for young talents from our local markets who want to develop professionally by doing meaningful projects in their home countries and internationally. If you are a student or a recent graduate, we offer various internship and entry-level positions that will best suit your needs."
+            image="students-and-graduates"
+            theme="orange"
           />
         </div>
         <!-- card #2 -->
-        <div class="basis-333px tw-grow-1 tw-text-white tw-rounded-3xl tw-relative">
-          <img
-            class="tw-w-full tw-rounded-3xl"
-            src="@/assets/images/experienced-professionals.png"
-            alt="Experienced professionals"
+        <div class="basis-333px w-444px">
+          <CardInfoAnim
+            title="Experienced professionals"
+            description="We truly believe that anyone can become a management consultant and apply relevant knowledge to drive change in organizations and make an impact on society."
+            image="experienced-professionals"
+            theme="blue"
           />
-
-          <div
-            class="tw-w-full tw-h-full tw-absolute tw-z-10 tw-top-0 tw-rounded-3xl bg-gradient-blue-1"
-          />
-
-          <div
-            class="tw-font-semibold tw-text-2xl tw-leading-6 tw-absolute tw-z-20 tw-bottom-0 tw-p-8"
-          >
-            <div class="max-w-200px tw-leading-8">Experienced professionals</div>
-          </div>
         </div>
 
         <!-- card #3 -->
@@ -297,6 +283,7 @@ export default defineComponent({
     ServiceSwipper: defineAsyncComponent(() => import("@/components/services/ServiceSwipper.vue")),
     CardInfo: defineAsyncComponent(() => import("@/components/services/CardInfo.vue")),
     CardInfoDynamic: defineAsyncComponent(() => import("@/components/services/CardInfoDynamic.vue")),
+    CardInfoAnim: defineAsyncComponent(() => import("@/components/services/CardInfoAnim.vue")),
     VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
     BgPatternChallenge: defineAsyncComponent(() => import("@/components/patterns/BgPatternChallenge.vue")),
     BgPatternInnovation: defineAsyncComponent(() => import("@/components/patterns/BgPatternInnovation.vue")),

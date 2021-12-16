@@ -102,6 +102,10 @@ body {
 .max-w-400px {
   max-width: 400px;
 }
+
+.w-444px {
+  width: 444px;
+}
 .basis-333px {
   flex-basis: 333px;
 }
@@ -126,6 +130,16 @@ body {
     rgba(0, 255, 255, 0) 0%,
     rgba(54, 114, 255, 0.784284661130077) 61%,
     rgba(54, 114, 255, 0.9411474062281162) 96%
+  );
+}
+
+.bg-gradient-orange-1 {
+  background: rgb(255, 17, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0) 0%,
+    rgba(223, 153, 48, 0.784) 61%,
+    #FF6939
   );
 }
 .topic-title {
