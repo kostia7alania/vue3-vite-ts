@@ -253,22 +253,9 @@
     <section class="tw-my-60 tw-px-20">
       <h2 class="topic-title max-w-400px tw-my-20">Our latest articles</h2>
       <div class="tw-flex tw-flex-wrap tw-gap-10">
-        <ArticleCard
-          date="2021-10-11"
-          title="Poland-based SAS Advisors is joining OÜ Primelight"
-          button-variant="blue"
-        />
-        <ArticleCard
-          date="2021-10-12"
-          title="Poland-based SAS Advisors is joining OÜ Primelight"
-          button-variant="blue"
-          class="tw--translate-y-5"
-        />
-        <ArticleCard
-          date="2021-10-13"
-          title="Poland-based SAS Advisors is joining OÜ Primelight"
-          button-variant="blue"
-        />
+        <ArticleCard date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCard date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCard date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
       </div>
     </section>
   </div>

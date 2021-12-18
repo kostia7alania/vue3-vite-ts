@@ -148,3 +148,7 @@ body {
 .topic-description {
   @apply tw-text-gray-2 tw-font-medium tw-leading-7;
 }
+
+.anim-500 {
+  @apply tw-transition-all tw-ease-in-out tw-duration-500
+}

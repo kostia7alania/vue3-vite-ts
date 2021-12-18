@@ -1,8 +1,14 @@
 <template>
-  <button :class="buttonClass" :style="{
-    width,
-    height,
-  }" v-bind="$attrs" v-on="$attrs">
+  <button
+    :class="buttonClass"
+    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-9 hover:tw-rounded-2xl active:tw-rounded-xl tw-transition tw-ease-in-out tw-duration-1000"
+    :style="{
+      width,
+      height,
+    }"
+    v-bind="$attrs"
+    v-on="$attrs"
+  >
     <span v-if="text">{{ text }}</span>
     <slot v-else />
   </button>
@@ -20,50 +26,9 @@ import {
 } from 'vue'
 
 const variantsMap: { [key: string]: string } = {
-  'orange-1': `
-                tw-text-orange-1
-                tw-text-sm
-                tw-font-semibold
-                tw-rounded-full
-                tw-border-2
-                tw-border-gray-3 
-                tw-h-10 tw-px-4
-                hover:tw-rounded-2xl
-                active:tw-rounded-xl
-                tw-transition
-                tw-ease-in-out
-                tw-duration-1000
-                `,
-  'orange-2': `
-                tw-bg-orange-1
-                tw-text-white
-                tw-text-sm
-                tw-font-semibold
-                tw-rounded-full
-                tw-border-2
-                tw-border-gray-3 
-                tw-h-10 tw-px-4
-                hover:tw-rounded-2xl
-                active:tw-rounded-xl
-                tw-transition
-                tw-ease-in-out
-                tw-duration-1000
-                `,
-  'blue': `
-                tw-text-white
-                tw-bg-blue-1
-                tw-font-semibold
-                tw-rounded-full
-                tw-border-2
-                tw-border-gray-3 
-                tw-h-12 tw-px-9
-                hover:tw-rounded-2xl
-                active:tw-rounded-xl
-                tw-transition
-                tw-ease-in-out
-                tw-duration-1000
-                `,
-
+  'orange-1': 'tw-text-orange-1 tw-text-sm',
+  'orange-2': 'tw-bg-orange-1 tw-text-white',
+  'blue': 'tw-text-white tw-bg-blue-1',
 }
 
 export default defineComponent({
@@ -74,6 +39,10 @@ export default defineComponent({
       default: '',
       // validator: val => ['orange-1'].find(e=> e===val)
     },
+    class: {
+      type: String,
+      default: '',
+    },
     text: { type: String, default: '' },
     width: { type: String, default: undefined },
     height: { type: String, default: undefined },
@@ -81,7 +50,7 @@ export default defineComponent({
   setup(props) {
     const buttonClass = computed(() => {
       const cls = variantsMap[props.variant] || ''
-      return cls
+      return cls + ' ' + props.class
     })
 
 
