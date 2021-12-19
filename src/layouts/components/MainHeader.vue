@@ -12,9 +12,9 @@
     </div>
     <!-- right -->
     <div
-      class="tw-mr-6 md:tw-mr-10 lg:tw-mr-14 tw-ml-auto md:tw-ml-0 tw-order-2 md:tw-order-3 tw-gap-5 lg:tw-gap-8 tw-flex tw-items-center"
+      class="tw-mr-6 md:tw-mr-10 lg:tw-mr-14 tw-ml-auto md:tw-ml-0 tw-order-2 md:tw-order-3 tw-gap-5 lg:tw-gap-8 tw-flex tw-items-center tw-text-sm"
     >
-      <VButton variant="orange-1" :text="$t('button.financing')" />
+      <VButton variant="orange-1" height="40px" width="102px" class="financing-btn" :text="$t('button.financing')" />
       <DarkToggle class="anim-batch-once" />
       <LocaleSelect />
     </div>
@@ -68,6 +68,12 @@ export default defineComponent({
   }
   &:active {
     transform: rotate(-360deg);
+  }
+}
+
+.financing-btn {
+  &::deep button {
+    @apply tw-border-gray-3;
   }
 }
 </style>

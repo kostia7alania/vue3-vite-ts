@@ -10,7 +10,7 @@
         <div>Fast-based management consulting</div>
         <div class="tw-pt-1">and market research</div>
       </div>
-      <VButton text="Our story" class="tw-mt-14" variant="blue" />
+      <VButton text="Our story" class="tw-mt-14" width="200px" variant="blue" />
     </div>
     <!-- right -->
     <ServiceSwipperSlide1Cartoon />

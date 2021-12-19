@@ -105,6 +105,9 @@ body {
 .w-444px {
   width: 444px;
 }
+.h-444px {
+  height: 444px;
+}
 .basis-333px {
   flex-basis: 333px;
 }
@@ -145,12 +148,24 @@ body {
   );
 }
 .topic-title {
+  // here is font-size: 48px
   @apply tw-font-semibold tw-text-5xl tw-leading-tight;
 }
 .topic-description {
+  // here is font-size: 16px
   @apply tw-text-gray-2 tw-font-medium tw-leading-7;
+}
+
+.topic-title-28px {
+  @apply tw-font-semibold tw-text-2.7xl tw-leading-tight;
 }
 
 .anim-500 {
   @apply tw-transition-all tw-ease-in-out tw-duration-500;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

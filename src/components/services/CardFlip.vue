@@ -28,7 +28,7 @@ export default defineComponent({
   background-color: transparent;
   width: 100%;
   height: 100%;
-  border: 1px solid #f1f1f1;
+  // border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 

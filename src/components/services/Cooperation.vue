@@ -6,10 +6,10 @@
         <div class="tw-flex-1 tw-flex tw-justify-center">
             <WorkScene />
         </div>
-        <div class="tw-flex-1">
-            <div class="topic-title tw-w-4/5" >{{ title }}</div>
+        <div class="tw-flex-1 tw-relative tw-z-20">
+            <div class="topic-title tw-w-4/5">{{ title }}</div>
             <VButton
-                class="tw-mt-10 w-244px"
+                class="tw-mt-10 "
                 text="Contact Us"
                 variant="blue"
                 width="244px"
@@ -17,7 +17,7 @@
             />
         </div>
 
-        <div class="tw-absolute tw-right-0">
+        <div class="tw-absolute tw-right-0 tw-z-10">
             <BgCooperation class="tw-rounded-4xl" />
         </div>
     </div>

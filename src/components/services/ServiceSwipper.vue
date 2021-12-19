@@ -1,7 +1,7 @@
 <template>
   <div class="tw-relative">
     <!-- bg left -->
-      <div class="tw-absolute tw-z-10">
+    <div class="tw-absolute tw-z-10">
       <BgPatternBottomLeft />
     </div>
     <!-- bg right -->
@@ -9,26 +9,28 @@
       <BgPatternTopRight />
     </div>
     <!-- slides -->
-    <Swiper
-      :slides-per-view="1"
-      :space-between="0"
-      :virtual-index="pageActive"
-      @swiper="onSwiper"
-      @slide-change="onSlideChange"
-    >
-      <SwiperSlide>
-        <ServiceSwipperSlide1 />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ServiceSwipperSlide2 />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ServiceSwipperSlide3 />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ServiceSwipperSlide4 />
-      </SwiperSlide>
-    </Swiper>
+    <div class="tw-relative tw-z-30">
+      <Swiper
+        :slides-per-view="1"
+        :space-between="0"
+        :virtual-index="pageActive"
+        @swiper="onSwiper"
+        @slide-change="onSlideChange"
+      >
+        <SwiperSlide>
+          <ServiceSwipperSlide1 />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ServiceSwipperSlide2 />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ServiceSwipperSlide3 />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ServiceSwipperSlide4 />
+        </SwiperSlide>
+      </Swiper>
+    </div>
     <div
       class="swiper-footer tw-flex tw-gap-4 tw-justify-center tw-items-center tw-h-15 tw-text-sm tw-font-medium tw-text-gray-2"
     >

@@ -1,6 +1,6 @@
 <template>
     <div
-        class="basis-400px tw-grow-1 tw-w-full tw-bg-white tw-rounded-4xl gray-shadow-1 tw-group anim-500 hover:tw--translate-y-5"
+        class="basis-333px tw-grow-1 tw-w-full tw-bg-white tw-rounded-4xl gray-shadow-1 tw-group anim-500 hover:tw--translate-y-5"
     >
         <div class="tw-h-74 tw-overflow-hidden">
             <div class="tw-overflow-hidden tw-h-74 group-hover:tw-h-0 anim-500">
@@ -20,7 +20,7 @@
         </div>
         <div class="tw-px-8 tw-pb-8">
             <div class="tw-text-orange-1 tw-mt-4 tw-text-sm tw-leading-6 tw-mt-6">{{ date }}</div>
-            <div class="tw-font-semibold tw-text-2xl tw-leading-6 tw-mt-3">{{ title }}</div>
+            <div class="tw-font-semibold tw-text-2xl tw-leading-8 tw-mt-3">{{ title }}</div>
             <VButton
                 class="tw-mt-9 tw-text-sm tw-text-blue-1 group-hover:tw-text-white group-hover:tw-bg-blue-1"
                 :text="`${buttonText} &nbsp; &gt;`"

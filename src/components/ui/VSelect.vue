@@ -6,6 +6,7 @@
     v-bind="$attrs"
     v-on="$attrs"
   >
+    <option value disabled selected>{{ placeholder }}</option>
     <option
       v-for="item of items"
       :key="String(item)"
