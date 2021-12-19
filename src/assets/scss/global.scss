@@ -169,3 +169,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
+
+a[href] {
+  @apply tw-text-primary-1;
+}
