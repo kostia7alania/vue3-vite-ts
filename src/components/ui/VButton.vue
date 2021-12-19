@@ -1,7 +1,7 @@
 <template>
   <button
     :class="buttonClass"
-    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 hover:tw-rounded-2xl active:tw-rounded-xl tw-transition tw-ease-in-out tw-duration-1000"
+    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit hover:tw-rounded-2xl active:tw-rounded-xl tw-transition tw-ease-in-out tw-duration-1000"
     :style="{
       width,
       height,
