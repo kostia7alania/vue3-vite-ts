@@ -76,6 +76,7 @@ module.exports = {
         14: '3.5rem',
         15: '3.75rem',
         16: '4rem',
+        18: '4.5rem',
         20: '5rem',
         24: '6rem',
         28: '7rem',
@@ -207,6 +208,7 @@ module.exports = {
         xl: '0.75rem',
         '2xl': '1rem',
         '3xl': '1.5rem',
+        '4xl': '2rem',
         full: '9999px',
       },
       borderWidth: {
@@ -347,7 +349,8 @@ module.exports = {
         base: ['1rem', { lineHeight: '1.5rem' }], // font-size: 18px
         lg: ['1.125rem', { lineHeight: '1.75rem' }], // font-size: 20px
         xl: ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }], // font-size: 27px
+        '2xl': ['1.5rem', { lineHeight: '2rem' }], // font-size: 24px
+        '2.7xl': ['1.75rem', { lineHeight: '2.1rem' }], // font-size: 28px
         '2.9xl': ['1.777779rem', { lineHeight: '2.2rem' }], // font-size: 32px
         '3xl': ['1.875rem', { lineHeight: '2.25rem' }], // font-size: 34px
         '3.5xl': ['2rem', { lineHeight: '2.25rem' }], // font-size: 36px
@@ -903,5 +906,5 @@ module.exports = {
     'disabled',
   ],
 
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

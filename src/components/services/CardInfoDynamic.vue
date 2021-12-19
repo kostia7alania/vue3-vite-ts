@@ -1,7 +1,7 @@
 <template>
   <!-- tw-h-60 -->
-  <div class="gray-shadow-1 tw-bg-white tw-rounded-3xl tw-p-8">
-    <VIcon :icon="icon" />
+  <div class="gray-shadow-1 tw-bg-white tw-rounded-4xl tw-p-8">
+    <VIcon :icon="icon" :class="iconClass"/>
     <div class="card-info__content tw-pt-8">
       <div class="tw-text-3xl tw-font-semibold">
         <!-- number -->
@@ -18,7 +18,7 @@
 import { defineComponent, defineAsyncComponent } from 'vue';
 
 export default defineComponent({
-  name: "CardInfo",
+  name: "CardInfoDynamic",
   components: {
     VIcon: defineAsyncComponent(() => import('@/components/ui/VIcon.vue'))
   },
@@ -26,6 +26,7 @@ export default defineComponent({
     title: { type: [Number, String], default: '', },
     description: { type: [Number, String], default: "", },
     icon: { type: String, default: "", },
+    iconClass: { type: String, default: "", },
   },
 });
 </script>

@@ -26,7 +26,7 @@ import {
 } from 'vue'
 
 const variantsMap: { [key: string]: string } = {
-  'orange-1': 'tw-text-orange-1 tw-text-sm',
+  'orange-1': 'tw-text-orange-1',
   'orange-2': 'tw-bg-orange-1 tw-text-white',
   'blue': 'tw-text-white tw-bg-blue-1',
 }
@@ -41,7 +41,7 @@ export default defineComponent({
     },
     class: {
       type: String,
-      default: '',
+      default: 'tw-text-sm',
     },
     text: { type: String, default: '' },
     width: { type: String, default: undefined },
@@ -52,7 +52,6 @@ export default defineComponent({
       const cls = variantsMap[props.variant] || ''
       return cls + ' ' + props.class
     })
-
 
     return {
       buttonClass,

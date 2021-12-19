@@ -1,12 +1,14 @@
 import { createApp } from 'vue';
 import { START_LOCATION } from 'vue-router';
+import VueUniversalModal from 'vue-universal-modal';
+import 'vue-universal-modal/dist/index.css';
 
 import { i18n } from './plugins/i18n';
 import { router } from './router/router';
 import { store, key } from './store/store';
 
 import App from '@/App.vue';
-import "@/assets/scss/global.scss";
+import '@/assets/scss/global.scss';
 
 import 'vite-plugin-svg-icons/register';
 
@@ -25,6 +27,10 @@ const app = createApp(App);
 app.use(i18n);
 app.use(router);
 app.use(store, key);
+app.use(VueUniversalModal, {
+  teleportTarget: '#my-modals',
+  modalComponent: 'MyModal',
+});
 
 app.mount('#app');
 

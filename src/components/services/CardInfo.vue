@@ -1,6 +1,6 @@
 <template>
   <div
-    class="gray-shadow-1 tw-h-56 tw-w-72 tw-bg-white tw-rounded-3xl tw-flex tw-items-center tw-justify-center tw-flex-col tw-gap-4"
+    class="gray-shadow-1 tw-h-56 tw-w-72 tw-bg-white tw-rounded-4xl tw-flex tw-items-center tw-justify-center tw-flex-col tw-gap-4"
   >
     <div class="tw-text-orange-1 tw-text-5xl tw-font-semibold">
       <!-- number -->

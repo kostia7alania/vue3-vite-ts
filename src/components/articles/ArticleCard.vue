@@ -1,6 +1,6 @@
 <template>
     <div
-        class="basis-400px tw-grow-1 tw-w-full tw-bg-white tw-rounded-3xl gray-shadow-1 tw-group anim-500 hover:tw--translate-y-5"
+        class="basis-400px tw-grow-1 tw-w-full tw-bg-white tw-rounded-4xl gray-shadow-1 tw-group anim-500 hover:tw--translate-y-5"
     >
         <div class="tw-h-74 tw-overflow-hidden">
             <div class="tw-overflow-hidden tw-h-74 group-hover:tw-h-0 anim-500">

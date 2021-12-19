@@ -1,12 +1,26 @@
 <template>
   <router-view />
+  <VModal v-if="state.items.length" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import useModal from './api/useModal'
+
+import VModal from '@/components/ui/VModal.vue'
+
 export default defineComponent({
   name: 'App',
+  components: { VModal, },
+  setup() {
+    const { openModal, state } = useModal()
+    // const hasModal = state.items.length
+    return {
+      state,
+      openModal
+    }
+  },
 });
 </script>
 

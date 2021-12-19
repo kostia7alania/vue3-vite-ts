@@ -6,7 +6,7 @@
           'tw-bg-orange-1': theme === 'orange',
           'tw-bg-blue-1': theme === 'blue',
         }"
-        class="tw-h-full tw-flex tw-flex-col tw-justify-between tw-text-white tw-p-8 tw-rounded-3xl"
+        class="tw-h-full tw-flex tw-flex-col tw-justify-between tw-text-white tw-p-8 tw-rounded-4xl"
       >
         <div>
           <div class="tw-font-semibold tw-text-2xl tw-leading-6">{{ title }}</div>
@@ -23,22 +23,22 @@
     </template>
     <!-- :hover -->
     <template #front>
-      <div class="tw-text-white tw-rounded-3xl tw-relative">
+      <div class="tw-text-white tw-rounded-4xl tw-relative">
         <img
           v-if="image === 'experienced-professionals'"
-          class="tw-w-full tw-rounded-3xl"
+          class="tw-w-full tw-rounded-4xl"
           src="@/assets/images/experienced-professionals.png"
           alt="Experienced professionals"
         />
         <img
           v-else-if="image === 'students-and-graduates'"
-          class="tw-w-full tw-rounded-3xl"
+          class="tw-w-full tw-rounded-4xl"
           src="@/assets/images/students-and-graduates.jpg"
           alt="Experienced professionals"
         />
 
         <div
-        class="tw-w-full tw-h-full tw-absolute tw-z-10 tw-top-0 tw-rounded-3xl"
+        class="tw-w-full tw-h-full tw-absolute tw-z-10 tw-top-0 tw-rounded-4xl"
           :class="
           {
             'bg-gradient-blue-1': theme==='blue',

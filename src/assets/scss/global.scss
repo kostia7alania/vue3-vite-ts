@@ -102,7 +102,6 @@ body {
 .max-w-400px {
   max-width: 400px;
 }
-
 .w-444px {
   width: 444px;
 }
@@ -118,6 +117,9 @@ body {
 
 .min-w-500px {
   min-width: 500px;
+}
+.h-510px {
+  height: 510px;
 }
 
 .gray-shadow-1 {
@@ -139,7 +141,7 @@ body {
     180deg,
     rgba(0, 255, 255, 0) 0%,
     rgba(223, 153, 48, 0.784) 61%,
-    #FF6939
+    #ff6939
   );
 }
 .topic-title {
@@ -150,5 +152,5 @@ body {
 }
 
 .anim-500 {
-  @apply tw-transition-all tw-ease-in-out tw-duration-500
+  @apply tw-transition-all tw-ease-in-out tw-duration-500;
 }

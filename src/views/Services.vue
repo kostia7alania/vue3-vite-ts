@@ -65,62 +65,69 @@
             <!-- row 1 -->
             <div class="tw-flex tw-flex-wrap tw-mt-20 tw-gap-10">
               <CardInfoDynamic
-                class="min-w-400px tw-rounded-3xl"
+                class="min-w-400px tw-rounded-4xl"
                 title="Strategy"
                 description="Providing classical fact-based strategic management consulting"
-                icon="circle-strategy-orange"
+                icon="circle-strategy"
+                icon-class="tw-text-orange-1"
               />
               <div class="tw-relative tw-flex-1">
                 <CardInfoDynamic
-                  class="min-w-500px tw-rounded-3xl"
+                  class="min-w-500px tw-rounded-4xl"
                   title="Innovation"
                   description="Helping corporations, start-ups and governments innovate"
                   icon="circle-innovation"
+                  icon-class="tw-text-blue-1"
                 />
                 <div class="tw-absolute tw-top-0 tw-right-0">
-                  <BgPatternInnovation class="tw-rounded-3xl" />
+                  <BgPatternInnovation class="tw-rounded-4xl" />
                 </div>
               </div>
             </div>
             <!-- row 2 -->
             <div class="tw-flex tw-flex-wrap tw-mt-20 tw-gap-10">
               <CardInfoDynamic
-                class="tw-flex-1 min-w-400px tw-rounded-3xl"
+                class="tw-flex-1 min-w-400px tw-rounded-4xl"
                 title="Funding"
                 description="Securing external financing for organization’s growth"
                 icon="circle-funding"
+                icon-class="tw-text-blue-1"
               />
               <CardInfoDynamic
-                class="tw-flex-1 min-w-400px tw-rounded-3xl"
+                class="tw-flex-1 min-w-400px tw-rounded-4xl"
                 title="Research"
                 description="Gathering and analyzing information to help our clients make the right decisions"
-                icon="circle-research-orange"
+                icon="circle-research"
+                icon-class="tw-text-orange-1"
               />
               <CardInfoDynamic
-                class="tw-flex-1 min-w-400px tw-rounded-3xl"
+                class="tw-flex-1 min-w-400px tw-rounded-4xl"
                 title="Implementation"
                 description="Executing projects and initiatives together with our clients"
                 icon="circle-implementation"
+                icon-class="tw-text-blue-1"
               />
             </div>
             <!-- row 3 -->
             <div class="tw-flex tw-flex-wrap tw-mt-20 tw-gap-10">
               <div class="tw-relative tw-flex-1">
                 <CardInfoDynamic
-                  class="tw-flex-1 min-w-500px tw-rounded-3xl"
+                  class="tw-flex-1 min-w-500px tw-rounded-4xl"
                   title="Digital"
                   description="Using big-data and latest IT technologies to drive the organization’s digitalization"
-                  icon="circle-digital-orange"
+                  icon="circle-digital"
+                  icon-class="tw-text-orange-1"
                 />
                 <div class="tw-absolute tw-top-0 tw-bottom-0 tw-right-0 tw-overflow-hidden">
-                  <BgPatternDigital class="tw-rounded-3xl" />
+                  <BgPatternDigital class="tw-rounded-4xl" />
                 </div>
               </div>
               <CardInfoDynamic
-                class="min-w-400px tw-rounded-3xl"
+                class="min-w-400px tw-rounded-4xl"
                 title="Sustainability"
                 description="Supporting companies and public organizations in the transformation"
                 icon="circle-sustainability"
+                icon-class="tw-text-blue-1"
               />
             </div>
           </div>
@@ -134,47 +141,7 @@
       Where are we located
       --------
     -->
-    <section class="tw-bg-gray-4 tw-relative">
-      <div class="tw-py-16">
-        <div class="tw-flex tw-justify-between tw-px-20 tw-gap-10">
-          <!-- left -->
-          <div class="tw-pt-20 tw-flex-1">
-            <h2 class="topic-title">Where are we located?</h2>
-            <div class="tw-pt-6 topic-description">
-              <div>In nine years from its founding, OÜ Primelight became the leading management consultancy across the Baltics and Eastern Europe, employing over 350 consultants in 29 offices across 18 countries.</div>
-              <div class="tw-mt-2">
-                Our international headquarters are located in Tartu, Estonia. Other OÜ Primelight offices are spread across
-                <span
-                  v-for="country of 'Estonia, Latvia, Lithuania, Finland, Poland, Ukraine, Romania, Moldova, Russia, Belarus, Serbia, Slovakia, Bulgaria, North Macedonia, Denmark'.split(', ')"
-                  :key="country"
-                >
-                  <span class="tw-text-orange-1">{{ country }}</span>,
-                </span>
-                <span class="tw-text-orange-1">Kosovo</span>
-                and
-                <span class="tw-text-orange-1">Armenia</span>
-                with a sales offices in the
-                <span
-                  class="tw-text-orange-1"
-                >United Kingdom</span>
-                and
-                <span class="tw-text-orange-1">Turkey</span>.
-              </div>
-              <div
-                class="tw-mt-2"
-              >We also conduct consulting and market research projects in countries beyond our home markets. Thousands of completed projects come from a flexible approach and international mindset, and they have ensured successful cooperation with clients in 40+ countries in Europe, Asia and Africa.</div>
-            </div>
-          </div>
-          <!-- right -->
-          <div class="tw-flex tw-flex-wrap tw-flex-1 tw-gap-10 tw-pt-12">
-            <WorldMap class="world-map tw-translate-x-20" />
-          </div>
-        </div>
-      </div>
-      <div class="tw-absolute tw-left-0 tw-bottom-0">
-        <BgPatternLocated />
-      </div>
-    </section>
+    <WhereWeLocated class="tw-bg-gray-4 tw-py-16" />
 
     <!--
       --------
@@ -204,8 +171,8 @@
         </div>
 
         <!-- card #3 -->
-        <div class="tw-flex-1 tw-grow-1 tw--my-4 tw-pl-8 tw-rounded-3xl">
-          <div class="tw-font-semibold tw-text-2xl tw-leading-6 tw-rounded-3xl">
+        <div class="tw-flex-1 tw-grow-1 tw--my-4 tw-pl-8 tw-rounded-4xl">
+          <div class="tw-font-semibold tw-text-2xl tw-leading-6 tw-rounded-4xl">
             <h2 class="topic-title">Who should join our team?</h2>
 
             <div class="tw-mt-6 topic-description">
@@ -241,7 +208,7 @@
       Interested In cooperation?
       --------
     -->
-    <Cooperation class="tw-my-60 tw-bg-white tw-px-20" />
+    <Cooperation class="tw-my-60 tw-bg-white tw-mx-20" title="Interested In cooperation?" />
 
     <!--
       --------
@@ -275,10 +242,9 @@ export default defineComponent({
     BgPatternChallenge: defineAsyncComponent(() => import("@/components/patterns/BgPatternChallenge.vue")),
     BgPatternInnovation: defineAsyncComponent(() => import("@/components/patterns/BgPatternInnovation.vue")),
     BgPatternDigital: defineAsyncComponent(() => import("@/components/patterns/BgPatternDigital.vue")),
-    BgPatternLocated: defineAsyncComponent(() => import("@/components/patterns/BgPatternLocated.vue")),
-    WorldMap: defineAsyncComponent(() => import("@/assets/icons/world-map.svg")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+    WhereWeLocated: defineAsyncComponent(() => import("@/components/services/WhereWeLocated.vue")),
   }
 });
 </script>

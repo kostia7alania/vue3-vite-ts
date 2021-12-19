@@ -21,6 +21,7 @@
     "deploy": "yarn build && surge dist foamy-credit.surge.sh"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.4.0",
     "axios": "0.24.0",
     "js-cookie": "3.0.1",
     "normalize.css": "8.0.1",
@@ -29,6 +30,7 @@
     "vue": "3.2.19",
     "vue-i18n": "^9.2.0-beta.23",
     "vue-router": "4.0.12",
+    "vue-universal-modal": "^1.1.3",
     "vuex": "4.0.2"
   },
   "devDependencies": {

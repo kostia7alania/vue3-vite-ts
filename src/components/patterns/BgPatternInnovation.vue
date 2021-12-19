@@ -1,7 +1,7 @@
 <template>
     <!-- eslint-disable vue/no-static-inline-styles -->
     <svg
-        class="tw-rounded-3xl"
+        class="tw-rounded-4xl"
         width="632"
         height="292"
         viewBox="0 0 632 292"
