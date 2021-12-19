@@ -2,7 +2,7 @@
   <!-- tw-h-60 -->
   <div class="tw-px-18 tw-py-8 tw-group hover:tw-text-gray-1 hover:tw-bg-orange-1">
     <div class="tw-flex tw-items-center tw-gap-x-10">
-      <div class="tw-flex-1">
+      <div v-if="icon" class="tw-flex-1">
         <VIcon :icon="icon" class="tw-text-blue-1 group-hover:tw-text-orange-1" />
       </div>
       <div class="w-268px tw-flex-grow-1 tw-flex-shrink-0">
