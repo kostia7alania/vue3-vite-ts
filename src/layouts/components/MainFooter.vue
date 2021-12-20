@@ -1,36 +1,41 @@
 <template>
-  <footer class="app-header tw-flex tw-flex-col tw-relative">
-    <div class="tw-bg-blue-1 dark:tw-bg-black dark:tw-text-gray-300 tw-flex-1">
-      <div class="tw-flex tw-gap-x-12 tw-pt-16 md:tw-pt-20 tw-px-5 md:tw-px-20">
-        <!-- col -->
-        <div class="tw-order-1">
-          <Logo white class="footer-title tw-pb-2" />
-          <div class="footer-description">The Challengeʳ Advisory</div>
+  <footer class="app-header tw-flex tw-flex-col">
+    <div class="tw-bg-blue-1 dark:tw-bg-black dark:tw-text-gray-300 tw-flex-1 tw-relative tw-overflow-hidden tw-pb-15 lg:tw-pb-20">
+      <div
+        class="px-80px tw-flex tw-gap-x-5 tw-gap-y-10 lg:tw-gap-12 tw-flex-wrap lg:tw-flex-nowrap tw-pt-15 md:tw-pt-20 tw-z-10 tw-relative"
+      >
+        <!-- col Logo -->
+        <div class="tw-order-1 tw-basis-full lg:tw-basis-auto">
+          <Logo white class="footer-title" />
+          <div class="footer-description tw-text-sm md:tw-text-base">The Challengeʳ Advisory</div>
         </div>
-        
-        <!-- col -->
 
-        <div class="tw-order-3 md:tw-order-2">
+        <!-- col Contact Us -->
+
+        <div class="tw-order-3 lg:tw-order-2 tw-flex-1 lg:tw-flex-none">
           <div class="footer-title">Contact Us</div>
-          <div class="footer-description">
+          <div class="footer-description tw-text-xs2 xl:tw-text-base">
             <div>info@OÜPrimelight.com</div>
             <div class="tw-pt-3">Riia st. 24a, 51010</div>
             <div>Tartu, Estonia</div>
           </div>
         </div>
 
-        <!-- col -->
-        <div class="tw-grow tw-order-2 md:tw-order-3">
-          <div class="footer-title">OUR OFFICES</div>
+        <!-- col OUR OFFICES -->
+        <div class="tw-grow tw-order-2 tw-flex-1 lg:tw-order-3 tw-basis-full lg:tw-basis-auto">
+          <div class="footer-title tw-text-base">OUR OFFICES</div>
           <div class="footer-description">
-            <div class="tw-flex tw-flex-wrap tw-flex-col tw-h-56 md:tw-h-46 tw-gap-3">
-              <div class="tw-max-w-xs" v-for="(office, i) of offices" :key="i">{{ office }}</div>
+            <div
+              class="tw-flex tw-flex-wrap tw-flex-col tw-h-68 tw-gap-x-3 tw-gap-y-3 tw-text-xs2 xl:tw-text-base"
+            >
+              <div v-for="(office, i) of offices" :key="i" class="tw-max-w-xs">{{ office }}</div>
             </div>
           </div>
         </div>
-        <!-- col -->
-        <div class="tw-order-4">
-          <div class="footer-title">Social</div>
+
+        <!-- col Social -->
+        <div class="tw-order-4 tw-flex-1 lg:tw-flex-none">
+          <div class="footer-title tw-text-lg">Social</div>
           <div class="tw-flex tw-items-center tw-gap-x-3">
             <!-- FACEBOOK -->
             <button>
@@ -85,7 +90,9 @@
           </div>
         </div>
       </div>
-      <BgPattern class="tw-absolute tw-left-0" />
+      <div class="tw-absolute tw-left-0  tw-top-1/2 tw-bottom-1/2">
+        <BgPattern />
+      </div>
     </div>
     <!-- footer of footer -->
     <div
@@ -167,7 +174,7 @@ export default defineComponent({
 }
 
 .footer-title {
-  @apply tw-font-semibold tw-text-white tw-uppercase tw-pb-4;
+  @apply tw-font-semibold tw-text-white tw-uppercase tw-pb-3 md:tw-pb-4;
 }
 .footer-description {
   @apply tw-font-medium tw-text-white tw-opacity-60;

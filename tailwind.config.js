@@ -349,6 +349,7 @@ module.exports = {
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }], // font-size: 13.5px
+        xs2: ['0.8125rem', { lineHeight: '1.1rem' }], // font-size: 13px [root: 16px]
         sm: ['0.875rem', { lineHeight: '1.25rem' }],
         base: ['1rem', { lineHeight: '1.5rem' }], // font-size: 18px
         lg: ['1.125rem', { lineHeight: '1.75rem' }], // font-size: 20px

@@ -39,7 +39,7 @@
     </button>
     <HeaderModal v-if="isActiveModal" @close="isActiveModal = false">
       <ul
-      class="navbar-items tw-flex tw-flex-col tw-text-left tw-px-9 tw-font-medium tw-text-3xl">
+      class="navbar-items tw-flex tw-flex-col tw-text-left tw-px-9 tw-font-medium tw-text-3.5xl">
         <li
           v-for="{ title, routeName } of linksMap"
           :key="title"

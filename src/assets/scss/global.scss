@@ -23,9 +23,9 @@ html {
   &::backdrop {
     background-color: #448;
   }
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-  }
+  // @media (max-width: 768px) {
+  //   font-size: 0.85714rem;
+  // }
 }
 
 // html,
@@ -180,3 +180,6 @@ body {
   white-space: nowrap;
 }
 
+.px-80px {
+  @apply tw-px-5 md:tw-px-10 lg:tw-px-14 xl:tw-px-18 2xl:tw-px-20;
+}

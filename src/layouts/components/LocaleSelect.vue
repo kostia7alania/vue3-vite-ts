@@ -3,7 +3,7 @@
     :class="{
       'tw-text-blue-1 tw-bg-blue-2  ': isOpen,
     }"
-    class="tw-text-base tw-font-medium tw-h-7 tw-duration-300 tw-relative tw-uppercase tw-border-none"
+    class="tw-text-sm md:tw-text-base tw-font-medium tw-h-7 tw-duration-300 tw-relative tw-uppercase tw-border-none"
     @click="isOpen = !isOpen"
   >
     <div class="tw-flex tw-items-center tw-gap-x-2">
