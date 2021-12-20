@@ -138,22 +138,24 @@ body {
 }
 .bg-gradient-blue-1 {
   background: rgb(0, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 255, 255, 0) 0%,
-    rgba(54, 114, 255, 0.784284661130077) 61%,
-    rgba(54, 114, 255, 0.9411474062281162) 96%
-  );
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(0, 255, 255, 0) 0%,
+  //   rgba(54, 114, 255, 0.784284661130077) 61%,
+  //   rgba(54, 114, 255, 0.9411474062281162) 96%
+  // );
+  background: linear-gradient(180deg, rgba(55, 114, 255, 0) 0%, #3772ff 100%);
 }
 
 .bg-gradient-orange-1 {
   background: rgb(255, 17, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 255, 255, 0) 0%,
-    rgba(223, 153, 48, 0.784) 61%,
-    #ff6939
-  );
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(0, 255, 255, 0) 0%,
+  //   rgba(223, 153, 48, 0.784) 61%,
+  //   #ff6939
+  // );
+  background: linear-gradient(180deg, rgba(255, 105, 57, 0) 0%, #ff6939 100%);
 }
 .topic-title {
   // here is font-size: 48px
@@ -178,6 +180,3 @@ body {
   white-space: nowrap;
 }
 
-a[href] {
-  @apply tw-text-primary-1;
-}

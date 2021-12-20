@@ -144,4 +144,8 @@ export default defineComponent({
 .link {
   @apply tw-mb-1.5 tw-font-semibold;
 }
+
+a[href] {
+  @apply tw-text-primary-1;
+}
 </style>
