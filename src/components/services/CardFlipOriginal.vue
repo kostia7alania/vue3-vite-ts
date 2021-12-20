@@ -1,10 +1,10 @@
 <template>
-  <div class="flip-card tw-group">
+  <div class="flip-card">
     <div class="flip-card-inner">
-      <div class="flip-card-front group-hover:tw-opacity-0 tw-transition-all">
+      <div class="flip-card-front">
         <slot name="front" />
       </div>
-      <div class="flip-card-back tw-opacity-0 group-hover:tw-opacity-100 tw-transition-all">
+      <div class="flip-card-back">
         <slot name="back" />
       </div>
     </div>
@@ -38,13 +38,13 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: 0.8s;
-  // transform-style: preserve-3d;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-  // transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* Position the front and back side */
@@ -53,9 +53,8 @@ export default defineComponent({
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: 0.4s;
-  // -webkit-backface-visibility: hidden; /* Safari */
-  // backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -68,6 +67,6 @@ export default defineComponent({
 .flip-card-back {
   // background-color: dodgerblue;
   // color: white;
-  // transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 </style>
