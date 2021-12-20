@@ -6,7 +6,7 @@
       -------- 
     -->
     <section>
-      <PageTopSection theme="blue">
+      <PageTopSection theme="blue" class="min-h-400px">
         <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Articles</div>
         <!-- bottom -->
         <div class="tw-flex tw-flex-wrap tw-gap-6 tw-text-sm tw-mt-16">
@@ -28,26 +28,31 @@
       --------
     -->
     <section class="tw-pt-16 tw-pb-30 tw-px-20 tw-relative">
-      <div v-for="el of [1,2,3,4,5,6,7,8,9]" :key="el" class="tw-flex tw-flex-wrap tw-gap-10 tw-relative tw-z-20">
+      <div
+        v-for="el of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        :key="el"
+        class="tw-flex tw-flex-wrap tw-gap-10 tw-relative tw-z-20"
+      >
         <ArticleCard
           class="tw-flex-1"
           date="2021-10-30"
           title="OÜ Primelight Challengers - Oleksandr Volik"
+          @click="$router.push({ name: 'article', params: { id: 0 } })"
         />
         <ArticleCard
           class="tw-flex-1"
           date="2021-10-26"
           title="OÜ Primelight Challengers - Maari Helilaid"
+          @click="$router.push({ name: 'article', params: { id: 0 } })"
         />
         <ArticleCard
           class="tw-flex-1"
           date="2021-10-09"
           title="OÜ Primelight Challengers - Sevak Hovhannisyan"
+          @click="$router.push({ name: 'article', params: { id: 0 } })"
         />
       </div>
-     </section>
-
-     
+    </section>
   </div>
 </template>
 
