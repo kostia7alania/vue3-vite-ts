@@ -11,13 +11,13 @@
       </div>
     </div>
     <div class="app-main tw-flex-1">
-      <div class="max-layout-width tw-mx-auto">
+      <div class="max-layout-width tw-overflow-hidden tw-mx-auto">
         <router-view />
       </div>
     </div>
     <!-- footer -->
     <div>
-      <MainFooter class="main-footer max-layout-width tw-mx-auto" />
+      <MainFooter class="main-footer max-layout-width tw-overflow-hidden tw-mx-auto" />
     </div>
   </div>
 </template>
@@ -46,7 +46,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .max-layout-width {
   max-width: 1440px;
-  overflow: hidden;
 }
 
 $header-lg: 80px;

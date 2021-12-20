@@ -22,7 +22,7 @@
         :text="$t('button.financing')"
         @click="$router.push({ name: 'financing' })"
       />
-      <DarkToggle class="anim-batch-once" />
+      <DarkToggle v-if="0" class="anim-batch-once" />
       <LocaleSelect />
     </div>
   </header>

@@ -39,7 +39,7 @@ export default defineComponent({
       default: '',
       // validator: val => ['orange-1'].find(e=> e===val)
     },
-    class: { type: String, default: 'tw-text-sm', },
+    class: { type: [String, Object], default: 'tw-text-sm', },
     text: { type: String, default: '' },
     width: { type: String, default: undefined },
     height: { type: String, default: undefined },

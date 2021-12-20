@@ -45,6 +45,8 @@ module.exports = {
         'orange-1': '#FF6939',
         'black-1': '#21242C',
         'blue-1': '#3772FF',
+        'blue-2': '#dbe4f7',
+        'blue-3': '#ebf1ff',
 
         // custom color aliases
         // 'white-1': '#F7F9FB',
