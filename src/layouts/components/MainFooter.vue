@@ -146,19 +146,10 @@ export default defineComponent({
 <style lang="scss" scoped>
 .app-header {
   border: 1.5px solid #e8e7ea;
-  z-index: 1111;
+  z-index: 40;
   @media (max-width: 770px) {
     .logo {
       width: 32px;
-    }
-  }
-}
-
-:deep {
-  .tw-modal-container {
-    @media (max-width: 500px) {
-      // on small screens - full width
-      width: calc(100vw - 20px) !important;
     }
   }
 }

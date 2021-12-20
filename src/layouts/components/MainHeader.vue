@@ -3,19 +3,20 @@
     class="app-header tw-flex tw-bg-gray-1 tw-items-center tw-justify-between dark:tw-bg-black dark:tw-text-gray-300"
   >
     <!-- left -->
-    <div class="tw-ml-3 sm:tw-ml-4 md:tw-ml-6 lg:tw-ml-20 xlg:tw-ml-20 tw-order-1">
+    <div class="tw-ml-2 sm:tw-ml-4 md:tw-ml-6 lg:tw-ml-20 xlg:tw-ml-20 tw-order-2 lg:tw-order-1">
       <Logo :white="false" />
     </div>
     <!-- center -->
-    <div class="tw-order-3 md:tw-order-2">
+    <div class="tw-order-1 lg:tw-order-2">
       <MainHeaderMenu />
     </div>
     <!-- right -->
     <div
-      class="tw-mr-6 md:tw-mr-10 lg:tw-mr-14 tw-ml-auto md:tw-ml-0 tw-order-2 md:tw-order-3 tw-gap-5 lg:tw-gap-8 tw-flex tw-items-center tw-text-sm"
+      class="tw-mr-5 lg:tw-mr-14 tw-order-2 md:tw-order-3 tw-gap-5 lg:tw-gap-8 tw-flex tw-items-center tw-text-sm"
     >
       <VButton
-        :variant="$route.name!=='financing'?'orange-1':'orange-2'"
+        class="tw-hidden lg:tw-block"
+        :variant="$route.name !== 'financing' ? 'orange-1' : 'orange-2'"
         height="40px"
         width="102px"
         :class="$route.name !== 'financing' ? 'tw-border-[#E8E7EA]' : ''"
@@ -53,15 +54,6 @@ export default defineComponent({
   @media (max-width: 770px) {
     .logo {
       width: 32px;
-    }
-  }
-}
-
-:deep {
-  .tw-modal-container {
-    @media (max-width: 500px) {
-      // on small screens - full width
-      width: calc(100vw - 20px) !important;
     }
   }
 }

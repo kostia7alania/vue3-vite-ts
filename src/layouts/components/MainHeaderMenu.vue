@@ -1,7 +1,7 @@
 <template>
-  <nav class="main-menu tw-hidden md:tw-block navbar tw-font-medium tw-text-sm tw-text-gray-2">
-    <ul class="tw-flex tw-gap-4 lg:tw-gap-12">
-      <li v-for="{ title, routeName } in linksMap" :key="routeName" class="link-item">
+  <nav class="main-menu tw-hidden lg:tw-block navbar tw-font-medium tw-text-sm tw-text-gray-2">
+    <ul class="tw-flex md:tw-gap-2 lg:tw-gap-4 xlg:tw-gap-12">
+      <li v-for="{ title, routeName } of linksMap" :key="routeName" class="link-item">
         <router-link
           class="anim-batch-once hover:tw-text-black"
           :to="{ name: routeName }"
@@ -10,19 +10,18 @@
     </ul>
   </nav>
   <!-- mobile menu -->
-  <!-- <MainHeaderMenuMobile class="tw-block md:tw-hidden" /> -->
+  <MainHeaderMenuMobile :links-map="linksMap" class="tw-block lg:tw-hidden" />
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'MainHeaderMenu',
   components: {
-    // MainHeaderMenuMobile: () => import('./MainHeaderMenuMobile.vue'),
+    MainHeaderMenuMobile: defineAsyncComponent(() => import('./MainHeaderMenuMobile.vue')),
   },
-
   setup(/* _, ctx: SetupContext */) {
     // use global scope
     const { t

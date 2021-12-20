@@ -26,7 +26,7 @@
       </div>
     </div>
     <div
-      class="tw-text-lg tw-font-normal tw-flex tw-flex-col tw-z-100 tw-rounded-3xl tw-overflow-hidden tw-absolute tw-top-10 tw-left-2/4 tw--translate-x-1/2"
+      class="tw-text-lg tw-font-normal tw-flex tw-flex-col  tw-rounded-3xl tw-overflow-hidden tw-absolute tw-z-50 tw-top-10 tw-left-2/4 tw--translate-x-1/2"
       :class="{ 'tw-hidden': !isOpen }"
     >
       <div
