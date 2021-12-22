@@ -6,7 +6,7 @@
       -------- 
     -->
     <section>
-      <PageTopSection theme="orange">
+      <PageTopSection theme="orange" class="min-h-400px">
         <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Careers</div>
       </PageTopSection>
     </section>

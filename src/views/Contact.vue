@@ -6,7 +6,7 @@
       -------- 
     -->
     <section>
-      <PageTopSection theme="orange">
+      <PageTopSection theme="orange" class="min-h-400px">
         <div class="tw-font-semibold tw-text-6xl tw-leading-tight tw-mt-11 tw-mb-26">Contact us</div>
       </PageTopSection>
     </section>

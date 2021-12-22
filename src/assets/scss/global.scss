@@ -159,15 +159,18 @@ body {
 }
 .topic-title {
   // here is font-size: 48px
-  @apply tw-font-semibold tw-text-5xl tw-leading-tight;
+  // 32px 48px 48px
+  @apply tw-font-semibold  tw-leading-tight tw-text-3.5xl md:tw-text-5xl;
 }
 .topic-description {
   // here is font-size: 16px
-  @apply tw-text-gray-2 tw-font-medium tw-leading-7;
+  // 14px - 16px - 16px
+  @apply tw-text-gray-2 tw-font-medium tw-leading-7 tw-text-sm md:tw-text-base;
 }
 
 .topic-title-28px {
-  @apply tw-font-semibold tw-text-2.7xl tw-leading-tight;
+  // 22px - 28px - 28px
+  @apply tw-font-semibold tw-leading-tight tw-text-1.5xl md:tw-text-2.7xl;
 }
 
 .anim-500 {
@@ -180,6 +183,58 @@ body {
   white-space: nowrap;
 }
 
-.px-80px {
-  @apply tw-px-5 md:tw-px-10 lg:tw-px-14 xl:tw-px-18 2xl:tw-px-20;
+.px-80px-48px-16px {
+  // todo fix
+  @apply tw-px-4 md:tw-px-12 lg:tw-px-14 xl:tw-px-18 2xl:tw-px-20;
+}
+.px-160px {
+  // todo fix
+  @apply tw-px-4 md:tw-px-20 lg:tw-px-28 xl:tw-px-36 2xl:tw-px-40;
+}
+
+.btn-h-48-56 {
+  // todo fix
+  @apply tw-h-14 lg:tw-h-12;
+}
+.my-120-80 {
+  // todo reverse
+  @apply tw-my-20 md:tw-my-26 lg:tw-my-30;
+}
+.py-80px-104px-120px {
+  // 80px - 104px - 120px
+  @apply tw-py-20 md:tw-py-26 lg:tw-py-30;
+}
+
+.gap-40px-16px {
+  // todo reverse
+  @apply tw-gap-4 md:tw-gap-7 lg:tw-gap-9 xl:tw-gap-10;
+}
+
+.basis-full-full-half {
+  @apply tw-basis-full md:tw-basis-full lg:tw-basis-1/2;
+}
+.wrap-wrap-nowrap {
+  @apply tw-flex-wrap md:tw-flex-wrap lg:tw-flex-nowrap;
+}
+
+.mt-16px-24px-24px {
+  @apply tw-mt-4 lg:tw-mt-6;
+}
+
+.mt-16px-24px-0 {
+  @apply tw-mt-4 md:tw-mt-6 lg:tw-mt-0;
+}
+
+.h-56px-48px-48px {
+  // for buttons height
+  @apply tw-h-14 md:tw-h-12;
+}
+
+.block-bg-img {
+  // hide hide show
+  @apply tw-hidden xl:tw-inline-block;
+}
+
+.my-160px-240px-240px {
+  @apply tw-my-40 xl:tw-my-60
 }

@@ -1,8 +1,10 @@
 <template>
     <section class="tw-relative">
-        <div class="tw-flex tw-justify-between tw-px-20 tw-gap-10">
+        <div
+            class="tw-flex tw-justify-between tw-flex-wrap xl:tw-flex-nowrap tw-px-20 tw-gap-10 tw-relative tw-z-10"
+        >
             <!-- left -->
-            <div class="tw-pt-20 tw-flex-1">
+            <div class="tw-pt-20 tw-flex-1 tw-basis-1/2">
                 <h2 class="topic-title">Where are we located?</h2>
                 <div class="tw-pt-6 topic-description">
                     <div>In nine years from its founding, OÜ Primelight became the leading management consultancy across the Baltics and Eastern Europe, employing over 350 consultants in 29 offices across 18 countries.</div>
@@ -30,8 +32,8 @@
                 </div>
             </div>
             <!-- right -->
-            <div class="tw-flex tw-flex-wrap tw-flex-1 tw-gap-10 tw-pt-12">
-                <WorldMap class="world-map tw-translate-x-20" />
+            <div class="tw-flex tw-flex-wrap tw-basis-1/2 tw-flex-1 tw-gap-10 tw-pt-12">
+                <WorldMap class="world-map tw-w-full tw-translate-x-20" />
             </div>
         </div>
         <div class="tw-absolute tw-left-0 tw-bottom-0">

@@ -354,6 +354,7 @@ module.exports = {
         base: ['1rem', { lineHeight: '1.5rem' }], // font-size: 18px
         lg: ['1.125rem', { lineHeight: '1.75rem' }], // font-size: 20px
         xl: ['1.25rem', { lineHeight: '1.75rem' }],
+        '1.5xl': ['1.375rem', { lineHeight: '1.88rem' }],
         '2xl': ['1.5rem', { lineHeight: '2rem' }], // font-size: 24px
         '2.7xl': ['1.75rem', { lineHeight: '2.1rem' }], // font-size: 28px
         '2.9xl': ['1.777779rem', { lineHeight: '2.2rem' }], // font-size: 32px
@@ -361,6 +362,7 @@ module.exports = {
         '3.5xl': ['2rem', { lineHeight: '2.25rem' }], // font-size: 36px
         '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
         '4.2xl': ['2.325rem', { lineHeight: '2.5rem' }],
+        '4.35xl': ['2.5rem', { lineHeight: '2.5rem' }],
         '4.5xl': ['2.625rem', { lineHeight: '2.5rem' }],
         '5xl': ['3rem', { lineHeight: '1' }],
         '5.5xl': ['3.375rem', { lineHeight: '1' }], // added

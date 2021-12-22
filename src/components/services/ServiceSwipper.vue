@@ -18,21 +18,21 @@
         @slide-change="onSlideChange"
       >
         <SwiperSlide>
-          <ServiceSwipperSlide1 />
+          <ServiceSwipperSlide1 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
         <SwiperSlide>
-          <ServiceSwipperSlide2 />
+          <ServiceSwipperSlide2 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
         <SwiperSlide>
-          <ServiceSwipperSlide3 />
+          <ServiceSwipperSlide3 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
         <SwiperSlide>
-          <ServiceSwipperSlide4 />
+          <ServiceSwipperSlide4 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
       </Swiper>
     </div>
     <div
-      class="swiper-footer tw-flex tw-gap-4 tw-justify-center tw-items-center tw-h-15 tw-text-sm tw-font-medium tw-text-gray-2"
+      class="swiper-footer tw-flex tw-gap-2 md:tw-gap-3 lg:tw-gap-4 tw-px-2 md:tw-px-0 tw-justify-center tw-items-center tw-h-15 tw-text-sm tw-font-medium tw-text-gray-2"
     >
       <div
         v-for="page of pages"

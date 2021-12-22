@@ -2,7 +2,7 @@
     <!-- eslint-disable vue/no-static-inline-styles -->
     <svg
         width="419"
-        height="506"
+        height="auto"
         viewBox="0 0 419 506"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,16 +1,16 @@
 <template>
     <div
-        class="basis-333px tw-grow-1 tw-w-full tw-bg-white tw-rounded-4xl gray-shadow-1 tw-group anim-500 hover:tw--translate-y-5"
+        class="anim-500 tw-grow-1 tw-w-full tw-bg-white tw-rounded-4xl gray-shadow-1 tw-group hover:tw--translate-y-5"
     >
-        <div class="tw-h-74 tw-overflow-hidden">
-            <div class="tw-overflow-hidden tw-h-74 group-hover:tw-h-0 anim-500">
+        <div class="tw-h-74 tw-overflow-hidden tw-cursor-pointer" @click="$emit('click')">
+            <div class="anim-500 tw-overflow-hidden tw-block group-hover:tw-hidden">
                 <img
                     class="tw-w-full tw-rounded-t-3xl"
                     src="@/assets/images/experienced-professionals.png"
                     alt="Experienced professionals"
                 />
             </div>
-            <div class="tw-overflow-hidden tw-h-0 group-hover:tw-h-74 anim-500">
+            <div class="anim-500 tw-overflow-hidden tw-hidden group-hover:tw-block">
                 <img
                     class="tw-w-full tw-rounded-t-3xl"
                     src="@/assets/images/students-and-graduates.jpg"
@@ -19,8 +19,11 @@
             </div>
         </div>
         <div class="tw-px-8 tw-pb-8">
-            <div class="tw-text-orange-1 tw-mt-4 tw-text-sm tw-leading-6 tw-mt-6">{{ date }}</div>
-            <div class="tw-font-semibold tw-text-2xl tw-leading-8 tw-mt-3">{{ title }}</div>
+            <div class="tw-text-orange-1 tw-text-sm tw-leading-6 tw-mt-6">{{ date }}</div>
+            <div
+                class="tw-font-semibold tw-text-2xl tw-leading-8 tw-mt-3 tw-cursor-pointer"
+                @click="$emit('click')"
+            >{{ title }}</div>
             <VButton
                 class="tw-mt-9 tw-text-sm tw-text-blue-1 group-hover:tw-text-white group-hover:tw-bg-blue-1"
                 :text="`${buttonText} &nbsp; &gt;`"

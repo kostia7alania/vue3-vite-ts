@@ -1,12 +1,12 @@
 <template>
   <div
-    class="gray-shadow-1 tw-h-56 tw-w-72 tw-bg-white tw-rounded-4xl tw-flex tw-items-center tw-justify-center tw-flex-col tw-gap-4"
+    class="gray-shadow-1 tw-h-40 md:tw-h-48 xl:tw-h-56 tw-w-40 md:tw-w-48 xl:tw-w-72 tw-bg-white tw-rounded-4xl tw-flex tw-items-center tw-justify-center tw-flex-col tw-gap-4"
   >
-    <div class="tw-text-orange-1 tw-text-5xl tw-font-semibold">
+    <div class="tw-text-orange-1 tw-text-4.35xl lg:tw-text-5xl tw-font-semibold">
       <!-- number -->
       {{ number }}
     </div>
-    <div class="tw-flex tw-items-center tw-gap-x-2 tw-text-gray-2 tw-text-lg tw-font-medium">
+    <div class="tw-flex tw-items-center tw-flex-col justify-center xl:justify-start xl:tw-flex-row tw-gap-2 tw-text-gray-2 tw-text-sm xl:tw-text-lg tw-font-medium">
       <div>
         <!-- icon -->
         <!-- {{ icon }} -->
