@@ -1,12 +1,12 @@
 <template>
     <section class="tw-relative">
         <div
-            class="tw-flex tw-justify-between tw-flex-wrap xl:tw-flex-nowrap tw-px-20 tw-gap-10 tw-relative tw-z-10"
+            class="px-80px-48px-16px tw-flex tw-justify-between tw-flex-wrap xl:tw-flex-nowrap tw-gap-10 tw-relative tw-z-10"
         >
             <!-- left -->
-            <div class="tw-pt-20 tw-flex-1 tw-basis-1/2">
+            <div class="tw-flex-1 tw-basis-1/2">
                 <h2 class="topic-title">Where are we located?</h2>
-                <div class="tw-pt-6 topic-description">
+                <div class="mt-16px-24px-24px topic-description">
                     <div>In nine years from its founding, OÜ Primelight became the leading management consultancy across the Baltics and Eastern Europe, employing over 350 consultants in 29 offices across 18 countries.</div>
                     <div class="tw-mt-2">
                         Our international headquarters are located in Tartu, Estonia. Other OÜ Primelight offices are spread across
@@ -32,12 +32,12 @@
                 </div>
             </div>
             <!-- right -->
-            <div class="tw-flex tw-flex-wrap tw-basis-1/2 tw-flex-1 tw-gap-10 tw-pt-12">
+            <div class="tw-flex tw-basis-1/2 tw-flex-1 tw-mt-10 xl:tw-mt-0 xl:tw--translate-y-7">
                 <WorldMap class="world-map tw-w-full tw-translate-x-20" />
             </div>
         </div>
-        <div class="tw-absolute tw-left-0 tw-bottom-0">
-            <BgPatternLocated />
+        <div class="tw-absolute tw-left-0 tw-top-0 xl:tw-bottom-0">
+            <img src="@/assets/images/patterns/bg-where-we-located.png" />
         </div>
     </section>
 </template>
@@ -48,7 +48,6 @@ import { defineComponent, defineAsyncComponent } from 'vue';
 export default defineComponent({
     name: "WhereWeLocated",
     components: {
-        BgPatternLocated: defineAsyncComponent(() => import("@/components/patterns/BgPatternLocated.vue")),
         WorldMap: defineAsyncComponent(() => import("@/assets/icons/world-map.svg")),
     }
 });

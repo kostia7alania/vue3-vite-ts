@@ -154,7 +154,7 @@
             </div>
           </div>
         </div>
-        <CardsSwiper v-else >
+        <CardsSwiper v-else>
           <!-- MOBILE -->
           <template #test1>
             <CardInfoDynamic
@@ -254,7 +254,7 @@
       --------
     -->
     <Cooperation
-      class="my-160px-240px-240px tw-bg-white tw-mx-20"
+      class="my-160px-240px-240px px-80px-48px-16px tw-bg-white"
       title="Interested In cooperation?"
     />
 
@@ -265,9 +265,10 @@
       Our latest articles
       --------
     -->
-    <section class="my-160px-240px-240px tw-px-20">
-      <h2 class="topic-title max-w-400px tw-my-20">Our latest articles</h2>
-      <div class="gap-40px-16px tw-flex">
+    <section class="my-160px-240px-240px px-80px-48px-16px">
+      <h2 class="topic-title max-w-400px my-120-80">Our latest articles</h2>
+      <div v-if="!sm" class="gap-40px-16px tw-flex">
+        <!-- DESKTOP -->
         <ArticleCard
           class="tw-w-full tw-basis-full"
           date="2021-10-11"
@@ -279,11 +280,35 @@
           title="Poland-based SAS Advisors is joining OÜ Primelight"
         />
         <ArticleCard
-          class="tw-w-full tw-basis-full"
+          class="dynamic-info-card"
           date="2021-10-13"
           title="Poland-based SAS Advisors is joining OÜ Primelight"
         />
       </div>
+      <CardsSwiper v-else>
+        <!-- MOBILE -->
+        <template #test1>
+          <ArticleCard
+            class="article-card-swiper"
+            date="2021-10-11"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+        <template #test2>
+          <ArticleCard
+            class="article-card-swiper"
+            date="2021-10-12"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+        <template #test3>
+          <ArticleCard
+            class="article-card-swiper"
+            date="2021-10-13"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+      </CardsSwiper>
     </section>
   </div>
 </template>
