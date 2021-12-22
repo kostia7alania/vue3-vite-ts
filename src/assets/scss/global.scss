@@ -236,5 +236,9 @@ body {
 }
 
 .my-160px-240px-240px {
-  @apply tw-my-40 xl:tw-my-60
+  @apply tw-my-40 xl:tw-my-60;
+}
+
+.dynamic-info-card {
+  @apply tw-rounded-4xl tw-h-74 tw-m-1 tw-mb-7;
 }

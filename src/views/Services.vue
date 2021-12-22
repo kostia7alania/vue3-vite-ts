@@ -65,10 +65,11 @@
           >OÜ Primelight provides management consulting and data analytics services to corporations, start-ups, SMEs, governments and NGOs, delivering great value for money price point. We offer a full spectrum of management consulting services: strategy, innovation, funding, research, digital and implementation.</div>
         </div>
         <!-- bottom -->
-        <div class="gap-40px-16px">
+        <div v-if="!sm" class="gap-40px-16px">
           <!-- row 1 -->
           <div class="gap-40px-16px tw-flex tw-flex-wrap tw-mt-20">
             <div class="tw-flex-1 xl:tw-flex-none xl:tw-basis-auto">
+              <!-- 1 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Strategy"
@@ -78,6 +79,7 @@
               />
             </div>
             <div class="tw-relative tw-flex-1 xl:tw-basis-auto">
+              <!-- 2 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Innovation"
@@ -93,6 +95,7 @@
           <!-- row 2 -->
           <div class="gap-40px-16px tw-flex tw-flex-wrap tw-mt-10">
             <div class="tw-flex-1 tw-basis-5/12 tw-w-1/2 xl:tw-basis-1/4">
+              <!-- 3 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Funding"
@@ -102,6 +105,7 @@
               />
             </div>
             <div class="tw-flex-1 tw-basis-5/12 tw-w-1/2 xl:tw-basis-1/4">
+              <!-- 4 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Research"
@@ -111,6 +115,7 @@
               />
             </div>
             <div class="tw-flex-1 tw-basis-5/12 xl:tw-basis-1/4">
+              <!-- 5 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Implementation"
@@ -121,6 +126,7 @@
             </div>
             <!-- row 3 -->
             <div class="tw-relative tw-flex-1 tw-basis-5/12 xl:tw-basis-3/5">
+              <!-- 6 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Digital"
@@ -137,6 +143,7 @@
             <div
               class="tw-flex-1 tw-basis-6/12 tw-flex-grow-0 xl:tw-flex-grow tw-w-1/2 xl:tw-basis-1/4"
             >
+              <!-- 7 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Sustainability"
@@ -147,6 +154,74 @@
             </div>
           </div>
         </div>
+        <CardsSwiper v-else >
+          <!-- MOBILE -->
+          <template #test1>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Strategy"
+              description="Providing classical fact-based strategic management consulting"
+              icon="circle-strategy"
+              icon-class="tw-text-orange-1"
+            />
+          </template>
+          <template #test2>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Innovation"
+              description="Helping corporations, start-ups and governments innovate"
+              icon="circle-innovation"
+              icon-class="tw-text-blue-1"
+            />
+          </template>
+
+          <template #test3>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Funding"
+              description="Securing external financing for organization’s growth"
+              icon="circle-funding"
+              icon-class="tw-text-blue-1"
+            />
+          </template>
+
+          <template #test4>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Research"
+              description="Gathering and analyzing information to help our clients make the right decisions"
+              icon="circle-research"
+              icon-class="tw-text-orange-1"
+            />
+          </template>
+          <template #test5>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Implementation"
+              description="Executing projects and initiatives together with our clients"
+              icon="circle-implementation"
+              icon-class="tw-text-blue-1"
+            />
+          </template>
+          <template #test6>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Digital"
+              description="Using big-data and latest IT technologies to drive the organization’s digitalization"
+              icon="circle-digital"
+              icon-class="tw-text-orange-1"
+            />
+          </template>
+          <template #test7>
+            <CardInfoDynamic
+              class="dynamic-info-card"
+              title="Sustainability"
+              description="Supporting companies and public organizations in the transformation"
+              icon="circle-sustainability"
+              icon-class="tw-text-blue-1"
+            />
+          </template>
+        </CardsSwiper>
       </div>
     </section>
     <!--
@@ -193,9 +268,21 @@
     <section class="my-160px-240px-240px tw-px-20">
       <h2 class="topic-title max-w-400px tw-my-20">Our latest articles</h2>
       <div class="gap-40px-16px tw-flex">
-        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCard
+          class="tw-w-full tw-basis-full"
+          date="2021-10-11"
+          title="Poland-based SAS Advisors is joining OÜ Primelight"
+        />
+        <ArticleCard
+          class="tw-w-full tw-basis-full"
+          date="2021-10-12"
+          title="Poland-based SAS Advisors is joining OÜ Primelight"
+        />
+        <ArticleCard
+          class="tw-w-full tw-basis-full"
+          date="2021-10-13"
+          title="Poland-based SAS Advisors is joining OÜ Primelight"
+        />
       </div>
     </section>
   </div>
@@ -209,6 +296,7 @@ export default defineComponent({
   name: 'Services',
   components: {
     ServiceSwipper: defineAsyncComponent(() => import("@/components/services/ServiceSwipper.vue")),
+    CardsSwiper: defineAsyncComponent(() => import("@/components/services/CardsSwiper.vue")),
     CardInfo: defineAsyncComponent(() => import("@/components/services/CardInfo.vue")),
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
     CardInfoDynamic: defineAsyncComponent(() => import("@/components/services/CardInfoDynamic.vue")),
@@ -219,6 +307,7 @@ export default defineComponent({
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
     WhereWeLocated: defineAsyncComponent(() => import("@/components/services/WhereWeLocated.vue")),
+
   },
   setup() {
     const breakpoints = useBreakpoints(breakpointsTailwind)
