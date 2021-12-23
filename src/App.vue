@@ -1,24 +1,38 @@
 <template>
   <router-view />
-  <VModal v-if="state.items.length" />
+  <!-- <VModal v-if="state.items.length" /> -->
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 
-import useModal from './api/useModal'
+// import useModal from './api/useModal'
 
-import VModal from '@/components/ui/VModal.vue'
+// import VModal from '@/components/ui/VModal.vue'
 
 export default defineComponent({
   name: 'App',
-  components: { VModal, },
+  // components: { VModal, },
   setup() {
-    const { openModal, state } = useModal()
+    // const { openModal, state } = useModal()
     // const hasModal = state.items.length
+
+    onMounted(() => {
+      setTimeout(function () {
+        const loading = document.querySelector('.starter-loading');
+        if (loading) {
+          loading.classList.add('starter-loading__hide');
+          setTimeout(function () {
+            loading.remove();
+            document.documentElement.style.overflow = '';
+          }, 500);
+        }
+      }, 300);
+
+    })
     return {
-      state,
-      openModal
+      // state,
+      // openModal
     }
   },
 });
