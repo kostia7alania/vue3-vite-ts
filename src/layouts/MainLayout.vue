@@ -3,7 +3,7 @@
     <!-- loading -->
     loading
   </div>
-  <div v-if="isInit" class="tw-flex tw-flex-col dark:tw-bg-gray-800 ">
+  <div v-if="isInit" class="tw-flex tw-flex-col dark:tw-bg-gray-800">
     <div class="main-header tw-flex-1">
       <div class="main-header"></div>
       <div class="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50">
@@ -12,7 +12,11 @@
     </div>
     <div class="app-main tw-flex-1">
       <div class="max-layout-width tw-overflow-hidden tw-mx-auto">
-        <router-view />
+        <router-view v-slot="{ Component }">
+          <transition name="component-fade">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </div>
     </div>
     <!-- footer -->
@@ -68,12 +72,12 @@ $footer-sm: 461px;
 }
 
 // .app-main {
-  // overflow: auto;
-  // min-height: calc(100vh - $header-lg - $footer-lg);
-  // // margin-top: calc($heightLg);
-  // @media (max-width: 770px) {
-  //   height: calc(100vh - $header-sm - $footer-sm);
-  //   // margin-top: calc($heightSm);
-  // }
+// overflow: auto;
+// min-height: calc(100vh - $header-lg - $footer-lg);
+// // margin-top: calc($heightLg);
+// @media (max-width: 770px) {
+//   height: calc(100vh - $header-sm - $footer-sm);
+//   // margin-top: calc($heightSm);
+// }
 // }
 </style>

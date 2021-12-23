@@ -11,14 +11,31 @@
         v-if="description"
         class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
       >{{ description }}</div>
+      <!-- bottom -->
+      <div
+        v-if="$route.name === 'articles'"
+        class="tw-flex tw-flex-wrap tw-gap-6 tw-text-sm tw-mt-16"
+      >
+        <VButtonRadio
+          v-model="category"
+          :items="categories"
+          theme="blue"
+          active-class="tw-bg-white tw-text-orange-1 active-class"
+          inactive-class="inactive-class"
+        />
+      </div>
     </PageTopSection>
   </section>
 
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <transition name="component-fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, computed, ComputedRef } from 'vue';
+import { defineComponent, defineAsyncComponent, computed, ComputedRef, ref } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router';
 type TThemeMap = 'services' | 'company' | 'team' | 'careers' | 'contact' | 'financing'
@@ -29,12 +46,14 @@ const themeMap: { [key: string]: string } = {
   team: 'orange',
   careers: 'orange',
   contact: 'orange',
+  articles: 'blue',
   financing: 'blue',
 }
 
 export default defineComponent({
   name: 'PagesLayout',
   components: {
+    VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
     PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
   },
   setup() {
@@ -45,8 +64,12 @@ export default defineComponent({
     const description = computed(() => t(`top-section.${String(routeName.value)}.description`))
     const theme = computed(() => themeMap[String(routeName.value)])
 
+    /* Articles */
+    const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
+    const category = ref(categories[0])
+
     return {
-      title, description, theme
+      title, description, theme, category, categories
     }
   },
 });

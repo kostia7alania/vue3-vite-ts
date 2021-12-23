@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router';
 
-import MainLayout from '@/layouts/MainLayout.vue'
-import PagesLayout from '@/layouts/PagesLayout.vue'
+import MainLayout from '@/layouts/MainLayout.vue';
+import PagesLayout from '@/layouts/PagesLayout.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -14,11 +14,6 @@ const routes: RouteRecordRaw[] = [
         path: '',
         name: 'main-page',
         component: () => import('@/views/Services.vue'),
-      },
-      {
-        name: 'articles',
-        path: '/articles',
-        component: () => import('@/views/Articles.vue'),
       },
       {
         name: 'article',
@@ -56,6 +51,11 @@ const routes: RouteRecordRaw[] = [
             name: 'contact',
             path: '/contact',
             component: () => import('@/views/Contact.vue'),
+          },
+          {
+            name: 'articles',
+            path: '/articles',
+            component: () => import('@/views/Articles.vue'),
           },
           {
             name: 'financing',

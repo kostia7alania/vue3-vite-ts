@@ -41,6 +41,10 @@
     "financing": {
       "title": "Financing",
       "description": "Funding programs are an important source of finance during the time of economic uncertainty and additional fuel to finance business activities and societal processes at any time. EU funding programmes are designed to support research, development and innovation and advancement of specific societal priorities (environment and climate actions, audio-visual, cultural and creative sectors, education, training, youth and sports initiatives, etc)."
+    },
+    "articles": {
+      "title": "Articles",
+      "description": ""
     }
   }
 }
