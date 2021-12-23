@@ -101,15 +101,18 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, ref } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({
   name: 'Contact',
   components: {
-    PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
   },
-  setup() {
+  emits: ['ready'],
+  setup(_, { emit }) {
+    onMounted(() => emit('ready'))
+
     const countries = [
       'INTERNATIONAL',
       'ESTONIA',

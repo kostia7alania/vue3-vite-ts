@@ -29,7 +29,7 @@
 
   <router-view v-slot="{ Component }">
     <transition name="component-fade" mode="out-in">
-      <component :is="Component" />
+      <component :is="Component" @ready="$emit('ready')" />
     </transition>
   </router-view>
 </template>
@@ -56,6 +56,7 @@ export default defineComponent({
     VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
     PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
   },
+  emits: ['ready'],
   setup() {
     const route = useRoute();
     const { t } = useI18n({ useScope: 'global' });
@@ -67,6 +68,7 @@ export default defineComponent({
     /* Articles */
     const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
     const category = ref(categories[0])
+
 
     return {
       title, description, theme, category, categories

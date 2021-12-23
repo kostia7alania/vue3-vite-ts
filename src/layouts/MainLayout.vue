@@ -14,7 +14,7 @@
       <div class="max-layout-width tw-overflow-hidden tw-mx-auto">
         <router-view v-slot="{ Component }">
           <transition name="component-fade">
-            <component :is="Component" />
+            <component :is="Component" @ready="$emit('ready')"/>
           </transition>
         </router-view>
       </div>
@@ -36,6 +36,7 @@ export default defineComponent({
     MainHeader: defineAsyncComponent(() => import('./components/MainHeader.vue')),
     MainFooter: defineAsyncComponent(() => import('./components/MainFooter.vue'))
   },
+  emits: ['ready'],
   setup() {
     const isInit = ref(false);
 

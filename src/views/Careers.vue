@@ -184,12 +184,12 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'Careers',
   components: {
-    PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     CompanyCardInfoAnim: defineAsyncComponent(() => import('@/components/company/CompanyCardInfoAnim.vue')),
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
@@ -197,7 +197,10 @@ export default defineComponent({
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
     BgPatternSearchCareerOpportunities: defineAsyncComponent(() => import("@/components/patterns/BgPatternSearchCareerOpportunities.vue")),
   },
-  setup() {
+  emits: ['ready'],
+  setup(_, { emit }) {
+    onMounted(() => emit('ready'))
+
     const consultingCol1 = [
       { title: '1. Partner', description: 'Intellectual leader with deep expertise in some particular industry and/or service line and own client portfolio' },
       { title: '3. Project manager / Team lead', description: 'Full-responsibility over project execution ensuring that it is delivered on time within high quality and budget expectations' },

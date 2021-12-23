@@ -60,7 +60,7 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, ref } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'Articles',
@@ -68,11 +68,14 @@ export default defineComponent({
     PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
   },
-  setup() {
-    const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
-    const category = ref(categories[0])
+  emits: ['ready'],
+  setup(_, { emit }) {
+    onMounted(() => emit('ready'))
 
-    return { category, categories }
+    // const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
+    // const category = ref(categories[0])
+
+    // return { category, categories }
   },
 });
 </script>

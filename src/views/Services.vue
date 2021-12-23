@@ -315,7 +315,7 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineAsyncComponent, defineComponent } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
 import ServiceSwipper from "@/components/services/ServiceSwipper.vue"
 
@@ -337,9 +337,12 @@ export default defineComponent({
     WhereWeLocated: defineAsyncComponent(() => import("@/components/services/WhereWeLocated.vue")),
 
   },
-  setup() {
+  emits: ['ready'],
+  setup(_, { emit }) {
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const sm = breakpoints.smaller('sm')
+
+    onMounted(() => emit('ready'))
 
     return { sm }
   }

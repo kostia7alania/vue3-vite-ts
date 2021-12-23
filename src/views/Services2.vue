@@ -129,7 +129,7 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'Services2',
@@ -139,6 +139,10 @@ export default defineComponent({
     BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+  },
+  emits: ['ready'],
+  setup(_, { emit }) {
+    onMounted(() => emit('ready'))
   }
 });
 </script>

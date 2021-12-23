@@ -121,19 +121,22 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'Financing',
   components: {
-    PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     NationalCard: defineAsyncComponent(() => import("@/components/financing/NationalCard.vue")),
     CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
     BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
   },
-  setup() {
+   emits: ['ready'],
+  setup(_, { emit }) {
+    onMounted(() => emit('ready'))
+
     const opportunities = [
       {
         title: 'Horizon Europe',

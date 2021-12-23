@@ -58,20 +58,23 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, ref } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({
   name: 'Articles',
   components: {
-    PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
+    // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    // VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
   },
-  setup() {
-    const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
-    const category = ref(categories[0])
+  emits: ['ready'],
+  setup(_, { emit }) {
+    onMounted(() => emit('ready'))
 
-    return { category, categories }
+    // const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
+    // const category = ref(categories[0])
+
+    // return { category, categories }
   },
 });
 </script>

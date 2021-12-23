@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view @ready="readyHandler" />
   <!-- <VModal v-if="state.items.length" /> -->
 </template>
 
@@ -16,23 +16,24 @@ export default defineComponent({
   setup() {
     // const { openModal, state } = useModal()
     // const hasModal = state.items.length
+    const removeSpinner = () => {
+      const loading = document.querySelector('.starter-loading');
+      if (loading) {
+        loading.classList.add('starter-loading__hide');
+        setTimeout(function () {
+          loading.remove();
+          document.documentElement.style.overflow = '';
+        }, 500);
+      }
+    }
 
-    onMounted(() => {
-      setTimeout(function () {
-        const loading = document.querySelector('.starter-loading');
-        if (loading) {
-          loading.classList.add('starter-loading__hide');
-          setTimeout(function () {
-            loading.remove();
-            document.documentElement.style.overflow = '';
-          }, 500);
-        }
-      }, 300);
 
-    })
+    const readyHandler = () => { setTimeout(removeSpinner, 300); }
+
     return {
       // state,
       // openModal
+      readyHandler
     }
   },
 });
