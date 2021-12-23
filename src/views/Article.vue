@@ -62,10 +62,12 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
+import PageTopSection from "@/components/services2/PageTopSection.vue"
+
 export default defineComponent({
   name: 'Articles',
   components: {
-    PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    PageTopSection,
     VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
   },
   emits: ['ready'],

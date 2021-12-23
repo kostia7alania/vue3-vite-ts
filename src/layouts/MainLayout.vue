@@ -14,7 +14,7 @@
       <div class="max-layout-width tw-overflow-hidden tw-mx-auto">
         <router-view v-slot="{ Component }">
           <transition name="component-fade">
-            <component :is="Component" @ready="$emit('ready')"/>
+            <component :is="Component" @ready="$emit('ready')" />
           </transition>
         </router-view>
       </div>
@@ -29,12 +29,14 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted, defineAsyncComponent } from 'vue';
 
+import MainHeader from './components/MainHeader.vue'
+import MainFooter from './components/MainFooter.vue'
 
 export default defineComponent({
   name: 'MainLayout',
   components: {
-    MainHeader: defineAsyncComponent(() => import('./components/MainHeader.vue')),
-    MainFooter: defineAsyncComponent(() => import('./components/MainFooter.vue'))
+    MainHeader,
+    MainFooter
   },
   emits: ['ready'],
   setup() {

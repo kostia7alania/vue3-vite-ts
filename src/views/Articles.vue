@@ -58,14 +58,17 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
+
+import ArticleCard from "@/components/articles/ArticleCard.vue"
 
 export default defineComponent({
   name: 'Articles',
   components: {
+    ArticleCard,
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     // VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
-    ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+    // ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {

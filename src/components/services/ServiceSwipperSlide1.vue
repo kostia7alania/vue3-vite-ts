@@ -26,13 +26,16 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
+
+import ServiceSwipperSlide1Cartoon from "@/components/services/ServiceSwipperSlide1Cartoon.vue"
+import VButton from "@/components/ui/VButton.vue"
 
 export default defineComponent({
   name: 'ServiceSwipper',
   components: {
-    ServiceSwipperSlide1Cartoon: defineAsyncComponent(() => import("@/components/services/ServiceSwipperSlide1Cartoon.vue")),
-    VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
+    ServiceSwipperSlide1Cartoon,
+    VButton
   }
 });
 </script>

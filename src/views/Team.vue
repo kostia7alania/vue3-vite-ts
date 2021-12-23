@@ -93,13 +93,16 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
+import TeamCard from "@/components/team/TeamCard.vue"
+import VButtonRadio from "@/components/ui/VButtonRadio.vue"
+
 export default defineComponent({
   name: 'Team',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    TeamCard: defineAsyncComponent(() => import("@/components/team/TeamCard.vue")),
+    VButtonRadio,
+    TeamCard,
     ContactForm: defineAsyncComponent(() => import("@/components/team/ContactForm.vue")),
-    VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
     BgPatternContactForm: defineAsyncComponent(() => import("@/components/patterns/BgPatternContactForm.vue")),
   },
   emits: ['ready'],

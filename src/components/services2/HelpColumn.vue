@@ -17,10 +17,12 @@
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from 'vue';
 
+import VIcon from '@/components/ui/VIcon.vue'
+
 export default defineComponent({
     name: "HelpColumn",
     components: {
-        VIcon: defineAsyncComponent(() => import('@/components/ui/VIcon.vue'))
+        VIcon
     },
     props: {
         title: { type: [Number, String], default: '', },

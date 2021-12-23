@@ -174,11 +174,12 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
+import CompanyCardInfoAnim from '@/components/company/CompanyCardInfoAnim.vue'
 export default defineComponent({
   name: 'Company',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    CompanyCardInfoAnim: defineAsyncComponent(() => import('@/components/company/CompanyCardInfoAnim.vue')),
+    CompanyCardInfoAnim,
     CardInfo: defineAsyncComponent(() => import("@/components/services/CardInfo.vue")),
     BgPatternChallenge: defineAsyncComponent(() => import("@/components/patterns/BgPatternChallenge.vue")),
     WhereWeLocated: defineAsyncComponent(() => import("@/components/services/WhereWeLocated.vue")),

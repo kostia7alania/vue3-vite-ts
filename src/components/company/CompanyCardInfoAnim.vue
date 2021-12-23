@@ -85,13 +85,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, computed, } from 'vue';
+import { defineComponent, computed, } from 'vue';
 
+import CardFlip from '@/components/services/CardFlip.vue'
 
 export default defineComponent({
     name: "CompanyCardInfoAnim",
     components: {
-        CardFlip: defineAsyncComponent(() => import('@/components/services/CardFlip.vue')),
+        CardFlip,
     },
     props: {
         title: { type: [Number, String], default: '', },

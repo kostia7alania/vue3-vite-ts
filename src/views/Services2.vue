@@ -131,10 +131,11 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
+import HelpColumn from "@/components/services2/HelpColumn.vue"
 export default defineComponent({
   name: 'Services2',
   components: {
-    HelpColumn: defineAsyncComponent(() => import("@/components/services2/HelpColumn.vue")),
+    HelpColumn,
     CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
     BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),

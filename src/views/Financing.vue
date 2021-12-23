@@ -123,12 +123,14 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
+import CardInfoDynamicHorizontal from "@/components/services2/CardInfoDynamicHorizontal.vue"
+
 export default defineComponent({
   name: 'Financing',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     NationalCard: defineAsyncComponent(() => import("@/components/financing/NationalCard.vue")),
-    CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
+    CardInfoDynamicHorizontal,
     BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
