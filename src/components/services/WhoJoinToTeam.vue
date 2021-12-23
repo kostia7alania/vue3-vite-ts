@@ -7,6 +7,7 @@
         class="tw-basis-5/12 xl:tw-basis-1/4 w-444px h-444px tw-mt-20 xl:tw-mt-0 tw-order-2 xl:tw-order-1"
       >
         <CardInfoAnim
+          :is-mobile="sm || smAndLg"
           title="Students and graduates"
           description="We are always looking for young talents from our local markets who want to develop professionally by doing meaningful projects in their home countries and internationally. If you are a student or a recent graduate, we offer various internship and entry-level positions that will best suit your needs."
           image="students-and-graduates"
@@ -19,6 +20,7 @@
         class="tw-basis-5/12 xl:tw-basis-1/4 w-444px h-444px tw-mt-20 xl:tw-mt-0 tw-order-3 xl:tw-order-2"
       >
         <CardInfoAnim
+          :is-mobile="sm || smAndLg"
           title="Experienced professionals"
           description="We truly believe that anyone can become a management consultant and apply relevant knowledge to drive change in organizations and make an impact on society."
           image="experienced-professionals"
@@ -63,8 +65,9 @@
     <CardsSwiper v-if="sm" class="tw-mt-40 tw-mb-40">
       <!-- MOBILE -->
       <template #test1>
-        <div class="w-444px h-444px tw-mb-40">
+        <div class=" h-444px tw-mb-40">
           <CardInfoAnim
+            :is-mobile="sm || smAndLg"
             title="Students and graduates"
             description="We are always looking for young talents from our local markets who want to develop professionally by doing meaningful projects in their home countries and internationally. If you are a student or a recent graduate, we offer various internship and entry-level positions that will best suit your needs."
             image="students-and-graduates"
@@ -73,8 +76,9 @@
         </div>
       </template>
       <template #test2>
-        <div class="w-444px h-444px tw-mb-40">
+        <div class=" h-444px tw-mb-40">
           <CardInfoAnim
+            :is-mobile="sm || smAndLg"
             title="Experienced professionals"
             description="We truly believe that anyone can become a management consultant and apply relevant knowledge to drive change in organizations and make an impact on society."
             image="experienced-professionals"
@@ -104,8 +108,9 @@ export default defineComponent({
   emits: ['click'], setup() {
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const sm = breakpoints.smaller('sm')
+    const smAndLg = breakpoints.between('sm', 'lg')
 
-    return { sm }
+    return { sm, smAndLg }
   }
 });
 </script>
