@@ -52,6 +52,8 @@ import 'swiper/css';
 import { defineAsyncComponent, defineComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n'
 
+import ServiceSwipperSlide1 from "@/components/services/ServiceSwipperSlide1.vue"
+
 interface ISwiper {
   realIndex: number
   slideTo: (a: number, b?: number) => void
@@ -61,7 +63,8 @@ export default defineComponent({
   components: {
     Swiper,
     SwiperSlide,
-    ServiceSwipperSlide1: defineAsyncComponent(() => import("@/components/services/ServiceSwipperSlide1.vue")),
+    // ServiceSwipperSlide1: defineAsyncComponent(() => import("@/components/services/ServiceSwipperSlide1.vue")),
+    ServiceSwipperSlide1,
     ServiceSwipperSlide2: defineAsyncComponent(() => import("@/components/services/ServiceSwipperSlide2.vue")),
     ServiceSwipperSlide3: defineAsyncComponent(() => import("@/components/services/ServiceSwipperSlide3.vue")),
     ServiceSwipperSlide4: defineAsyncComponent(() => import("@/components/services/ServiceSwipperSlide4.vue")),

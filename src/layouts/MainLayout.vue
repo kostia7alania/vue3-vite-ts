@@ -67,7 +67,7 @@ $footer-sm: 461px;
   }
 }
 
-.app-main {
+// .app-main {
   // overflow: auto;
   // min-height: calc(100vh - $header-lg - $footer-lg);
   // // margin-top: calc($heightLg);
@@ -75,5 +75,5 @@ $footer-sm: 461px;
   //   height: calc(100vh - $header-sm - $footer-sm);
   //   // margin-top: calc($heightSm);
   // }
-}
+// }
 </style>

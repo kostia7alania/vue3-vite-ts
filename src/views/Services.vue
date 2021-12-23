@@ -317,10 +317,13 @@
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent } from 'vue';
 
+import ServiceSwipper from "@/components/services/ServiceSwipper.vue"
+
 export default defineComponent({
   name: 'Services',
   components: {
-    ServiceSwipper: defineAsyncComponent(() => import("@/components/services/ServiceSwipper.vue")),
+    ServiceSwipper,
+    // ServiceSwipper: defineAsyncComponent(() => import("@/components/services/ServiceSwipper.vue")),
     CardsSwiper: defineAsyncComponent(() => import("@/components/services/CardsSwiper.vue")),
     CardInfo: defineAsyncComponent(() => import("@/components/services/CardInfo.vue")),
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
