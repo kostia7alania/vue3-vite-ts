@@ -16,5 +16,31 @@
     "our origin": "Our origin",
     "our approach": "Our approach",
     "our news": "Our news"
+  },
+  "top-section": {
+    "services": {
+      "title": "Services",
+      "description": "Our team has strong educational credentials, intellectual curiosity, proven leadership capacity and commitment to values. We are analytically rigorous, delivering fact-based advice to get the job done. In doing so, we provide great value for the money price point, always striving to understand and meet the customer's needs as efficiently as possible, with the least negative impact on the environment."
+    },
+    "company": {
+      "title": "Story of OÜ Primelight",
+      "description": "OÜ Primelight challenges the traditional norms of management consulting, providing quality advisory talent that delivers results at a value for money price point. We help our clients from private companies to governments and non-profits to challenge their own industries by becoming more innovative, efficient and dynamic."
+    },
+    "team": {
+      "title": "Team",
+      "description": "Our team of 350+ consultants and 150+ software developers is led by Partners and Managers. These individuals working across 18 countries combine strong educational credentials, intellectual curiosity, proven leadership capacity and commitment to values."
+    },
+    "careers": {
+      "title": "Careers",
+      "description": ""
+    },
+    "contact": {
+      "title": "Contact",
+      "description": ""
+    },
+    "financing": {
+      "title": "Financing",
+      "description": "Funding programs are an important source of finance during the time of economic uncertainty and additional fuel to finance business activities and societal processes at any time. EU funding programmes are designed to support research, development and innovation and advancement of specific societal priorities (environment and climate actions, audio-visual, cultural and creative sectors, education, training, youth and sports initiatives, etc)."
+    }
   }
 }

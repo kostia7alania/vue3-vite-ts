@@ -5,14 +5,16 @@
       @Section #0
       -------- 
     -->
-    <section>
+    <!--
+      <section>
       <PageTopSection theme="orange" class="min-h-400px">
-        <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Team</div>
-        <div
-          class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
-        >Our team of 350+ consultants and 150+ software developers is led by Partners and Managers. These individuals working across 18 countries combine strong educational credentials, intellectual curiosity, proven leadership capacity and commitment to values.</div>
+      <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Team</div>
+      <div
+      class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
+      >Our team of 350+ consultants and 150+ software developers is led by Partners and Managers. These individuals working across 18 countries combine strong educational credentials, intellectual curiosity, proven leadership capacity and commitment to values.</div>
       </PageTopSection>
-    </section>
+      </section>
+    -->
 
     <!--
       --------

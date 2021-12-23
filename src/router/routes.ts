@@ -1,6 +1,7 @@
 import { RouteRecordRaw } from 'vue-router';
 
-const MainLayout = () => import('@/layouts/MainLayout.vue');
+import MainLayout from '@/layouts/MainLayout.vue'
+import PagesLayout from '@/layouts/PagesLayout.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -10,29 +11,9 @@ const routes: RouteRecordRaw[] = [
     redirect: { name: 'main-page' },
     children: [
       {
+        path: '',
         name: 'main-page',
-        path: '/main-page',
         component: () => import('@/views/Services.vue'),
-      },
-      {
-        name: 'services',
-        path: '/services',
-        component: () => import('@/views/Services2.vue'),
-      },
-      {
-        name: 'company',
-        path: '/company',
-        component: () => import('@/views/Company.vue'),
-      },
-      {
-        name: 'team',
-        path: '/team',
-        component: () => import('@/views/Team.vue'),
-      },
-      {
-        name: 'careers',
-        path: '/careers',
-        component: () => import('@/views/Careers.vue'),
       },
       {
         name: 'articles',
@@ -44,15 +25,44 @@ const routes: RouteRecordRaw[] = [
         path: '/articles/:id',
         component: () => import('@/views/Article.vue'),
       },
+
+      // with common Layout
       {
-        name: 'contact',
-        path: '/contact',
-        component: () => import('@/views/Contact.vue'),
-      },
-      {
-        name: 'financing',
-        path: '/financing',
-        component: () => import('@/views/Financing.vue'),
+        path: '',
+        component: PagesLayout,
+        children: [
+          {
+            name: 'services',
+            path: '/services',
+            component: () => import('@/views/Services2.vue'),
+          },
+          {
+            name: 'company',
+            path: '/company',
+            component: () => import('@/views/Company.vue'),
+          },
+          {
+            name: 'team',
+            path: '/team',
+            component: () => import('@/views/Team.vue'),
+          },
+          {
+            name: 'careers',
+            path: '/careers',
+            component: () => import('@/views/Careers.vue'),
+          },
+
+          {
+            name: 'contact',
+            path: '/contact',
+            component: () => import('@/views/Contact.vue'),
+          },
+          {
+            name: 'financing',
+            path: '/financing',
+            component: () => import('@/views/Financing.vue'),
+          },
+        ],
       },
     ],
   },

@@ -5,14 +5,16 @@
       @Section #0
       -------- 
     -->
-    <section>
+    <!--
+      <section>
       <PageTopSection theme="blue">
-        <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Financing</div>
-        <div
-          class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
-        >Funding programs are an important source of finance during the time of economic uncertainty and additional fuel to finance business activities and societal processes at any time. EU funding programmes are designed to support research, development and innovation and advancement of specific societal priorities (environment and climate actions, audio-visual, cultural and creative sectors, education, training, youth and sports initiatives, etc).</div>
+      <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Financing</div>
+      <div
+      class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
+      >Funding programs are an important source of finance during the time of economic uncertainty and additional fuel to finance business activities and societal processes at any time. EU funding programmes are designed to support research, development and innovation and advancement of specific societal priorities (environment and climate actions, audio-visual, cultural and creative sectors, education, training, youth and sports initiatives, etc).</div>
       </PageTopSection>
-    </section>
+      </section>
+    -->
 
     <!--
       --------
@@ -57,7 +59,7 @@
       <div class="tw-flex tw-gap-x-18 tw-gap-y-22">
         <div class="tw-flex tw-flex-col tw-gap-y-22 tw-flex-1 basis-444px">
           <NationalCard
-            class="tw-h-78 "
+            class="tw-h-78"
             title="Programs in Estonia"
             description="Local programs in Estonia for applied research in smart specialization growth areas, product development, digital diagnostics, enterprise development, innovation voucher, development voucher, and large investor support."
             image="estonia"

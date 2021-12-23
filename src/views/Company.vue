@@ -5,14 +5,16 @@
       @Section #0
       -------- 
     -->
-    <section>
+    <!--   
+      <section>
       <PageTopSection theme="blue" class="min-h-400px">
-        <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Story of OÜ Primelight</div>
-        <div
-          class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
-        >OÜ Primelight challenges the traditional norms of management consulting, providing quality advisory talent that delivers results at a value for money price point. We help our clients from private companies to governments and non-profits to challenge their own industries by becoming more innovative, efficient and dynamic.</div>
+      <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Story of OÜ Primelight</div>
+      <div
+      class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
+      >OÜ Primelight challenges the traditional norms of management consulting, providing quality advisory talent that delivers results at a value for money price point. We help our clients from private companies to governments and non-profits to challenge their own industries by becoming more innovative, efficient and dynamic.</div>
       </PageTopSection>
-    </section>
+      </section>
+    -->
 
     <!--
       --------

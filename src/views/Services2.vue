@@ -5,14 +5,16 @@
       @Section #0
       -------- 
     -->
-    <section>
+    <!-- 
+      <section>
       <PageTopSection theme="blue" class="min-h-400px">
-        <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Services</div>
-        <div
-          class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
-        >Our team has strong educational credentials, intellectual curiosity, proven leadership capacity and commitment to values. We are analytically rigorous, delivering fact-based advice to get the job done. In doing so, we provide great value for the money price point, always striving to understand and meet the customer's needs as efficiently as possible, with the least negative impact on the environment.</div>
+      <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Services</div>
+      <div
+      class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
+      >Our team has strong educational credentials, intellectual curiosity, proven leadership capacity and commitment to values. We are analytically rigorous, delivering fact-based advice to get the job done. In doing so, we provide great value for the money price point, always striving to understand and meet the customer's needs as efficiently as possible, with the least negative impact on the environment.</div>
       </PageTopSection>
-    </section>
+      </section>
+    -->
 
     <!--
       --------
@@ -105,7 +107,7 @@
       --------
     -->
     <section class="tw-my-60 tw-mx-20">
-      <Cooperation title="Interested In cooperation?"  />
+      <Cooperation title="Interested In cooperation?" />
     </section>
 
     <!--
@@ -132,7 +134,6 @@ import { defineAsyncComponent, defineComponent } from 'vue';
 export default defineComponent({
   name: 'Services2',
   components: {
-    PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     HelpColumn: defineAsyncComponent(() => import("@/components/services2/HelpColumn.vue")),
     CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
     BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),

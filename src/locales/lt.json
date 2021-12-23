@@ -16,5 +16,11 @@
     "our story": "Mūsų istorija",
     "our approach": "Mūsų požiūris",
     "our news": "Mūsų naujienos"
+  },
+  "top-section": {
+    "services": {
+      "title": "Paslaugos",
+      "description": "Mūsų komanda turi stiprius išsilavinimo pažymėjimus, intelektualų smalsumą, įrodytus lyderystės gebėjimus ir atsidavimą vertybėms. \nEsame analitiškai griežti ir teikiame faktais pagrįstus patarimus, kad galėtume atlikti darbą. \nTai darydami užtikriname puikų kainos ir kokybės santykį, visada stengdamiesi suprasti ir patenkinti kliento poreikius kuo efektyviau, darydami kuo mažesnį neigiamą poveikį aplinkai."
+    }
   }
 }
