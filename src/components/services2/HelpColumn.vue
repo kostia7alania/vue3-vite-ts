@@ -1,7 +1,7 @@
 <template>
     <!-- tw-h-60 -->
     <div class="tw-bg-white tw-p-2">
-        <VIcon :icon="icon" class="tw-h-20 lg:tw-h-23" />
+        <VIcon :icon="icon" class="h-80px-92px-92px" />
         <div class="card-info__content tw-pt-4 md:tw-pt-6">
             <div class="topic-title-28px">
                 <!-- number -->

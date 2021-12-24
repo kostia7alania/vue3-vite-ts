@@ -20,10 +20,11 @@
       --------
       @Section #1
       --------
+      We help
     -->
     <section class="my-80px-104px-120px px-16px-48px-80px">
       <div class="md:tw-text-center">
-        <h2 class="topic-title">What do we do?:</h2>
+        <h2 class="topic-title">We help:</h2>
       </div>
       <div class="mt-60px-80px-80px">
         <div class="gap-40px-60px-40px tw-flex tw-flex-col tw-flex-wrap xl:tw-flex-row">
@@ -54,17 +55,21 @@
       --------
     -->
     <section
-      class="bg-services-we-provide px-16px-48px-80px tw-relative tw-bg-gray-4"
+      class="px-16px-48px-80px tw-relative tw-bg-gray-4"
       :class="{
-        'bg-services-we-provide__sm': smallerXl,
-        'bg-services-we-provide__xl': !smallerXl,
+        'bg-services-we-provide-top__sm': smallerXl,
+        'bg-services-we-provide-top__xl': !smallerXl,
       }"
-    >
-      <div class="tw-py-30 tw-gap-10">
+    > 
+      <div class="py-80px-120px-120px"
+        :class="{
+        'bg-services-we-provide-bottom__sm': smallerXl,
+      }"
+      >
         <!-- title -->
-        <div class="topic-title tw-mb-20">Services we provide?</div>
+        <div class="topic-title  md:tw-mb-20 lg:tw-mb-0">Services we provide?</div>
         <!-- rows -->
-        <div class="tw-bg-white tw-rounded-4xl tw-py-3">
+        <div class="mt-0-80px-80px gap-40px-48px-0 md:tw-bg-white tw-rounded-4xl tw-pt-15 md:tw-pt-8 tw-flex tw-flex-col ">
           <CardInfoDynamicHorizontal
             title="Strategy"
             description="We work side-by-side with our clients on strategic planning, expansion to new markets, change management and organizational transformations to create meaningful changes in their business, organization and society. In our work, we offer the best strategy practices and experience gained across many countries and industries."
@@ -99,8 +104,8 @@
             title="Sustainability"
             description="We enable our clients to integrate sustainability and sustainable innovation in daily operations in a strategic and quantifiable manner, as well as assist them in locating and obtaining optimal funding opportunities for a transformation into a more agile, resilient, and eco-friendly entity."
             icon="circle-sustainability"
-          />
-        </div>
+          /> 
+      </div>
       </div>
     </section>
 
@@ -111,7 +116,7 @@
       Interested In cooperation?
       --------
     -->
-    <section class="tw-my-60 tw-mx-20">
+    <section class="my-160px-240px-240px px-16px-48px-80px">
       <Cooperation title="Interested In cooperation?" />
     </section>
 
@@ -119,16 +124,29 @@
       --------
       @Section #9
       --------
-      Our latest articles
+      Case studies
       --------
     -->
-    <section class="tw-my-60 tw-px-20">
-      <h2 class="topic-title max-w-400px tw-my-20">Case studies</h2>
-      <div class="tw-flex tw-flex-wrap tw-gap-10">
-        <ArticleCard date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+    <section class="my-160px-240px-240px px-16px-48px-80px">
+      <h2 class="topic-title max-w-400px my-120-80">Case studies</h2>
+      <div v-if="!sm" class="gap-40px-16px tw-flex">
+        <!-- DESKTOP -->
+        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
       </div>
+      <CardsSwiper v-else>
+        <!-- MOBILE -->
+        <template #test1>
+          <ArticleCard class="article-card-swiper" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        </template>
+        <template #test2>
+          <ArticleCard class="article-card-swiper" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        </template>
+        <template #test3>
+          <ArticleCard class="article-card-swiper" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        </template>
+      </CardsSwiper>
     </section>
   </div>
 </template>
@@ -137,10 +155,13 @@
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
+import CardsSwiper from "@/components/services/CardsSwiper.vue"
 import HelpColumn from "@/components/services2/HelpColumn.vue"
+
 export default defineComponent({
   name: 'Services2',
   components: {
+    CardsSwiper,
     HelpColumn,
     CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
@@ -150,26 +171,36 @@ export default defineComponent({
   setup(_, { emit }) {
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const smallerXl = breakpoints.smaller('xl')
+    const sm = breakpoints.smaller('sm')
 
     onMounted(() => emit('ready'))
-    return { smallerXl }
+    return { smallerXl, sm}
   }
 });
 </script>
 
 <!-- bg-services-we-provide -->
 <style lang="scss" scoped>
-.bg-services-we-provide {
-  background-image: url("@/assets/images/services2/bg-services-we-provide.png");
+
+.bg-services-we-provide-top__xl {
+  background-repeat: no-repeat;
+  background-position: top right;
   // background-size: cover;
-  &__sm {
-    background-repeat: repeat-x;
-    background-position: top right;
-  }
-  &__xl {
-    background-repeat: no-repeat;
-    background-position: top right;
-  }
+  background-image: url("@/assets/images/services2/bg-services-we-provide-top__xl.png");
+}
+
+.bg-services-we-provide-top__sm {
+  background-repeat: no-repeat;
+  background-position: top right;
+  // background-size: cover;
+  background-image: url("@/assets/images/services2/bg-services-we-provide-top__sm.png");
+    // background-repeat: repeat-y;
+}
+
+.bg-services-we-provide-bottom__sm {
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-image: url("@/assets/images/services2/bg-services-we-provide-bottom__sm.png");
 }
 </style>
 

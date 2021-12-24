@@ -187,6 +187,9 @@ body {
 .px-16px-48px-80px {
   @apply tw-px-4 md:tw-px-12 lg:tw-px-14 xl:tw-px-18 2xl:tw-px-20;
 }
+.px-0-32px-70px {
+  @apply tw-px-0 md:tw-px-8 lg:tw-px-12 xl:tw-px-16 2xl:tw-px-18;
+}
 
 .px-160px {
   // todo fix
@@ -210,15 +213,17 @@ body {
   @apply tw-my-20 md:tw-my-26 lg:tw-my-30;
 }
 
+
 .gap-40px-16px {
   // todo reverse
   @apply tw-gap-4 md:tw-gap-7 lg:tw-gap-9 xl:tw-gap-10;
 }
 .gap-40px-60px-40px {
-  // todo reverse
   @apply tw-gap-10 lg:tw-gap-14 xl:tw-gap-10;
 }
-
+.gap-40px-48px-0 {
+  @apply tw-gap-10 md:tw-gap-12 lg:tw-gap-0;
+}
 .basis-full-full-half {
   @apply tw-basis-full md:tw-basis-full lg:tw-basis-1/2;
 }
@@ -230,6 +235,9 @@ body {
   @apply tw-mt-4 lg:tw-mt-6;
 }
 
+.mt-8px-12px-0 {
+  @apply tw-mt-2 md:tw-mt-3 lg:tw-mt-0;
+}
 .mt-16px-24px-0 {
   @apply tw-mt-4 md:tw-mt-6 lg:tw-mt-0;
 }
@@ -240,7 +248,15 @@ body {
 .mt-60px-80px-80px {
   @apply tw-mt-15 lg:tw-mt-20;
 }
-
+.pt-80px-120px-120px {
+  @apply tw-pt-20 lg:tw-pt-30;
+}
+.py-80px-120px-120px {
+  @apply tw-py-20 lg:tw-py-30;
+}
+.mt-0-80px-80px {
+  @apply tw-mt-0 lg:tw-mt-20;
+}
 
 .h-56px-48px-48px {
   // for buttons height
@@ -250,6 +266,10 @@ body {
 .block-bg-img {
   // hide hide show
   @apply tw-hidden xl:tw-inline-block;
+}
+
+.h-80px-92px-92px {
+  @apply tw-h-20 lg:tw-h-23;
 }
 
 .my-160px-240px-240px {
