@@ -8,7 +8,7 @@
         }"
         class="tw-text-gray-1 dark:tw-bg-black tw-relative"
     >
-        <div class="px-80px-48px-16px tw-flex tw-flex-col">
+        <div class="px-16px-48px-80px tw-flex tw-flex-col">
             <div class="mt-60px-120px-120px tw-mb-15 ">
                 <slot />
             </div>

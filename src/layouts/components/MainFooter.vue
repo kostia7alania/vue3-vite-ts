@@ -2,7 +2,7 @@
   <footer class="app-header tw-flex tw-flex-col">
     <div class="tw-bg-blue-1 dark:tw-bg-black dark:tw-text-gray-300 tw-flex-1 tw-relative tw-overflow-hidden tw-pb-15 lg:tw-pb-20">
       <div
-        class="px-80px-48px-16px tw-flex tw-gap-x-5 tw-gap-y-10 lg:tw-gap-12 tw-flex-wrap lg:tw-flex-nowrap tw-pt-15 md:tw-pt-20 tw-z-10 tw-relative"
+        class="px-16px-48px-80px tw-flex tw-gap-x-5 tw-gap-y-10 lg:tw-gap-12 tw-flex-wrap lg:tw-flex-nowrap tw-pt-15 md:tw-pt-20 tw-z-10 tw-relative"
       >
         <!-- col Logo -->
         <div class="tw-order-1 tw-basis-full lg:tw-basis-auto">

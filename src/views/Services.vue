@@ -14,7 +14,7 @@
     <section class="my-120-80 tw-bg-gray-4 tw-relative">
       <div class="py-80px-104px-120px tw-relative tw-z-10">
         <div
-          class="gap-40px-16px px-80px-48px-16px tw-flex tw-justify-between tw-flex-wrap lg:tw-flex-nowrap"
+          class="gap-40px-16px px-16px-48px-80px tw-flex tw-justify-between tw-flex-wrap lg:tw-flex-nowrap"
         >
           <!-- left -->
           <div class="lg:tw-pt-20 tw-flex-1 tw-basis-full lg:tw-basis-auto">
@@ -56,7 +56,7 @@
       What do we do?
     -->
     <section class="my-120-80 tw-relative">
-      <div class="gap-40px-16px px-80px-48px-16px">
+      <div class="gap-40px-16px px-16px-48px-80px">
         <!-- top -->
         <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
           <div class="basis-full-full-half tw-flex-1 topic-title">What do we do?</div>
@@ -254,7 +254,7 @@
       --------
     -->
     <Cooperation
-      class="my-160px-240px-240px px-80px-48px-16px tw-bg-white"
+      class="my-160px-240px-240px px-16px-48px-80px tw-bg-white"
       title="Interested In cooperation?"
     />
 
@@ -265,7 +265,7 @@
       Our latest articles
       --------
     -->
-    <section class="my-160px-240px-240px px-80px-48px-16px">
+    <section class="my-160px-240px-240px px-16px-48px-80px">
       <h2 class="topic-title max-w-400px my-120-80">Our latest articles</h2>
       <div v-if="!sm" class="gap-40px-16px tw-flex">
         <!-- DESKTOP -->

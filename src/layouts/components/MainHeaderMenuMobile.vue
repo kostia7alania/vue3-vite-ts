@@ -39,7 +39,8 @@
     </button>
     <HeaderModal v-if="isActiveModal" @close="isActiveModal = false">
       <ul
-      class="navbar-items tw-flex tw-flex-col tw-text-left tw-px-9 tw-font-medium tw-text-3.5xl">
+        class="navbar-items tw-flex tw-flex-col tw-text-left tw-px-9 tw-font-medium tw-text-3.5xl"
+      >
         <li
           v-for="{ title, routeName } of linksMap"
           :key="title"
@@ -57,7 +58,10 @@
             'tw-underline tw-font-semibold': 'financing' === $route.name
           }"
         >
-          <router-link :to="{ name: 'financing' }" @click.prevent="isActiveModal = false">{{ $t('button.financing') }}</router-link>
+          <router-link
+            :to="{ name: 'financing' }"
+            @click.prevent="isActiveModal = false"
+          >{{ $t('button.financing') }}</router-link>
         </li>
       </ul>
     </HeaderModal>
@@ -65,17 +69,18 @@
 </template>
 
 <script lang="ts">
-import { computed, defineAsyncComponent, defineComponent, PropType, ref } from 'vue';
+import { computed, defineComponent, PropType, ref } from 'vue';
+
+import HeaderModal from './HeaderModal.vue'
 
 interface ILinksMap {
   title: string,
   routeName: string
 }
-
 export default defineComponent({
   name: 'MainHeaderMenuMobile',
   components: {
-    HeaderModal: defineAsyncComponent(() => import('./HeaderModal.vue'))
+    HeaderModal
   },
   props: {
     linksMap: {

@@ -184,10 +184,10 @@ body {
   white-space: nowrap;
 }
 
-.px-80px-48px-16px {
-  // todo fix
+.px-16px-48px-80px {
   @apply tw-px-4 md:tw-px-12 lg:tw-px-14 xl:tw-px-18 2xl:tw-px-20;
 }
+
 .px-160px {
   // todo fix
   @apply tw-px-4 md:tw-px-20 lg:tw-px-28 xl:tw-px-36 2xl:tw-px-40;
@@ -205,10 +205,18 @@ body {
   // 80px - 104px - 120px
   @apply tw-py-20 md:tw-py-26 lg:tw-py-30;
 }
+.my-80px-104px-120px {
+  // 80px - 104px - 120px
+  @apply tw-my-20 md:tw-my-26 lg:tw-my-30;
+}
 
 .gap-40px-16px {
   // todo reverse
   @apply tw-gap-4 md:tw-gap-7 lg:tw-gap-9 xl:tw-gap-10;
+}
+.gap-40px-60px-40px {
+  // todo reverse
+  @apply tw-gap-10 lg:tw-gap-14 xl:tw-gap-10;
 }
 
 .basis-full-full-half {
@@ -228,6 +236,11 @@ body {
 .mt-60px-120px-120px {
   @apply tw-mt-15 lg:tw-mt-30;
 }
+
+.mt-60px-80px-80px {
+  @apply tw-mt-15 lg:tw-mt-20;
+}
+
 
 .h-56px-48px-48px {
   // for buttons height
