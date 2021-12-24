@@ -32,14 +32,20 @@
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from 'vue';
 
+import LocaleSelect from './LocaleSelect.vue'
+import Logo from './Logo.vue'
+import MainHeaderMenu from './MainHeaderMenu.vue'
+
+import VButton from '@/components/ui/VButton.vue'
+
 export default defineComponent({
   name: 'MainHeader',
   components: {
-    MainHeaderMenu: defineAsyncComponent(() => import('./MainHeaderMenu.vue')),
-    VButton: defineAsyncComponent(() => import('@/components/ui/VButton.vue')),
+    Logo,
+    MainHeaderMenu,
+    LocaleSelect,
+    VButton,
     DarkToggle: defineAsyncComponent(() => import('./DarkToggle.vue')),
-    LocaleSelect: defineAsyncComponent(() => import('./LocaleSelect.vue')),
-    Logo: defineAsyncComponent(() => import('./Logo.vue'))
   },
   // setup(/* _, ctx: SetupContext */) {
 

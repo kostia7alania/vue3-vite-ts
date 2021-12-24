@@ -14,13 +14,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, defineAsyncComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useI18n } from 'vue-i18n'
+
+import MainHeaderMenuMobile from './MainHeaderMenuMobile.vue'
 
 export default defineComponent({
   name: 'MainHeaderMenu',
   components: {
-    MainHeaderMenuMobile: defineAsyncComponent(() => import('./MainHeaderMenuMobile.vue')),
+    MainHeaderMenuMobile
   },
   setup(/* _, ctx: SetupContext */) {
     // use global scope

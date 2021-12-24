@@ -225,6 +225,9 @@ body {
 .mt-16px-24px-0 {
   @apply tw-mt-4 md:tw-mt-6 lg:tw-mt-0;
 }
+.mt-60px-120px-120px {
+  @apply tw-mt-15 lg:tw-mt-30;
+}
 
 .h-56px-48px-48px {
   // for buttons height
@@ -245,4 +248,11 @@ body {
 }
 .article-card-swiper {
   @apply tw-rounded-4xl  tw-m-1 tw-mb-7;
+}
+
+.text-16px-18px-18px {
+  @apply tw-text-base xl:tw-text-lg;
+}
+.text-40px-60px-60px {
+  @apply tw-text-4.35xl xl:tw-text-6xl;
 }

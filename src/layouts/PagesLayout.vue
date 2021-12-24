@@ -5,25 +5,14 @@
     -------- 
   -->
   <section>
-    <PageTopSection :theme="theme" class="min-h-400px">
-      <div v-if="title" class="tw-font-semibold tw-text-6xl tw-leading-tight">{{ title }}</div>
+    <PageTopSection :theme="theme" class="min-h-400px tw-h-[474] md:tw-h-[464] xl:tw-h-[400]">
+      <div v-if="title" class="text-40px-60px-60px tw-font-semibold tw-leading-tight">{{ title }}</div>
       <div
         v-if="description"
-        class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
+        class="text-16px-18px-18px tw-font-medium tw-leading-7 tw-max-w-5xl tw-mt-4 xl:tw-mt-5"
       >{{ description }}</div>
       <!-- bottom -->
-      <div
-        v-if="$route.name === 'articles'"
-        class="tw-flex tw-flex-wrap tw-gap-6 tw-text-sm tw-mt-16"
-      >
-        <VButtonRadio
-          v-model="category"
-          :items="categories"
-          theme="blue"
-          active-class="tw-bg-white tw-text-orange-1 active-class"
-          inactive-class="inactive-class"
-        />
-      </div>
+      <ArticlesTags v-if="$route.name === 'articles'" class="tw-mt-16" />
     </PageTopSection>
   </section>
 
@@ -35,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, computed, ComputedRef, ref } from 'vue';
+import { defineComponent, defineAsyncComponent, computed, ComputedRef, } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router';
 type TThemeMap = 'services' | 'company' | 'team' | 'careers' | 'contact' | 'financing'
@@ -53,8 +42,8 @@ const themeMap: { [key: string]: string } = {
 export default defineComponent({
   name: 'PagesLayout',
   components: {
-    VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
     PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    ArticlesTags: defineAsyncComponent(() => import("@/components/articles/ArticlesTags.vue")),
   },
   emits: ['ready'],
   setup() {
@@ -65,13 +54,9 @@ export default defineComponent({
     const description = computed(() => t(`top-section.${String(routeName.value)}.description`))
     const theme = computed(() => themeMap[String(routeName.value)])
 
-    /* Articles */
-    const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
-    const category = ref(categories[0])
-
 
     return {
-      title, description, theme, category, categories
+      title, description, theme,
     }
   },
 });

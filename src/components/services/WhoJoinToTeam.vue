@@ -65,7 +65,7 @@
     <CardsSwiper v-if="sm" class="tw-mt-40 tw-mb-40">
       <!-- MOBILE -->
       <template #test1>
-        <div class=" h-444px tw-mb-40">
+        <div class="h-444px tw-mb-40">
           <CardInfoAnim
             :is-mobile="sm || smAndLg"
             title="Students and graduates"
@@ -76,7 +76,7 @@
         </div>
       </template>
       <template #test2>
-        <div class=" h-444px tw-mb-40">
+        <div class="h-444px tw-mb-40">
           <CardInfoAnim
             :is-mobile="sm || smAndLg"
             title="Experienced professionals"
@@ -105,7 +105,8 @@ export default defineComponent({
   props: {
     isShownButton: { type: Boolean, default: false },
   },
-  emits: ['click'], setup() {
+  emits: ['click'],
+  setup() {
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const sm = breakpoints.smaller('sm')
     const smAndLg = breakpoints.between('sm', 'lg')

@@ -1,9 +1,5 @@
 <template>
-  <div v-if="!isInit" class="tw-w-full tw-h-screen tw-flex">
-    <!-- loading -->
-    loading
-  </div>
-  <div v-if="isInit" class="tw-flex tw-flex-col dark:tw-bg-gray-800">
+  <div class="tw-flex tw-flex-col dark:tw-bg-gray-800">
     <div class="main-header tw-flex-1">
       <div class="main-header"></div>
       <div class="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50">
@@ -27,26 +23,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, defineAsyncComponent } from 'vue';
+import { defineComponent, defineAsyncComponent } from 'vue';
 
 import MainHeader from './components/MainHeader.vue'
-import MainFooter from './components/MainFooter.vue'
+
 
 export default defineComponent({
   name: 'MainLayout',
   components: {
     MainHeader,
-    MainFooter
+    MainFooter: defineAsyncComponent(() => import('./components/MainFooter.vue'))
   },
   emits: ['ready'],
-  setup() {
-    const isInit = ref(false);
-
-    onMounted(() => {
-      isInit.value = true;
-    });
-    return { isInit };
-  },
 });
 </script>
 
