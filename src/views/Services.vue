@@ -154,7 +154,7 @@
             </div>
           </div>
         </div>
-        <CardsSwiper v-else>
+        <CardsSwiper v-else class="tw-mt-15">
           <!-- MOBILE -->
           <template #test1>
             <CardInfoDynamic
@@ -239,11 +239,8 @@
       -------- 
       Who should join our team?
     -->
-    <section class="my-120-80 tw-relative">
+    <section class="my-120-80 tw-relative" :class="{ 'bg-should-join-mobile': sm }">
       <WhoJoinToTeam is-shown-button />
-      <div v-if="sm" class="tw-absolute tw-top-1/2 tw-bottom-1/2 tw--translate-y-1/2 tw-right-0">
-        <img src="@/assets/images/patterns/bg-should-join-mobile.png" />
-      </div>
     </section>
 
     <!--
@@ -253,10 +250,9 @@
       Interested In cooperation?
       --------
     -->
-    <Cooperation
-      class="my-160px-240px-240px px-16px-48px-80px tw-bg-white"
-      title="Interested In cooperation?"
-    />
+    <div class="px-16px-48px-80px">
+      <Cooperation class="my-160px-240px-240px tw-bg-white" title="Interested In cooperation?" />
+    </div>
 
     <!--
       --------
@@ -353,7 +349,9 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-.world-map {
-  max-height: 533px;
+.bg-should-join-mobile {
+  background-image: url("@/assets/images/patterns/bg-should-join-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 </style>

@@ -1,3 +1,45 @@
+/*
+2 => 8px
+3 => 12px
+4 => 16px
+5 => 20px
+6 => 24px
+7 => 28px
+8 => 32px
+9 => 36px
+10 => 40px
+11 => 44px
+12 => 48px
+13 => -
+14 => 56px
+15 => 60px
+16 => 64px
+17 => -
+18 => 72px
+19 => -
+20 => 80px
+12 => -
+22 => 88px
+23 => 92px
+24 => 96px
+25 => -
+26 => 104px
+27 => -
+28 => 112px
+29 => 116px
+30 => 120px
+31 => 124px
+32 => 128px
+33 => 132px
+34 => 136px
+35 => 140px
+36 => 144px
+37 => -
+38 => -
+39 => -
+40 => 160px
+*/
+
 @import 'normalize.css';
 
 @tailwind base;
@@ -213,6 +255,9 @@ body {
   @apply tw-my-20 md:tw-my-26 lg:tw-my-30;
 }
 
+.gap-16px-24px-24px {
+  @apply tw-gap-4 lg:tw-gap-6;
+}
 
 .gap-40px-16px {
   // todo reverse
@@ -250,6 +295,9 @@ body {
 }
 .pt-80px-120px-120px {
   @apply tw-pt-20 lg:tw-pt-30;
+}
+.pt-40px-120px-80px {
+  @apply tw-pt-10 md:tw-pt-30 xl:tw-pt-20;
 }
 .py-80px-120px-120px {
   @apply tw-py-20 lg:tw-py-30;

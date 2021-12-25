@@ -1,11 +1,17 @@
 <template>
-    <section class="tw-relative">
+    <section
+        class="tw-relative bg-where-we-located"
+        :class="{
+            'bg-where-we-located-xl': !sm,
+            'bg-where-we-located-sm': sm,
+        }"
+    >
         <div
             class="px-16px-48px-80px tw-flex tw-justify-between tw-flex-wrap xl:tw-flex-nowrap tw-gap-10 tw-relative tw-z-10"
         >
             <!-- left -->
             <div class="tw-flex-1 tw-basis-1/2">
-                <h2 class="topic-title">Where are we located?</h2>
+                <h2 class="topic-title tw-max-w-xs">Where are we located?</h2>
                 <div class="mt-16px-24px-24px topic-description">
                     <div>In nine years from its founding, OÜ Primelight became the leading management consultancy across the Baltics and Eastern Europe, employing over 350 consultants in 29 offices across 18 countries.</div>
                     <div class="tw-mt-2">
@@ -33,24 +39,41 @@
             </div>
             <!-- right -->
             <div class="tw-flex tw-basis-1/2 tw-flex-1 tw-mt-10 xl:tw-mt-0 xl:tw--translate-y-7">
-                <WorldMap class="world-map tw-w-full tw-translate-x-20" />
+                <img
+                    src="@/assets/images/company/world-map.png"
+                    class="world-map tw-w-full tw-translate-x-20"
+                />
             </div>
-        </div>
-        <div class="tw-absolute tw-left-0 tw-top-0 xl:tw-bottom-0">
-            <img src="@/assets/images/patterns/bg-where-we-located.png" />
         </div>
     </section>
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent } from 'vue';
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { defineComponent, } from 'vue';
 
 export default defineComponent({
     name: "WhereWeLocated",
-    components: {
-        WorldMap: defineAsyncComponent(() => import("@/assets/icons/world-map.svg")),
+    setup() {
+        const breakpoints = useBreakpoints(breakpointsTailwind)
+        const sm = breakpoints.smaller('sm')
+
+        return { sm, }
     }
 });
 </script>
 
 
+
+<style lang="scss" scoped>
+.bg-where-we-located-xl {
+    background-image: url("@/assets/images/company/bg-where-we-located-xl.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.bg-where-we-located-sm {
+    background-image: url("@/assets/images/company/bg-where-we-located-sm.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+</style>

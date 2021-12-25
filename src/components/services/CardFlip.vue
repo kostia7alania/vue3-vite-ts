@@ -1,5 +1,6 @@
 <template>
-  <div v-if="!isMobile" class="flip-card tw-group tw-h-full tw-w-full">
+  <div v-if="!smallerSm" class="flip-card tw-group tw-h-full tw-w-full">
+  <!-- large -->
     <div class="flip-card-inner">
       <div class="flip-card-front group-hover:tw-hidden group-hover:tw-z-0 tw-transition-all tw-relative">
         <slot name="front" />
@@ -10,6 +11,7 @@
     </div>
   </div>
   <div v-else class="tw-relative">
+    <!-- small -->
     <slot :name="isOpen ? 'back' : 'front'" />
     <button
       class="tw-absolute tw-text-[#FDFDFD] tw-bottom-8 tw-right-7 tw-z-30 tw-transition-all"
@@ -27,6 +29,7 @@
 </template>
 
 <script lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, ref } from 'vue';
 
 
@@ -41,8 +44,12 @@ export default defineComponent({
   setup() {
     const isOpen = ref(false)
 
+    const breakpoints = useBreakpoints(breakpointsTailwind)
+    const smallerSm = breakpoints.smaller('lg')
+
+
     return {
-      isOpen
+      isOpen, smallerSm
     }
   },
 });
