@@ -246,6 +246,9 @@ body {
   // todo reverse
   @apply tw-my-20 md:tw-my-26 lg:tw-my-30;
 }
+.my-40px-80px {
+  @apply tw-my-10 md:tw-my-15 lg:tw-my-20;
+}
 .py-80px-104px-120px {
   // 80px - 104px - 120px
   @apply tw-py-20 md:tw-py-26 lg:tw-py-30;
@@ -326,6 +329,11 @@ body {
 .my-160px-240px-240px {
   @apply tw-my-40 xl:tw-my-60;
 }
+ 
+.pb-80px-160px-240px {
+  @apply tw-pb-20 lg:tw-pb-40 xl:tw-pb-60;
+}
+ 
 
 .dynamic-info-card {
   @apply tw-rounded-4xl tw-h-74 tw-m-1 tw-mb-7;

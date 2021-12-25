@@ -4,7 +4,7 @@
       <!-- card #1 -->
       <div
         v-if="!sm"
-        class="tw-basis-5/12 xl:tw-basis-1/4 w-444px h-444px tw-mt-20 xl:tw-mt-0 tw-order-2 xl:tw-order-1"
+        class="tw-basis-5/12 xl:tw-basis-1/4 w-444px h-444px tw-mt-10 xl:tw-mt-0 tw-order-2 xl:tw-order-1"
       >
         <CardInfoAnim
           show-button
@@ -17,7 +17,7 @@
       <!-- card #2 -->
       <div
         v-if="!sm"
-        class="tw-basis-5/12 xl:tw-basis-1/4 w-444px h-444px tw-mt-20 xl:tw-mt-0 tw-order-3 xl:tw-order-2"
+        class="tw-basis-5/12 xl:tw-basis-1/4 w-444px h-444px tw-mt-10 xl:tw-mt-0 tw-order-3 xl:tw-order-2"
       >
         <CardInfoAnim
           show-button
@@ -33,7 +33,7 @@
         class="tw-flex-1 tw-grow-1 tw--my-4 tw-pl-8 tw-rounded-4xl tw-order-1 xl:tw-order-3 tw-basis-full xl:tw-basis-5/12 tw-relative tw-z-10"
       >
         <div class="tw-font-semibold tw-text-2xl tw-leading-6 tw-rounded-4xl">
-          <h2 class="topic-title">Who should join our team?</h2>
+          <h2 class="topic-title xl:tw-mt-5">Who should join our team?</h2>
 
           <div class="topic-description">
             <div
@@ -62,10 +62,10 @@
       <!--  -->
     </div>
     <!-- swiper -->
-    <CardsSwiper v-if="sm" class="tw-mt-40 tw-mb-40">
+    <CardsSwiper v-if="sm" class="tw-mt-20">
       <!-- MOBILE -->
       <template #test1>
-        <div class="h-444px tw-mb-40">
+        <div class="h-444px">
           <CardInfoAnim
             title="Students and graduates"
             description="We are always looking for young talents from our local markets who want to develop professionally by doing meaningful projects in their home countries and internationally. If you are a student or a recent graduate, we offer various internship and entry-level positions that will best suit your needs."
@@ -75,7 +75,7 @@
         </div>
       </template>
       <template #test2>
-        <div class="h-444px tw-mb-40">
+        <div class="h-444px">
           <CardInfoAnim
             title="Experienced professionals"
             description="We truly believe that anyone can become a management consultant and apply relevant knowledge to drive change in organizations and make an impact on society."

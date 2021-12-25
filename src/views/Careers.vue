@@ -18,15 +18,17 @@
       @Section #1
       -------- 
     -->
-    <section class="tw-my-30 tw-px-20">
-      <div class="topic-title tw-flex tw-justify-center tw-mb-20">
-        <h2 class="tw-max-w-3xl tw-text-center">Working at OÜ Primelight</h2>
+    <section class="my-80px-104px-120px px-16px-48px-80px">
+      <div class="topic-title tw-flex tw-justify-center">
+        <h2 class="tw-max-w-3xl lg:tw-text-center">Working at OÜ Primelight</h2>
       </div>
 
-      <div class="tw-flex tw-w-full tw-gap-x-10 tw-text-sm">
+      <div
+        class="gap-16px-24px-40px mt-60px-80px-80px tw-flex tw-flex-col xl:tw-flex-row tw-w-full tw-text-sm"
+      >
         <!-- card #1 -->
-        <div class="tw-w-full h-640px">
-          <CompanyCardInfoAnim
+        <div class="tw-w-full tw-h-[354px] xl:tw-h-[640px]">
+          <CardInfoAnim
             title="Adventure"
             description="We value people who are not ordinary and who do not want to do everyday things. We are open to new experiences and challenging the status quo. It's never boring around here!"
             image="adventure"
@@ -34,10 +36,10 @@
             title-class="tw-text-2xl"
           />
         </div>
-        <div class="tw-w-full tw-flex tw-flex-wrap tw-gap-x-10 tw-gap-y-14">
+        <div class="gap-16px-24px-40px tw-w-full tw-flex tw-flex-wrap">
           <!-- card #2 -->
-          <div class="basis-222px h-300px tw-shrink tw-grow">
-            <CompanyCardInfoAnim
+          <div class="work-card-secondary">
+            <CardInfoAnim
               title="Intellectual challenge"
               description="We are about learning on the job through a variety of intellectually challenging projects spanning various industries, functions, and geographies."
               image="intellectual-challenge"
@@ -46,8 +48,8 @@
             />
           </div>
           <!-- card #3 -->
-          <div class="basis-222px h-300px tw-shrink tw-grow">
-            <CompanyCardInfoAnim
+          <div class="work-card-secondary">
+            <CardInfoAnim
               title="Non - hierarchical organization"
               description="We value a high degree of responsibility and the importance of input from every employee from day one on the job. Everyone is expected to contribute to overall success."
               image="non-hierarchical-organization"
@@ -57,8 +59,8 @@
           </div>
 
           <!-- card #2 -->
-          <div class="basis-222px h-300px tw-shrink tw-grow">
-            <CompanyCardInfoAnim
+          <div class="work-card-secondary">
+            <CardInfoAnim
               title="Flexibility"
               description="We seek to balance getting the job done with employees’ lives outside work, creating the possibilities to combine studies, entrepreneurial activities, hobbies, sports, and family life."
               image="flexibility"
@@ -67,8 +69,8 @@
             />
           </div>
           <!-- card #3 -->
-          <div class="basis-222px h-300px tw-shrink tw-grow">
-            <CompanyCardInfoAnim
+          <div class="work-card-secondary">
+            <CardInfoAnim
               title="Fun"
               description="AtOÜ Primelight , we provide an enjoyable working atmosphere, social events, offsite sessions and trips abroad for the whole company."
               image="fun"
@@ -86,7 +88,14 @@
       -------- 
       Who should join our team?
     -->
-    <section class="tw-my-60">
+    <section
+      class="py-80px-104px-120px tw-bg-gray-4"
+      :class="{
+        'bg-should-join-xl': !sm,
+        'bg-should-join-sm': sm,
+      
+      }"
+    >
       <WhoJoinToTeam />
     </section>
 
@@ -97,9 +106,14 @@
       Our latest articles
       --------
     -->
-    <section class="tw-pb-60 tw-px-20 tw-relative">
-      <h2 class="topic-title tw-max-w-sm tw-pr-20 tw-my-20">Stories of our people</h2>
-      <div class="tw-flex tw-flex-wrap tw-gap-10 tw-relative tw-z-20">
+    <section
+      class="px-16px-48px-80px tw-pb-20 md:tw-pb-20 xl:tw-pb-60"
+      :class="{
+        'bg-stories-of-our-people-xl': !sm
+      }"
+    >
+      <h2 class="topic-title lg:tw-max-w-sm lg:tw-pr-20 my-40px-80px">Stories of our people</h2>
+      <div v-if="!sm" class="tw-flex tw-flex-wrap tw-gap-10">
         <ArticleCard
           class="tw-flex-1"
           date="2021-10-30"
@@ -116,9 +130,30 @@
           title="OÜ Primelight Challengers - Sevak Hovhannisyan"
         />
       </div>
-      <div class="tw-absolute tw--bottom-20 tw-left-0">
-        <BgPatternStoriesOfOurPeople />
-      </div>
+      <CardsSwiper v-else>
+        <!-- MOBILE -->
+        <template #test1>
+          <ArticleCard
+            class="article-card-swiper"
+            date="2021-10-11"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+        <template #test2>
+          <ArticleCard
+            class="article-card-swiper"
+            date="2021-10-12"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+        <template #test3>
+          <ArticleCard
+            class="article-card-swiper"
+            date="2021-10-13"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+      </CardsSwiper>
     </section>
 
     <!--
@@ -126,18 +161,16 @@
       @Section #4
       -------- 
     -->
-    <section class="tw-my-30 tw-px-20">
-      <div class="tw-mb-20">
-        <div class="topic-title tw-flex tw-justify-center tw-mb-6">
-          <h2 class="tw-max-w-3xl tw-text-center">Working at OÜ Primelight</h2>
-        </div>
-        <div class="topic-description tw-flex tw-justify-center tw-mb-20">
-          <div
-            class="tw-max-w-3xl tw-text-center"
-          >We truly believe that our success lies in the talented and passionate team of professionals who make CIVITTA a great place to work. We encourage our personnel to seek adventure in everything they do and help them to achieve their professional and personal goals.</div>
-        </div>
+    <section class="pb-80px-160px-240px px-16px-48px-80px">
+      <div class="topic-title tw-flex tw-justify-center tw-mb-6">
+        <h2 class="tw-max-w-3xl lg:tw-text-center">Consulting career path at OÜ Primelight</h2>
       </div>
-      <div class="tw-flex tw-gap-15">
+      <div class="topic-description tw-flex tw-justify-center tw-mb-20">
+        <div
+          class="tw-max-w-3xl lg:tw-text-center"
+        >We truly believe that our success lies in the talented and passionate team of professionals who make CIVITTA a great place to work. We encourage our personnel to seek adventure in everything they do and help them to achieve their professional and personal goals.</div>
+      </div>
+      <div class="mt-60px-80px-80px tw-flex tw-flex-col lg:tw-flex-row tw-gap-15">
         <div class="tw-flex tw-flex-col tw-flex-1 tw-gap-15">
           <div v-for="col of consultingCol1" :key="col.title">
             <div class="topic-title-28px">{{ col.title }}</div>
@@ -158,8 +191,14 @@
       @Section #2
       --------
     -->
-    <section class="tw-bg-gray-4 tw-relative tw-px-20">
-      <div class="tw-mt-20 tw-relative tw-z-20">
+    <section
+      class="tw-bg-gray-4 px-16px-48px-80px"
+      :class="{
+        'bg-contacts-sm': md,
+        'bg-contacts-xl': !md,
+      }"
+    >
+      <div class="pt-80px-120px-120px">
         <div class="topic-title tw-flex tw-justify-center tw-mb-6">
           <h2 class="tw-max-w-xl tw-text-center">Searching for new career opportunities?</h2>
         </div>
@@ -173,31 +212,29 @@
           </div>
         </div>
       </div>
+
       <div class="tw-pt-20 tw-pb-35">
         <ContactFormCareer class="tw-bg-white" />
-      </div>
-      <div class="tw-absolute tw-right-0 tw--top-20">
-        <BgPatternSearchCareerOpportunities />
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
-import CompanyCardInfoAnim from '@/components/company/CompanyCardInfoAnim.vue'
+import CardInfoAnim from '@/components/services/CardInfoAnim.vue'
 
 export default defineComponent({
   name: 'Careers',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    CompanyCardInfoAnim,
+    CardInfoAnim,
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
-    BgPatternStoriesOfOurPeople: defineAsyncComponent(() => import("@/components/patterns/BgPatternStoriesOfOurPeople.vue")),
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
-    BgPatternSearchCareerOpportunities: defineAsyncComponent(() => import("@/components/patterns/BgPatternSearchCareerOpportunities.vue")),
+    CardsSwiper: defineAsyncComponent(() => import("@/components/services/CardsSwiper.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {
@@ -213,19 +250,46 @@ export default defineComponent({
       { title: '5. Analyst / Consultant', description: 'Performs larger and more sophisticated tasks, including data analysis and visualization, formulating and testing hypotheses, etc.' },
       { title: '6. Junior analyst / Junior consultant', description: 'Supports the team with market research, analysis, data collection, generation of ideas and other daily tasks' }
     ]
-    return { consultingCol1, consultingCol2 }
+
+    const breakpoints = useBreakpoints(breakpointsTailwind)
+    const sm = breakpoints.smaller('sm')
+    const md = breakpoints.smaller('md')
+
+    return { consultingCol1, consultingCol2, sm, md }
   },
 });
 </script>
 
 <style lang="scss" scoped >
-.h-640px {
-  height: 640px;
+.work-card-secondary {
+  @apply tw-basis-full md:tw-basis-5/12 xl:tw-basis-[222px] tw-h-[354px] xl:tw-h-[300px] tw-shrink tw-grow;
 }
-.basis-222px {
-  flex-basis: 222px;
+.bg-should-join-xl {
+  background-image: url("@/assets/images/careers/bg-should-join-xl.png");
+  background-repeat: no-repeat;
+  background-position: top right;
 }
-.h-300px {
-  height: 300px;
+.bg-should-join-sm {
+  background-image: url("@/assets/images/careers/bg-should-join-sm.png");
+  background-repeat: no-repeat;
+  background-position: top right;
 }
+
+.bg-stories-of-our-people-xl {
+  background-image: url("@/assets/images/careers/bg-stories-of-our-people-xl.png");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+
+.bg-contacts-sm{
+  background-image: url("@/assets/images/team/bg-contacts-sm.png");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.bg-contacts-xl {
+  background-image: url("@/assets/images/team/bg-contacts-xl.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+} 
 </style>

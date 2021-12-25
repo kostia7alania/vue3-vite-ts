@@ -5,29 +5,31 @@
         :class="{
           'tw-bg-orange-1': theme === 'orange',
           'tw-bg-blue-1': theme === 'blue',
-          'tw-justify-center': !showButton
+          'tw-justify-between': showButton && !toBottom,
+          'tw-justify-center': !showButton && !toBottom,
+          'tw-justify-end': toBottom,
+        
         }"
-        class="tw-h-full tw-w-full tw-flex tw-flex-col tw-justify-between tw-text-white tw-p-8 tw-rounded-4xl"
+        class="tw-h-full tw-w-full tw-flex tw-flex-col tw-text-white tw-p-8 tw-rounded-4xl"
       >
-        <div>
+        <div class="tw-text-left">
           <div
             class="tw-font-semibold"
             :class="
               {
                 'tw-text-2xl tw-leading-8': showButton,
-                'tw-text-2.7xl tw-leading-10': !showButton,
+                'tw-text-2xl tw-leading-10': !showButton,
               }
             "
           >{{ title }}</div>
-          <div 
-          
-           :class="
+          <div
+            :class="
               {
-                'tw-text-sm': showButton,
-                'tw-text-sm md:tw-text-base': !showButton,
+                ' md:tw-text-sm': !showButton,
               }
             "
-          class="tw-mt-4 tw-text-sm tw-leading-6">{{ description }}</div>
+            class="tw-mt-4 tw-text-sm tw-leading-6"
+          >{{ description }}</div>
         </div>
         <VButton
           v-if="showButton"
@@ -44,50 +46,50 @@
         <!-- services (main page)  -->
         <img
           v-if="image === 'experienced-professionals'"
-          class="tw-w-full tw-h-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/experienced-professionals.png"
           alt="Experienced professionals"
         />
         <img
           v-else-if="image === 'students-and-graduates'"
-          class="tw-w-full tw-h-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/students-and-graduates.jpg"
           alt="Experienced professionals"
         />
         <!-- company's page  -->
         <img
           v-else-if="image === 'adventure'"
-          class="tw-w-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/careers/adventure.jpg"
           alt="Adventure"
         />
         <img
           v-else-if="image === 'flexibility'"
-          class="tw-w-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/careers/flexibility.jpg"
           alt="Flexibility"
         />
         <img
           v-else-if="image === 'intellectual-challenge'"
-          class="tw-w-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/careers/intellectual-challenge.jpg"
           alt="intellectual challenge"
         />
         <img
           v-else-if="image === 'non-hierarchical-organization'"
-          class="tw-w-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/careers/non-hierarchical-organization.jpg"
           alt="non hierarchical organization"
         />
         <img
           v-else-if="image === 'fun'"
-          class="tw-w-full tw-rounded-4xl tw-object-cover"
+          class="front-img"
           src="@/assets/images/careers/fun.jpg"
           alt="fun"
         />
 
         <div
-          class="tw-w-full tw-h-full tw-absolute tw-z-10 tw-top-0 tw-rounded-4xl"
+          class="front-img tw-absolute tw-z-10 tw-top-0"
           :class="
             {
               'bg-gradient-blue-1': theme === 'blue',
@@ -101,7 +103,7 @@
           :class="
             {
               'tw-text-2xl tw-leading-8': showButton,
-              'tw-text-1.5xl tw-leading-10': !showButton,
+              'tw-text-1.5xl tw-leading-6': !showButton,
             }
           "
         >{{ title }}</div>
@@ -126,6 +128,7 @@ export default defineComponent({
     theme: { type: String, default: "", }, // blue orange
     image: { type: String, default: "", }, // @/assets/images/experienced-professionals.png
     showButton: { type: Boolean, default: false, },
+    toBottom: { type: Boolean, default: false, },
   },
   emits: ['click'],
 
@@ -137,5 +140,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .card-info__content {
   max-width: 336px;
+}
+
+.front-img {
+  @apply tw-w-full tw-h-full tw-rounded-4xl tw-object-cover
 }
 </style>

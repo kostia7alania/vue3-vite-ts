@@ -1,5 +1,5 @@
 <template>
-    <div class="tw-px-4 tw-pt-15 tw-pb-10 md:tw-p-15 xl:tw-p-17.5 gray-shadow-1">
+    <div class="tw-px-4 tw-pt-15 tw-pb-10 md:tw-p-15 xl:tw-p-17.5 gray-shadow-1 tw-rounded-4xl">
         <div
             class="tw-flex tw-justify-between tw-items-center md:tw-items-start xl:tw-items-center tw-flex-col xl:tw-flex-row tw-gap-4"
         >
@@ -31,32 +31,19 @@
                 />
             </div>
             <div class="tw-mt-4 xl:tw-mt-6">
-                <VTextarea v-model="form.message" placeholder="Your message*" />
+                <VTextarea v-model="form.message" rows=3 placeholder="Your message*" />
             </div>
         </div>
         <!-- past link -->
         <div class="tw-my-6">
-            <VInput
-                v-model="form.link"
-                placeholder="Paste link to your online profile (e.g. LinkedIn) or upload your CV*"
-            >
-                <template #append>
-                    <VButton
-                        class="tw-w-full tw-text-base truncate tw-bg-white"
-                        text="Upload CV"
-                        variant="orange-1"
-                        height="42px"
-                        width="200px"
-                    />
-                </template>
-            </VInput>
+            <VCVPicker v-model="form.link" />
         </div>
         <!-- upload doc -->
         <div class="tw-my-6">
-            <VFilePicker
-                v-model="form.file"
-                label="Upload other documents (e.g. portfolio, references)"
-            />
+            <VFilePicker v-model="form.file">
+                Upload other documents
+                <br class="lg:tw-hidden" />(e.g. portfolio, references)
+            </VFilePicker>
         </div>
         <!-- checks -->
         <div
@@ -149,6 +136,7 @@ export default defineComponent({
         VSelect: defineAsyncComponent(() => import("@/components/ui/VSelect.vue")),
         VCustomModal: defineAsyncComponent(() => import("@/components/ui/VCustomModal.vue")),
         VFilePicker: defineAsyncComponent(() => import("@/components/ui/VFilePicker.vue")),
+        VCVPicker: defineAsyncComponent(() => import("@/components/ui/VCVPicker.vue")),
     },
     setup() {
 

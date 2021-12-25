@@ -239,7 +239,7 @@
       -------- 
       Who should join our team?
     -->
-    <section class="my-120-80 tw-relative" :class="{ 'bg-should-join-mobile': sm }">
+    <section class="my-120-80" :class="{ 'bg-should-join-mobile': sm }">
       <WhoJoinToTeam is-shown-button />
     </section>
 

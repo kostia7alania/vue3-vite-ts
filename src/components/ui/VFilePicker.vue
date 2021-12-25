@@ -1,16 +1,19 @@
 <template>
-  <div class="tw-flex tw-justify-center tw-items-center tw-gap-x-10">
+  <div
+    class="tw-flex tw-justify-center tw-items-center tw-gap-3 lg:tw-gap-10 tw-flex-col lg:tw-flex-row"
+  >
     <input
       id="formFile"
+      ref="formFile"
       class="form-control tw-hidden tw-w-full tw-px-3 tw-py-1.5 tw-text-base tw-font-normal tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-blue-600 focus:tw-outline-none"
       type="file"
       :accept="accept"
       @change="changeHandler"
     />
     <!-- selected file label container -->
-    <label
+    <div
       v-if="modelValue"
-      class="truncate tw-form-label tw-flex tw-flex-1 tw-items-center tw-text-center tw-pl-2 tw-h-16 tw-font-semibold tw-rounded-2xl tw-border-2 tw-text-white tw-bg-orange-1 tw-border-orange-1 tw-relative"
+      class="truncate tw-form-label tw-w-full tw-flex tw-flex-1 tw-items-center tw-text-center tw-p-2 tw-h-16 tw-font-semibold tw-rounded-2xl tw-border-2 tw-text-white tw-bg-orange-1 tw-border-orange-1 tw-relative"
     >
       {{ modelValue.name }}
       <span
@@ -35,19 +38,22 @@
           </button>
         </span>
       </span>
-    </label>
+    </div>
     <!-- button -->
     <label
       for="formFile"
-      class="tw-form-label tw-flex tw-flex-1 tw-items-center tw-justify-center tw-text-center tw-cursor-pointer tw-px-2 tw-h-16 tw-font-semibold tw-rounded-2xl tw-border-2 tw-text-orange-1 tw-border-orange-1"
-    >{{ label }}</label>
+      class="tw-form-label tw-w-full tw-flex tw-flex-1 tw-items-center tw-justify-center tw-text-center tw-cursor-pointer tw-p-2 tw-h-16 tw-font-semibold tw-rounded-2xl tw-border-2 tw-text-orange-1 tw-border-orange-1"
+    >
+      <span v-if="label" v-html="label" />
+      <slot v-else />
+    </label>
   </div>
 </template>
 
 <script lang="ts">
 
 import {
-  defineComponent, getCurrentInstance
+  defineComponent, getCurrentInstance, ref
   // PropType,
   // computed,
   // ref,
@@ -67,12 +73,18 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup(_, { emit }) {
+    const formFile = ref(null)
 
     const uid = `${getCurrentInstance()?.uid}`
 
     const changeHandler = (event: Event | null) => {
       // @ts-ignore
       const file = event?.target?.files?.[0] || undefined
+      // window.e = event?.target
+
+      // @ts-ignore
+      formFile.value.value = ''
+
       emit('update:modelValue', file)
     }
     const remove = () => {
@@ -81,7 +93,8 @@ export default defineComponent({
     return {
       uid,
       changeHandler,
-      remove
+      remove,
+      formFile
     }
   },
 
