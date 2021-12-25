@@ -9,7 +9,7 @@
     v-bind="$attrs"
     v-on="$attrs"
   >
-    <span v-if="text">{{ text }}</span>
+    <span v-if="text" v-html="text" />
     <slot v-else />
   </button>
 </template>

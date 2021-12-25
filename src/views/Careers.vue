@@ -173,7 +173,7 @@
           </div>
         </div>
       </div>
-      <div class="tw-relative tw-z-20 tw-pt-20 tw-pb-35">
+      <div class="tw-pt-20 tw-pb-35">
         <ContactFormCareer class="tw-bg-white" />
       </div>
       <div class="tw-absolute tw-right-0 tw--top-20">

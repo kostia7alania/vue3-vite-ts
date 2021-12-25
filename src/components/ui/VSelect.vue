@@ -5,6 +5,7 @@
     :placeholder="placeholder"
     v-bind="$attrs"
     v-on="$attrs"
+    @change="changeHandler($event)"
   >
     <option value disabled selected>{{ placeholder }}</option>
     <option
@@ -30,10 +31,19 @@ import {
 
 export default defineComponent({
   name: 'VSelect',
+  inheritAttrs: false,
   props: {
     modelValue: { type: null, default: undefined },
     items: { type: Array, default: () => [] },
     placeholder: { type: null, default: undefined },
   },
+  setup(_, { emit }) {
+    const changeHandler = (event: Event | null) => {
+      // @ts-ignore
+      emit('update:modelValue', event?.currentTarget?.value)
+    }
+    return { changeHandler }
+  },
+
 })
 </script>

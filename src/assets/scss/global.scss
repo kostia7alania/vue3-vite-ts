@@ -258,7 +258,9 @@ body {
 .gap-16px-24px-24px {
   @apply tw-gap-4 lg:tw-gap-6;
 }
-
+.gap-16px-24px-40px {
+  @apply tw-gap-4 lg:tw-gap-6 xl:tw-gap-10;
+}
 .gap-40px-16px {
   // todo reverse
   @apply tw-gap-4 md:tw-gap-7 lg:tw-gap-9 xl:tw-gap-10;
@@ -299,6 +301,7 @@ body {
 .pt-40px-120px-80px {
   @apply tw-pt-10 md:tw-pt-30 xl:tw-pt-20;
 }
+
 .py-80px-120px-120px {
   @apply tw-py-20 lg:tw-py-30;
 }
@@ -334,6 +337,14 @@ body {
 .text-16px-18px-18px {
   @apply tw-text-base xl:tw-text-lg;
 }
+.text-22px-24px-24px {
+  @apply tw-text-1.5xl xl:tw-text-2xl;
+}
 .text-40px-60px-60px {
   @apply tw-text-4.35xl xl:tw-text-6xl;
+}
+.text-14px-16px-16px {
+  // here is font-size: 16px
+  // 14px - 16px - 16px
+  @apply tw-font-medium tw-leading-7 tw-text-sm lg:tw-text-base;
 }

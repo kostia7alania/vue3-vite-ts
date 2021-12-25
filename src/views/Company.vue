@@ -218,12 +218,13 @@ export default defineComponent({
   },
   emits: ['ready'],
   setup(_, { emit }) {
+
+    onMounted(() => emit('ready'))
+
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const sm = breakpoints.smaller('sm')
     const smAndXl = breakpoints.between('sm', 'xl')
     const xl = breakpoints.greater('xl')
-
-    onMounted(() => emit('ready'))
 
     return { sm, smAndXl, xl }
   }

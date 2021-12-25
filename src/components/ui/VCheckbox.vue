@@ -1,6 +1,6 @@
 <template>
   <label
-    class="tw-form-check-label tw-flex tw-items-center tw-text-black-1 tw-cursor-pointer group-checked:tw-bg-orange-1"
+    class="tw-form-check-label tw-flex tw-items-center tw-text-black-1 tw-cursor-pointer group-checked:tw-bg-orange-1 tw-select-none"
     :class="{
       'tw-font-medium': !modelValue,
       'tw-font-semibold': modelValue

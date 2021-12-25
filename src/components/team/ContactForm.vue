@@ -1,43 +1,55 @@
 <template>
-    <div class="tw-p-16 gray-shadow-1">
-        <div class="tw-flex tw-justify-between tw-items-center">
-            <div class="topic-title">Fill the contact form</div>
-            <div class="topic-description">*Required fields</div>
+    <div class="tw-px-4 tw-pt-15 tw-pb-10 md:tw-p-15 xl:tw-p-17.5 gray-shadow-1">
+        <div
+            class="tw-flex tw-justify-between tw-items-center md:tw-items-start xl:tw-items-center tw-flex-col xl:tw-flex-row tw-gap-4"
+        >
+            <div class="topic-title tw-text-center">Fill the contact form</div>
+            <div class="topic-description tw-hidden md:tw-block">*Required fields</div>
         </div>
         <!-- form inputs -->
-        <div class="tw-mt-16">
-            <div class="tw-flex tw-items-center tw-gap-x-10">
+        <div class="tw-mt-8 md:tw-mt-15 xl:tw-mt-17">
+            <div class="tw-flex tw-items-center tw-gap-x-10 tw-flex-col xl:tw-flex-row tw-gap-y-4">
                 <VInput v-model="form.name" placeholder="Name*" />
                 <VInput v-model="form.surname" placeholder="Surname*" />
             </div>
 
-            <div class="tw-flex tw-items-center tw-gap-x-10 tw-mt-6">
+            <div
+                class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
+            >
                 <VInput v-model="form.phone" placeholder="Phone" />
                 <VInput v-model="form.email" placeholder="Email*" />
             </div>
-            <div class="tw-flex tw-items-center tw-gap-x-10 tw-mt-6">
-                <VInput v-model="form.companyName" class="tw-w-1/2" placeholder="Company name" />
+            <div
+                class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
+            >
+                <VInput v-model="form.companyName" class="tw-basis-1/2" placeholder="Company name" />
                 <VSelect
                     v-model="form.office"
-                    class="tw-w-1/2"
+                    class="tw-basis-1/2"
                     placeholder="Office(-s) you want to contact*"
                     :items="['Office 1', 'Office 2', 'Office 3']"
                 />
             </div>
-            <div class="tw-mt-6">
+            <div class="tw-mt-4 xl:tw-mt-6">
                 <VTextarea v-model="form.message" placeholder="Your message*" />
             </div>
         </div>
         <!-- upload doc -->
         <div class="tw-my-6">
             <VButton
-                class="tw-w-full tw-text-base"
-                text="Upload documents (e.g. brief, project description)"
+                class="tw-rounded-3xl tw-h-[80px] lg:tw-h-[60px] tw-w-full tw-text-base"
                 variant="orange-1"
-            />
+            >
+                <div>
+                    Upload documents
+                    <br class="lg:tw-hidden" />(e.g. brief, project description)
+                </div>
+            </VButton>
         </div>
         <!-- checks -->
-        <div class="tw-flex tw-justify-between tw-items-center tw-mt-10">
+        <div
+            class="tw-flex tw-justify-between tw-flex-col lg:tw-flex-row tw-items-center tw-gap-15 tw-mt-4 md:tw-mt-12 lg:tw-mt-12"
+        >
             <div class="tw-text-sm tw-max-w-2xl">
                 <VCheckbox v-model="agreement1">
                     <span>
@@ -54,11 +66,19 @@
                 />
             </div>
             <div>
-                <VButton text="Send" variant="blue" class="w-244px" @click="submitHandler" />
+                <VButton
+                    text="Send"
+                    variant="blue"
+                    class="tw-w-[311px] lg:tw-w-[244px]"
+                    @click="submitHandler"
+                />
+                <div
+                    class="topic-description tw-text-center tw-mt-4 tw-block md:tw-hidden"
+                >*Required fields</div>
             </div>
         </div>
         <VCustomModal v-if="isSent" @close="isSent = false">
-            <div class="alert-modal tw-relative tw-bg-white tw-m-auto tw-rounded-3xl">
+            <div class="alert-modal bg-contact-alert tw-relative tw-bg-white tw-m-auto tw-rounded-3xl">
                 <div class="tw-h-full tw-relative tw-z-20 tw-pb-16">
                     <button class="tw-absolute tw-right-6 tw-top-6" @click="isSent = false">
                         <svg
@@ -81,16 +101,13 @@
                         class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-full tw-font-semibold tw-text-2xl"
                     >
                         <div>
-                            <SentSuccess />
+                            <img src="@/assets/images/team/bg-contact-alert-cartoon.png" />
                         </div>
                         <div
                             class="tw-text-center tw-max-w-sm tw-mt-10"
                         >Your form has been successfully send!</div>
                     </div>
-                </div>
-                <div class="tw-absolute tw-bottom-0">
-                    <BgPatternContactSent />
-                </div>
+                </div> 
             </div>
         </VCustomModal>
     </div>
@@ -108,8 +125,6 @@ export default defineComponent({
         VTextarea: defineAsyncComponent(() => import("@/components/ui/VTextarea.vue")),
         VSelect: defineAsyncComponent(() => import("@/components/ui/VSelect.vue")),
         VCustomModal: defineAsyncComponent(() => import("@/components/ui/VCustomModal.vue")),
-        BgPatternContactSent: defineAsyncComponent(() => import("@/components/patterns/BgPatternContactSent.vue")),
-        SentSuccess: defineAsyncComponent(() => import("@/assets/icons/sent-success.svg")),
     },
     setup() {
 
@@ -145,11 +160,16 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-.w-244px {
-    width: 244px;
-}
 .alert-modal {
-    width: 620px;
-    height: 420px;
+    // width: 620px;
+    // height: 420px;
+    @apply tw-w-3/4 md:tw-w-[620px] md:tw-h-[420px]
+}
+
+.bg-contact-alert {
+  background-image: url("@/assets/images/team/bg-contact-alert.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
 }
 </style>

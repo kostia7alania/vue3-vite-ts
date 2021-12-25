@@ -27,27 +27,22 @@
 import { defineComponent, } from 'vue'
 
 export default defineComponent({
+    name: 'VCustomModal',
     emits: ['close']
 })
 </script>
 
 <style scoped lang="scss">
 .modal-mask {
-    position: fixed;
     z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: table;
     transition: opacity 0.3s ease;
+    @apply tw-fixed tw-flex tw-items-center tw-justify-center tw-h-full tw-w-full tw-top-0 tw-left-0;
 }
 
-.modal-wrapper {
-    display: table-cell;
-    vertical-align: middle;
-}
+// .modal-wrapper {
+// //
+// }
 
 .modal-container {
     width: 300px;
@@ -59,17 +54,8 @@ export default defineComponent({
     transition: all 0.3s ease;
 }
 
-.modal-header h3 {
-    margin-top: 0;
-    color: #42b983;
-}
-
 .modal-body {
-    margin: 20px 0;
-}
-
-.modal-default-button {
-    float: right;
+    @apply tw-mx-7;
 }
 
 /*
@@ -83,7 +69,7 @@ export default defineComponent({
 
 .modal-enter-from,
 .modal-leave-to {
-    opacity: 0;
+    @apply tw-opacity-0;
 }
 
 .modal-enter-active .modal-container,
