@@ -18,15 +18,13 @@
       @Section #1
       --------
     -->
-    <section class="tw-px-20 tw-py-30">
+    <section class="px-16px-48px-80px py-80px-104px-120px">
       <!-- top -->
-      <div class="tw-flex tw-flex-wrap tw-gap-6 tw-text-sm tw-justify-center">
-        <VButtonRadio v-model="country" :items="countries" inactive-class="tw-border-gray-200" />
-      </div>
+      <TagsToggle />
 
       <!-- bottom  -->
       <div class="topic-title tw-flex tw-justify-center tw-my-20">
-        <h2 class="tw-max-w-3xl tw-text-center">OÜ Primelight International</h2>
+        <h2 class="tw-max-w-3xl lg:tw-text-center">OÜ Primelight International</h2>
       </div>
 
       <!-- row 1 -->
@@ -97,50 +95,56 @@
         </div>
       </div>
     </section>
+
+    <!--
+      --------
+      @Section #2
+      --------
+    -->
+    <section
+      class="tw-bg-gray-4 px-16px-48px-80px"
+      :class="{
+        'bg-contacts-sm': md,
+        'bg-contacts-xl': !md,
+      }"
+    >
+      <div class="pt-80px-120px-120px">
+        <div class="topic-title tw-flex tw-justify-center tw-mb-6">
+          <h2 class="tw-max-w-xl tw-text-center">
+            How can we help you grow?
+            <br />Request proposal
+          </h2>
+        </div>
+      </div>
+
+      <div class="tw-pt-20 tw-pb-35">
+        <ContactFormCareer class="tw-bg-white" />
+      </div>
+    </section>
   </div>
 </template>
 
 <script lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
+
+import TagsToggle from "@/components/team/TagsToggle.vue"
 
 export default defineComponent({
   name: 'Contact',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
+    TagsToggle,
+    ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {
     onMounted(() => emit('ready'))
 
-    const countries = [
-      'INTERNATIONAL',
-      'ESTONIA',
-      'LITHUANIA',
-      'LATVIA',
-      'FINLAND',
-      'DENMARK',
-      'POLAND',
-      'SLOVAKIA',
-      'UKRAINE',
-      'ROMANIA',
-      'MOLDOVA',
-      'RUSSIA',
-      'BELARUS',
-      'SERBIA',
-      'BULGARIA',
-      'NORTH MACEDONIA',
-      'KOSOVO',
-      'ARMENIA',
-    ]
+    const breakpoints = useBreakpoints(breakpointsTailwind)
+    const md = breakpoints.smaller('md')
 
-
-    const country = ref(countries[0])
-
-    return {
-      countries,
-      country
-    }
+    return { md }
   },
 });
 </script>
@@ -152,5 +156,16 @@ export default defineComponent({
 
 a[href] {
   @apply tw-text-primary-1;
+}
+
+.bg-contacts-sm {
+  background-image: url("@/assets/images/team/bg-contacts-sm.png");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.bg-contacts-xl {
+  background-image: url("@/assets/images/team/bg-contacts-xl.png");
+  background-repeat: no-repeat;
+  background-position: top left;
 }
 </style>
