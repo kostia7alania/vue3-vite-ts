@@ -6,12 +6,19 @@
       -------- 
     -->
     <section>
-      <PageTopSection theme="blue" class="min-h-400px">
+      <PageTopSection theme="blue" class="min-h-400px tw-flex tw-flex-col tw-justify-end lg:tw-justify-center">
         <div class="tw-text-gray-1 tw-font-medium">
-          <div class="tw-text-sm">2021-10-11</div>
+          <div class="tw-text-base xl:tw-text-lg tw-mt-15 lg:tw-mt-0">2021-10-11</div>
           <div
-            class="tw-font-semibold tw-text-5xl tw-leading-tight tw-mt-4"
+            class="tw-font-semibold tw-leading-10 tw-text-3xl xl:tw-text-5xl tw-mt-4 xl:tw-mt-5"
           >Innovating european smart city, green tech and health tech industries with urban tech line</div>
+          <VButton
+            class="tw-mt-8 tw-mb-12 tw-bg-white tw-border-0 tw-block lg:tw-hidden"
+            variant="orange-1"
+            text="Back"
+            width="180px"
+            @click="$router.push({ name: 'articles' })"
+          />
         </div>
       </PageTopSection>
     </section>
@@ -22,9 +29,9 @@
       article
       --------
     -->
-    <section class="tw-pt-16 tw-pb-30 tw-px-20 tw-relative">
+    <section class="px-16px-48px-80px tw-pt-16 tw-pb-20 xl:tw-pb-30">
       <div class="tw-flex">
-        <div class="basis-333px tw-flex-grow-0">
+        <div class="basis-333px tw-flex-grow-0 tw-hidden lg:tw-block">
           <VButton
             variant="orange-2"
             text="Back"
@@ -35,7 +42,7 @@
         <div class="tw-flex-1 tw-font-medium tw-max-w-3xl">
           <div>In October, CIVITTA took over the leadership of the pan-European project URBAN TECH, which aims to find solutions to the challenges of both private and public sector organizations and develop new industrial value chains in the three emerging areas, helping to shape a healthy, smart and green urban environment of the future.</div>
           <div class="tw-text-xl tw-font-semibold tw-mt-6 tw-mb-2">How will we do it?</div>
-          <div class="tw-mb-6">
+          <div class="tw-mb-6 tw-ml-6">
             <ul class="tw-list-disc">
               <li>Urban Tech will map 300 challenges in the areas of Health Tech, Smart City and GreenTech industries.</li>
               <li>The project will launch 3 Open Calls for start-ups and SMEs to provide solutions to one or more Challenges. Selected start-ups and SMEs will be invited to participate in 16 international industry hackathons which will identify 80 innovation projects selected for the incubation phase.</li>
