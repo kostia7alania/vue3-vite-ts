@@ -28,37 +28,26 @@
       Our latest articles
       --------
     -->
-    <section class="tw-pt-16 tw-pb-30 tw-px-20 tw-relative">
-      <div
-        v-for="el of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
-        :key="el"
-        class="tw-flex tw-flex-wrap tw-gap-10 tw-relative tw-z-20"
-      >
-        <ArticleCard
-          class="tw-flex-1"
-          date="2021-10-30"
-          title="OÜ Primelight Challengers - Oleksandr Volik"
-          @click="$router.push({ name: 'article', params: { id: 0 } })"
-        />
-        <ArticleCard
-          class="tw-flex-1"
-          date="2021-10-26"
-          title="OÜ Primelight Challengers - Maari Helilaid"
-          @click="$router.push({ name: 'article', params: { id: 0 } })"
-        />
-        <ArticleCard
-          class="tw-flex-1"
-          date="2021-10-09"
-          title="OÜ Primelight Challengers - Sevak Hovhannisyan"
-          @click="$router.push({ name: 'article', params: { id: 0 } })"
-        />
+    <section class="px-16px-48px-80px tw-pt-20 xl:tw-pt-24 xl:tw-pb-30 tw-pb-40">
+      <div class="tw-flex tw-flex-wrap tw-gap-10 tw-justify-center">
+        <div
+          v-for="el of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+          :key="el"
+          class="md:tw-basis-[400px] tw-grow-1 tw-shrink-1"
+        >
+          <ArticleCard
+            date="2021-10-30"
+            title="OÜ Primelight Challengers - Oleksandr Volik"
+            @click="$router.push({ name: 'article', params: { id: 0 } })"
+          />
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, } from 'vue';
 
 import ArticleCard from "@/components/articles/ArticleCard.vue"
 

@@ -6,12 +6,10 @@
             'bg-section-sm': smallerMd,
             'bg-section-xl': !smallerMd,
         }"
-        class="tw-text-gray-1 dark:tw-bg-black tw-relative"
+        class="tw-text-gray-1 dark:tw-bg-black tw-relative tw-flex"
     >
         <div class="px-16px-48px-80px tw-flex tw-flex-col">
-            <div class="mt-60px-120px-120px tw-mb-15 ">
-                <slot />
-            </div>
+            <slot />
             <!--
               <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Services</div>
               <div class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
