@@ -18,6 +18,7 @@
       @Section #1
       --------
     -->
+
     <section class="px-16px-48px-80px py-80px-104px-120px">
       <!-- top -->
       <VCountries v-model:country="country" key-label="title" key-value="id" />
@@ -27,75 +28,58 @@
         <h2 class="tw-max-w-3xl lg:tw-text-center">OÜ Primelight International</h2>
       </div>
 
-      <!-- row 1 -->
-      <div class="tw-flex tw-flex-wrap tw-justify-center tw-mt-20 tw-gap-10">
-        <!-- col left -->
-        <div class="basis-400px">
-          <div class="topic-title-28px tw-mb-6">Tartu</div>
-          <div class="tw-mb-4">
-            <div class="link">
-              <a href="tel:+3726464488">+372 646 448 8</a>
-            </div>
-            <div class="link">
-              <a href="mailTo:info@OÜPrimelight.com">info@OÜPrimelight.com</a>
-            </div>
-          </div>
-          <div class="link">
-            <a href="#">Send a message &gt;</a>
-          </div>
-          <div class="link">
-            <a href="#">Visit country page &gt;</a>
-          </div>
-          <div class="link">
-            <a href="#">Navigate &gt;</a>
+      <div v-if="isLoading" class="tw-flex tw-justify-around tw-gap-10">
+        <div class="tw-flex tw-justify-center tw-flex-col tw-flex-wrap tw-gap-10">
+          <div v-for="item of new Array(5).keys()" :key="item">
+            <VSkeleton />
           </div>
         </div>
-        <!-- col right -->
-        <div class="basis-400px">
-          <div class="topic-title-28px tw-mb-6">Company information</div>
-          <div class="topic-description">
-            <div>Primelight International OÜ</div>
-            <div>Riia st. 24a, 51010</div>
-            <div>Tartu, Estonia</div>
-            <div>VAT code: EE101899220</div>
-            <div>Company code: 12241708</div>
+
+        <div class="tw-flex tw-justify-center tw-flex-col tw-flex-wrap-reverse tw-gap-10">
+          <div v-for="item of new Array(5).keys()" :key="item">
+            <VSkeleton />
           </div>
         </div>
       </div>
-
-      <!-- row 2 -->
-      <div class="tw-flex tw-flex-wrap tw-justify-center tw-mt-20 tw-gap-10">
-        <!-- col left -->
-        <div class="basis-400px">
-          <div class="topic-title-28px tw-mb-6">London (Sales office)</div>
-          <div class="tw-mb-4">
+      <div v-else>
+        <!-- row 1 -->
+        <div
+          v-for="contact of contacts"
+          :key="contact.id"
+          class="tw-flex tw-flex-wrap tw-justify-center tw-mt-20 tw-gap-10"
+        >
+          <!-- col left -->
+          <div class="basis-400px">
+            <div class="topic-title-28px tw-mb-6">{{ contact.title }}</div>
+            <div class="tw-mb-4">
+              <div v-if="contact.phone" class="link">
+                <a :href="`tel:${contact.phone}`">{{ contact.phone }}</a>
+              </div>
+              <div v-if="contact.email1" class="link">
+                <a :href="`mailTo:${contact.email1}`">{{ contact.email1 }}</a>
+              </div>
+              <div v-if="contact.email2" class="link">
+                <a :href="`mailTo:${contact.email2}`">{{ contact.email2 }}</a>
+              </div>
+            </div>
             <div class="link">
-              <a href="tel:+3726464488">info@OÜPrimelight.com</a>
+              <a href="#">Send a message &gt;</a>
+            </div>
+            <div class="link">
+              <a href="#">Visit country page &gt;</a>
+            </div>
+            <div class="link">
+              <a href="#">Navigate &gt;</a>
             </div>
           </div>
-          <div class="link">
-            <a href="#">Send a message &gt;</a>
-          </div>
-          <div class="link">
-            <a href="#">Visit country page &gt;</a>
-          </div>
-          <div class="link">
-            <a href="#">Navigate &gt;</a>
-          </div>
-        </div>
-        <!-- col right -->
-        <div class="basis-400px">
-          <div class="topic-title-28px tw-mb-6">Company information</div>
-          <div class="topic-description">
-            <div>OÜ Primelight UK LTD</div>
-            <div>56 Leman Street, E1 8EU</div>
-            <div>London, UK</div>
-            <div>Company code: 10274449</div>
+          <!-- col right -->
+          <div class="basis-400px">
+            <div class="topic-title-28px tw-mb-6">Company information</div>
+            <div class="topic-description tw-max-w-[250px]" v-html="contact.address.split(',').join(',<br>')"></div>
           </div>
         </div>
       </div>
     </section>
-
     <!--
       --------
       @Section #2
@@ -126,9 +110,11 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted, Ref, ref, watch } from 'vue';
 
 import VCountries from "@/components/ui/VCountries.vue"
+import { useVuex } from '@/store/store'
+import { IContacts } from '@/store/modules/contacts/contacts';
 
 export default defineComponent({
   name: 'Contact',
@@ -136,17 +122,37 @@ export default defineComponent({
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     VCountries,
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
+    VSkeleton: defineAsyncComponent(() => import("@/components/ui/VSkeleton.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {
+    const store = useVuex()
+
     onMounted(() => emit('ready'))
 
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const md = breakpoints.smaller('md')
 
     const country = ref(null)
+    const contacts: Ref<IContacts> = ref([])
 
-    return { md, country }
+    const isLoading = ref(false)
+
+    const getCountries = async () => {
+      if (!country.value) return
+      isLoading.value = true
+      try {
+        contacts.value = await store.dispatch('contacts/GET_CONTACT', country.value)
+      } catch (err) {
+        console.error({ err })
+      } finally {
+        isLoading.value = false
+      }
+    }
+
+    watch(() => country.value, getCountries, { immediate: true })
+
+    return { md, country, isLoading, contacts }
   },
 });
 </script>
