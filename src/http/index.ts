@@ -1,9 +1,10 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
-import { i18n } from '@/plugins/i18n';
-// import { useI18n } from 'vue-i18n'
 
 import { API_URL, isPROD } from '@/runtimeEnv';
+
+import { i18n } from '@/plugins/i18n';
+// import { useI18n } from 'vue-i18n'
 
 const HTTPClient = axios.create({
   baseURL: API_URL,
