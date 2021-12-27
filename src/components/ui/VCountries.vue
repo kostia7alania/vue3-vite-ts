@@ -3,6 +3,7 @@
     <VTagsToggle
         :model-value="country"
         key-label="title"
+        :key-value="keyValue"
         placeholder="Preferred location*"
         :items="countries.COUNTRIES"
         @update:model-value="$emit('update:country', $event)"
@@ -60,9 +61,9 @@ export default defineComponent({
         const getCountries = () => store.dispatch('countries/GET_COUNTRIES')
         const init = async () => {
             await getCountries()
-            // const [res] = await getCountries()
-            // const { keyValue } = props
-            // emit('update:country', keyValue ? res[keyValue] : res)
+            const [res] = await getCountries()
+            const { keyValue } = props
+            emit('update:country', keyValue ? res[keyValue] : res)
         }
 
         onMounted(init)
