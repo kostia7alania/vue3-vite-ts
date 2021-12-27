@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-flex-col dark:tw-bg-gray-800">
+  <div :key="$i18n.locale" class="tw-flex tw-flex-col dark:tw-bg-gray-800">
     <div class="main-header tw-flex-1">
       <div class="main-header"></div>
       <div class="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50">

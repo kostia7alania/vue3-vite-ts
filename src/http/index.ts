@@ -1,5 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
+import { i18n } from '@/plugins/i18n';
+// import { useI18n } from 'vue-i18n'
 
 import { API_URL, isPROD } from '@/runtimeEnv';
 
@@ -19,6 +21,28 @@ HTTPClient.interceptors.response.use(
   },
 );
 
+HTTPClient.interceptors.request.use(
+  (config) => {
+    // debugger
+    // config.params['blah-defaut-param'] = 'blah-blah-default-value';
+    const localeMap = {
+      lt: 'ee',
+      en: 'en',
+    };
+
+    const lang = localeMap[i18n.global.locale] || localeMap.en;
+
+    const params = {
+      lang,
+    };
+
+    const qs = new URLSearchParams(params);
+    config.url += `?${qs}`;
+    return config;
+  },
+  (error) => Promise.reject(error),
+);
+
 export const HTTPRequest = (
   options: AxiosRequestConfig,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -36,4 +60,3 @@ export const HTTPRequest = (
 
 export const POST = HTTPClient.post;
 export const GET = HTTPClient.get;
-
