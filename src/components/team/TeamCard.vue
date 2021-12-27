@@ -2,8 +2,10 @@
     <!-- tw-h-60 -->
     <!-- 360px -mob 400px-tab+ -->
     <div
-        class="tw-h-[360px] xl:tw-h-[400px] tw-overflow-hidden gray-shadow-1 tw-bg-white tw-rounded-4xl tw-relative"
+        class="tw-max-w-[400px] tw-h-[360px] xl:tw-h-[400px] tw-overflow-hidden gray-shadow-1 tw-bg-white tw-rounded-4xl tw-relative"
     >
+        <img v-if="avatar" class="card-image" :src="avatar" :alt="String(title)" />
+
         <img
             v-if="+image === 1"
             class="card-image"
@@ -60,6 +62,7 @@ export default defineComponent({
         title: { type: [Number, String], default: '', },
         description: { type: [Number, String], default: "", },
         image: { type: [Number, String], default: "1", },
+        avatar: { type: String, default: "", },
     },
 });
 </script>

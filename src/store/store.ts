@@ -9,10 +9,16 @@ import {
 import { isPROD } from '@/runtimeEnv';
 
 // import { auth } from './modules/auth';
+import { countries } from './modules/countries/countries';
+import { ICountries } from './modules/countries/countries.d';
 import { settings } from './modules/settings';
+import { teams } from './modules/teams';
+import { ITeams } from './modules/teams/teams.d';
 
 export interface IRootState {
   count?: number;
+  teams: ITeams;
+  countries: ICountries;
 }
 
 export const key: InjectionKey<Store<IRootState>> = Symbol();
@@ -21,8 +27,9 @@ export const store = createStore<IRootState>({
   strict: !isPROD,
   modules: {
     settings,
+    teams,
+    countries,
   },
-  state: {},
   getters: {},
   mutations: {},
   plugins: isPROD ? [] : [createLogger()],

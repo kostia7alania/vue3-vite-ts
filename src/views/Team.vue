@@ -27,28 +27,30 @@
         <h2 class="tw-max-w-3xl tw-text-center">OÜ Primelight International senior team</h2>
       </div>
       <!-- bottom -->
-      <TagsToggle />
+      <VCountries v-model:country="country" key-label="title" key-value="id" />
 
       <!-- row 1 -->
       <div class="gap-16px-24px-40px tw-flex tw-flex-wrap tw-mt-20">
         <!-- row 1 -->
         <TeamCard
+          v-for="member of teams.TEAMS"
+          :key="member.id"
           class="team-card"
-          title="Adam Saulius Vaina"
-          description="BOARD MEMBER"
-          image="1"
+          :title="member.name + ' ' + member.surname"
+          :description="member.position"
+          :avatar="member.avatar"
         />
-        <TeamCard class="team-card" title="Mikalai Koniukh" description="BOARD MEMBER" image="2" />
-        <TeamCard class="team-card" title="Riivo Anton" description="ADVISOR" image="3" />
+        <!-- <TeamCard class="team-card" title="Mikalai Koniukh" description="BOARD MEMBER" image="2" /> -->
+        <!-- <TeamCard class="team-card" title="Riivo Anton" description="ADVISOR" image="3" /> -->
         <!-- row 2 -->
-        <TeamCard class="team-card" title="Roman Khlibun" description="PROJECT MANAGER" image="4" />
-        <TeamCard
+        <!-- <TeamCard class="team-card" title="Roman Khlibun" description="PROJECT MANAGER" image="4" /> -->
+        <!-- <TeamCard
           class="team-card"
           title="Alexandra Sferle"
           description="MARKETING MANAGER"
           image="5"
         />
-        <TeamCard class="team-card" title="Gundega Ēlerte" description="HR MANAGER" image="6" />
+        <TeamCard class="team-card" title="Gundega Ēlerte" description="HR MANAGER" image="6" />-->
       </div>
     </section>
 
@@ -64,7 +66,6 @@
         'bg-contacts-xl': !md,
       }"
     >
-    
       <div class="tw-py-30 px-16px-48px-80px">
         <ContactForm class="tw-bg-white" />
       </div>
@@ -73,28 +74,43 @@
 </template>
 
 <script lang="ts">
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineAsyncComponent, defineComponent, onMounted, } from 'vue';
 
-import TagsToggle from "@/components/team/TagsToggle.vue"
+
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { defineAsyncComponent, defineComponent, onMounted, ref, } from 'vue';
+
 import TeamCard from "@/components/team/TeamCard.vue"
+import VCountries from "@/components/ui/VCountries.vue"
+import { useVuex } from '@/store/store'
 
 export default defineComponent({
   name: 'Team',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    TagsToggle,
+    VCountries,
     TeamCard,
     ContactForm: defineAsyncComponent(() => import("@/components/team/ContactForm.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {
-    onMounted(() => emit('ready'))
+    const store = useVuex()
+
+    // access an action
+    const teams = store.state.teams
+    // window.store = store
+    const getTeams = () => store.dispatch('teams/GET_TEAMS')
+    onMounted(() => {
+      emit('ready')
+      getTeams()
+    })
+
 
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const md = breakpoints.smaller('md')
 
-    return { md }
+    const country = ref(null)
+
+    return { md, teams, country }
   },
 });
 </script>
@@ -103,8 +119,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .team-card {
   @apply tw-basis-[222px] md:tw-basis-[280px] xl:tw-basis-[333px] tw-flex-grow tw-shrink;
-} 
-.bg-contacts-sm{
+}
+.bg-contacts-sm {
   background-image: url("@/assets/images/team/bg-contacts-sm.png");
   background-repeat: no-repeat;
   background-position: top;
@@ -113,5 +129,5 @@ export default defineComponent({
   background-image: url("@/assets/images/team/bg-contacts-xl.png");
   background-repeat: no-repeat;
   background-position: top left;
-} 
+}
 </style>

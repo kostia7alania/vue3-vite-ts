@@ -20,7 +20,7 @@
     -->
     <section class="px-16px-48px-80px py-80px-104px-120px">
       <!-- top -->
-      <TagsToggle />
+      <VCountries v-model:country="country" key-label="title" key-value="id" />
 
       <!-- bottom  -->
       <div class="topic-title tw-flex tw-justify-center tw-my-20">
@@ -128,13 +128,13 @@
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
-import TagsToggle from "@/components/team/TagsToggle.vue"
+import VCountries from "@/components/ui/VCountries.vue"
 
 export default defineComponent({
   name: 'Contact',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
-    TagsToggle,
+    VCountries,
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
   },
   emits: ['ready'],
@@ -144,7 +144,9 @@ export default defineComponent({
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const md = breakpoints.smaller('md')
 
-    return { md }
+    const country = ref(null)
+
+    return { md, country }
   },
 });
 </script>

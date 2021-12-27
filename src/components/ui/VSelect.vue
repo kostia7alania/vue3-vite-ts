@@ -10,10 +10,10 @@
     <option value disabled selected>{{ placeholder }}</option>
     <option
       v-for="item of items"
-      :key="String(item)"
-      :value="item"
-      :selected="modelValue === item"
-    >{{ item }}</option>
+      :key="keyValue ? item[keyValue] : item"
+      :value="keyValue ? item[keyValue] : item"
+      :selected="checkIsSelected(item)"
+    >{{ keyLabel ? item[keyLabel] : item }}</option>
   </select>
 </template>
 
@@ -33,16 +33,37 @@ export default defineComponent({
   name: 'VSelect',
   inheritAttrs: false,
   props: {
-    modelValue: { type: null, default: undefined },
-    items: { type: Array, default: () => [] },
+    modelValue: { type: [Number, String, Object], default: undefined },
+    items: { type: Array as any, default: () => [] },
+
+    keyValue: { type: String, default: undefined },
+    keyLabel: { type: String, default: undefined },
+
     placeholder: { type: null, default: undefined },
+
   },
-  setup(_, { emit }) {
+  setup(props, { emit }) {
     const changeHandler = (event: Event | null) => {
+      // emit('update:model-value', event?.currentTarget?.value)
+
+      const { keyValue } = props
       // @ts-ignore
-      emit('update:modelValue', event?.currentTarget?.value)
+      // remember that the first option is placeoplder
+      const idx = event?.target?.selectedIndex - 1
+      const res = props.items[idx]
+      const resData = keyValue ? res[keyValue] : res
+      emit('update:model-value', resData)
     }
-    return { changeHandler }
+
+    const checkIsSelected = (item: any) => {
+
+      const { keyValue, modelValue, } = props as any
+
+      if (keyValue) return item[keyValue] === modelValue
+      return item === modelValue
+
+    }
+    return { changeHandler, checkIsSelected }
   },
 
 })
