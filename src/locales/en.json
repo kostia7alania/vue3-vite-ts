@@ -1,4 +1,15 @@
 {
+  "title": {
+    "main-page": "Main Page",
+    "services": "Services",
+    "company": "Company",
+    "team": "Team",
+    "careers": "Careers",
+    "articles": "Articles",
+    "contact": "Contact",
+    "financing": "Financing",
+    "article": "Article"
+  },
   "menu": {
     "services": "Services",
     "company": "Company",

@@ -1,4 +1,15 @@
 {
+  "title": {
+    "article": "Straipsnis",
+    "articles": "Straipsniai",
+    "careers": "Karjera",
+    "company": "Bendrovė",
+    "contact": "kontaktas",
+    "financing": "Finansavimas",
+    "main-page": "Pagrindinis puslapis",
+    "services": "Paslaugos",
+    "team": "Komanda"
+  },
   "menu": {
     "services": "Paslaugos",
     "company": "Company",
