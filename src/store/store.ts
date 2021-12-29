@@ -32,7 +32,6 @@ export const store = createStore<IRootState>({
     settings,
     teams,
     countries,
-    // @ts-ignore
     contacts,
   },
   getters: {},

@@ -18,7 +18,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "precommit": "yarn lint && yarn test && yarn build",
-    "deploy": "yarn build && surge dist foamy-credit.surge.sh"
+    "deploy": "yarn build && surge dist foamy-credit.surge.sh",
+    "surge": "surge dist foamy-credit.surge.sh"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.4.0",

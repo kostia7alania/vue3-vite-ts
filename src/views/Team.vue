@@ -30,27 +30,22 @@
       <VCountries v-model:country="country" key-label="title" key-value="id" />
 
       <!-- row 1 -->
-      <div class="gap-16px-24px-40px tw-flex tw-flex-wrap tw-mt-20">
-        <!-- row 1 -->
-        <TeamCard
-          v-for="member of teams.TEAMS"
-          :key="member.id"
-          class="team-card"
-          :title="member.name + ' ' + member.surname"
-          :description="member.position"
-          :avatar="member.avatar"
-        />
-        <!-- <TeamCard class="team-card" title="Mikalai Koniukh" description="BOARD MEMBER" image="2" /> -->
-        <!-- <TeamCard class="team-card" title="Riivo Anton" description="ADVISOR" image="3" /> -->
-        <!-- row 2 -->
-        <!-- <TeamCard class="team-card" title="Roman Khlibun" description="PROJECT MANAGER" image="4" /> -->
-        <!-- <TeamCard
-          class="team-card"
-          title="Alexandra Sferle"
-          description="MARKETING MANAGER"
-          image="5"
-        />
-        <TeamCard class="team-card" title="Gundega Ēlerte" description="HR MANAGER" image="6" />-->
+      <div class="tw-mt-20">
+        <div v-if="teams.length" class="gap-16px-24px-40px tw-flex tw-flex-wrap">
+          <!-- row 1 -->
+          <TeamCard
+            v-for="member of teams"
+            :key="member.id"
+            class="team-card"
+            :title="member.name + ' ' + member.surname"
+            :description="member.position"
+            :avatar="member.avatar"
+          />
+        </div>
+        <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
+          <VIconSpinner class="tw-h-20" spin />
+        </div>
+        <div v-else>We have no colleagues in the selected country</div>
       </div>
     </section>
 
@@ -77,16 +72,17 @@
 
 
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineAsyncComponent, defineComponent, onMounted, ref, } from 'vue';
+import { computed, defineAsyncComponent, defineComponent, onMounted, ref, watch, } from 'vue';
 
 import TeamCard from "@/components/team/TeamCard.vue"
 import VCountries from "@/components/ui/VCountries.vue"
+import VIconSpinner from "@/components/ui/VIconSpinner.vue"
 import { useVuex } from '@/store/store'
-
 export default defineComponent({
   name: 'Team',
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
+    VIconSpinner,
     VCountries,
     TeamCard,
     ContactForm: defineAsyncComponent(() => import("@/components/team/ContactForm.vue")),
@@ -95,22 +91,42 @@ export default defineComponent({
   setup(_, { emit }) {
     const store = useVuex()
 
+    const country = ref(null)
+
     // access an action
-    const teams = store.state.teams
+    const teams = computed(() => {
+      const { teams } = store.state
+      if (teams?.TEAMS) return teams.TEAMS.filter(team => team.country.id === country.value)
+      return []
+    })
+
+
+    const isLoading = ref(false)
     // window.store = store
-    const getTeams = () => store.dispatch('teams/GET_TEAMS')
+    const getTeams = async () => {
+      isLoading.value = true
+      try {
+        await store.dispatch('teams/GET_TEAMS')
+      } catch (err) {
+        console.error({ err })
+      } finally {
+        isLoading.value = false
+      }
+    }
+
     onMounted(() => {
       emit('ready')
       getTeams()
     })
 
+    watch(() => country.value, getTeams)
+
 
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const md = breakpoints.smaller('md')
 
-    const country = ref(null)
 
-    return { md, teams, country }
+    return { md, teams, country, isLoading }
   },
 });
 </script>
