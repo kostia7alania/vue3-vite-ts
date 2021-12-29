@@ -1,17 +1,17 @@
 <template>
-  <button
-    :class="buttonClass"
-    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit hover:tw-hue-rotate-180 active:tw-sepia tw-transition tw-ease-in-out tw-duration-1000"
-    :style="{
-      width,
-      height,
-    }"
-    v-bind="$attrs"
-    v-on="$attrs"
-  >
-    <span v-if="text" v-html="text" />
-    <slot v-else />
-  </button>
+    <button
+      :class="buttonClass"
+      class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit hover:tw-hue-rotate-180 active:tw-sepia tw-transition tw-ease-in-out tw-duration-1000"
+      :style="{
+        width,
+        height,
+      }"
+      v-bind="$attrs"
+      v-on="$attrs"
+    >
+      <span v-if="text" v-html="text" />
+      <slot v-else />
+    </button>
 </template>
 
 <script lang="ts">
@@ -43,6 +43,7 @@ export default defineComponent({
     text: { type: String, default: '' },
     width: { type: String, default: undefined },
     height: { type: String, default: undefined },
+    // to: { type: [String, Object,], default: undefined } // link
   },
   setup(props) {
     const buttonClass = computed(() => {

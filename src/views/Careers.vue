@@ -114,17 +114,17 @@
     >
       <h2 class="topic-title lg:tw-max-w-sm lg:tw-pr-20 my-40px-80px">Stories of our people</h2>
       <div v-if="!sm" class="tw-flex tw-flex-wrap tw-gap-10">
-        <ArticleCard
+        <ArticleCardOld
           class="tw-flex-1"
           date="2021-10-30"
           title="OÜ Primelight Challengers - Oleksandr Volik"
         />
-        <ArticleCard
+        <ArticleCardOld
           class="tw-flex-1"
           date="2021-10-26"
           title="OÜ Primelight Challengers - Maari Helilaid"
         />
-        <ArticleCard
+        <ArticleCardOld
           class="tw-flex-1"
           date="2021-10-09"
           title="OÜ Primelight Challengers - Sevak Hovhannisyan"
@@ -133,21 +133,21 @@
       <CardsSwiper v-else>
         <!-- MOBILE -->
         <template #test1>
-          <ArticleCard
+          <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-11"
             title="Poland-based SAS Advisors is joining OÜ Primelight"
           />
         </template>
         <template #test2>
-          <ArticleCard
+          <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-12"
             title="Poland-based SAS Advisors is joining OÜ Primelight"
           />
         </template>
         <template #test3>
-          <ArticleCard
+          <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-13"
             title="Poland-based SAS Advisors is joining OÜ Primelight"
@@ -232,7 +232,7 @@ export default defineComponent({
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     CardInfoAnim,
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
-    ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+    ArticleCardOld: defineAsyncComponent(() => import("@/components/articles/ArticleCardOld.vue")),
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
     CardsSwiper: defineAsyncComponent(() => import("@/components/services/CardsSwiper.vue")),
   },

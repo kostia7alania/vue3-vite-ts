@@ -265,17 +265,17 @@
       <h2 class="topic-title max-w-400px my-120-80">Our latest articles</h2>
       <div v-if="!sm" class="gap-40px-16px tw-flex">
         <!-- DESKTOP -->
-        <ArticleCard
+        <ArticleCardOld
           class="tw-w-full tw-basis-full"
           date="2021-10-11"
           title="Poland-based SAS Advisors is joining OÜ Primelight"
         />
-        <ArticleCard
+        <ArticleCardOld
           class="tw-w-full tw-basis-full"
           date="2021-10-12"
           title="Poland-based SAS Advisors is joining OÜ Primelight"
         />
-        <ArticleCard
+        <ArticleCardOld
           class="dynamic-info-card"
           date="2021-10-13"
           title="Poland-based SAS Advisors is joining OÜ Primelight"
@@ -284,21 +284,21 @@
       <CardsSwiper v-else>
         <!-- MOBILE -->
         <template #test1>
-          <ArticleCard
+          <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-11"
             title="Poland-based SAS Advisors is joining OÜ Primelight"
           />
         </template>
         <template #test2>
-          <ArticleCard
+          <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-12"
             title="Poland-based SAS Advisors is joining OÜ Primelight"
           />
         </template>
         <template #test3>
-          <ArticleCard
+          <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-13"
             title="Poland-based SAS Advisors is joining OÜ Primelight"
@@ -331,7 +331,7 @@ export default defineComponent({
     BgPatternInnovation: defineAsyncComponent(() => import("@/components/patterns/BgPatternInnovation.vue")),
     BgPatternDigital: defineAsyncComponent(() => import("@/components/patterns/BgPatternDigital.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
-    ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+    ArticleCardOld: defineAsyncComponent(() => import("@/components/articles/ArticleCardOld.vue")),
     WhereWeLocated: defineAsyncComponent(() => import("@/components/services/WhereWeLocated.vue")),
 
   },

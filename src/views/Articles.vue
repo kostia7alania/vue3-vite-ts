@@ -29,32 +29,40 @@
       --------
     -->
     <section class="px-16px-48px-80px tw-pt-20 xl:tw-pt-24 xl:tw-pb-30 tw-pb-40">
-      <div class="tw-flex tw-flex-wrap tw-gap-10 tw-justify-center">
+      <div v-if="articles.length" class="tw-flex tw-flex-wrap tw-gap-10 tw-justify-start">
         <div
-          v-for="el of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
-          :key="el"
+          v-for="article of articles"
+          :key="article.id"
           class="md:tw-basis-[400px] tw-grow-1 tw-shrink-1"
         >
           <ArticleCard
-            date="2021-10-30"
-            title="OÜ Primelight Challengers - Oleksandr Volik"
-            @click="$router.push({ name: 'article', params: { id: 0 } })"
+            :id="article.id"
+            :img="article.cover"
+            :date="article.publish_at"
+            :title="article.title"
           />
         </div>
       </div>
+      <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
+        <VIconSpinner class="tw-h-20" spin />
+      </div>
+      <div v-else>We have no articles in the selected category</div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, } from 'vue';
+import { computed, defineComponent, onMounted, Ref, ref, } from 'vue';
+import { useRoute, } from 'vue-router';
 
 import ArticleCard from "@/components/articles/ArticleCard.vue"
+import VIconSpinner from "@/components/ui/VIconSpinner.vue"
+import { useVuex } from '@/store/store'
 
 export default defineComponent({
   name: 'Articles',
   components: {
-    ArticleCard,
+    ArticleCard, VIconSpinner,
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     // VButtonRadio: defineAsyncComponent(() => import("@/components/ui/VButtonRadio.vue")),
     // ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
@@ -62,11 +70,38 @@ export default defineComponent({
   emits: ['ready'],
   setup(_, { emit }) {
     onMounted(() => emit('ready'))
+    const store = useVuex()
+    const route = useRoute();
 
-    // const categories = ['All', 'Insights', 'Case studies', 'Career stories', 'Company news',]
-    // const category = ref(categories[0])
+    const categoryId = computed(() => String(route.query?.category))
 
-    // return { category, categories }
+    const articles = computed(() => {
+      const { news } = store.state
+      if (news?.ARTICLES) return news.ARTICLES.filter(item => {
+        if (!+categoryId.value) return true // all
+        return String(item.id) === categoryId.value
+      })
+      return []
+    })
+
+
+    const isLoading = ref(false)
+
+    // window.store = store
+    const getNews = async () => {
+      isLoading.value = true
+      try {
+        await store.dispatch('news/GET_ARTICLES')
+      } catch (err) {
+        console.error({ err })
+      } finally {
+        isLoading.value = false
+      }
+    }
+
+    onMounted(getNews)
+
+    return { isLoading, articles }
   },
 });
 </script>

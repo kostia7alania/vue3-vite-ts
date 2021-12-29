@@ -131,20 +131,20 @@
       <h2 class="topic-title max-w-400px my-120-80">Case studies</h2>
       <div v-if="!sm" class="gap-40px-16px tw-flex">
         <!-- DESKTOP -->
-        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard class="tw-w-full tw-basis-full" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCardOld class="tw-w-full tw-basis-full" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCardOld class="tw-w-full tw-basis-full" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCardOld class="tw-w-full tw-basis-full" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
       </div>
       <CardsSwiper v-else>
         <!-- MOBILE -->
         <template #test1>
-          <ArticleCard class="article-card-swiper" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+          <ArticleCardOld class="article-card-swiper" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
         </template>
         <template #test2>
-          <ArticleCard class="article-card-swiper" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+          <ArticleCardOld class="article-card-swiper" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
         </template>
         <template #test3>
-          <ArticleCard class="article-card-swiper" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+          <ArticleCardOld class="article-card-swiper" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
         </template>
       </CardsSwiper>
     </section>
@@ -165,7 +165,7 @@ export default defineComponent({
     HelpColumn,
     CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
-    ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+    ArticleCardOld: defineAsyncComponent(() => import("@/components/articles/ArticleCardOld.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {

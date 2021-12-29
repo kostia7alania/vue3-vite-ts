@@ -78,6 +78,7 @@ import TeamCard from "@/components/team/TeamCard.vue"
 import VCountries from "@/components/ui/VCountries.vue"
 import VIconSpinner from "@/components/ui/VIconSpinner.vue"
 import { useVuex } from '@/store/store'
+
 export default defineComponent({
   name: 'Team',
   components: {
@@ -102,6 +103,7 @@ export default defineComponent({
 
 
     const isLoading = ref(false)
+
     // window.store = store
     const getTeams = async () => {
       isLoading.value = true

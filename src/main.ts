@@ -23,6 +23,14 @@ router.beforeEach(async (to, from, next) => {
 // 3. Create a vue root instance
 const app = createApp(App);
 
+// declare module '@vue/runtime-core' {
+//   interface ComponentCustomProperties {
+//     $config: Record<string, unknown>;
+//   }
+// }
+
+// app.config.globalProperties.$formatDate =
+
 // 4. Install i18n instance to make the whole app i18n-aware
 app.use(i18n);
 app.use(router);

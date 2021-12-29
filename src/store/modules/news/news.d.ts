@@ -1,7 +1,7 @@
 import { ICountry } from '../countries/countries.d';
 
 export interface IActions {
-  commit: (a: string, b: Array<INew>) => void;
+  commit: (a: string, b: Array<INew> | boolean) => void;
 }
 
 type TType = 'image_container' | 'image_fullscreen' | 'text_only';
@@ -31,5 +31,6 @@ export interface INewsResponse {
 }
 
 export interface INews {
-  NEWS: Array<INew>;
+  ARTICLES: Array<INew>;
+  IS_LOADING: boolean;
 }

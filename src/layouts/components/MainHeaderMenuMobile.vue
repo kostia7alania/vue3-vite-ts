@@ -69,7 +69,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from 'vue';
+import { computed, ComputedRef, defineComponent, PropType, Ref, ref } from 'vue';
 
 import HeaderModal from './HeaderModal.vue'
 
@@ -89,13 +89,13 @@ export default defineComponent({
     },
   },
   setup(/* _, { emit } */) {
-    const isActiveModal = ref(false);
+    const isActiveModal: Ref<boolean> = ref(false);
 
-    const setIsActiveContacts = (val: boolean) => {
+    const setIsActiveContacts = (val: boolean): void => {
       isActiveModal.value = val;
     };
 
-    const classComputed = computed(() => {
+    const classComputed: ComputedRef<string> = computed((): string => {
       if (isActiveModal.value)
         return 'tw-text-black tw-rounded-full tw-flex tw-justify-center tw-items-center tw-z-50';
       return ' tw-text-black tw-font-bold  box-shadow-1';
