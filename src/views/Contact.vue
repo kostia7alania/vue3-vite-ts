@@ -113,8 +113,8 @@ import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted, Ref, ref, watch } from 'vue';
 
 import VCountries from "@/components/ui/VCountries.vue"
+import { IContact } from '@/store/modules/contacts/contacts.d';
 import { useVuex } from '@/store/store'
-import { IContacts } from '@/store/modules/contacts/contacts';
 
 export default defineComponent({
   name: 'Contact',
@@ -134,7 +134,7 @@ export default defineComponent({
     const md = breakpoints.smaller('md')
 
     const country = ref(null)
-    const contacts: Ref<IContacts> = ref([])
+    const contacts: Ref<Array<IContact>> = ref([])
 
     const isLoading = ref(false)
 

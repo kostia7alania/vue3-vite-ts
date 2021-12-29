@@ -9,9 +9,9 @@ import {
 import { isPROD } from '@/runtimeEnv';
 
 // import { auth } from './modules/auth';
-import { contacts } from './modules/contacts';
+import { contacts } from './modules/contacts/';
 import { IContacts } from './modules/contacts/contacts.d';
-import { countries } from './modules/countries/countries';
+import { countries } from './modules/countries/';
 import { ICountries } from './modules/countries/countries.d';
 import { settings } from './modules/settings';
 import { teams } from './modules/teams';
@@ -32,6 +32,7 @@ export const store = createStore<IRootState>({
     settings,
     teams,
     countries,
+    // @ts-ignore
     contacts,
   },
   getters: {},
