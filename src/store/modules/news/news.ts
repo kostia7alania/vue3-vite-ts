@@ -21,6 +21,11 @@ export const news = {
       (id: number | string): INew | object => {
         return state.ARTICLES.find((e) => String(e.id) === String(id)) || {};
       },
+    GETTER_LATEST_ARTICLES:
+      (state: INews) =>
+      (count: number): INew[] => {
+        return state.ARTICLES.slice(0, count + 1);
+      },
     GETTER_CATEGORIES: (state: INews) => {
       const res = [{ id: 0, title: 'All' }];
       // [{category: { id: 1, title: "Insights"}}, ]
