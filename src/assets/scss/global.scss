@@ -229,6 +229,7 @@ body {
 .px-16px-48px-80px {
   @apply tw-px-4 md:tw-px-12 lg:tw-px-14 xl:tw-px-18 2xl:tw-px-20;
 }
+
 .px-0-32px-70px {
   @apply tw-px-0 md:tw-px-8 lg:tw-px-12 xl:tw-px-16 2xl:tw-px-18;
 }
@@ -329,11 +330,13 @@ body {
 .my-160px-240px-240px {
   @apply tw-my-40 xl:tw-my-60;
 }
- 
+.my-80px-160px-240px {
+  @apply tw-my-20 md:tw-my-40 xl:tw-my-60;
+}
+
 .pb-80px-160px-240px {
   @apply tw-pb-20 lg:tw-pb-40 xl:tw-pb-60;
 }
- 
 
 .dynamic-info-card {
   @apply tw-rounded-4xl tw-h-74 tw-m-1 tw-mb-7;

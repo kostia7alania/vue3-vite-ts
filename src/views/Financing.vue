@@ -22,15 +22,15 @@
       --------
     -->
     <section class="tw-relative tw-bg-gray-4">
-      <div class="tw-px-20 tw-py-30 tw-gap-10 tw-z-10 tw-relative">
+      <div class="px-16px-48px-80px py-80px-120px-120px tw-gap-10 tw-z-10 tw-relative">
         <!-- title -->
-        <div class="topic-title tw-mb-20">
+        <div class="topic-title">
           <h2
             class="tw-font-semibold tw-text-5xl tw-leading-tight tw-max-w-3xl"
           >International financing opportunities</h2>
         </div>
         <!-- rows -->
-        <div class="tw-bg-white tw-rounded-4xl">
+        <div class="lg:tw-bg-white tw-rounded-4xl mt-60px-80px-80px">
           <CardInfoDynamicHorizontal
             v-for="opportunity of opportunities"
             :key="opportunity.title"
@@ -51,38 +51,40 @@
       National financing opportunities
       --------
     -->
-    <section class="tw-my-60 tw-px-20">
+    <section class="my-80px-160px-240px px-16px-48px-80px">
       <div class="tw-flex tw-justify-center tw-mb-20">
         <h2 class="topic-title tw-max-w-3xl tw-text-center">National financing opportunities</h2>
       </div>
       <!-- cards -->
-      <div class="tw-flex tw-gap-x-18 tw-gap-y-22">
-        <div class="tw-flex tw-flex-col tw-gap-y-22 tw-flex-1 basis-444px">
+      <div class="tw-flex tw-flex-col xl:tw-flex-row tw-gap-x-18 tw-gap-y-10 xl:tw-gap-y-22 ">
+        <div class="tw-basis-[444px] tw-flex tw-flex-col tw-gap-y-10 xl:tw-gap-y-22  tw-flex-1">
           <NationalCard
-            class="tw-h-78"
+            class="xl:tw-h-78"
             title="Programs in Estonia"
             description="Local programs in Estonia for applied research in smart specialization growth areas, product development, digital diagnostics, enterprise development, innovation voucher, development voucher, and large investor support."
             image="estonia"
           />
 
           <NationalCard
-            class="tw-h-78"
+            class="xl:tw-h-78"
             title="Programs in Latvia"
             description="Local programs in Latvia for new products and technologies development in competence centers and innovation vouchers."
             image="latvia"
           />
         </div>
 
-        <div class="tw-flex tw-flex-col tw-gap-y-22 tw-flex-1 basis-444px tw-translate-y-12">
+        <div
+          class="tw-basis-[444px] tw-flex tw-flex-col tw-gap-y-10 xl:tw-gap-y-22 tw-flex-1 xl:tw-translate-y-12"
+        >
           <NationalCard
-            class="tw-h-78"
+            class="xl:tw-h-78"
             title="Programs in Lithuania"
             description="Local programs in Lithuania for industry digitization, eco-innovations, green industry innovation, and ICT."
             image="lithuania"
           />
 
           <NationalCard
-            class="tw-h-78"
+            class="xl:tw-h-78"
             title="Programs in Romania"
             description="Local programs in Romania for innovative green, blue and ICT technologies, products, processes, and solutions."
             image="romania"
@@ -98,7 +100,7 @@
       Interested In cooperation?
       --------
     -->
-    <section class="tw-my-60 tw-mx-20">
+    <section class="my-80px-160px-240px px-16px-48px-80px">
       <Cooperation title="Interested In cooperation?" />
     </section>
 
@@ -109,18 +111,56 @@
       Case studies
       --------
     -->
-    <section class="tw-my-60 tw-px-20">
-      <h2 class="topic-title max-w-400px tw-my-20">Case studies</h2>
-      <div class="tw-flex tw-flex-wrap tw-gap-10">
-        <ArticleCard date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCard date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+    <section class="my-160px-240px-240px px-16px-48px-80px">
+      <h2 class="topic-title max-w-400px my-120-80">Case studies</h2>
+      <div v-if="!sm" class="gap-40px-16px tw-flex">
+        <!-- DESKTOP -->
+        <ArticleCardOld
+          class="tw-w-full tw-basis-full"
+          date="2021-10-11"
+          title="Poland-based SAS Advisors is joining OÜ Primelight"
+        />
+        <ArticleCardOld
+          class="tw-w-full tw-basis-full"
+          date="2021-10-12"
+          title="Poland-based SAS Advisors is joining OÜ Primelight"
+        />
+        <ArticleCardOld
+          class="tw-w-full tw-basis-full"
+          date="2021-10-13"
+          title="Poland-based SAS Advisors is joining OÜ Primelight"
+        />
       </div>
+      <CardsSwiper v-else>
+        <!-- MOBILE -->
+        <template #test1>
+          <ArticleCardOld
+            class="article-card-swiper"
+            date="2021-10-11"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+        <template #test2>
+          <ArticleCardOld
+            class="article-card-swiper"
+            date="2021-10-12"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+        <template #test3>
+          <ArticleCardOld
+            class="article-card-swiper"
+            date="2021-10-13"
+            title="Poland-based SAS Advisors is joining OÜ Primelight"
+          />
+        </template>
+      </CardsSwiper>
     </section>
   </div>
 </template>
 
 <script lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
 import CardInfoDynamicHorizontal from "@/components/services2/CardInfoDynamicHorizontal.vue"
@@ -133,11 +173,14 @@ export default defineComponent({
     CardInfoDynamicHorizontal,
     BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
-    ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
+    ArticleCardOld: defineAsyncComponent(() => import("@/components/articles/ArticleCardOld.vue")),
+    CardsSwiper: defineAsyncComponent(() => import("@/components/services/CardsSwiper.vue")),
   },
-   emits: ['ready'],
+  emits: ['ready'],
   setup(_, { emit }) {
     onMounted(() => emit('ready'))
+    const breakpoints = useBreakpoints(breakpointsTailwind)
+    const sm = breakpoints.smaller('sm')
 
     const opportunities = [
       {
@@ -177,7 +220,7 @@ export default defineComponent({
 
     ]
 
-    return { opportunities }
+    return { opportunities, sm }
   },
 });
 </script>
