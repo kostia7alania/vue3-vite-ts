@@ -12,7 +12,7 @@
     </div>
     <!-- right -->
     <div
-      class="tw-mr-5 lg:tw-mr-14 tw-order-2 md:tw-order-3 tw-gap-5 lg:tw-gap-8 tw-flex tw-items-center tw-text-sm"
+      class="tw-mr-5 lg:tw-mr-14 tw-order-2 md:tw-order-3 tw-gap-5 lg:tw-gap-8 tw-flex tw-items-center tw-text-sm tw-z-50"
     >
       <VButton
         class="tw-hidden lg:tw-block"

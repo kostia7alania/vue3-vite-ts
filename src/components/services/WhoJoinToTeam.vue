@@ -33,20 +33,20 @@
         class="tw-flex-1 tw-grow-1 tw--my-4 tw-pl-8 tw-rounded-4xl tw-order-1 xl:tw-order-3 tw-basis-full xl:tw-basis-5/12 tw-relative tw-z-10"
       >
         <div class="tw-font-semibold tw-text-2xl tw-leading-6 tw-rounded-4xl">
-          <h2 class="topic-title xl:tw-mt-5">Who should join our team?</h2>
+          <h2 class="topic-title xl:tw-mt-5">Join us</h2>
 
           <div class="topic-description">
             <div
               class="mt-16px-24px-24px tw-text-base topic-description"
-            >Our success lies in the talented and passionate team of professionals who make OÜ Primelight a great place to work.</div>
-            <div class="mt-16px-24px-24px tw-font-semibold tw-text-xl">The way we work:</div>
+            >Our people are based at many different locations so we can often assure you local support with necessary knowledge of local and global markets.</div>
+            <div class="mt-16px-24px-24px tw-font-semibold tw-text-xl">Our employees excel in both conceptual planning and implementation and offer you:</div>
 
             <ul class="tw-mt-2 tw-ml-5 tw-text-base tw-font-medium tw-list-disc tw-leading-7">
               <li>International teams and projects</li>
-              <li>Non-hierarchical work environment</li>
-              <li>Impactful and meaningful projects</li>
-              <li>Focus on employee growth and mentorship</li>
-              <li>Competitive remuneration and training packages</li>
+              <li>Positive and impactful innovation</li>
+              <li>Diversified work environment</li>
+              <li>Focus on employee growth and development</li>
+              <li>Team building and training packages</li>
             </ul>
             <VButton
               v-if="isShownButton"

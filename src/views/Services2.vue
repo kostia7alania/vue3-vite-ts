@@ -31,19 +31,19 @@
           <HelpColumn
             class="tw-flex-1 min-w-400px tw-rounded-4xl"
             title="Corporations"
-            description="We officiate companies in various industries including telecommunications, banking, insurance, retail, wholesale, manufacturing, FMCG, transport, energy, HORECa, media and publishing, IT services, construction, forestry, agriculture, real estate, private equity, and professional services."
+            description="We assist companies in various industries such as telecommunications, banking, insurance, retail, wholesale, manufacturing, FMCG, transport, energy, HORECa, media and publishing, IT services, construction, forestry, agriculture, real estate and etc."
             icon="circle-users"
           />
           <HelpColumn
             class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            title="Start-ups and smes"
-            description="We serve start-ups and small companies across the spectrum of various industries, with a focus on innovative companies, R&D commercialization and start-up ecosystem development."
+            title="Start-up companies"
+            description="We support start -ups and small companies involved in different industries and focusing on innovative companies and start-up ecosystem development."
             icon="circle-startup"
           />
           <HelpColumn
             class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            title="Governments and ngos"
-            description="We serve central governmental institutions (ministries and governments agencies), regions and municipalities, educational institutions, including Universities, hospitals, state-owned companies, public infrastructure and energy utility establishments, donor and other international organizations (EBRD, World Bank, European Commission), non-governmental organizations."
+            title="Government organizations"
+            description="We provide services for government, educational institutions, hospitals, state-owned companies, public infrastructure and energy utility establishments,"
             icon="circle-government"
           />
         </div>
@@ -67,42 +67,42 @@
       }"
       >
         <!-- title -->
-        <div class="topic-title  md:tw-mb-20 lg:tw-mb-0">Services we provide?</div>
+        <div class="topic-title  md:tw-mb-20 lg:tw-mb-0">Our Services</div>
         <!-- rows -->
         <div class="mt-0-80px-80px gap-40px-48px-0 md:tw-bg-white tw-rounded-4xl tw-pt-15 md:tw-pt-8 tw-flex tw-flex-col ">
           <CardInfoDynamicHorizontal
             title="Strategy"
-            description="We work side-by-side with our clients on strategic planning, expansion to new markets, change management and organizational transformations to create meaningful changes in their business, organization and society. In our work, we offer the best strategy practices and experience gained across many countries and industries."
+            description="Our consultants advise organizations on high-level decisions in strategic planning, expansion of new markets, management modification using deep industry knowledge to deliver the best results. We offer the best strategy practices and experience gained across many countries and industries."
             icon="circle-strategy"
           />
           <CardInfoDynamicHorizontal
             title="Innovation"
-            description="We help start-ups to grow and scale; universities to connect research with business and commercialize R&D; corporates to build and accelerate innovation inside the company, and governments to build innovation communities and ecosystems."
+            description="We help making future by being in the whole innovation value chain from helping clients innovate to evaluating, finding and creating sustainable innovations through our multiyear experience and professional team."
             icon="circle-innovation"
           />
           <CardInfoDynamicHorizontal
             title="Funding"
-            description="We help clients identify funding opportunities, develop the project and follow through the implementation process. We provide advisory services in national EU program funding, EU-level program funding (Horizon 2020), equity investor attraction and private sector lending."
+            description="We help clients to choose the right funding opportunities, develop the project and follow through the implementation process. We also provide advisory services in national EU program funding, EU-level program funding (Horizon 2020)."
             icon="circle-funding"
           />
           <CardInfoDynamicHorizontal
             title="Research"
-            description="We gather and analyze external and internal information in order to deliver valuable insights for decision-making of our clients. We perform market research, product market research, attitude market research, public policy research and evaluations of public policy reforms."
+            description="We collect and analyze external and internal information in order to deliver the best solutions to our clients. OU Primelight conducts research into trends and developments in the consulting industry, aswell as performs research into trending topics at the intersection of management, economics, IT, real estate, construction and many other fields."
             icon="circle-research"
           />
           <CardInfoDynamicHorizontal
             title="Implementation"
-            description="We help clients become more competitive in the digital era by using Big Data and the latest IT technologies. Our services include digital strategy, customer journey analysis and redesign, UI/UX, web and mobile development, customer base analysis and segmentation, churn analysis, and other IT and Big Data services."
+            description="We help our clients to become more competitive in the digital market by using Big Data and the latest IT innovations. We provide digital strategies, customer analysis and redesign, UX/UI, web and mobile software development, segmentation and other IT services."
             icon="circle-implementation"
           />
           <CardInfoDynamicHorizontal
             title="Digital"
-            description="We offer assistance at any stage of the project implementation, by setting up and running project management office (PMO), helping with business development/expansion and filling temporary capacity and competency gaps with on-hire consultants, as well as building outsourcing teams in Central Eastern Europe."
+            description="We provide support and assistance at all stages of the project implementation, by setting up and running project management office, helping with business development and expansion, as well as building outsourcing network in Central Eastern Europe."
             icon="circle-digital"
           />
           <CardInfoDynamicHorizontal
             title="Sustainability"
-            description="We enable our clients to integrate sustainability and sustainable innovation in daily operations in a strategic and quantifiable manner, as well as assist them in locating and obtaining optimal funding opportunities for a transformation into a more agile, resilient, and eco-friendly entity."
+            description="We ensure our clients stability in all daily operations in a strategic and qualitative manner, as well assist them in obtaining optimal funding opportunities. Our emphasis on sustainability, trust and tolerance for diverging opinions helps clients focus on their opportunities, build their capabilities and win the future."
             icon="circle-sustainability"
           /> 
       </div>

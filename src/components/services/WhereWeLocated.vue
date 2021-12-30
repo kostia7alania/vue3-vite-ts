@@ -11,11 +11,11 @@
         >
             <!-- left -->
             <div class="tw-flex-1 tw-basis-1/2">
-                <h2 class="topic-title tw-max-w-xs">Where are we located?</h2>
+                <h2 class="topic-title tw-max-w-xs">Where we are located?</h2>
                 <div class="mt-16px-24px-24px topic-description">
-                    <div>In nine years from its founding, OÜ Primelight became the leading management consultancy across the Baltics and Eastern Europe, employing over 350 consultants in 29 offices across 18 countries.</div>
+                    <div>OU Primeligt was founded in 2012 and has been in continuous operation for more than 9 years.</div>
                     <div class="tw-mt-2">
-                        Our international headquarters are located in Tartu, Estonia. Other OÜ Primelight offices are spread across
+                       The company’s corporate headquarters are located in Tartu, Estonia. Our offices are spread across 
                         <span
                             v-for="country of 'Estonia, Latvia, Lithuania, Finland, Poland, Ukraine, Romania, Moldova, Russia, Belarus, Serbia, Slovakia, Bulgaria, North Macedonia, Denmark'.split(', ')"
                             :key="country"
@@ -34,7 +34,7 @@
                     </div>
                     <div
                         class="tw-mt-2"
-                    >We also conduct consulting and market research projects in countries beyond our home markets. Thousands of completed projects come from a flexible approach and international mindset, and they have ensured successful cooperation with clients in 40+ countries in Europe, Asia and Africa.</div>
+                    >Most of our projects come from an international mindset and have ensured successful cooperation with clients in Europe, Asia and Africa. OU Primelight is known by many as the world’s leading consulting firm in the knowledge management field. </div>
                 </div>
             </div>
             <!-- right -->

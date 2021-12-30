@@ -18,17 +18,22 @@
         >
           <!-- left -->
           <div class="lg:tw-pt-20 tw-flex-1 tw-basis-full lg:tw-basis-auto">
-            <div class="topic-title">OÜ Primelight - The Challengeʳ Advisory</div>
+            <div class="topic-title">OU Primelight - Management Consulting</div>
             <div class="mt-16px-24px-24px topic-description">
               <div>Started as an alliance of advisory firms in the Baltic States, and headquartered in Estonia, OÜ Primelight is now the leading management consultancy from Central Eastern Europe.</div>
               <div
                 class="tw-mt-2"
-              >Our consultants support companies interested in and operating in over 40 countries in Europe, Asia, and the Americas, resulting in more than 10 000 completed projects.</div>
+              >OU Primelight is the leading management consultancy from Central Eastern Europe. Our consultancy services operate in over 40 countries in Europe, Asia, and USA, resulting in more than 10 000 successful projects. OU Primelight provides exclusive and traditional management consulting services to all clients over the world.</div>
               <div
                 class="tw-mt-2"
-              >OÜ Primelight challenges the traditional management consulting industry, providing high-quality fact-based and analytically rigorous consulting services to all clients at a reasonable.</div>
+              >We combine bold strategies and transformative technologies to help organizations innovate more sustainably, achieve lasting gains in performance, and build workforces that will thrive for this generation and the next.</div>
             </div>
-            <VButton text="Learn more about" class="tw-mt-10" variant="blue" width="222px" />
+            <VButton
+              text="Learn more about"
+              class="btn-h-48-56 tw-mt-10 lg:tw-mt-15"
+              variant="blue"
+              width="222px"
+            />
           </div>
           <!-- right -->
           <div
@@ -53,16 +58,22 @@
       --------
       @Section #2
       --------
-      What do we do?
+      What we do?
     -->
     <section class="my-120-80 tw-relative">
       <div class="gap-40px-16px px-16px-48px-80px">
         <!-- top -->
         <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
-          <div class="basis-full-full-half tw-flex-1 topic-title">What do we do?</div>
-          <div
-            class="mt-16px-24px-0 basis-full-full-half tw-flex-1 topic-description"
-          >OÜ Primelight provides management consulting and data analytics services to corporations, start-ups, SMEs, governments and NGOs, delivering great value for money price point. We offer a full spectrum of management consulting services: strategy, innovation, funding, research, digital and implementation.</div>
+          <div class="basis-full-full-half tw-flex-1 topic-title">What we do?</div>
+          <div class="mt-16px-24px-0 basis-full-full-half tw-flex-1 topic-description">
+            <div>OU Primeligt provides management consulting and data analytic services to companies, star-ups, SMEs, government organizations and etc., delivering professional services and great value for money.</div>
+            <div
+              class="tw-mt-2"
+            >Our services include strategy development, innovation, funding, research and implementation.</div>
+            <div
+              class="tw-mt-2"
+            >We take a consistent approach to recruiting and skills development regardless of where our people are located, so that we can quickly deliver the right team, with the right experience and expertise, to every client, anywhere in the world.</div>
+          </div>
         </div>
         <!-- bottom -->
         <div v-if="!sm" class="gap-40px-16px">
@@ -73,7 +84,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Strategy"
-                description="Providing classical fact-based strategic management consulting"
+                description="OU Primeligt Provides methodological expertise to help its clients capture growth opportunity. "
                 icon="circle-strategy"
                 icon-class="tw-text-orange-1"
               />
@@ -83,7 +94,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Innovation"
-                description="Helping corporations, start-ups and governments innovate"
+                description="We use innovative technologies to identify new ways to reach consumers and build enterprise resilience."
                 icon="circle-innovation"
                 icon-class="tw-text-blue-1"
               />
@@ -99,7 +110,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Funding"
-                description="Securing external financing for organization’s growth"
+                description="Safeguard external financing for company’s growth."
                 icon="circle-funding"
                 icon-class="tw-text-blue-1"
               />
@@ -109,7 +120,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Research"
-                description="Gathering and analyzing information to help our clients make the right decisions"
+                description="We gather data and analytics to choose the right decision for our clients. "
                 icon="circle-research"
                 icon-class="tw-text-orange-1"
               />
@@ -119,7 +130,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Implementation"
-                description="Executing projects and initiatives together with our clients"
+                description="Implement the best solutions for our projects to our clients."
                 icon="circle-implementation"
                 icon-class="tw-text-blue-1"
               />
@@ -130,7 +141,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Digital"
-                description="Using big-data and latest IT technologies to drive the organization’s digitalization"
+                description="We are using the latest IT technologies to drive the organization’s business."
                 icon="circle-digital"
                 icon-class="tw-text-orange-1"
               />
@@ -147,7 +158,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl"
                 title="Sustainability"
-                description="Supporting companies and public organizations in the transformation"
+                description="Connect companies and public organizations."
                 icon="circle-sustainability"
                 icon-class="tw-text-blue-1"
               />
@@ -160,7 +171,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Strategy"
-              description="Providing classical fact-based strategic management consulting"
+              description="OU Primeligt Provides methodological expertise to help its clients capture growth opportunity. "
               icon="circle-strategy"
               icon-class="tw-text-orange-1"
             />
@@ -169,7 +180,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Innovation"
-              description="Helping corporations, start-ups and governments innovate"
+              description="We use innovative technologies to identify new ways to reach consumers and build enterprise resilience."
               icon="circle-innovation"
               icon-class="tw-text-blue-1"
             />
@@ -179,7 +190,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Funding"
-              description="Securing external financing for organization’s growth"
+              description="Safeguard external financing for company’s growth."
               icon="circle-funding"
               icon-class="tw-text-blue-1"
             />
@@ -189,7 +200,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Research"
-              description="Gathering and analyzing information to help our clients make the right decisions"
+              description="We gather data and analytics to choose the right decision for our clients. "
               icon="circle-research"
               icon-class="tw-text-orange-1"
             />
@@ -198,7 +209,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Implementation"
-              description="Executing projects and initiatives together with our clients"
+              description="Implement the best solutions for our projects to our clients."
               icon="circle-implementation"
               icon-class="tw-text-blue-1"
             />
@@ -207,7 +218,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Digital"
-              description="Using big-data and latest IT technologies to drive the organization’s digitalization"
+              description="We are using the latest IT technologies to drive the organization’s business."
               icon="circle-digital"
               icon-class="tw-text-orange-1"
             />
@@ -216,7 +227,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               title="Sustainability"
-              description="Supporting companies and public organizations in the transformation"
+              description="Connect companies and public organizations."
               icon="circle-sustainability"
               icon-class="tw-text-blue-1"
             />
@@ -228,7 +239,7 @@
       --------
       @Section #3
       --------
-      Where are we located
+      Where we are located? 
       --------
     -->
     <WhereWeLocated class="tw-bg-gray-4 py-80px-104px-120px" />

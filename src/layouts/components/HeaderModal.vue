@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="tw-modal-container tw-bg-blue-1 tw-text-gray-1 tw-fixed tw-right-0 tw-left-0 tw-top-22 tw-bottom-0 tw-z-50 tw-overflow-y-auto tw-flex tw-items-center"
+      class="tw-modal-container tw-bg-blue-1 tw-text-gray-1 tw-fixed tw-right-0 tw-left-0 tw-top-20 md:tw-top-18 tw-bottom-0 tw-z-50 tw-overflow-y-auto tw-flex tw-items-center"
     >
       <!-- Add margin if you want to see some of the overlay behind the modal -->
       <!-- <Contacts class="tw-modal-content tw-py-4 tw-text-left tw-px-6" /> -->
