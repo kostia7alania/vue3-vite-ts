@@ -1,10 +1,14 @@
 <template>
-  <router-view @ready="readyHandler" />
+  <router-view v-slot="{ Component }">
+    <transition name="component-fade">
+      <component :is="Component" @ready="readyHandler" />
+    </transition>
+  </router-view>
   <!-- <VModal v-if="state.items.length" /> -->
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 
 // import useModal from './api/useModal'
 
