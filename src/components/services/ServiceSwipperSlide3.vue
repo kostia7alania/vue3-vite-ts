@@ -3,12 +3,12 @@
     <!-- left -->
     <div class="tw-pt-5 tw-basis-full tw-flex-1">
       <div class="tw-font-semibold tw-text-4.35xl lg:tw-text-6xl">
-        <div>We deliver more</div>
+        <div>{{ $t('we deliver more') }}</div>
       </div>
       <div class="tw-pt-5 tw-text-gray-2 tw-max-w-sm tw-text-base lg:tw-text-lg tw-font-medium">
-        <div>With an effective management model, we ensure</div>
-        <div class="tw-pt-1">that the money paid for our work is invested in the</div>
-        <div class="tw-pt-1">project, not into overheads.</div>
+        <div>
+          {{ $t('with an effective management model we ensure') }}.
+        </div>
       </div>
       <VButton
         text="Our approach"
@@ -18,7 +18,9 @@
       />
     </div>
     <!-- right -->
-    <div class="tw-flex tw-justify-center tw-w-full tw-px-1 md:tw-px-6 lg:tw-px-0 tw-mt-10 lg:tw-mt-0">
+    <div
+      class="tw-flex tw-justify-center tw-w-full tw-px-1 md:tw-px-6 lg:tw-px-0 tw-mt-10 lg:tw-mt-0"
+    >
       <ServiceSwipperSlide3Cartoon />
     </div>
   </div>

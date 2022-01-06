@@ -3,35 +3,39 @@
         <div
             class="tw-flex tw-justify-between tw-items-center md:tw-items-start xl:tw-items-center tw-flex-col xl:tw-flex-row tw-gap-4"
         >
-            <div class="topic-title tw-text-center">Fill the contact form</div>
-            <div class="topic-description tw-hidden md:tw-block">*Required fields</div>
+            <div class="topic-title tw-text-center">{{ $t('Fill the contact form') }}</div>
+            <div class="topic-description tw-hidden md:tw-block">*{{ $t('Required fields') }}</div>
         </div>
         <!-- form inputs -->
         <div class="tw-mt-8 md:tw-mt-15 xl:tw-mt-17">
             <div class="tw-flex tw-items-center tw-gap-x-10 tw-flex-col xl:tw-flex-row tw-gap-y-4">
-                <VInput v-model="form.name" placeholder="Name*" />
-                <VInput v-model="form.surname" placeholder="Surname*" />
+                <VInput v-model.trim="form.name" placeholder="Name" required />
+                <VInput v-model.trim="form.surname" placeholder="Surname" required />
             </div>
 
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
-                <VInput v-model="form.phone" placeholder="Phone" />
-                <VInput v-model="form.email" placeholder="Email*" />
+                <VInput v-model.trim="form.phone" placeholder="Phone" />
+                <VInput v-model.trim="form.email" placeholder="Email" required />
             </div>
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
-                <VInput v-model="form.companyName" class="tw-basis-1/2" placeholder="Company name" />
+                <VInput
+                    v-model.trim="form.companyName"
+                    class="tw-basis-1/2"
+                    placeholder="Company name"
+                />
                 <VSelect
                     v-model="form.office"
                     class="tw-basis-1/2"
-                    placeholder="Office(-s) you want to contact*"
+                    :placeholder="$t('Offices you want to contact') + '*'"
                     :items="['Office 1', 'Office 2', 'Office 3']"
                 />
             </div>
             <div class="tw-mt-4 xl:tw-mt-6">
-                <VTextarea v-model="form.message" placeholder="Your message*" />
+                <VTextarea v-model="form.message" :placeholder="$t('Your message') + '*'" />
             </div>
         </div>
         <!-- upload doc -->
@@ -41,8 +45,9 @@
                 variant="orange-1"
             >
                 <div>
-                    Upload documents
-                    <br class="lg:tw-hidden" />(e.g. brief, project description)
+                    {{ $t('Upload documents') }}
+                    <br class="lg:tw-hidden" />
+                    ({{ $t('eg brief project description') }})
                 </div>
             </VButton>
         </div>
@@ -53,16 +58,16 @@
             <div class="tw-text-sm tw-max-w-2xl">
                 <VCheckbox v-model="agreement1">
                     <span>
-                        *I have read and understood that my personal data will be processed for contact purposes as described in the
+                        *{{ $t('I have read and understood that my personal data will be processed for contact purposes as described in the') }}
                         <span
                             class="tw-text-orange-1"
-                        >Privacy notice for clients and external experts.</span>
+                        >{{ $t('Privacy notice for clients and external experts') }}.</span>
                     </span>
                 </VCheckbox>
                 <VCheckbox
                     v-model="agreement2"
                     class="tw-mt-6"
-                    label="I agree to receive from CIVITTA information related to the services it offers."
+                    :label="$t('I agree to receive from CIVITTA information related to the services it offers')"
                 />
             </div>
             <div>
@@ -74,11 +79,13 @@
                 />
                 <div
                     class="topic-description tw-text-center tw-mt-4 tw-block md:tw-hidden"
-                >*Required fields</div>
+                >*{{ $t('Required fields') }}</div>
             </div>
         </div>
         <VCustomModal v-if="isSent" @close="isSent = false">
-            <div class="alert-modal bg-contact-alert tw-relative tw-bg-white tw-m-auto tw-rounded-3xl">
+            <div
+                class="alert-modal bg-contact-alert tw-relative tw-bg-white tw-m-auto tw-rounded-3xl"
+            >
                 <div class="tw-h-full tw-relative tw-z-20 tw-pb-16">
                     <button class="tw-absolute tw-right-6 tw-top-6" @click="isSent = false">
                         <svg
@@ -105,9 +112,9 @@
                         </div>
                         <div
                             class="tw-text-center tw-max-w-sm tw-mt-10"
-                        >Your form has been successfully send!</div>
+                        >{{ $t('Your form has been successfully send') }}!</div>
                     </div>
-                </div> 
+                </div>
             </div>
         </VCustomModal>
     </div>
@@ -163,13 +170,13 @@ export default defineComponent({
 .alert-modal {
     // width: 620px;
     // height: 420px;
-    @apply tw-w-3/4 md:tw-w-[620px] md:tw-h-[420px]
+    @apply tw-w-3/4 md:tw-w-[620px] md:tw-h-[420px];
 }
 
 .bg-contact-alert {
-  background-image: url("@/assets/images/team/bg-contact-alert.png");
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: cover;
+    background-image: url("@/assets/images/team/bg-contact-alert.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
 }
 </style>

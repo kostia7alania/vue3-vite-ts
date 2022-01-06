@@ -11,30 +11,31 @@
         >
             <!-- left -->
             <div class="tw-flex-1 tw-basis-1/2">
-                <h2 class="topic-title tw-max-w-xs">Where we are located?</h2>
+                <h2 class="topic-title tw-max-w-[380px]" v-html="$t('Where we are located')"></h2>
                 <div class="mt-16px-24px-24px topic-description">
-                    <div>OU Primeligt was founded in 2012 and has been in continuous operation for more than 9 years.</div>
+                    <div>{{ $t('OU Primeligt was founded in 2012 and has been in continuous operation for more than 9 years') }}</div>
                     <div class="tw-mt-2">
-                       The company’s corporate headquarters are located in Tartu, Estonia. Our offices are spread across 
+                        {{ $t('The companys corporate headquarters are located') }}
                         <span
-                            v-for="country of 'Estonia, Latvia, Lithuania, Finland, Poland, Ukraine, Romania, Moldova, Russia, Belarus, Serbia, Slovakia, Bulgaria, North Macedonia, Denmark'.split(', ')"
+                            v-for="(country, i) of countries"
                             :key="country"
                         >
-                            <span class="tw-text-orange-1">{{ country }}</span>,
+                            <span class="tw-text-orange-1">{{ country }}</span>
+                            <span v-if="i < countries.length - 2">, &nbsp;</span>
+                            <span v-if="i === countries.length - 2">&nbsp;and&nbsp;</span>
                         </span>
-                        <span class="tw-text-orange-1">Kosovo</span>
-                        and
-                        <span class="tw-text-orange-1">Armenia</span>
-                        with a sales offices in the
+                        {{ $t('with a sales offices in the') }}
                         <span
                             class="tw-text-orange-1"
-                        >United Kingdom</span>
-                        and
-                        <span class="tw-text-orange-1">Turkey</span>.
+                        >{{ $t('United Kingdom') }}</span>
+                        {{ $t('and') }}
+                        <span
+                            class="tw-text-orange-1"
+                        >{{ $t('Turkey') }}</span>.
                     </div>
                     <div
                         class="tw-mt-2"
-                    >Most of our projects come from an international mindset and have ensured successful cooperation with clients in Europe, Asia and Africa. OU Primelight is known by many as the world’s leading consulting firm in the knowledge management field. </div>
+                    >{{ $t('Most of our projects come from an international mindset and have ensured successful cooperation with clients in Europe Asia and Africa') }}</div>
                 </div>
             </div>
             <!-- right -->
@@ -50,7 +51,10 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineComponent, } from 'vue';
+import { defineComponent, onMounted, ref, } from 'vue';
+
+import { ICountry } from '@/store/modules/countries/countries.d';
+import { useVuex } from '@/store/store'
 
 export default defineComponent({
     name: "WhereWeLocated",
@@ -58,7 +62,20 @@ export default defineComponent({
         const breakpoints = useBreakpoints(breakpointsTailwind)
         const sm = breakpoints.smaller('sm')
 
-        return { sm, }
+        const countries = ref([
+            'Estonia', 'Latvia', 'Lithuania', 'Finland', 'Poland', 'Ukraine', 'Romania', 'Moldova', 'Russia', 'Belarus', 'Serbia', 'Slovakia', 'Bulgaria', 'North Macedonia', 'Denmark'
+        ])
+
+        const store = useVuex()
+
+        const getCountries = async () => {
+            countries.value = (await store.dispatch('countries/GET_COUNTRIES')).map((e: ICountry) => e.title).filter((e: string) => e.toLowerCase() !== 'international')
+        }
+
+        onMounted(getCountries)
+
+
+        return { sm, countries }
     }
 });
 </script>

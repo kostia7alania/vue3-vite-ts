@@ -4,7 +4,7 @@
         :model-value="country"
         key-label="title"
         :key-value="keyValue"
-        placeholder="Preferred location*"
+        :placeholder="$t('Preferred location') + '*'"
         :items="countries.COUNTRIES"
         @update:model-value="$emit('update:country', $event)"
     />
@@ -63,6 +63,7 @@ export default defineComponent({
             await getCountries()
             const [res] = await getCountries()
             const { keyValue } = props
+            if(props.country) return
             emit('update:country', keyValue ? res[keyValue] : res)
         }
 

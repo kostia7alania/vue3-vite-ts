@@ -5,12 +5,13 @@
     -------- 
   -->
   <section>
-    <PageTopSection :theme="theme" 
-    class="tw-flex tw-flex-col  min-h-400px tw-h-[474] md:tw-h-[464] xl:tw-h-[400]"
-    :class="{
-      'tw-justify-center':$route.name !== 'articles',
-      'tw-justify-end tw-pb-15':$route.name === 'articles'
-    }"
+    <PageTopSection
+      :theme="theme"
+      class="tw-flex tw-flex-col min-h-400px tw-h-[474] md:tw-h-[464] xl:tw-h-[400]"
+      :class="{
+        'tw-justify-center': $route.name !== 'articles',
+        'tw-justify-end tw-pb-15': $route.name === 'articles'
+      }"
     >
       <div v-if="title" class="text-40px-60px-60px tw-font-semibold tw-leading-tight">{{ title }}</div>
       <div

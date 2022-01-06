@@ -24,10 +24,10 @@
     <section class="px-16px-48px-80px py-80px-104px-120px">
       <!-- top -->
       <div class="topic-title tw-flex tw-justify-center tw-mb-20">
-        <h2 class="tw-max-w-3xl tw-text-center">OÜ Primelight International senior team</h2>
+        <h2 class="tw-max-w-3xl tw-text-center">OÜ Primelight {{ $t('International senior team') }}</h2>
       </div>
       <!-- bottom -->
-      <VCountries v-model:country="country" key-label="title" key-value="id" />
+      <VCountries v-model:country="countryId" key-label="title" key-value="id" />
 
       <!-- row 1 -->
       <div class="tw-mt-20">
@@ -45,7 +45,7 @@
         <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
           <VIconSpinner class="tw-h-20" spin />
         </div>
-        <div v-else>We have no colleagues in the selected country</div>
+        <div v-else>{{ $t('We have no colleagues in the selected country') }}</div>
       </div>
     </section>
 
@@ -72,7 +72,9 @@
 
 
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { computed, defineAsyncComponent, defineComponent, onMounted, ref, watch, } from 'vue';
+import { computed, ComputedRef, defineAsyncComponent, defineComponent, onMounted, ref, watch, } from 'vue';
+import { useRoute } from 'vue-router';
+
 
 import TeamCard from "@/components/team/TeamCard.vue"
 import VCountries from "@/components/ui/VCountries.vue"
@@ -91,13 +93,23 @@ export default defineComponent({
   emits: ['ready'],
   setup(_, { emit }) {
     const store = useVuex()
+    const route = useRoute();
+    const queryCountryId = computed(() => route.query.countryId) as ComputedRef<string>
 
-    const country = ref(null)
+    const countryId = ref(1)
+
+    watch(() => queryCountryId.value, () => {
+      const cId = parseInt(queryCountryId.value)
+      if (cId && !Number.isNaN(cId) && cId !== null) {
+        countryId.value = cId
+      }
+    }, { immediate: true })
+
 
     // access an action
     const teams = computed(() => {
       const { teams } = store.state
-      if (teams?.TEAMS) return teams.TEAMS.filter(team => team.country.id === country.value)
+      if (teams?.TEAMS) return teams.TEAMS.filter(team => team.country.id === countryId.value)
       return []
     })
 
@@ -121,14 +133,14 @@ export default defineComponent({
       getTeams()
     })
 
-    watch(() => country.value, getTeams)
+    watch(() => countryId.value, getTeams)
 
 
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const md = breakpoints.smaller('md')
 
 
-    return { md, teams, country, isLoading }
+    return { md, teams, countryId, isLoading }
   },
 });
 </script>

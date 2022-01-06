@@ -4,7 +4,7 @@
   <component
     :is="!md ? 'VInput' : 'VTextarea'"
     rows="6"
-    placeholder="Paste link to your online profile (e.g. LinkedIn) or upload your CV*"
+    :placeholder="$t('Paste link to your online profile') + '*'"
     :model-value="modelValue"
     v-bind="$attrs"
     @update:model-value="setModelValue($event)"
@@ -12,13 +12,13 @@
   >
     <template v-if="!modelValue" #bottom>
       <div class="tw-text-center tw-relative tw-mb-4 tw-flex tw-justify-center">
-        <div class="tw-px-2 tw-bg-white tw-relative tw-z-50">or</div>
+        <div class="tw-px-2 tw-bg-white tw-relative tw-z-50">{{ $t('or') }}</div>
         <div class="delimiter-or"></div>
       </div>
       <div class="tw-mx-2 tw-mb-6">
         <VButton
           class="tw-rounded-lg tw-w-full tw-text-base truncate tw-bg-white md:tw-w-[200px]"
-          text="Upload CV"
+          :text="$t('Upload CV')"
           variant="orange-1"
           height="42px"
         />
@@ -28,7 +28,7 @@
     <template v-if="!modelValue" #append>
       <VButton
         class="tw-rounded-lg tw-w-full tw-text-base truncate tw-bg-white md:tw-w-[200px]"
-        text="Upload CV"
+        :text="$t('Upload CV')"
         variant="orange-1"
         height="42px"
       />
@@ -80,7 +80,7 @@ export default defineComponent({
     // const remove = () => {
     //   changeHandler(null)
     // }
-      // @ts-ignore
+    // @ts-ignore
     const setModelValue = ($event) => {
       emit('update:modelValue', $event)
     }

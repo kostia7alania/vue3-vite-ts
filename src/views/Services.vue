@@ -18,15 +18,15 @@
         >
           <!-- left -->
           <div class="lg:tw-pt-20 tw-flex-1 tw-basis-full lg:tw-basis-auto">
-            <div class="topic-title">OU Primelight - Management Consulting</div>
+            <div class="topic-title">{{$t('ou primelight management consulting')}}</div>
             <div class="mt-16px-24px-24px topic-description">
-              <div>Started as an alliance of advisory firms in the Baltic States, and headquartered in Estonia, OÜ Primelight is now the leading management consultancy from Central Eastern Europe.</div>
+              <div>{{$t('Started as an alliance of advisory firms in the Baltic States')}}.</div>
               <div
                 class="tw-mt-2"
-              >OU Primelight is the leading management consultancy from Central Eastern Europe. Our consultancy services operate in over 40 countries in Europe, Asia, and USA, resulting in more than 10 000 successful projects. OU Primelight provides exclusive and traditional management consulting services to all clients over the world.</div>
+              >{{$t('OU Primelight is the leading management consultancy from Central Eastern Europe')}}.</div>
               <div
                 class="tw-mt-2"
-              >We combine bold strategies and transformative technologies to help organizations innovate more sustainably, achieve lasting gains in performance, and build workforces that will thrive for this generation and the next.</div>
+              >{{$t('We combine bold strategies and transformative technologies to help organizations innovate more sustainably')}}.</div>
             </div>
             <VButton
               text="Learn more about"
@@ -40,12 +40,12 @@
             class="gap-40px-16px tw-flex tw-justify-center tw-flex-1 tw-basis-full lg:tw-basis-auto"
           >
             <div class="gap-40px-16px tw-flex tw-flex-col tw-mt-10 lg:tw-mt-20">
-              <CardInfo number="18" label="National branches" icon="branches" />
-              <CardInfo number="29" label="Offices" icon="consultations" />
+              <CardInfo number="18" :label="$t('National branches')" icon="branches" />
+              <CardInfo number="29" :label="$t('Offices')" icon="consultations" />
             </div>
             <div class="gap-40px-16px tw-flex tw-flex-col">
-              <CardInfo number="350+" label="Consultants" icon="offices" />
-              <CardInfo number="150+" label="Software Developers" icon="softGroup" />
+              <CardInfo number="350+" :label="$t('Consultants')" icon="offices" />
+              <CardInfo number="150+" :label="$t('Software Developers')" icon="softGroup" />
             </div>
           </div>
         </div>
@@ -64,15 +64,15 @@
       <div class="gap-40px-16px px-16px-48px-80px">
         <!-- top -->
         <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
-          <div class="basis-full-full-half tw-flex-1 topic-title">What we do?</div>
+          <div class="basis-full-full-half tw-flex-1 topic-title">{{$t('What we do')}}</div>
           <div class="mt-16px-24px-0 basis-full-full-half tw-flex-1 topic-description">
-            <div>OU Primeligt provides management consulting and data analytic services to companies, star-ups, SMEs, government organizations and etc., delivering professional services and great value for money.</div>
+            <div>{{$t('OU Primeligt provides management consulting and data analytic services to companies')}}.</div>
             <div
               class="tw-mt-2"
-            >Our services include strategy development, innovation, funding, research and implementation.</div>
+            >{{$t('Our services include strategy development')}}.</div>
             <div
               class="tw-mt-2"
-            >We take a consistent approach to recruiting and skills development regardless of where our people are located, so that we can quickly deliver the right team, with the right experience and expertise, to every client, anywhere in the world.</div>
+            >{{$t('We take a consistent approach to recruiting and skills development regardless of where our people are located')}}.</div>
           </div>
         </div>
         <!-- bottom -->
@@ -83,8 +83,8 @@
               <!-- 1 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Strategy"
-                description="OU Primeligt Provides methodological expertise to help its clients capture growth opportunity. "
+                :title="$t('Strategy')"
+                :description="$t('OU Primeligt Provides methodological expertise to help its clients capture growth opportunity')"
                 icon="circle-strategy"
                 icon-class="tw-text-orange-1"
               />
@@ -93,8 +93,8 @@
               <!-- 2 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Innovation"
-                description="We use innovative technologies to identify new ways to reach consumers and build enterprise resilience."
+                :title="$t('Innovation')"
+                :description="$t('We use innovative technologies to identify new ways to reach consumers and build enterprise resilience')"
                 icon="circle-innovation"
                 icon-class="tw-text-blue-1"
               />
@@ -109,8 +109,8 @@
               <!-- 3 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Funding"
-                description="Safeguard external financing for company’s growth."
+                :title="$t('Funding')"
+                :description="$t('Safeguard external financing for companys growth')"
                 icon="circle-funding"
                 icon-class="tw-text-blue-1"
               />
@@ -119,8 +119,8 @@
               <!-- 4 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Research"
-                description="We gather data and analytics to choose the right decision for our clients. "
+                :title="$t('Research')"
+                :description="$t('We gather data and analytics to choose the right decision for our clients')"
                 icon="circle-research"
                 icon-class="tw-text-orange-1"
               />
@@ -129,8 +129,8 @@
               <!-- 5 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Implementation"
-                description="Implement the best solutions for our projects to our clients."
+                :title="$t('Implementation')"
+                :description="$t('Implement the best solutions for our projects to our clients')"
                 icon="circle-implementation"
                 icon-class="tw-text-blue-1"
               />
@@ -140,8 +140,8 @@
               <!-- 6 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Digital"
-                description="We are using the latest IT technologies to drive the organization’s business."
+                :title="$t('Digital')"
+                :description="$t('We are using the latest IT technologies to drive the organizations business')"
                 icon="circle-digital"
                 icon-class="tw-text-orange-1"
               />
@@ -157,8 +157,8 @@
               <!-- 7 -->
               <CardInfoDynamic
                 class="tw-rounded-4xl"
-                title="Sustainability"
-                description="Connect companies and public organizations."
+                :title="$t('Sustainability')"
+                :description="$t('Connect companies and public organizations')"
                 icon="circle-sustainability"
                 icon-class="tw-text-blue-1"
               />
@@ -170,8 +170,8 @@
           <template #test1>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Strategy"
-              description="OU Primeligt Provides methodological expertise to help its clients capture growth opportunity. "
+              :title="$t('Strategy')"
+              :description="$t('OU Primeligt Provides methodological expertise to help its clients capture growth opportunity')"
               icon="circle-strategy"
               icon-class="tw-text-orange-1"
             />
@@ -179,8 +179,8 @@
           <template #test2>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Innovation"
-              description="We use innovative technologies to identify new ways to reach consumers and build enterprise resilience."
+              :title="$t('Innovation')"
+              :description="$t('We use innovative technologies to identify new ways to reach consumers and build enterprise resilience')"
               icon="circle-innovation"
               icon-class="tw-text-blue-1"
             />
@@ -189,8 +189,8 @@
           <template #test3>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Funding"
-              description="Safeguard external financing for company’s growth."
+              :title="$t('Funding')"
+              :description="$t('Safeguard external financing for companys growth')"
               icon="circle-funding"
               icon-class="tw-text-blue-1"
             />
@@ -199,8 +199,8 @@
           <template #test4>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Research"
-              description="We gather data and analytics to choose the right decision for our clients. "
+              :title="$t('Research')"
+              :description="$t('We gather data and analytics to choose the right decision for our clients')"
               icon="circle-research"
               icon-class="tw-text-orange-1"
             />
@@ -208,8 +208,8 @@
           <template #test5>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Implementation"
-              description="Implement the best solutions for our projects to our clients."
+              :title="$t('Implementation')"
+              :description="$t('Implement the best solutions for our projects to our clients')"
               icon="circle-implementation"
               icon-class="tw-text-blue-1"
             />
@@ -217,8 +217,8 @@
           <template #test6>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Digital"
-              description="We are using the latest IT technologies to drive the organization’s business."
+              :title="$t('Digital')"
+              :description="$t('We are using the latest IT technologies to drive the organizations business')"
               icon="circle-digital"
               icon-class="tw-text-orange-1"
             />
@@ -226,8 +226,8 @@
           <template #test7>
             <CardInfoDynamic
               class="dynamic-info-card"
-              title="Sustainability"
-              description="Connect companies and public organizations."
+              :title="$t('Sustainability')"
+              :description="$t('Connect companies and public organizations')"
               icon="circle-sustainability"
               icon-class="tw-text-blue-1"
             />
@@ -262,7 +262,7 @@
       --------
     -->
     <div class="px-16px-48px-80px">
-      <Cooperation class="my-160px-240px-240px tw-bg-white" title="Interested In cooperation?" />
+      <Cooperation class="my-160px-240px-240px tw-bg-white" :title="$t('Interested In cooperation')" />
     </div>
 
     <!--

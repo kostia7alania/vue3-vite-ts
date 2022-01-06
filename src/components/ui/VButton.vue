@@ -1,21 +1,20 @@
 <template>
-    <button
-      :class="buttonClass"
-      class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit hover:tw-hue-rotate-180 active:tw-sepia tw-transition tw-ease-in-out tw-duration-1000"
-      :style="{
-        width,
-        height,
-      }"
-      v-bind="$attrs"
-      v-on="$attrs"
-    >
-      <span v-if="text" v-html="text" />
-      <slot v-else />
-    </button>
+  <button
+    :class="buttonClass"
+    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit hover:tw-hue-rotate-180 active:tw-sepia tw-transition tw-ease-in-out tw-duration-1000"
+    :style="{
+      width,
+      height,
+    }"
+    v-bind="$attrs"
+    v-on="$attrs"
+  >
+    <span v-if="textLocalized" v-html="textLocalized" />
+    <slot v-else />
+  </button>
 </template>
 
 <script lang="ts">
-
 import {
   defineComponent, computed
   // PropType,
@@ -24,6 +23,7 @@ import {
   // toRef,
   // Ref,
 } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const variantsMap: { [key: string]: string } = {
   'orange-1': 'tw-text-orange-1 tw-border-orange-1 ',
@@ -46,13 +46,25 @@ export default defineComponent({
     // to: { type: [String, Object,], default: undefined } // link
   },
   setup(props) {
+    const { t, te } = useI18n({ useScope: 'global' });
+
     const buttonClass = computed(() => {
       const cls = variantsMap[props.variant] || ''
       return cls + ' ' + props.class
     })
 
+    const textLocalized = computed(() => {
+      const { text } = props
+      const path = `button.${text?.toLowerCase()}`
+      if (te(path)) return t(path).replace('button.', '')
+      return text
+      // $t('button.send')
+    })
+
+    // $t('button.our origin')
+
     return {
-      buttonClass,
+      buttonClass, textLocalized
     }
   },
 

@@ -1,21 +1,27 @@
 <template>
   <footer class="app-header tw-flex tw-flex-col">
-    <div class="tw-bg-blue-1 dark:tw-bg-black dark:tw-text-gray-300 tw-flex-1 tw-relative tw-overflow-hidden tw-pb-15 lg:tw-pb-20">
+    <div
+      class="tw-bg-blue-1 dark:tw-bg-black dark:tw-text-gray-300 tw-flex-1 tw-relative tw-overflow-hidden tw-pb-15 lg:tw-pb-20"
+    >
       <div
         class="px-16px-48px-80px tw-flex tw-gap-x-5 tw-gap-y-10 lg:tw-gap-12 tw-flex-wrap lg:tw-flex-nowrap tw-pt-15 md:tw-pt-20 tw-z-10 tw-relative"
       >
         <!-- col Logo -->
         <div class="tw-order-1 tw-basis-full lg:tw-basis-auto">
           <Logo white class="footer-title" />
-          <div class="footer-description tw-text-sm md:tw-text-base">The Challengeʳ Advisory</div>
+          <div
+            class="footer-description tw-text-sm md:tw-text-base"
+          >{{ $t('the challenger advisory') }}</div>
         </div>
 
         <!-- col Contact Us -->
 
         <div class="tw-order-3 lg:tw-order-2 tw-flex-1 lg:tw-flex-none">
-          <div class="footer-title">Contact Us</div>
+          <div class="footer-title">{{ $t('Contact Us') }}</div>
           <div class="footer-description tw-text-xs2 xl:tw-text-base">
-            <div>info@OÜPrimelight.com</div>
+            <div>
+              <a href="mailTo:info@OÜPrimelight.com">info@OÜPrimelight.com</a>
+            </div>
             <div class="tw-pt-3">Riia st. 24a, 51010</div>
             <div>Tartu, Estonia</div>
           </div>
@@ -23,19 +29,23 @@
 
         <!-- col OUR OFFICES -->
         <div class="tw-grow tw-order-2 tw-flex-1 lg:tw-order-3 tw-basis-full lg:tw-basis-auto">
-          <div class="footer-title tw-text-base">OUR OFFICES</div>
+          <div class="footer-title tw-text-base tw-uppercase">{{ $t('Our offices') }}</div>
           <div class="footer-description">
             <div
               class="tw-flex tw-flex-wrap tw-flex-col tw-h-68 tw-gap-x-3 tw-gap-y-3 tw-text-xs2 xl:tw-text-base"
             >
-              <div v-for="(office, i) of offices" :key="i" class="tw-max-w-xs">{{ office }}</div>
+              <div v-for="(country, i) of countries" :key="country.id" class="tw-max-w-xs">
+                <router-link
+                  :to="{ name: 'team', query: { countryId: country.id, countryTitle: country.title } }"
+                >{{ country.title }}</router-link>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- col Social -->
         <div class="tw-order-4 tw-flex-1 lg:tw-flex-none">
-          <div class="footer-title tw-text-lg">Social</div>
+          <div class="footer-title">{{ $t('Social') }}</div>
           <div class="tw-flex tw-items-center tw-gap-x-3">
             <!-- FACEBOOK -->
             <button>
@@ -90,7 +100,7 @@
           </div>
         </div>
       </div>
-      <div class="tw-absolute tw-left-0  tw-top-1/2 tw-bottom-1/2">
+      <div class="tw-absolute tw-left-0 tw-top-1/2 tw-bottom-1/2">
         <BgPattern />
       </div>
     </div>
@@ -98,23 +108,29 @@
     <div
       class="tw-bg-black-1 tw-text-white tw-h-20 tw-mt-auto tw-flex tw-items-center tw-justify-between tw-px-5 md:tw-px-20"
     >
-      <div class="tw-font-medium tw-flex tw-flex-wrap md:tw-flex-nowrap tw-w-40 md:tw-w-none">
-        <div>All rights reserved</div>
+      <!-- left -->
+      <div
+        class="footer-of-footer tw-font-medium tw-flex tw-flex-wrap md:tw-flex-nowrap tw-w-40 md:tw-w-none"
+      >
+        <div>{{ $t('All rights reserved') }}</div>
         <div>OÜ Primelight.</div>
       </div>
+      <!-- right -->
       <div
-        class="tw-flex tw-gap-x-4 tw-items-center tw-font-semibold tw-flex-wrap md:tw-flex-nowrap tw-w-29 md:tw-w-none"
+        class="footer-of-footer tw-flex tw-gap-x-4 tw-items-center tw-font-semibold tw-flex-wrap md:tw-flex-nowrap tw-w-29 md:tw-w-none"
       >
-        <div>Privacy policy</div>
+        <div>{{ $t('Privacy policy') }}</div>
         <div class="tw-hidden md:tw-block">/</div>
-        <div>Cookie notice</div>
+        <div class="tw-min-w-[100px]">{{ $t('Cookie notice') }}</div>
       </div>
     </div>
   </footer>
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue';
+import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
+
+import { useVuex } from '@/store/store'
 
 
 
@@ -125,7 +141,9 @@ export default defineComponent({
     Logo: defineAsyncComponent(() => import('./Logo.vue'))
   },
   setup(/* _, ctx: SetupContext */) {
-    const offices = [
+    const store = useVuex()
+
+    const countries = ref([
       // col 1
       'INTERNATIONAL', 'ESTONIA', 'LATVIA', 'FINLAND', 'POLAND',
       // col 2
@@ -141,10 +159,16 @@ export default defineComponent({
       'NORTH MACEDONIA',
       'KOSOVO',
       'ARMENIA',
-    ]
+    ].map((title, id) => ({ title, id: id + 1 })))
+
+    const getCountries = async () => {
+      countries.value = (await store.dispatch('countries/GET_COUNTRIES'))
+    }
+
+    onMounted(getCountries)
 
     return {
-      offices
+      countries
     }
   },
 });
@@ -178,6 +202,9 @@ export default defineComponent({
 }
 .footer-description {
   @apply tw-font-medium tw-text-white tw-opacity-60;
+}
+.footer-of-footer {
+  @apply tw-text-xs md:tw-text-sm xl:tw-text-base;
 }
 </style>
 

@@ -25,7 +25,7 @@
 
       <!-- bottom  -->
       <div class="topic-title tw-flex tw-justify-center tw-my-20">
-        <h2 class="tw-max-w-3xl lg:tw-text-center">OÜ Primelight International</h2>
+        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('OU Primelight International') }}</h2>
       </div>
 
       <div v-if="isLoading" class="tw-flex tw-justify-around tw-gap-10">
@@ -63,19 +63,22 @@
               </div>
             </div>
             <div class="link">
-              <a href="#">Send a message &gt;</a>
+              <a href="#">{{ $t('Send a message') }} &gt;</a>
             </div>
             <div class="link">
-              <a href="#">Visit country page &gt;</a>
+              <a href="#">{{ $t('Visit country page') }} &gt;</a>
             </div>
             <div class="link">
-              <a href="#">Navigate &gt;</a>
+              <a href="#">{{ $t('Navigate') }} &gt;</a>
             </div>
           </div>
           <!-- col right -->
           <div class="basis-400px">
-            <div class="topic-title-28px tw-mb-6">Company information</div>
-            <div class="topic-description tw-max-w-[250px]" v-html="contact.address.split(',').join(',<br>')"></div>
+            <div class="topic-title-28px tw-mb-6">{{ $t('Company information') }}</div>
+            <div
+              class="topic-description tw-max-w-[250px]"
+              v-html="contact.address.split(',').join(',<br>')"
+            ></div>
           </div>
         </div>
       </div>
@@ -95,8 +98,9 @@
       <div class="pt-80px-120px-120px">
         <div class="topic-title tw-flex tw-justify-center tw-mb-6">
           <h2 class="tw-max-w-xl tw-text-center">
-            How can we help you grow?
-            <br />Request proposal
+            {{ $t('How can we help you grow') }}
+            <br />
+            {{ $t('Request proposal') }}
           </h2>
         </div>
       </div>

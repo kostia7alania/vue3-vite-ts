@@ -3,21 +3,21 @@
         <div
             class="tw-flex tw-justify-between tw-items-center md:tw-items-start xl:tw-items-center tw-flex-col xl:tw-flex-row tw-gap-4"
         >
-            <div class="topic-title tw-text-center">Fill the contact form</div>
-            <div class="topic-description tw-hidden md:tw-block">*Required fields</div>
+            <div class="topic-title tw-text-center">{{ $t('Fill the contact form') }}</div>
+            <div class="topic-description tw-hidden md:tw-block">*{{ $t('Required fields') }}</div>
         </div>
         <!-- form inputs -->
         <div class="tw-mt-8 md:tw-mt-15 xl:tw-mt-17">
             <div class="tw-flex tw-items-center tw-gap-x-10 tw-flex-col xl:tw-flex-row tw-gap-y-4">
-                <VInput v-model="form.name" placeholder="Name*" />
-                <VInput v-model="form.surname" placeholder="Surname*" />
+                <VInput v-model="form.name" placeholder="name" required />
+                <VInput v-model="form.surname" placeholder="surname" required />
             </div>
 
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
-                <VInput v-model="form.phone" placeholder="Phone" />
-                <VInput v-model="form.email" placeholder="Email*" />
+                <VInput v-model="form.phone" placeholder="phone" />
+                <VInput v-model="form.email" placeholder="email" required />
             </div>
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
@@ -26,12 +26,12 @@
                 <VSelect
                     v-model="form.office"
                     class="tw-basis-1/2"
-                    placeholder="Preferred location*"
+                    :placeholder="$t('Preferred location') + '*'"
                     :items="['Office 1', 'Office 2', 'Office 3']"
                 />
             </div>
             <div class="tw-mt-4 xl:tw-mt-6">
-                <VTextarea v-model="form.message" rows=3 placeholder="Your message*" />
+                <VTextarea v-model="form.message" rows="3" :placeholder="$t('Your message') + '*'" />
             </div>
         </div>
         <!-- past link -->
@@ -41,8 +41,9 @@
         <!-- upload doc -->
         <div class="tw-my-6">
             <VFilePicker v-model="form.file">
-                Upload other documents
-                <br class="lg:tw-hidden" />(e.g. portfolio, references)
+                {{ $t('Upload other documents') }}
+                <br class="lg:tw-hidden" />
+                ({{ $t('eg portfolio references') }})
             </VFilePicker>
         </div>
         <!-- checks -->
@@ -52,26 +53,26 @@
             <div class="tw-text-sm tw-max-w-3xl">
                 <VCheckbox v-model="agreement1">
                     <span>
-                        *I have read and understood that my personal data will be processed for the ongoing recruitment process, as described in the
+                        *{{ $t('I have read and understood that my personal data will be processed for the ongoing recruitment processpe') }}
                         <span
                             class="tw-text-orange-1"
-                        >Privacy notice for applicants.</span>
+                        >{{ $t('Privacy notice for applicants') }}.</span>
                     </span>
                 </VCheckbox>
                 <VCheckbox v-model="agreement2" class="tw-mt-4">
                     <span>
-                        I agree to the storage of my personal data to be contacted by OÜ Primelight for future employment opportunities, as described in the
+                        {{ $t('I agree to the storage of my personal data to be contacted') }}
                         <span
                             class="tw-text-orange-1"
-                        >Privacy notice for applicants.</span>
+                        >{{ $t('Privacy notice for applicants') }}.</span>
                     </span>
                 </VCheckbox>
                 <VCheckbox v-model="agreement3" class="tw-mt-4">
                     <span>
-                        I agree that OÜ Primelight shares my personal data internally, with other OÜ Primelight offices, as described in the
+                        {{ $t('I agree that OU Primelight shares my personal data internally') }}
                         <span
                             class="tw-text-orange-1"
-                        >Privacy notice for applicants.</span>
+                        >{{ $t('Privacy notice for applicants') }}.</span>
                     </span>
                 </VCheckbox>
             </div>
@@ -84,7 +85,7 @@
                 />
                 <div
                     class="topic-description tw-text-center tw-mt-4 tw-block md:tw-hidden"
-                >*Required fields</div>
+                >*{{ $t('Required fields') }}</div>
             </div>
         </div>
         <VCustomModal v-if="isSent" @close="isSent = false">
@@ -115,7 +116,7 @@
                         </div>
                         <div
                             class="tw-text-center tw-max-w-sm tw-mt-10"
-                        >Your form has been successfully send!</div>
+                        >{{ $t('Your form has been successfully send') }}!</div>
                     </div>
                 </div>
             </div>

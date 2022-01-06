@@ -33,7 +33,7 @@
         </div>
         <VButton
           v-if="showButton"
-          class="tw-mt-3 tw-w-2/3 lg:tw-w-full tw-border-1"
+          class="tw-mt-3 tw-min-h-[48px] tw-w-2/3 lg:tw-w-full tw-border-1"
           text="Apply now"
           :variant="theme === 'blue' ? 'blue' : 'orange-2'"
           height="48px"

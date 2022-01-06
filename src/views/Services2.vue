@@ -24,26 +24,26 @@
     -->
     <section class="my-80px-104px-120px px-16px-48px-80px">
       <div class="md:tw-text-center">
-        <h2 class="topic-title">We help:</h2>
+        <h2 class="topic-title">{{ $t('We help') }}:</h2>
       </div>
       <div class="mt-60px-80px-80px">
         <div class="gap-40px-60px-40px tw-flex tw-flex-col tw-flex-wrap xl:tw-flex-row">
           <HelpColumn
             class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            title="Corporations"
-            description="We assist companies in various industries such as telecommunications, banking, insurance, retail, wholesale, manufacturing, FMCG, transport, energy, HORECa, media and publishing, IT services, construction, forestry, agriculture, real estate and etc."
+            :title="$t('Corporations')"
+            :description="$t('We assist companies in various industries such as telecommunications')"
             icon="circle-users"
           />
           <HelpColumn
             class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            title="Start-up companies"
-            description="We support start -ups and small companies involved in different industries and focusing on innovative companies and start-up ecosystem development."
+            :title="$t('Start-up companies')"
+            :description="$t('We support start -ups and small companies involved in different industries')"
             icon="circle-startup"
           />
           <HelpColumn
             class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            title="Government organizations"
-            description="We provide services for government, educational institutions, hospitals, state-owned companies, public infrastructure and energy utility establishments,"
+            :title="$t('Government organizations')"
+            :description="$t('We provide services for government')"
             icon="circle-government"
           />
         </div>
@@ -60,52 +60,55 @@
         'bg-services-we-provide-top__sm': smallerXl,
         'bg-services-we-provide-top__xl': !smallerXl,
       }"
-    > 
-      <div class="py-80px-120px-120px"
+    >
+      <div
+        class="py-80px-120px-120px"
         :class="{
-        'bg-services-we-provide-bottom__sm': smallerXl,
-      }"
+          'bg-services-we-provide-bottom__sm': smallerXl,
+        }"
       >
         <!-- title -->
-        <div class="topic-title  md:tw-mb-20 lg:tw-mb-0">Our Services</div>
+        <div class="topic-title md:tw-mb-20 lg:tw-mb-0">{{ $t('Our Services') }}</div>
         <!-- rows -->
-        <div class="mt-0-80px-80px gap-40px-48px-0 md:tw-bg-white tw-rounded-4xl tw-pt-15 md:tw-pt-8 tw-flex tw-flex-col ">
+        <div
+          class="mt-0-80px-80px gap-40px-48px-0 md:tw-bg-white tw-rounded-4xl tw-pt-15 md:tw-pt-8 tw-flex tw-flex-col"
+        >
           <CardInfoDynamicHorizontal
-            title="Strategy"
-            description="Our consultants advise organizations on high-level decisions in strategic planning, expansion of new markets, management modification using deep industry knowledge to deliver the best results. We offer the best strategy practices and experience gained across many countries and industries."
+            :title="$t('Strategy')"
+            :description="$t('Our consultants advise organizations on high-level decisions in strategic planning')"
             icon="circle-strategy"
           />
           <CardInfoDynamicHorizontal
-            title="Innovation"
-            description="We help making future by being in the whole innovation value chain from helping clients innovate to evaluating, finding and creating sustainable innovations through our multiyear experience and professional team."
+            :title="$t('Innovation')"
+            :description="$t('We help making future by being in the whole innovation value chain from helping clients innovate to evaluating')"
             icon="circle-innovation"
           />
           <CardInfoDynamicHorizontal
-            title="Funding"
-            description="We help clients to choose the right funding opportunities, develop the project and follow through the implementation process. We also provide advisory services in national EU program funding, EU-level program funding (Horizon 2020)."
+            :title="$t('Funding')"
+            :description="$t('We help clients to choose the right funding opportunities')"
             icon="circle-funding"
           />
           <CardInfoDynamicHorizontal
-            title="Research"
-            description="We collect and analyze external and internal information in order to deliver the best solutions to our clients. OU Primelight conducts research into trends and developments in the consulting industry, aswell as performs research into trending topics at the intersection of management, economics, IT, real estate, construction and many other fields."
+            :title="$t('Research')"
+            :description="$t('We collect and analyze external and internal information')"
             icon="circle-research"
           />
           <CardInfoDynamicHorizontal
-            title="Implementation"
-            description="We help our clients to become more competitive in the digital market by using Big Data and the latest IT innovations. We provide digital strategies, customer analysis and redesign, UX/UI, web and mobile software development, segmentation and other IT services."
+            :title="$t('Implementation')"
+            :description="$t('We help our clients to become more competitive')"
             icon="circle-implementation"
           />
           <CardInfoDynamicHorizontal
-            title="Digital"
-            description="We provide support and assistance at all stages of the project implementation, by setting up and running project management office, helping with business development and expansion, as well as building outsourcing network in Central Eastern Europe."
+            :title="$t('Digital')"
+            :description="$t('We provide support and assistance at all stages of the project implementation')"
             icon="circle-digital"
           />
           <CardInfoDynamicHorizontal
-            title="Sustainability"
-            description="We ensure our clients stability in all daily operations in a strategic and qualitative manner, as well assist them in obtaining optimal funding opportunities. Our emphasis on sustainability, trust and tolerance for diverging opinions helps clients focus on their opportunities, build their capabilities and win the future."
+            :title="$t('Sustainability')"
+            :description="$t('We ensure our clients stability in all daily operations in a strategic')"
             icon="circle-sustainability"
-          /> 
-      </div>
+          />
+        </div>
       </div>
     </section>
 
@@ -117,7 +120,7 @@
       --------
     -->
     <section class="my-160px-240px-240px px-16px-48px-80px">
-      <Cooperation title="Interested In cooperation?" />
+      <Cooperation :title="$t('Interested In cooperation')" />
     </section>
 
     <!--
@@ -128,23 +131,47 @@
       --------
     -->
     <section class="my-160px-240px-240px px-16px-48px-80px">
-      <h2 class="topic-title max-w-400px my-120-80">Case studies</h2>
+      <h2 class="topic-title max-w-400px my-120-80">{{ $t('Case studies') }}</h2>
       <div v-if="!sm" class="gap-40px-16px tw-flex">
         <!-- DESKTOP -->
-        <ArticleCardOld class="tw-w-full tw-basis-full" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCardOld class="tw-w-full tw-basis-full" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
-        <ArticleCardOld class="tw-w-full tw-basis-full" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+        <ArticleCardOld
+          class="tw-w-full tw-basis-full"
+          date="2021-10-11"
+          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+        />
+        <ArticleCardOld
+          class="tw-w-full tw-basis-full"
+          date="2021-10-12"
+          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+        />
+        <ArticleCardOld
+          class="tw-w-full tw-basis-full"
+          date="2021-10-13"
+          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+        />
       </div>
       <CardsSwiper v-else>
         <!-- MOBILE -->
         <template #test1>
-          <ArticleCardOld class="article-card-swiper" date="2021-10-11" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+          <ArticleCardOld
+            class="article-card-swiper"
+            date="2021-10-11"
+            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+          />
         </template>
         <template #test2>
-          <ArticleCardOld class="article-card-swiper" date="2021-10-12" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+          <ArticleCardOld
+            class="article-card-swiper"
+            date="2021-10-12"
+            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+          />
         </template>
         <template #test3>
-          <ArticleCardOld class="article-card-swiper" date="2021-10-13" title="Poland-based SAS Advisors is joining OÜ Primelight" />
+          <ArticleCardOld
+            class="article-card-swiper"
+            date="2021-10-13"
+            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+          />
         </template>
       </CardsSwiper>
     </section>
@@ -174,14 +201,13 @@ export default defineComponent({
     const sm = breakpoints.smaller('sm')
 
     onMounted(() => emit('ready'))
-    return { smallerXl, sm}
+    return { smallerXl, sm }
   }
 });
 </script>
 
 <!-- bg-services-we-provide -->
 <style lang="scss" scoped>
-
 .bg-services-we-provide-top__xl {
   background-repeat: no-repeat;
   background-position: top right;
@@ -194,7 +220,7 @@ export default defineComponent({
   background-position: top right;
   // background-size: cover;
   background-image: url("@/assets/images/services2/bg-services-we-provide-top__sm.png");
-    // background-repeat: repeat-y;
+  // background-repeat: repeat-y;
 }
 
 .bg-services-we-provide-bottom__sm {

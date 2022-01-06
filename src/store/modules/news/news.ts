@@ -7,6 +7,7 @@ type Context = ActionContext<INews, IRootState>;
 import { IActions, INews, INew, INewsResponse } from './news.d';
 
 import { GET } from '@/http';
+import { i18n } from '@/plugins/i18n';
 
 export const news = {
   namespaced: true,
@@ -27,7 +28,7 @@ export const news = {
         return state.ARTICLES.slice(0, count + 1);
       },
     GETTER_CATEGORIES: (state: INews) => {
-      const res = [{ id: 0, title: 'All' }];
+      const res = [{ id: 0, title: i18n.global.t('All') }];
       // [{category: { id: 1, title: "Insights"}}, ]
 
       const news = state.ARTICLES;

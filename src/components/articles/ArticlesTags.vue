@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { watchOnce } from '@vueuse/core';
-import { defineComponent, defineAsyncComponent, ref, onMounted, Ref, watch, computed } from 'vue';
+import { defineComponent, defineAsyncComponent, ref, Ref, watch, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 // import { useI18n } from 'vue-i18n'

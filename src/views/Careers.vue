@@ -20,7 +20,7 @@
     -->
     <section class="my-80px-104px-120px px-16px-48px-80px">
       <div class="topic-title tw-flex tw-justify-center">
-        <h2 class="tw-max-w-3xl lg:tw-text-center">Working at OÜ Primelight</h2>
+        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at OU Primelight') }}</h2>
       </div>
 
       <div
@@ -29,8 +29,8 @@
         <!-- card #1 -->
         <div class="tw-w-full tw-h-[354px] xl:tw-h-[640px]">
           <CardInfoAnim
-            title="Adventure"
-            description="We value people who are not ordinary and who do not want to do everyday things. We are open to new experiences and challenging the status quo. It's never boring around here!"
+            :title="$t('Adventure')"
+            :description="$t('We value people who are not ordinary and who do not want to do everyday things')"
             image="adventure"
             theme="blue"
             title-class="tw-text-2xl"
@@ -40,8 +40,8 @@
           <!-- card #2 -->
           <div class="work-card-secondary">
             <CardInfoAnim
-              title="Intellectual challenge"
-              description="We are about learning on the job through a variety of intellectually challenging projects spanning various industries, functions, and geographies."
+              :title="$t('Intellectual challenge')"
+              :description="$t('We are about learning on the job through a variety of intellectually challenging projects')"
               image="intellectual-challenge"
               theme="blue"
               title-class="tw-text-2xl"
@@ -50,8 +50,8 @@
           <!-- card #3 -->
           <div class="work-card-secondary">
             <CardInfoAnim
-              title="Non - hierarchical organization"
-              description="We value a high degree of responsibility and the importance of input from every employee from day one on the job. Everyone is expected to contribute to overall success."
+              :title="$t('Non - hierarchical organization')"
+              :description="$t('We value a high degree of responsibility and the importance of input from every employee from day one on the job')"
               image="non-hierarchical-organization"
               theme="orange"
               title-class="tw-text-2xl"
@@ -61,8 +61,8 @@
           <!-- card #2 -->
           <div class="work-card-secondary">
             <CardInfoAnim
-              title="Flexibility"
-              description="We seek to balance getting the job done with employees’ lives outside work, creating the possibilities to combine studies, entrepreneurial activities, hobbies, sports, and family life."
+              :title="$t('Flexibility')"
+              :description="$t('We seek to balance getting the job done with employees')"
               image="flexibility"
               theme="orange"
               title-class="tw-text-2xl"
@@ -71,8 +71,8 @@
           <!-- card #3 -->
           <div class="work-card-secondary">
             <CardInfoAnim
-              title="Fun"
-              description="AtOÜ Primelight , we provide an enjoyable working atmosphere, social events, offsite sessions and trips abroad for the whole company."
+              :title="$t('Fun')"
+              :description="$t('At OU Primelight we provide an enjoyable working atmosphere')"
               image="fun"
               theme="blue"
               title-class="tw-text-2xl"
@@ -112,22 +112,24 @@
         'bg-stories-of-our-people-xl': !sm
       }"
     >
-      <h2 class="topic-title lg:tw-max-w-sm lg:tw-pr-20 my-40px-80px">Stories of our people</h2>
+      <h2
+        class="topic-title lg:tw-max-w-sm lg:tw-pr-20 my-40px-80px"
+      >{{ $t('Stories of our people') }}</h2>
       <div v-if="!sm" class="tw-flex tw-flex-wrap tw-gap-10">
         <ArticleCardOld
           class="tw-flex-1"
           date="2021-10-30"
-          title="OÜ Primelight Challengers - Oleksandr Volik"
+          :title="`${$t('OU Primelight Challengers')} - Oleksandr Volik`"
         />
         <ArticleCardOld
           class="tw-flex-1"
           date="2021-10-26"
-          title="OÜ Primelight Challengers - Maari Helilaid"
+          :title="`${$t('OU Primelight Challengers')} - Maari Helilaid`"
         />
         <ArticleCardOld
           class="tw-flex-1"
           date="2021-10-09"
-          title="OÜ Primelight Challengers - Sevak Hovhannisyan"
+          :title="`${$t('OU Primelight Challengers')} - Sevak Hovhannisyan`"
         />
       </div>
       <CardsSwiper v-else>
@@ -136,21 +138,21 @@
           <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-11"
-            title="Poland-based SAS Advisors is joining OÜ Primelight"
+            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
           />
         </template>
         <template #test2>
           <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-12"
-            title="Poland-based SAS Advisors is joining OÜ Primelight"
+            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
           />
         </template>
         <template #test3>
           <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-13"
-            title="Poland-based SAS Advisors is joining OÜ Primelight"
+            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
           />
         </template>
       </CardsSwiper>
@@ -163,12 +165,14 @@
     -->
     <section class="pb-80px-160px-240px px-16px-48px-80px">
       <div class="topic-title tw-flex tw-justify-center tw-mb-6">
-        <h2 class="tw-max-w-3xl lg:tw-text-center">Consulting career path at OÜ Primelight</h2>
+        <h2
+          class="tw-max-w-3xl lg:tw-text-center"
+        >{{ $t('Consulting career path at OU Primelight') }}</h2>
       </div>
       <div class="topic-description tw-flex tw-justify-center tw-mb-20">
         <div
           class="tw-max-w-3xl lg:tw-text-center"
-        >We truly believe that our success lies in the talented and passionate team of professionals who make CIVITTA a great place to work. We encourage our personnel to seek adventure in everything they do and help them to achieve their professional and personal goals.</div>
+        >{{ $t('We truly believe that our success lies in the talented and passionate team of professionals') }}</div>
       </div>
       <div class="mt-60px-80px-80px tw-flex tw-flex-col lg:tw-flex-row tw-gap-15">
         <div class="tw-flex tw-flex-col tw-flex-1 tw-gap-15">
@@ -200,11 +204,11 @@
     >
       <div class="pt-80px-120px-120px">
         <div class="topic-title tw-flex tw-justify-center tw-mb-6">
-          <h2 class="tw-max-w-xl tw-text-center">Searching for new career opportunities?</h2>
+          <h2 class="tw-max-w-xl tw-text-center">{{ $t('Searching for new career opportunities') }}</h2>
         </div>
         <div class="topic-description tw-flex tw-justify-center">
           <div class="tw-max-w-3xl tw-text-center">
-            Apply now and build your career in OÜ Primelight, gain international experience and make an impact. Fill in the application form. Our team will review it and contact you. For any questions regarding your application, send an email to
+            {{ $t('Apply now and build your career in OU Primelight') }}
             <a
               class="tw-text-blue-1"
               href="mailto:adventure@OÜ Primelight.com"
@@ -222,7 +226,8 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
+import { computed, defineAsyncComponent, defineComponent, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n'
 
 import CardInfoAnim from '@/components/services/CardInfoAnim.vue'
 
@@ -239,17 +244,19 @@ export default defineComponent({
   emits: ['ready'],
   setup(_, { emit }) {
     onMounted(() => emit('ready'))
+    const { t } = useI18n({ useScope: 'global' });
 
-    const consultingCol1 = [
-      { title: '1. Partner', description: 'Intellectual leader with deep expertise in some particular industry and/or service line and own client portfolio' },
-      { title: '3. Project manager / Team lead', description: 'Full-responsibility over project execution ensuring that it is delivered on time within high quality and budget expectations' },
-      { title: '2. Associate partner', description: 'Leads several teams with growing role in mentorship of other colleagues and business development' }
-    ]
-    const consultingCol2 = [
-      { title: '4. Senior analyst / Senior consultant', description: 'Works more closely with client team members and owns a particular stream in the project, such as performing operational analysis, market research, financial model, etc.' },
-      { title: '5. Analyst / Consultant', description: 'Performs larger and more sophisticated tasks, including data analysis and visualization, formulating and testing hypotheses, etc.' },
-      { title: '6. Junior analyst / Junior consultant', description: 'Supports the team with market research, analysis, data collection, generation of ideas and other daily tasks' }
-    ]
+    const consultingCol1 = computed(() => [
+      { title: `1. ${t('Partner')}`, description: t('Intellectual leader with deep expertise in some particular industry and/or service line and own client portfolio') },
+      { title: `3. ${t('Project manager / Team lead')}`, description: t('Full-responsibility over project execution ensuring that it is delivered on time within high quality and budget expectations') },
+      { title: `2. ${t('Associate partner')}`, description: t('Leads several teams with growing role in mentorship of other colleagues and business development') }
+    ])
+
+    const consultingCol2 = computed(() => [
+      { title: `4. ${t('Senior analyst / Senior consultant')}`, description: t('Works more closely with client team members and owns a particular stream') },
+      { title: `5. ${t('Analyst / Consultant')}`, description: t('Performs larger and more sophisticated tasks') },
+      { title: `6. ${t('Junior analyst / Junior consultant')}`, description: t('Supports the team with market research') }
+    ])
 
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const sm = breakpoints.smaller('sm')
@@ -281,8 +288,7 @@ export default defineComponent({
   background-position: bottom left;
 }
 
-
-.bg-contacts-sm{
+.bg-contacts-sm {
   background-image: url("@/assets/images/team/bg-contacts-sm.png");
   background-repeat: no-repeat;
   background-position: top;
@@ -291,5 +297,5 @@ export default defineComponent({
   background-image: url("@/assets/images/team/bg-contacts-xl.png");
   background-repeat: no-repeat;
   background-position: top left;
-} 
+}
 </style>
