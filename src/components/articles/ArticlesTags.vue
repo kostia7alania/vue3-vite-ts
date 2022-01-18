@@ -2,13 +2,13 @@
     <div class="tw-flex tw-flex-wrap tw-gap-6 tw-text-sm">
         <VButtonRadio
             v-model="category"
-            :items="categories"
+            :items="articleCategories"
             key-value="id"
             key-label="title"
             theme="blue"
             active-class="tw-bg-white tw-text-orange-1 active-class"
             inactive-class="inactive-class"
-        />
+        /> 
     </div>
 </template>
 
@@ -18,6 +18,7 @@ import { defineComponent, defineAsyncComponent, ref, Ref, watch, computed } from
 import { useRoute, useRouter } from 'vue-router';
 
 // import { useI18n } from 'vue-i18n'
+import { i18n } from '@/plugins/i18n';
 import { INew } from '@/store/modules/news/news.d';
 import { useVuex } from '@/store/store'
 
@@ -38,6 +39,7 @@ export default defineComponent({
             const res = categories.value.some((e: INew) => String(e?.id) === String(categoryValue))
             return res
         }
+
 
         const categories = computed(() => store.getters['news/GETTER_CATEGORIES'].map((e: INew) => ({ ...e, id: String(e.id) })))
 
@@ -62,8 +64,19 @@ export default defineComponent({
 
         // after loading the news, we can set category
         watchOnce(() => isLoading.value, initCategory)
-
-        return { category, categories, isLoading }
+ 
+        const articleCategories = computed(() => {
+            const uniq = new Set()
+            const teams = store.state.news?.ARTICLES || []
+            return teams.reduce((acc, el) => {
+                if (uniq.size !== uniq.add(el.category.id).size) {
+                    acc.push(el.category)
+                }
+                return acc
+            }, [{ id: 0, title: i18n.global.t('All') }])
+        })
+        
+        return { category, articleCategories }
     }
 });
 </script>

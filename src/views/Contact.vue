@@ -65,12 +65,14 @@
             <div class="link">
               <a href="#">{{ $t('Send a message') }} &gt;</a>
             </div>
-            <div class="link">
+            <!--
+              <div class="link">
               <a href="#">{{ $t('Visit country page') }} &gt;</a>
-            </div>
-            <div class="link">
+              </div>
+              <div class="link">
               <a href="#">{{ $t('Navigate') }} &gt;</a>
-            </div>
+              </div>
+            -->
           </div>
           <!-- col right -->
           <div class="basis-400px">

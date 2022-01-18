@@ -52,7 +52,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, Ref, ref, } from 'vue';
+import { computed, defineComponent, onMounted, ref, } from 'vue';
 import { useRoute, } from 'vue-router';
 
 import ArticleCard from "@/components/articles/ArticleCard.vue"

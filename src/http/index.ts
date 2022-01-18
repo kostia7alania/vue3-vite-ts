@@ -27,10 +27,9 @@ HTTPClient.interceptors.request.use(
     // debugger
     // config.params['blah-defaut-param'] = 'blah-blah-default-value';
     const localeMap = {
-      lt: 'ee',
+      est: 'ee',
       en: 'en',
     };
-
     const lang = localeMap[i18n.global.locale] || localeMap.en;
 
     const params = {

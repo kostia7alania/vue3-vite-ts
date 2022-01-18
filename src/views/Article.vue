@@ -75,7 +75,7 @@
       <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center tw-mt-10">
         <VIconSpinner class="tw-h-20" spin />
       </div>
-      <div v-else>We have no content in the selected article</div>
+      <div v-else>{{ $t('We have no content in the selected article') }}</div>
       <!--  -->
     </section>
   </div>

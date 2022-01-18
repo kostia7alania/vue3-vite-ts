@@ -19,11 +19,16 @@
         <div class="tw-order-3 lg:tw-order-2 tw-flex-1 lg:tw-flex-none">
           <div class="footer-title">{{ $t('Contact Us') }}</div>
           <div class="footer-description tw-text-xs2 xl:tw-text-base">
-            <div>
-              <a href="mailTo:info@OÜPrimelight.com">info@OÜPrimelight.com</a>
+            <div>OÜ Primelight</div>
+            <div class="tw-pt-3">{{ $t('Registry code') }} 11954642</div>
+            <div class="tw-pt-3">{{ $t('Registered 14.06.2010') }}</div>
+            <div class="tw-pt-3">{{ $t('address') }}</div>
+            <div class="tw-pt-3">
+              <a
+                class="hover:tw-text-black"
+                href="mailTo:info@primelightou.com"
+              >info@primelightou.com</a>
             </div>
-            <div class="tw-pt-3">Riia st. 24a, 51010</div>
-            <div>Tartu, Estonia</div>
           </div>
         </div>
 
@@ -44,7 +49,7 @@
         </div>
 
         <!-- col Social -->
-        <div class="tw-order-4 tw-flex-1 lg:tw-flex-none">
+        <div v-if="0" class="tw-order-4 tw-flex-1 lg:tw-flex-none">
           <div class="footer-title">{{ $t('Social') }}</div>
           <div class="tw-flex tw-items-center tw-gap-x-3">
             <!-- FACEBOOK -->
@@ -106,22 +111,15 @@
     </div>
     <!-- footer of footer -->
     <div
-      class="tw-bg-black-1 tw-text-white tw-h-20 tw-mt-auto tw-flex tw-items-center tw-justify-between tw-px-5 md:tw-px-20"
+      class="tw-bg-black-1 tw-text-white tw-h-20 tw-mt-auto tw-flex tw-items-center xs:tw-justify-between tw-flex-wrap md:tw-flex-nowrap tw-px-5 md:tw-px-20 tw-gap-4"
     >
       <!-- left -->
-      <div
-        class="footer-of-footer tw-font-medium tw-flex tw-flex-wrap md:tw-flex-nowrap tw-w-40 md:tw-w-none"
-      >
+      <div class="footer-of-footer tw-font-medium">
         <div>{{ $t('All rights reserved') }}</div>
-        <div>OÜ Primelight.</div>
       </div>
       <!-- right -->
-      <div
-        class="footer-of-footer tw-flex tw-gap-x-4 tw-items-center tw-font-semibold tw-flex-wrap md:tw-flex-nowrap tw-w-29 md:tw-w-none"
-      >
-        <div>{{ $t('Privacy policy') }}</div>
-        <div class="tw-hidden md:tw-block">/</div>
-        <div class="tw-min-w-[100px]">{{ $t('Cookie notice') }}</div>
+      <div class="footer-of-footer tw-font-semibold">
+        <div>{{ $t('registry-code') }}</div>
       </div>
     </div>
   </footer>

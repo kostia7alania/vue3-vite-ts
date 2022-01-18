@@ -36,9 +36,9 @@
       >EN</div>
       <div
         class="tw-px-4 tw-py-3 tw-bg-white"
-        :class="{ 'tw-bg-blue-3': $i18n.locale === 'lt' }"
-        @click="localeToggle('lt')"
-      >LT</div>
+        :class="{ 'tw-bg-blue-3': $i18n.locale === 'est' }"
+        @click="localeToggle('est')"
+      >EST</div>
     </div>
   </VButton>
 </template>
@@ -47,7 +47,7 @@
 import { defineComponent, defineAsyncComponent, Ref, ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-type TLocales = 'en' | 'lt'
+type TLocales = 'en' | 'est'
 
 const STORE_KEY = 'locale'
 
@@ -55,7 +55,7 @@ const getInitialTheme = (): TLocales | void => {
 
   if (window?.localStorage) {
     const localeStored: TLocales = window.localStorage.getItem(STORE_KEY) as TLocales
-    if (['en', 'lt'].includes(localeStored)) return localeStored
+    if (['en', 'est'].includes(localeStored)) return localeStored
   }
 }
 
@@ -73,7 +73,7 @@ export default defineComponent({
 
 
     const localeToggle = (loc: TLocales) => {
-      locale.value = loc// locale.value === 'en' ? 'lt' : 'en'
+      locale.value = loc// locale.value === 'en' ? 'est' : 'en'
       localStorage.setItem(STORE_KEY, String(locale.value))
     }
 

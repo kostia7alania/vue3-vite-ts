@@ -36,7 +36,7 @@ export const news = {
 
       for (let i = 0; i < news.length; i++) {
         const { category } = news[i];
-        const id = String(category);
+        const id = String(category.id);
         if (!uniqIds.has(id)) {
           res.push(category);
           uniqIds.add(id);

@@ -5,7 +5,7 @@
         key-label="title"
         :key-value="keyValue"
         :placeholder="$t('Preferred location') + '*'"
-        :items="countries.COUNTRIES"
+        :items="route.name === 'team' ? teamCategories : countries"
         @update:model-value="$emit('update:country', $event)"
     />
     <!-- :value-model="country" -->
@@ -16,7 +16,8 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineComponent, onMounted } from 'vue';
+import { computed, defineComponent, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 import VTagsToggle from "@/components/ui/VTagsToggle.vue"
 import { useVuex } from '@/store/store'
@@ -54,16 +55,17 @@ export default defineComponent({
         // ]
 
         const store = useVuex()
+        const route = useRoute();
 
         // access an action
-        const countries = store.state.countries
+        const countries = computed(() => store.state.countries?.COUNTRIES || [])
 
         const getCountries = () => store.dispatch('countries/GET_COUNTRIES')
         const init = async () => {
             await getCountries()
             const [res] = await getCountries()
             const { keyValue } = props
-            if(props.country) return
+            if (props.country) return
             emit('update:country', keyValue ? res[keyValue] : res)
         }
 
@@ -72,9 +74,24 @@ export default defineComponent({
         const breakpoints = useBreakpoints(breakpointsTailwind)
         const xl = breakpoints.smaller('xl')
 
+
+        const teamCategories = computed(() => {
+            const uniq = new Set()
+            const teams = store.state.teams?.TEAMS || []
+            return teams.reduce((acc, el) => {
+                if (uniq.size !== uniq.add(el.country.id).size) {
+                    // @ts-ignore
+                    acc.push(el.country)
+                }
+                return acc
+            }, [])
+        })
+
         return {
             countries,
-            xl
+            xl,
+            teamCategories,
+            route
         }
     },
 });

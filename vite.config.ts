@@ -39,7 +39,7 @@ export default defineConfig({
     https: true,
     proxy: {
       '/api': {
-        target: 'https://primelightou.com',
+        target: 'https://api.primelightou.com',
         changeOrigin: true,
         secure: false,
         // rewrite: (path) => path.replace(/^\/api/, ''),
