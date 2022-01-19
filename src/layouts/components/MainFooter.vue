@@ -19,10 +19,11 @@
         <div class="tw-order-3 lg:tw-order-2 tw-flex-1 lg:tw-flex-none">
           <div class="footer-title">{{ $t('Contact Us') }}</div>
           <div class="footer-description tw-text-xs2 xl:tw-text-base">
-            <div>OÜ Primelight</div>
+            <div>Primelight OU</div>
             <div class="tw-pt-3">{{ $t('Registry code') }} 11954642</div>
             <div class="tw-pt-3">{{ $t('Registered 14.06.2010') }}</div>
             <div class="tw-pt-3">{{ $t('address') }}</div>
+            <div class="tw-pt-3">{{ $t('address 2') }}</div>
             <div class="tw-pt-3">
               <a
                 class="hover:tw-text-black"

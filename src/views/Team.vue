@@ -24,7 +24,7 @@
     <section class="px-16px-48px-80px py-80px-104px-120px">
       <!-- top -->
       <div class="topic-title tw-flex tw-justify-center tw-mb-20">
-        <h2 class="tw-max-w-3xl tw-text-center">OÜ Primelight {{ $t('International senior team') }}</h2>
+        <h2 class="tw-max-w-3xl tw-text-center">Primelight OU {{ $t('International senior team') }}</h2>
       </div>
       <!-- bottom -->
       <VCountries v-model:country="countryId" key-label="title" key-value="id" />

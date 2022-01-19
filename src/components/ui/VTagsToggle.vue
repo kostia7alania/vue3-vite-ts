@@ -1,7 +1,7 @@
 <template>
     <div class="tw-flex tw-justify-center tw-flex-wrap tw-gap-[20px] tw-text-sm">
         <VButtonRadio
-            v-if="!xl"
+            v-if="isSelect ? false : !xl"
             :model-value="modelValue"
             :items="items"
             :key-value="keyValue"
@@ -14,7 +14,10 @@
             :items="items"
             :key-value="keyValue"
             :key-label="keyLabel"
-            class="tw-w-[343px]"
+            :class="{
+                'tw-w-[343px]': !isSelect,
+                'tw-w-full': isSelect,
+            }"
             :placeholder="placeholder"
             @update:model-value="$emit('update:modelValue', $event)"
         />
@@ -47,6 +50,7 @@ export default defineComponent({
         keyValue: { type: String, default: undefined },
         keyLabel: { type: String, default: undefined },
 
+        isSelect: { type: Boolean, default: false },
     },
     emits: ['update:modelValue'],
     setup() {

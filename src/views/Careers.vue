@@ -211,8 +211,8 @@
             {{ $t('Apply now and build your career in OU Primelight') }}
             <a
               class="tw-text-blue-1"
-              href="mailto:adventure@OÜ Primelight.com"
-            >adventure@OÜ Primelight.com</a>
+              href="mailto:adventure@Primelight OU.com"
+            >adventure@Primelight OU.com</a>
           </div>
         </div>
       </div>

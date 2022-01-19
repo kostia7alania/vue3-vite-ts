@@ -191,7 +191,7 @@ export default defineComponent({
       { title: t('Horizon Europe'), description: t('Horizon Europe supports large international consortiums composing'), },
       { title: t('European Innovation'), description: t('EIC supports highly innovative SMEs and start-ups in developing ground-breaking business ideas'), },
       { title: t('Cascade Funding'), description: t('Cascade funding opportunities are calls organized within H2020 projects to tech start-ups or scale-ups via acceleration'), },
-      { title: t('Eit Innovation Comunities'), description: t('The European Institute of Innovation and Technology supports the creation and fining of innovative solutions'), },
+      { title: t('Eit Innovation Communities'), description: t('The European Institute of Innovation and Technology supports the creation and fining of innovative solutions'), },
       { title: t('Erasmus'), description: t('Erasmus supports education'), },
       { title: t('Creative Europe'), description: t('Creative Europe supports the audiovisual'), },
       { title: t('Life'), description: t('LIFE supports private bodies public entities and NGOs in the environment and climate field'), },

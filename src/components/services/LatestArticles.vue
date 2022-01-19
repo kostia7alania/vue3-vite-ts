@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2 class="topic-title max-w-400px my-120-80">Our latest articles</h2>
+    <h2 class="topic-title max-w-400px my-120-80">{{ $t('Our latest articles') }}</h2>
     <div v-if="latestArticles.length">
-      <div v-if="!sm" class="gap-40px-16px tw-flex">
+      <div v-if="!md" class="gap-40px-16px tw-flex">
         <!-- DESKTOP -->
 
         <ArticleCard
@@ -19,12 +19,7 @@
         <!-- MOBILE -->
 
         <!-- @vue-ignore -->
-        <template
-          v-for="(article, i) of latestArticles"
-          :id="article.id"
-          v-slot:[i]
-          :key="article.id"
-        >
+        <template v-for="(article, i) of latestArticles" :id="article.id" #[i] :key="article.id">
           <ArticleCard
             :id="article.id"
             class="article-card-swiper"
@@ -38,7 +33,7 @@
     <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
       <VIconSpinner class="tw-h-20" spin />
     </div>
-    <div v-else>We have no latest articles at the time</div>
+    <div v-else>{{$t('We have no latest articles at the time')}}</div>
   </div>
 </template>
 
@@ -59,7 +54,7 @@ export default defineComponent({
   },
   setup() {
     const breakpoints = useBreakpoints(breakpointsTailwind)
-    const sm = breakpoints.smaller('sm')
+    const md = breakpoints.smaller('lg')
 
     const store = useVuex()
 
@@ -86,7 +81,7 @@ export default defineComponent({
     onMounted(getNews)
 
     return {
-      sm,
+      md,
       isLoading,
       latestArticles
     }

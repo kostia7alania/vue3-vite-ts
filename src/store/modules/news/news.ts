@@ -25,7 +25,7 @@ export const news = {
     GETTER_LATEST_ARTICLES:
       (state: INews) =>
       (count: number): INew[] => {
-        return state.ARTICLES.slice(0, count + 1);
+        return state.ARTICLES.slice(0, count);
       },
     GETTER_CATEGORIES: (state: INews) => {
       const res = [{ id: 0, title: i18n.global.t('All') }];

@@ -3,6 +3,7 @@
     <VTagsToggle
         :model-value="country"
         key-label="title"
+        is-select
         :key-value="keyValue"
         :placeholder="$t('Preferred location') + '*'"
         :items="route.name === 'team' ? teamCategories : countries"
@@ -28,6 +29,7 @@ export default defineComponent({
     props: {
         country: { type: null, default: undefined },
         keyValue: { type: String, default: undefined },
+        isSelect: { type: Boolean, default: false },
     },
     emits: ['ready', 'update:country'],
     setup(props, { emit }) {

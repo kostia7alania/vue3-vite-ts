@@ -23,11 +23,20 @@
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
                 <VInput v-model="form.companyName" class="tw-basis-1/2" placeholder="Company name" />
-                <VSelect
-                    v-model="form.office"
-                    class="tw-basis-1/2"
-                    :placeholder="$t('Preferred location') + '*'"
-                    :items="['Office 1', 'Office 2', 'Office 3']"
+                <!--
+                  <VSelect
+                  v-model="form.office"
+                  :placeholder="$t('Preferred location') + '*'"
+                  :items="['Office 1', 'Office 2', 'Office 3']"
+                  />
+                -->
+
+                <VCountries
+                    v-model:country="form.office"
+                    class="tw-basis-1/2 tw-w-full"
+                    key-label="title"
+                    key-value="id"
+                    is-select
                 />
             </div>
             <div class="tw-mt-4 xl:tw-mt-6">
@@ -127,6 +136,8 @@
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, ref, } from 'vue';
 
+import VCountries from "@/components/ui/VCountries.vue"
+
 export default defineComponent({
     name: "ContactFormCareer",
     components: {
@@ -138,6 +149,7 @@ export default defineComponent({
         VCustomModal: defineAsyncComponent(() => import("@/components/ui/VCustomModal.vue")),
         VFilePicker: defineAsyncComponent(() => import("@/components/ui/VFilePicker.vue")),
         VCVPicker: defineAsyncComponent(() => import("@/components/ui/VCVPicker.vue")),
+        VCountries
     },
     setup() {
 

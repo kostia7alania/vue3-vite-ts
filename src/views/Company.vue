@@ -8,10 +8,10 @@
     <!--   
       <section>
       <PageTopSection theme="blue" class="min-h-400px">
-      <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Story of OÜ Primelight</div>
+      <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Story of Primelight OU</div>
       <div
       class="tw-text-lg tw-font-medium tw-leading-7 tw-max-w-5xl"
-      >OÜ Primelight challenges the traditional norms of management consulting, providing quality advisory talent that delivers results at a value for money price point. We help our clients from private companies to governments and non-profits to challenge their own industries by becoming more innovative, efficient and dynamic.</div>
+      >Primelight OU challenges the traditional norms of management consulting, providing quality advisory talent that delivers results at a value for money price point. We help our clients from private companies to governments and non-profits to challenge their own industries by becoming more innovative, efficient and dynamic.</div>
       </PageTopSection>
       </section>
     -->
@@ -29,7 +29,7 @@
         <!-- card #1 -->
         <div class="tw-h-[510px] tw-basis-[333px] tw-w-full tw-shrink tw-grow">
           <CardInfoAnim
-            :title="$t('Fact-Based management consultigs')"
+            :title="$t('Fact-Based management consultig')"
             :description="$t('We are always looking for young talents from our local markets who want to develop professionally')"
             image="students-and-graduates"
             theme="orange"
@@ -100,7 +100,7 @@
         >
           <!-- left -->
           <div class="tw-basis-2/3 tw-grow-0 tw-shrink-1">
-            <div class="topic-title">OÜ Primelight - {{ $t('the challenger advisory') }}</div>
+            <div class="topic-title">Primelight OU - {{ $t('the challenger advisory') }}</div>
             <div class="tw-pt-6 topic-description">
               <p class="tw-mt-2">{{ $t('We started our journey in Estonia') }}</p>
               <p class="tw-mt-2">{{ $t('Taking advantage of our unique origin and experience') }}</p>

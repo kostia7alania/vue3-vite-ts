@@ -6,7 +6,7 @@
   >
     <div class="tw-h-5 tw-w-5 md:tw-h-7 md:tw-w-7 lg:tw-h-9 lg:tw-w-9">
       <VIconSpinner :white="white"/>
-    </div>OÜ Primelight
+    </div>Primelight OU
   </router-link>
 </template>
 
