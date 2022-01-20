@@ -1,9 +1,10 @@
 <template>
   <VButton
+    v-click-outside="clickOutsideHandler"
     :class="{
       'tw-text-blue-1 tw-bg-blue-2': isOpen,
     }"
-    class="tw-text-sm md:tw-text-base tw-font-medium tw-h-7 tw-duration-300 tw-relative tw-uppercase tw-border-none hover:tw-hue-rotate-0 active:tw-sepia-0"
+    class="tw-hue-rotate-200 tw-text-sm md:tw-text-base tw-font-medium tw-h-7 tw-duration-300 tw-relative tw-uppercase tw-border-none hover:tw-hue-rotate-0 active:tw-sepia-0"
     @click="isOpen = !isOpen"
   >
     <div class="tw-flex tw-items-center tw-gap-x-2">
@@ -26,7 +27,7 @@
       </div>
     </div>
     <div
-      class="tw-text-lg tw-font-normal tw-flex tw-flex-col  tw-rounded-3xl tw-overflow-hidden tw-absolute tw-z-100 tw-top-10 tw-left-2/4 tw--translate-x-1/2"
+      class="tw-text-lg tw-font-normal tw-flex tw-flex-col tw-rounded-3xl tw-overflow-hidden tw-absolute tw-z-100 tw-top-10 tw-left-2/4 tw--translate-x-1/2"
       :class="{ 'tw-hidden': !isOpen }"
     >
       <div
@@ -82,9 +83,11 @@ export default defineComponent({
       if (storedLocale) locale.value = storedLocale
     })
 
+    const clickOutsideHandler = () => {
+      isOpen.value = false
+    }
 
-
-    return { localeToggle, isOpen }
+    return { localeToggle, isOpen, clickOutsideHandler }
   },
 })
 </script>

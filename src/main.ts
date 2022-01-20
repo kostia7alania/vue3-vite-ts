@@ -8,6 +8,7 @@ import { router } from './router/router';
 import { store, key } from './store/store';
 
 import App from '@/App.vue';
+import { vClickOutside } from '@/directives/vClickOutside';
 import '@/assets/scss/global.scss';
 
 import 'vite-plugin-svg-icons/register';
@@ -39,6 +40,8 @@ app.use(VueUniversalModal, {
   teleportTarget: '#my-modals',
   modalComponent: 'MyModal',
 });
+
+app.directive('click-outside', vClickOutside);
 
 app.mount('#app');
 
