@@ -61,8 +61,8 @@
             :class="{
               'tw-max-w-3xl': item.type !== 'image_fullscreen',
             }"
-          >
-            <div v-if="item.type === 'text_only'" v-html="item.content.text"></div>
+          > 
+            <Markdown v-if="item.type === 'text_only'" :source="item.content.text" />
             <div v-else-if="item.type === 'image_fullscreen'">
               <img :src="item.content.image" :alt="article.title" />
             </div>
@@ -83,7 +83,12 @@
 
 <script lang="ts">
 import { computed, defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
+
+
 import { useRoute, } from 'vue-router';
+//@ts-ignore
+import Markdown from 'vue3-markdown-it';
+import 'highlight.js/styles/monokai.css';
 
 import { dateFormat } from '@/utils/dateFormat'
 
@@ -96,7 +101,7 @@ export default defineComponent({
   components: {
     PageTopSection,
     VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
-    VIconSpinner,
+    VIconSpinner, Markdown
   },
   emits: ['ready'],
   setup(_, { emit }) {
