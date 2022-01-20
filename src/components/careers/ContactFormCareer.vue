@@ -78,7 +78,7 @@
                 </VCheckbox>
                 <VCheckbox v-model="agreement3" class="tw-mt-4">
                     <span>
-                        {{ $t('I agree that OU Primelight shares my personal data internally') }}
+                        {{ $t('I agree that Primelight OÜ shares my personal data internally') }}
                         <span
                             class="tw-text-orange-1"
                         >{{ $t('Privacy notice for applicants') }}.</span>

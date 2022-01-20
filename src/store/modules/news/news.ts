@@ -8,6 +8,10 @@ import { IActions, INews, INew, INewsResponse } from './news.d';
 
 import { GET } from '@/http';
 import { i18n } from '@/plugins/i18n';
+interface IGetArticlesByCategory {
+  count: number;
+  category?: string;
+}
 
 export const news = {
   namespaced: true,
@@ -24,8 +28,11 @@ export const news = {
       },
     GETTER_LATEST_ARTICLES:
       (state: INews) =>
-      (count: number): INew[] => {
-        return state.ARTICLES.slice(0, count);
+      ({ count = 3, category = '' }: IGetArticlesByCategory): INew[] => {
+        let articles = state.ARTICLES;
+        if (category)
+          articles = articles.filter((e) => e.category.title === category);
+        return articles.slice(0, count);
       },
     GETTER_CATEGORIES: (state: INews) => {
       const res = [{ id: 0, title: i18n.global.t('All') }];

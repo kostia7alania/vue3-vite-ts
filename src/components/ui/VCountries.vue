@@ -2,8 +2,9 @@
     <!-- key-value="id" -->
     <VTagsToggle
         :model-value="country"
+        class="tw-w-full"
         key-label="title"
-        is-select
+        :is-select="isSelect"
         :key-value="keyValue"
         :placeholder="$t('Preferred location') + '*'"
         :items="route.name === 'team' ? teamCategories : countries"

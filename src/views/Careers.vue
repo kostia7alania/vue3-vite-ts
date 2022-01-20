@@ -20,7 +20,7 @@
     -->
     <section class="my-80px-104px-120px px-16px-48px-80px">
       <div class="topic-title tw-flex tw-justify-center">
-        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at OU Primelight') }}</h2>
+        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at Primelight OÜ') }}</h2>
       </div>
 
       <div
@@ -72,7 +72,7 @@
           <div class="work-card-secondary">
             <CardInfoAnim
               :title="$t('Fun')"
-              :description="$t('At OU Primelight we provide an enjoyable working atmosphere')"
+              :description="$t('At Primelight OÜ we provide an enjoyable working atmosphere')"
               image="fun"
               theme="blue"
               title-class="tw-text-2xl"
@@ -112,50 +112,7 @@
         'bg-stories-of-our-people-xl': !sm
       }"
     >
-      <h2
-        class="topic-title lg:tw-max-w-sm lg:tw-pr-20 my-40px-80px"
-      >{{ $t('Stories of our people') }}</h2>
-      <div v-if="!sm" class="tw-flex tw-flex-wrap tw-gap-10">
-        <ArticleCardOld
-          class="tw-flex-1"
-          date="2021-10-30"
-          :title="`${$t('OU Primelight Challengers')} - Oleksandr Volik`"
-        />
-        <ArticleCardOld
-          class="tw-flex-1"
-          date="2021-10-26"
-          :title="`${$t('OU Primelight Challengers')} - Maari Helilaid`"
-        />
-        <ArticleCardOld
-          class="tw-flex-1"
-          date="2021-10-09"
-          :title="`${$t('OU Primelight Challengers')} - Sevak Hovhannisyan`"
-        />
-      </div>
-      <CardsSwiper v-else>
-        <!-- MOBILE -->
-        <template #test1>
-          <ArticleCardOld
-            class="article-card-swiper"
-            date="2021-10-11"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-          />
-        </template>
-        <template #test2>
-          <ArticleCardOld
-            class="article-card-swiper"
-            date="2021-10-12"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-          />
-        </template>
-        <template #test3>
-          <ArticleCardOld
-            class="article-card-swiper"
-            date="2021-10-13"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-          />
-        </template>
-      </CardsSwiper>
+      <LatestArticles :title="$t('Stories of our people')" category="Career stories" />
     </section>
 
     <!--
@@ -167,7 +124,7 @@
       <div class="topic-title tw-flex tw-justify-center tw-mb-6">
         <h2
           class="tw-max-w-3xl lg:tw-text-center"
-        >{{ $t('Consulting career path at OU Primelight') }}</h2>
+        >{{ $t('Consulting career path at Primelight OÜ') }}</h2>
       </div>
       <div class="topic-description tw-flex tw-justify-center tw-mb-20">
         <div
@@ -208,7 +165,7 @@
         </div>
         <div class="topic-description tw-flex tw-justify-center">
           <div class="tw-max-w-3xl tw-text-center">
-            {{ $t('Apply now and build your career in OU Primelight') }}
+            {{ $t('Apply now and build your career in Primelight OÜ') }}
             <a
               class="tw-text-blue-1"
               href="mailto:adventure@Primelight OU.com"
@@ -237,9 +194,8 @@ export default defineComponent({
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     CardInfoAnim,
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
-    ArticleCardOld: defineAsyncComponent(() => import("@/components/articles/ArticleCardOld.vue")),
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
-    CardsSwiper: defineAsyncComponent(() => import("@/components/services/CardsSwiper.vue")),
+    LatestArticles: defineAsyncComponent(() => import("@/components/services/LatestArticles.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {

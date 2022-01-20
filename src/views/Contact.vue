@@ -25,7 +25,7 @@
 
       <!-- bottom  -->
       <div class="topic-title tw-flex tw-justify-center tw-my-20">
-        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('OU Primelight International') }}</h2>
+        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Primelight OÜ International') }}</h2>
       </div>
 
       <div v-if="isLoading" class="tw-flex tw-justify-around tw-gap-10">

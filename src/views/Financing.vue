@@ -120,17 +120,17 @@
         <ArticleCardOld
           class="tw-w-full tw-basis-full"
           date="2021-10-11"
-          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+          :title="$t('Poland-based SAS Advisors is joining Primelight OÜ')"
         />
         <ArticleCardOld
           class="tw-w-full tw-basis-full"
           date="2021-10-12"
-          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+          :title="$t('Poland-based SAS Advisors is joining Primelight OÜ')"
         />
         <ArticleCardOld
           class="tw-w-full tw-basis-full"
           date="2021-10-13"
-          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+          :title="$t('Poland-based SAS Advisors is joining Primelight OÜ')"
         />
       </div>
       <CardsSwiper v-else>
@@ -139,21 +139,21 @@
           <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-11"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+            :title="$t('Poland-based SAS Advisors is joining Primelight OÜ')"
           />
         </template>
         <template #test2>
           <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-12"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+            :title="$t('Poland-based SAS Advisors is joining Primelight OÜ')"
           />
         </template>
         <template #test3>
           <ArticleCardOld
             class="article-card-swiper"
             date="2021-10-13"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
+            :title="$t('Poland-based SAS Advisors is joining Primelight OÜ')"
           />
         </template>
       </CardsSwiper>

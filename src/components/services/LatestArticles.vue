@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="topic-title max-w-400px my-120-80">{{ $t('Our latest articles') }}</h2>
+    <h2 class="topic-title max-w-400px my-120-80">{{ title ? title : $t('Our latest articles') }}</h2>
     <div v-if="latestArticles.length">
       <div v-if="!md" class="gap-40px-16px tw-flex">
         <!-- DESKTOP -->
@@ -33,7 +33,7 @@
     <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
       <VIconSpinner class="tw-h-20" spin />
     </div>
-    <div v-else>{{$t('We have no latest articles at the time')}}</div>
+    <div v-else>{{ $t('We have no latest articles at the time') }}</div>
   </div>
 </template>
 
@@ -52,7 +52,11 @@ export default defineComponent({
     VIconSpinner,
     ArticleCard: defineAsyncComponent(() => import("@/components/articles/ArticleCard.vue")),
   },
-  setup() {
+  props: {
+    title: { type: String, default: '' },
+    category: { type: String, default: '' }
+  },
+  setup(props) {
     const breakpoints = useBreakpoints(breakpointsTailwind)
     const md = breakpoints.smaller('lg')
 
@@ -61,7 +65,7 @@ export default defineComponent({
     const countLatestArticles = 3
 
     const latestArticles = computed(() => {
-      return store.getters['news/GETTER_LATEST_ARTICLES'](countLatestArticles) || {}
+      return store.getters['news/GETTER_LATEST_ARTICLES']({ count: countLatestArticles, category: props.category }) || {}
     })
 
     const isLoading = ref(false)

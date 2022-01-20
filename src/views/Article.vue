@@ -106,7 +106,8 @@ export default defineComponent({
     const isLoading = ref(false)
 
     const article = computed(() => {
-      return store.getters['news/GETTER_ARTICLE'](1) || {}
+      const articleId = route.params?.id
+      return store.getters['news/GETTER_ARTICLE'](articleId) || {}
     })
 
     const getArticle = async () => {

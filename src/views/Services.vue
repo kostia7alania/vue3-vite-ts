@@ -18,12 +18,12 @@
         >
           <!-- left -->
           <div class="lg:tw-pt-20 tw-flex-1 tw-basis-full lg:tw-basis-auto">
-            <div class="topic-title">{{$t('ou primelight management consulting')}}</div>
+            <div class="topic-title">{{$t('Primelight OÜ management consulting')}}</div>
             <div class="mt-16px-24px-24px topic-description">
               <div>{{$t('Started as an alliance of advisory firms in the Baltic States')}}.</div>
               <div
                 class="tw-mt-2"
-              >{{$t('OU Primelight is the leading management consultancy from Central Eastern Europe')}}.</div>
+              >{{$t('Primelight OÜ is the leading management consultancy from Central Eastern Europe')}}.</div>
               <div
                 class="tw-mt-2"
               >{{$t('We combine bold strategies and transformative technologies to help organizations innovate more sustainably')}}.</div>

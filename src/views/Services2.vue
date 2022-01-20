@@ -131,49 +131,7 @@
       --------
     -->
     <section class="my-160px-240px-240px px-16px-48px-80px">
-      <h2 class="topic-title max-w-400px my-120-80">{{ $t('Case studies') }}</h2>
-      <div v-if="!sm" class="gap-40px-16px tw-flex">
-        <!-- DESKTOP -->
-        <ArticleCardOld
-          class="tw-w-full tw-basis-full"
-          date="2021-10-11"
-          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-        />
-        <ArticleCardOld
-          class="tw-w-full tw-basis-full"
-          date="2021-10-12"
-          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-        />
-        <ArticleCardOld
-          class="tw-w-full tw-basis-full"
-          date="2021-10-13"
-          :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-        />
-      </div>
-      <CardsSwiper v-else>
-        <!-- MOBILE -->
-        <template #test1>
-          <ArticleCardOld
-            class="article-card-swiper"
-            date="2021-10-11"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-          />
-        </template>
-        <template #test2>
-          <ArticleCardOld
-            class="article-card-swiper"
-            date="2021-10-12"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-          />
-        </template>
-        <template #test3>
-          <ArticleCardOld
-            class="article-card-swiper"
-            date="2021-10-13"
-            :title="$t('Poland-based SAS Advisors is joining OU Primelight')"
-          />
-        </template>
-      </CardsSwiper>
+      <LatestArticles :title="$t('Case studies')" category="Case studies" />
     </section>
   </div>
 </template>
@@ -182,17 +140,15 @@
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
-import CardsSwiper from "@/components/services/CardsSwiper.vue"
 import HelpColumn from "@/components/services2/HelpColumn.vue"
 
 export default defineComponent({
   name: 'Services2',
   components: {
-    CardsSwiper,
     HelpColumn,
     CardInfoDynamicHorizontal: defineAsyncComponent(() => import("@/components/services2/CardInfoDynamicHorizontal.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
-    ArticleCardOld: defineAsyncComponent(() => import("@/components/articles/ArticleCardOld.vue")),
+    LatestArticles: defineAsyncComponent(() => import("@/components/services/LatestArticles.vue")),
   },
   emits: ['ready'],
   setup(_, { emit }) {
