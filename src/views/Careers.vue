@@ -19,64 +19,66 @@
       -------- 
     -->
     <section class="my-80px-104px-120px px-16px-48px-80px">
-      <div class="topic-title tw-flex tw-justify-center">
-        <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at Primelight OÜ') }}</h2>
-      </div>
-
-      <div
-        class="gap-16px-24px-40px mt-60px-80px-80px tw-flex tw-flex-col xl:tw-flex-row tw-w-full tw-text-sm"
-      >
-        <!-- card #1 -->
-        <div class="tw-w-full tw-h-[354px] xl:tw-h-[640px]">
-          <CardInfoAnim
-            :title="$t('Adventure')"
-            :description="$t('We value people who are not ordinary and who do not want to do everyday things')"
-            image="adventure"
-            theme="blue"
-            title-class="tw-text-2xl"
-          />
+      <div class="max-layout-width">
+        <div class="topic-title tw-flex tw-justify-center">
+          <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at Primelight OÜ') }}</h2>
         </div>
-        <div class="gap-16px-24px-40px tw-w-full tw-flex tw-flex-wrap">
-          <!-- card #2 -->
-          <div class="work-card-secondary">
-            <CardInfoAnim
-              :title="$t('Intellectual challenge')"
-              :description="$t('We are about learning on the job through a variety of intellectually challenging projects')"
-              image="intellectual-challenge"
-              theme="blue"
-              title-class="tw-text-2xl"
-            />
-          </div>
-          <!-- card #3 -->
-          <div class="work-card-secondary">
-            <CardInfoAnim
-              :title="$t('Non - hierarchical organization')"
-              :description="$t('We value a high degree of responsibility and the importance of input from every employee from day one on the job')"
-              image="non-hierarchical-organization"
-              theme="orange"
-              title-class="tw-text-2xl"
-            />
-          </div>
 
-          <!-- card #2 -->
-          <div class="work-card-secondary">
+        <div
+          class="gap-16px-24px-40px mt-60px-80px-80px tw-flex tw-flex-col xl:tw-flex-row tw-w-full tw-text-sm"
+        >
+          <!-- card #1 -->
+          <div class="tw-w-full tw-h-[354px] xl:tw-h-[640px]">
             <CardInfoAnim
-              :title="$t('Flexibility')"
-              :description="$t('We seek to balance getting the job done with employees')"
-              image="flexibility"
-              theme="orange"
-              title-class="tw-text-2xl"
-            />
-          </div>
-          <!-- card #3 -->
-          <div class="work-card-secondary">
-            <CardInfoAnim
-              :title="$t('Fun')"
-              :description="$t('At Primelight OÜ we provide an enjoyable working atmosphere')"
-              image="fun"
+              :title="$t('Adventure')"
+              :description="$t('We value people who are not ordinary and who do not want to do everyday things')"
+              image="adventure"
               theme="blue"
               title-class="tw-text-2xl"
             />
+          </div>
+          <div class="gap-16px-24px-40px tw-w-full tw-flex tw-flex-wrap">
+            <!-- card #2 -->
+            <div class="work-card-secondary">
+              <CardInfoAnim
+                :title="$t('Intellectual challenge')"
+                :description="$t('We are about learning on the job through a variety of intellectually challenging projects')"
+                image="intellectual-challenge"
+                theme="blue"
+                title-class="tw-text-2xl"
+              />
+            </div>
+            <!-- card #3 -->
+            <div class="work-card-secondary">
+              <CardInfoAnim
+                :title="$t('Non - hierarchical organization')"
+                :description="$t('We value a high degree of responsibility and the importance of input from every employee from day one on the job')"
+                image="non-hierarchical-organization"
+                theme="orange"
+                title-class="tw-text-2xl"
+              />
+            </div>
+
+            <!-- card #2 -->
+            <div class="work-card-secondary">
+              <CardInfoAnim
+                :title="$t('Flexibility')"
+                :description="$t('We seek to balance getting the job done with employees')"
+                image="flexibility"
+                theme="orange"
+                title-class="tw-text-2xl"
+              />
+            </div>
+            <!-- card #3 -->
+            <div class="work-card-secondary">
+              <CardInfoAnim
+                :title="$t('Fun')"
+                :description="$t('At Primelight OÜ we provide an enjoyable working atmosphere')"
+                image="fun"
+                theme="blue"
+                title-class="tw-text-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -121,27 +123,29 @@
       -------- 
     -->
     <section class="pb-80px-160px-240px px-16px-48px-80px">
-      <div class="topic-title tw-flex tw-justify-center tw-mb-6">
-        <h2
-          class="tw-max-w-3xl lg:tw-text-center"
-        >{{ $t('Consulting career path at Primelight OÜ') }}</h2>
-      </div>
-      <div class="topic-description tw-flex tw-justify-center tw-mb-20">
-        <div
-          class="tw-max-w-3xl lg:tw-text-center"
-        >{{ $t('We truly believe that our success lies in the talented and passionate team of professionals') }}</div>
-      </div>
-      <div class="mt-60px-80px-80px tw-flex tw-flex-col lg:tw-flex-row tw-gap-15">
-        <div class="tw-flex tw-flex-col tw-flex-1 tw-gap-15">
-          <div v-for="col of consultingCol1" :key="col.title">
-            <div class="topic-title-28px">{{ col.title }}</div>
-            <div class="topic-description tw-mt-6">{{ col.description }}</div>
-          </div>
+      <div class="max-layout-width">
+        <div class="topic-title tw-flex tw-justify-center tw-mb-6">
+          <h2
+            class="tw-max-w-3xl lg:tw-text-center"
+          >{{ $t('Consulting career path at Primelight OÜ') }}</h2>
         </div>
-        <div class="tw-flex tw-flex-col tw-flex-1 tw-gap-15">
-          <div v-for="col of consultingCol2" :key="col.title">
-            <div class="topic-title-28px">{{ col.title }}</div>
-            <div class="topic-description tw-mt-6">{{ col.description }}</div>
+        <div class="topic-description tw-flex tw-justify-center tw-mb-20">
+          <div
+            class="tw-max-w-3xl lg:tw-text-center"
+          >{{ $t('We truly believe that our success lies in the talented and passionate team of professionals') }}</div>
+        </div>
+        <div class="mt-60px-80px-80px tw-flex tw-flex-col lg:tw-flex-row tw-gap-15">
+          <div class="tw-flex tw-flex-col tw-flex-1 tw-gap-15">
+            <div v-for="col of consultingCol1" :key="col.title">
+              <div class="topic-title-28px">{{ col.title }}</div>
+              <div class="topic-description tw-mt-6">{{ col.description }}</div>
+            </div>
+          </div>
+          <div class="tw-flex tw-flex-col tw-flex-1 tw-gap-15">
+            <div v-for="col of consultingCol2" :key="col.title">
+              <div class="topic-title-28px">{{ col.title }}</div>
+              <div class="topic-description tw-mt-6">{{ col.description }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -159,23 +163,27 @@
         'bg-contacts-xl': !md,
       }"
     >
-      <div class="pt-80px-120px-120px">
-        <div class="topic-title tw-flex tw-justify-center tw-mb-6">
-          <h2 class="tw-max-w-xl tw-text-center">{{ $t('Searching for new career opportunities') }}</h2>
-        </div>
-        <div class="topic-description tw-flex tw-justify-center">
-          <div class="tw-max-w-3xl tw-text-center">
-            {{ $t('Apply now and build your career in Primelight OÜ') }}
-            <a
-              class="tw-text-blue-1"
-              href="mailto:adventure@Primelight OU.com"
-            >adventure@Primelight OU.com</a>
+      <div class="max-layout-width">
+        <div class="pt-80px-120px-120px">
+          <div class="topic-title tw-flex tw-justify-center tw-mb-6">
+            <h2
+              class="tw-max-w-xl tw-text-center"
+            >{{ $t('Searching for new career opportunities') }}</h2>
+          </div>
+          <div class="topic-description tw-flex tw-justify-center">
+            <div class="tw-max-w-3xl tw-text-center">
+              {{ $t('Apply now and build your career in Primelight OÜ') }}
+              <a
+                class="tw-text-blue-1"
+                href="mailto:adventure@Primelight OU.com"
+              >adventure@Primelight OU.com</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="tw-pt-20 tw-pb-35">
-        <ContactFormCareer class="tw-bg-white" />
+        <div class="tw-pt-20 tw-pb-35">
+          <ContactFormCareer class="tw-bg-white" />
+        </div>
       </div>
     </section>
   </div>

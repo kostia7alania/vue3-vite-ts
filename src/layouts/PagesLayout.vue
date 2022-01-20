@@ -13,13 +13,15 @@
         'tw-justify-end tw-pb-15': $route.name === 'articles'
       }"
     >
-      <div v-if="title" class="text-40px-60px-60px tw-font-semibold tw-leading-tight">{{ title }}</div>
-      <div
-        v-if="description"
-        class="text-16px-18px-18px tw-font-medium tw-leading-7 tw-max-w-5xl tw-mt-4 xl:tw-mt-5"
-      >{{ description }}</div>
-      <!-- bottom -->
-      <ArticlesTags v-if="$route.name === 'articles'" class="tw-mt-8 md:tw-mt-10 xl:tw-mt-16" />
+      <div class="max-layout-width">
+        <div v-if="title" class="text-40px-60px-60px tw-font-semibold tw-leading-tight">{{ title }}</div>
+        <div
+          v-if="description"
+          class="text-16px-18px-18px tw-font-medium tw-leading-7 tw-max-w-5xl tw-mt-4 xl:tw-mt-5"
+        >{{ description }}</div>
+        <!-- bottom -->
+        <ArticlesTags v-if="$route.name === 'articles'" class="tw-mt-8 md:tw-mt-10 xl:tw-mt-16" />
+      </div>
     </PageTopSection>
   </section>
 

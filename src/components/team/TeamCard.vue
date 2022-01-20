@@ -2,7 +2,7 @@
     <!-- tw-h-60 -->
     <!-- 360px -mob 400px-tab+ -->
     <div
-        class="tw-max-w-[400px] tw-h-[360px] xl:tw-h-[400px] tw-overflow-hidden gray-shadow-1 tw-bg-white tw-rounded-4xl tw-relative"
+        class="tw-max-w-[456px] tw-h-[360px] xl:tw-h-[400px] tw-overflow-hidden gray-shadow-1 tw-bg-white tw-rounded-4xl tw-relative"
     >
         <img v-if="avatar" class="card-image" :src="avatar" :alt="String(title)" />
 

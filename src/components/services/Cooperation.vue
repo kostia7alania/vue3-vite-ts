@@ -4,7 +4,7 @@
         :class="{
             'bg-cooperation': !smallerXl,
         }"
-        class="gray-shadow-1 tw-pb-10 tw-pt-3 md:tw-pt-5 md:tw-pb-30 xl:tw-pb-10 tw-flex tw-flex-wrap xl:tw-flex-nowrap tw-justify-center tw-items-center tw-bg-gray-4 tw-rounded-4xl tw-relative tw-overflow-hidden"
+        class="max-layout-width gray-shadow-1 tw-pb-10 tw-pt-3 md:tw-pt-5 md:tw-pb-30 xl:tw-pb-10 tw-flex tw-flex-wrap xl:tw-flex-nowrap tw-justify-center tw-items-center tw-bg-gray-4 tw-rounded-4xl tw-relative tw-overflow-hidden"
     >
         <div class="tw-flex-1 tw-flex tw-justify-center tw-basis-full">
             <WorkScene class="tw-h-100" />

@@ -7,7 +7,7 @@
         }"
     >
         <div
-            class="px-16px-48px-80px tw-flex tw-justify-between tw-flex-wrap xl:tw-flex-nowrap tw-gap-10 tw-relative tw-z-10"
+            class="max-layout-width-overflow-auto px-16px-48px-80px tw-flex tw-justify-between tw-flex-wrap xl:tw-flex-nowrap tw-gap-10 tw-relative tw-z-10"
         >
             <!-- left -->
             <div class="tw-flex-1 tw-basis-1/2">
@@ -42,7 +42,7 @@
             <div class="tw-flex tw-basis-1/2 tw-flex-1 tw-mt-10 xl:tw-mt-0 xl:tw--translate-y-7">
                 <img
                     src="@/assets/images/company/world-map.png"
-                    class="world-map tw-w-full tw-translate-x-20"
+                    class="world-map tw-w-full tw-translate-x-40"
                 />
             </div>
         </div>

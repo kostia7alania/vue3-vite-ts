@@ -1,23 +1,22 @@
 <template>
   <div :key="$i18n.locale" class="tw-flex tw-flex-col dark:tw-bg-gray-800">
     <div class="main-header tw-flex-1">
-      <div class="main-header"></div>
-      <div class="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50">
-        <MainHeader class="main-header max-layout-width tw-mx-auto" />
+      <div class="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50 border-bottom-gray-1 tw-bg-gray-1">
+        <div class="max-layout-width-overflow-auto tw-mx-auto">
+          <MainHeader class="main-header" />
+        </div>
       </div>
     </div>
     <div class="app-main tw-flex-1">
-      <div class="max-layout-width tw-overflow-hidden tw-mx-auto">
-        <router-view v-slot="{ Component }">
-          <transition name="component-fade">
-            <component :is="Component" @ready="$emit('ready')" />
-          </transition>
-        </router-view>
-      </div>
+      <router-view v-slot="{ Component }">
+        <transition name="component-fade">
+          <component :is="Component" @ready="$emit('ready')" />
+        </transition>
+      </router-view>
     </div>
     <!-- footer -->
     <div>
-      <MainFooter class="main-footer max-layout-width tw-overflow-hidden tw-mx-auto" />
+      <MainFooter class="main-footer" />
     </div>
   </div>
 </template>
@@ -39,16 +38,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.max-layout-width {
-  max-width: 1440px;
-}
-
 $header-lg: 80px;
 $header-sm: 72px;
 
 $footer-lg: 480px;
 $footer-sm: 461px;
 
+.border-bottom-gray-1 {
+  border-bottom: 1.5px solid #e8e7ea;
+}
 .main-header {
   min-height: $header-sm;
   @media (max-width: 770px) {

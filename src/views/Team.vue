@@ -22,30 +22,34 @@
       --------
     -->
     <section class="px-16px-48px-80px py-80px-104px-120px">
-      <!-- top -->
-      <div class="topic-title tw-flex tw-justify-center tw-mb-20">
-        <h2 class="tw-max-w-3xl tw-text-center">Primelight OU {{ $t('International senior team') }}</h2>
-      </div>
-      <!-- bottom -->
-      <VCountries v-model:country="countryId" key-label="title" key-value="id" />
+      <div class="max-layout-width">
+        <!-- top -->
+        <div class="topic-title tw-flex tw-justify-center tw-mb-20">
+          <h2
+            class="tw-max-w-3xl tw-text-center"
+          >Primelight OU {{ $t('International senior team') }}</h2>
+        </div>
+        <!-- bottom -->
+        <VCountries v-model:country="countryId" key-label="title" key-value="id" />
 
-      <!-- row 1 -->
-      <div class="tw-mt-20">
-        <div v-if="teams.length" class="gap-16px-24px-40px tw-flex tw-flex-wrap">
-          <!-- row 1 -->
-          <TeamCard
-            v-for="member of teams"
-            :key="member.id"
-            class="team-card"
-            :title="member.name + ' ' + member.surname"
-            :description="member.position"
-            :avatar="member.avatar"
-          />
+        <!-- row 1 -->
+        <div class="tw-mt-20">
+          <div v-if="teams.length" class="gap-16px-24px-40px tw-flex tw-flex-wrap">
+            <!-- row 1 -->
+            <TeamCard
+              v-for="member of teams"
+              :key="member.id"
+              class="team-card"
+              :title="member.name + ' ' + member.surname"
+              :description="member.position"
+              :avatar="member.avatar"
+            />
+          </div>
+          <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
+            <VIconSpinner class="tw-h-20" spin />
+          </div>
+          <div v-else>{{ $t('We have no colleagues in the selected country') }}</div>
         </div>
-        <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
-          <VIconSpinner class="tw-h-20" spin />
-        </div>
-        <div v-else>{{ $t('We have no colleagues in the selected country') }}</div>
       </div>
     </section>
 
@@ -62,7 +66,7 @@
       }"
     >
       <div class="tw-py-30 px-16px-48px-80px">
-        <ContactForm class="tw-bg-white" />
+        <ContactForm class="tw-bg-white max-layout-width" />
       </div>
     </section>
   </div>

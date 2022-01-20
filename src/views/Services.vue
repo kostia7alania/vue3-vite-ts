@@ -12,28 +12,30 @@
       --------
     -->
     <section class="my-120-80 tw-bg-gray-4 tw-relative">
-      <div class="py-80px-104px-120px tw-relative tw-z-10">
+      <div class="max-layout-width py-80px-104px-120px tw-relative tw-z-10">
         <div
           class="gap-40px-16px px-16px-48px-80px tw-flex tw-justify-between tw-flex-wrap lg:tw-flex-nowrap"
         >
           <!-- left -->
           <div class="lg:tw-pt-20 tw-flex-1 tw-basis-full lg:tw-basis-auto">
-            <div class="topic-title">{{$t('Primelight OÜ management consulting')}}</div>
+            <div class="topic-title">{{ $t('Primelight OÜ management consulting') }}</div>
             <div class="mt-16px-24px-24px topic-description">
-              <div>{{$t('Started as an alliance of advisory firms in the Baltic States')}}.</div>
+              <div>{{ $t('Started as an alliance of advisory firms in the Baltic States') }}.</div>
               <div
                 class="tw-mt-2"
-              >{{$t('Primelight OÜ is the leading management consultancy from Central Eastern Europe')}}.</div>
+              >{{ $t('Primelight OÜ is the leading management consultancy from Central Eastern Europe') }}.</div>
               <div
                 class="tw-mt-2"
-              >{{$t('We combine bold strategies and transformative technologies to help organizations innovate more sustainably')}}.</div>
+              >{{ $t('We combine bold strategies and transformative technologies to help organizations innovate more sustainably') }}.</div>
             </div>
-            <VButton
-              text="Learn more about"
-              class="btn-h-48-56 tw-mt-10 lg:tw-mt-15"
-              variant="blue"
-              width="222px"
-            />
+            <router-link :to="{ name: 'company' }">
+              <VButton
+                :text="$t('Learn more about')"
+                class="btn-h-48-56 tw-mt-10 lg:tw-mt-15"
+                variant="blue"
+                width="222px"
+              />
+            </router-link>
           </div>
           <!-- right -->
           <div
@@ -61,18 +63,16 @@
       What we do?
     -->
     <section class="my-120-80 tw-relative">
-      <div class="gap-40px-16px px-16px-48px-80px">
+      <div class="max-layout-width gap-40px-16px px-16px-48px-80px">
         <!-- top -->
         <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
-          <div class="basis-full-full-half tw-flex-1 topic-title">{{$t('What we do')}}</div>
+          <div class="basis-full-full-half tw-flex-1 topic-title">{{ $t('What we do') }}</div>
           <div class="mt-16px-24px-0 basis-full-full-half tw-flex-1 topic-description">
-            <div>{{$t('OU Primeligt provides management consulting and data analytic services to companies')}}.</div>
+            <div>{{ $t('OU Primeligt provides management consulting and data analytic services to companies') }}.</div>
+            <div class="tw-mt-2">{{ $t('Our services include strategy development') }}.</div>
             <div
               class="tw-mt-2"
-            >{{$t('Our services include strategy development')}}.</div>
-            <div
-              class="tw-mt-2"
-            >{{$t('We take a consistent approach to recruiting and skills development regardless of where our people are located')}}.</div>
+            >{{ $t('We take a consistent approach to recruiting and skills development regardless of where our people are located') }}.</div>
           </div>
         </div>
         <!-- bottom -->
@@ -82,7 +82,7 @@
             <div class="tw-flex-1 xl:tw-flex-none xl:tw-basis-auto">
               <!-- 1 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Strategy')"
                 :description="$t('OU Primeligt Provides methodological expertise to help its clients capture growth opportunity')"
                 icon="circle-strategy"
@@ -92,7 +92,7 @@
             <div class="tw-relative tw-flex-1 xl:tw-basis-auto">
               <!-- 2 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Innovation')"
                 :description="$t('We use innovative technologies to identify new ways to reach consumers and build enterprise resilience')"
                 icon="circle-innovation"
@@ -108,7 +108,7 @@
             <div class="tw-flex-1 tw-basis-5/12 tw-w-1/2 xl:tw-basis-1/4">
               <!-- 3 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Funding')"
                 :description="$t('Safeguard external financing for companys growth')"
                 icon="circle-funding"
@@ -118,7 +118,7 @@
             <div class="tw-flex-1 tw-basis-5/12 tw-w-1/2 xl:tw-basis-1/4">
               <!-- 4 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Research')"
                 :description="$t('We gather data and analytics to choose the right decision for our clients')"
                 icon="circle-research"
@@ -128,7 +128,7 @@
             <div class="tw-flex-1 tw-basis-5/12 xl:tw-basis-1/4">
               <!-- 5 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Implementation')"
                 :description="$t('Implement the best solutions for our projects to our clients')"
                 icon="circle-implementation"
@@ -139,7 +139,7 @@
             <div class="tw-relative tw-flex-1 tw-basis-5/12 xl:tw-basis-3/5">
               <!-- 6 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Digital')"
                 :description="$t('We are using the latest IT technologies to drive the organizations business')"
                 icon="circle-digital"
@@ -156,7 +156,7 @@
             >
               <!-- 7 -->
               <CardInfoDynamic
-                class="tw-rounded-4xl"
+                class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Sustainability')"
                 :description="$t('Connect companies and public organizations')"
                 icon="circle-sustainability"
@@ -262,7 +262,10 @@
       --------
     -->
     <div class="px-16px-48px-80px">
-      <Cooperation class="my-160px-240px-240px tw-bg-white" :title="$t('Interested In cooperation')" />
+      <Cooperation
+        class="my-160px-240px-240px tw-bg-white"
+        :title="$t('Interested In cooperation')"
+      />
     </div>
 
     <!--
@@ -321,5 +324,9 @@ export default defineComponent({
   background-image: url("@/assets/images/patterns/bg-should-join-mobile.png");
   background-repeat: no-repeat;
   background-position: center right;
+}
+
+.border-gray-card-gray-1 {
+  border: solid 1px #f4f4f4;
 }
 </style>

@@ -31,13 +31,14 @@
             class="tw-mt-4 tw-text-sm tw-leading-6"
           >{{ description }}</div>
         </div>
-        <VButton
-          v-if="showButton"
-          class="tw-mt-3 tw-min-h-[48px] tw-w-2/3 lg:tw-w-full tw-border-1"
-          text="Apply now"
-          :variant="theme === 'blue' ? 'blue' : 'orange-2'"
-          height="48px"
-        />
+        <router-link v-if="showButton" :to="{ name: 'company' }">
+          <VButton
+            class="tw-mt-3 tw-min-h-[48px] tw-w-2/3 lg:tw-w-full tw-border-1"
+            text="Apply now"
+            :variant="theme === 'blue' ? 'blue' : 'orange-2'"
+            height="48px"
+          />
+        </router-link>
       </div>
     </template>
     <!-- :hover -->
@@ -143,6 +144,6 @@ export default defineComponent({
 }
 
 .front-img {
-  @apply tw-w-full tw-h-full tw-rounded-4xl tw-object-cover
+  @apply tw-w-full tw-h-full tw-rounded-4xl tw-object-cover;
 }
 </style>

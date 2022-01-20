@@ -23,29 +23,31 @@
       We help
     -->
     <section class="my-80px-104px-120px px-16px-48px-80px">
-      <div class="md:tw-text-center">
-        <h2 class="topic-title">{{ $t('We help') }}:</h2>
-      </div>
-      <div class="mt-60px-80px-80px">
-        <div class="gap-40px-60px-40px tw-flex tw-flex-col tw-flex-wrap xl:tw-flex-row">
-          <HelpColumn
-            class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            :title="$t('Corporations')"
-            :description="$t('We assist companies in various industries such as telecommunications')"
-            icon="circle-users"
-          />
-          <HelpColumn
-            class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            :title="$t('Start-up companies')"
-            :description="$t('We support start -ups and small companies involved in different industries')"
-            icon="circle-startup"
-          />
-          <HelpColumn
-            class="tw-flex-1 min-w-400px tw-rounded-4xl"
-            :title="$t('Government organizations')"
-            :description="$t('We provide services for government')"
-            icon="circle-government"
-          />
+      <div class="max-layout-width">
+        <div class="md:tw-text-center">
+          <h2 class="topic-title">{{ $t('We help') }}:</h2>
+        </div>
+        <div class="mt-60px-80px-80px">
+          <div class="gap-40px-60px-40px tw-flex tw-flex-col tw-flex-wrap xl:tw-flex-row">
+            <HelpColumn
+              class="tw-flex-1 min-w-400px tw-rounded-4xl"
+              :title="$t('Corporations')"
+              :description="$t('We assist companies in various industries such as telecommunications')"
+              icon="circle-users"
+            />
+            <HelpColumn
+              class="tw-flex-1 min-w-400px tw-rounded-4xl"
+              :title="$t('Start-up companies')"
+              :description="$t('We support start -ups and small companies involved in different industries')"
+              icon="circle-startup"
+            />
+            <HelpColumn
+              class="tw-flex-1 min-w-400px tw-rounded-4xl"
+              :title="$t('Government organizations')"
+              :description="$t('We provide services for government')"
+              icon="circle-government"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -67,47 +69,49 @@
           'bg-services-we-provide-bottom__sm': smallerXl,
         }"
       >
-        <!-- title -->
-        <div class="topic-title md:tw-mb-20 lg:tw-mb-0">{{ $t('Our Services') }}</div>
-        <!-- rows -->
-        <div
-          class="mt-0-80px-80px gap-40px-48px-0 md:tw-bg-white tw-rounded-4xl tw-pt-15 md:tw-pt-8 tw-flex tw-flex-col"
-        >
-          <CardInfoDynamicHorizontal
-            :title="$t('Strategy')"
-            :description="$t('Our consultants advise organizations on high-level decisions in strategic planning')"
-            icon="circle-strategy"
-          />
-          <CardInfoDynamicHorizontal
-            :title="$t('Innovation')"
-            :description="$t('We help making future by being in the whole innovation value chain from helping clients innovate to evaluating')"
-            icon="circle-innovation"
-          />
-          <CardInfoDynamicHorizontal
-            :title="$t('Funding')"
-            :description="$t('We help clients to choose the right funding opportunities')"
-            icon="circle-funding"
-          />
-          <CardInfoDynamicHorizontal
-            :title="$t('Research')"
-            :description="$t('We collect and analyze external and internal information')"
-            icon="circle-research"
-          />
-          <CardInfoDynamicHorizontal
-            :title="$t('Implementation')"
-            :description="$t('We help our clients to become more competitive')"
-            icon="circle-implementation"
-          />
-          <CardInfoDynamicHorizontal
-            :title="$t('Digital')"
-            :description="$t('We provide support and assistance at all stages of the project implementation')"
-            icon="circle-digital"
-          />
-          <CardInfoDynamicHorizontal
-            :title="$t('Sustainability')"
-            :description="$t('We ensure our clients stability in all daily operations in a strategic')"
-            icon="circle-sustainability"
-          />
+        <div class="max-layout-width">
+          <!-- title -->
+          <div class="topic-title md:tw-mb-20 lg:tw-mb-0">{{ $t('Our Services') }}</div>
+          <!-- rows -->
+          <div
+            class="mt-0-80px-80px gap-40px-48px-0 md:tw-bg-white tw-rounded-4xl tw-pt-15 md:tw-pt-8 tw-flex tw-flex-col"
+          >
+            <CardInfoDynamicHorizontal
+              :title="$t('Strategy')"
+              :description="$t('Our consultants advise organizations on high-level decisions in strategic planning')"
+              icon="circle-strategy"
+            />
+            <CardInfoDynamicHorizontal
+              :title="$t('Innovation')"
+              :description="$t('We help making future by being in the whole innovation value chain from helping clients innovate to evaluating')"
+              icon="circle-innovation"
+            />
+            <CardInfoDynamicHorizontal
+              :title="$t('Funding')"
+              :description="$t('We help clients to choose the right funding opportunities')"
+              icon="circle-funding"
+            />
+            <CardInfoDynamicHorizontal
+              :title="$t('Research')"
+              :description="$t('We collect and analyze external and internal information')"
+              icon="circle-research"
+            />
+            <CardInfoDynamicHorizontal
+              :title="$t('Implementation')"
+              :description="$t('We help our clients to become more competitive')"
+              icon="circle-implementation"
+            />
+            <CardInfoDynamicHorizontal
+              :title="$t('Digital')"
+              :description="$t('We provide support and assistance at all stages of the project implementation')"
+              icon="circle-digital"
+            />
+            <CardInfoDynamicHorizontal
+              :title="$t('Sustainability')"
+              :description="$t('We ensure our clients stability in all daily operations in a strategic')"
+              icon="circle-sustainability"
+            />
+          </div>
         </div>
       </div>
     </section>

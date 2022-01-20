@@ -29,11 +29,14 @@
       --------
     -->
     <section class="px-16px-48px-80px tw-pt-20 xl:tw-pt-24 xl:tw-pb-30 tw-pb-40">
-      <div v-if="articles.length" class="tw-flex tw-flex-wrap tw-gap-10 tw-justify-start">
+      <div
+        v-if="articles.length"
+        class="max-layout-width tw-flex tw-flex-wrap tw-gap-10 tw-justify-start"
+      >
         <div
           v-for="article of articles"
           :key="article.id"
-          class="md:tw-basis-[400px] tw-grow-1 tw-shrink-1"
+          class="md:tw-basis-[400px] tw-max-w-[555px] tw-grow-1 tw-shrink-1 tw-w-full"
         >
           <ArticleCard
             :id="article.id"
@@ -46,7 +49,7 @@
       <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
         <VIconSpinner class="tw-h-20" spin />
       </div>
-      <div v-else>We have no articles in the selected category</div>
+      <div v-else>{{ $t('We have no articles in the selected category') }}</div>
     </section>
   </div>
 </template>

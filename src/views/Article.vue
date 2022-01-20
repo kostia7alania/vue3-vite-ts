@@ -20,7 +20,7 @@
           <VButton
             class="tw-mt-8 tw-mb-12 tw-bg-white tw-border-0 tw-block lg:tw-hidden"
             variant="orange-1"
-            text="Back"
+            :text="$t('Back')"
             width="180px"
             @click="$router.push({ name: 'articles' })"
           />
@@ -50,7 +50,7 @@
               <VButton
                 v-if="!i"
                 variant="orange-2"
-                text="Back"
+                :text="$t('Back')"
                 width="180px"
                 @click="$router.push({ name: 'articles' })"
               />
@@ -61,7 +61,7 @@
             :class="{
               'tw-max-w-3xl': item.type !== 'image_fullscreen',
             }"
-          > 
+          >
             <Markdown v-if="item.type === 'text_only'" :source="item.content.text" />
             <div v-else-if="item.type === 'image_fullscreen'">
               <img :src="item.content.image" :alt="article.title" />
@@ -83,8 +83,6 @@
 
 <script lang="ts">
 import { computed, defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
-
-
 import { useRoute, } from 'vue-router';
 //@ts-ignore
 import Markdown from 'vue3-markdown-it';
