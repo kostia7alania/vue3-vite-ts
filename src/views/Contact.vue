@@ -26,15 +26,18 @@
           v-model:country="country"
           key-label="title"
           key-value="id"
-          :initCountries="countries"
+          :init-countries="countries"
         />
 
         <!-- bottom  -->
         <div class="topic-title tw-flex tw-justify-center tw-my-20">
-          <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Primelight OÜ International') }}</h2>
+          <h2 class="tw-flex  tw-items-center tw-max-w-3xl lg:tw-text-center tw-relative">
+            {{ $t('Primelight OÜ International') }}
+            <VIconSpinner v-if="isLoading" spin class="tw-h-10 tw-absolute tw--right-14"/>
+          </h2>
         </div>
 
-        <div v-if="isLoading" class="tw-flex tw-justify-around tw-gap-10">
+        <div v-if="isLoading && !contacts.length" class="tw-flex tw-justify-around tw-gap-10">
           <div class="tw-flex tw-justify-center tw-flex-col tw-flex-wrap tw-gap-10">
             <div v-for="item of new Array(5).keys()" :key="item">
               <VSkeleton />
@@ -125,12 +128,12 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { computed, defineAsyncComponent, defineComponent, onMounted, Ref, ref, watch } from 'vue';
-
+import { computed, defineAsyncComponent, defineComponent, onMounted, ref, watch } from 'vue';
 
 import VCountries from "@/components/ui/VCountries.vue"
-import { IContact } from '@/store/modules/contacts/contacts.d';
-import { ICountry } from '@/store/modules/countries/countries.d';
+import VIconSpinner from "@/components/ui/VIconSpinner.vue"
+// import { IContact } from '@/store/modules/contacts/contacts.d';
+// import { ICountry } from '@/store/modules/countries/countries.d';
 import { useVuex } from '@/store/store'
 
 export default defineComponent({
@@ -140,6 +143,7 @@ export default defineComponent({
     VCountries,
     ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
     VSkeleton: defineAsyncComponent(() => import("@/components/ui/VSkeleton.vue")),
+    VIconSpinner
   },
   emits: ['ready'],
   setup(_, { emit }) {
@@ -168,7 +172,11 @@ export default defineComponent({
       isLoading.value = true
       try {
         const countries = await getCountries()
-        await Promise.allSettled(countries.map((country: ICountry) => getContactByCountry(country.id)))
+
+        for (let i = 0; i < countries.length; i++) {
+          await getContactByCountry(countries[i].id);
+        }
+        // await (countries.map(async (country: ICountry) => await getContactByCountry(country.id)))
       } catch (err) {
         console.error({ err })
       } finally {
@@ -195,7 +203,7 @@ export default defineComponent({
     }
 
     const contacts = computed(() => {
-      const contacts = store.getters['contacts/GETTER_CONTACT_BY_ID'](country.value)
+      const contacts = store.getters['contacts/GETTER_CONTACT_BY_ID'](country.value) || []
       return contacts
     })
 
