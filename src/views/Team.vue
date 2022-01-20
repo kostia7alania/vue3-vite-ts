@@ -22,7 +22,7 @@
       --------
     -->
     <section class="px-16px-48px-80px py-80px-104px-120px">
-      <div class="max-layout-width">
+      <div class="max-layout-width tw-w-full">
         <!-- top -->
         <div class="topic-title tw-flex tw-justify-center tw-mb-20">
           <h2

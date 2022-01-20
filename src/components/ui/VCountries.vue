@@ -7,7 +7,7 @@
         :is-select="isSelect"
         :key-value="keyValue"
         :placeholder="$t('Preferred location') + '*'"
-        :items="route.name === 'team' ? teamCategories : countries"
+        :items="countries"
         @update:model-value="$emit('update:country', $event)"
     />
     <!-- :value-model="country" -->
@@ -31,6 +31,7 @@ export default defineComponent({
         country: { type: null, default: undefined },
         keyValue: { type: String, default: undefined },
         isSelect: { type: Boolean, default: false },
+        initCountries: { type: Array, default: undefined },
     },
     emits: ['ready', 'update:country'],
     setup(props, { emit }) {
@@ -61,7 +62,12 @@ export default defineComponent({
         const route = useRoute();
 
         // access an action
-        const countries = computed(() => store.state.countries?.COUNTRIES || [])
+        const countriesAll = computed(() => store.state.countries?.COUNTRIES || [])
+        const countries = computed(() => {
+            if (route.name === 'team') return teamCategories.value || []
+            if (props.initCountries) return props.initCountries || []
+            return countriesAll.value || []
+        })
 
         const getCountries = () => store.dispatch('countries/GET_COUNTRIES')
         const init = async () => {

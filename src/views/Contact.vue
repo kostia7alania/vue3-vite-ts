@@ -22,7 +22,12 @@
     <section class="px-16px-48px-80px py-80px-104px-120px">
       <div class="max-layout-width">
         <!-- top -->
-        <VCountries v-model:country="country" key-label="title" key-value="id" />
+        <VCountries
+          v-model:country="country"
+          key-label="title"
+          key-value="id"
+          :initCountries="countries"
+        />
 
         <!-- bottom  -->
         <div class="topic-title tw-flex tw-justify-center tw-my-20">
@@ -67,12 +72,12 @@
                 <a href="#">{{ $t('Send a message') }} &gt;</a>
               </div>
               <!--
-              <div class="link">
-              <a href="#">{{ $t('Visit country page') }} &gt;</a>
-              </div>
-              <div class="link">
-              <a href="#">{{ $t('Navigate') }} &gt;</a>
-              </div>
+                <div class="link">
+                <a href="#">{{ $t('Visit country page') }} &gt;</a>
+                </div>
+                <div class="link">
+                <a href="#">{{ $t('Navigate') }} &gt;</a>
+                </div>
               -->
             </div>
             <!-- col right -->
@@ -120,10 +125,12 @@
 
 <script lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { defineAsyncComponent, defineComponent, onMounted, Ref, ref, watch } from 'vue';
+import { computed, defineAsyncComponent, defineComponent, onMounted, Ref, ref, watch } from 'vue';
+
 
 import VCountries from "@/components/ui/VCountries.vue"
 import { IContact } from '@/store/modules/contacts/contacts.d';
+import { ICountry } from '@/store/modules/countries/countries.d';
 import { useVuex } from '@/store/store'
 
 export default defineComponent({
@@ -144,25 +151,58 @@ export default defineComponent({
     const md = breakpoints.smaller('md')
 
     const country = ref(null)
-    const contacts: Ref<Array<IContact>> = ref([])
+    // const contacts: Ref<Array<IContact>> = ref([])
 
     const isLoading = ref(false)
 
     const getCountries = async () => {
-      if (!country.value) return
+      const countries = (await store.dispatch('countries/GET_COUNTRIES'))
+      return countries
+    }
+    const getContactByCountry = async (countryId: number) => {
+      const contact = (await store.dispatch('contacts/GET_CONTACT_BY_COUNTRY', countryId))
+      return contact
+    }
+
+    const getContactsByCountries = async () => {
       isLoading.value = true
       try {
-        contacts.value = await store.dispatch('contacts/GET_CONTACT', country.value)
+        const countries = await getCountries()
+        await Promise.allSettled(countries.map((country: ICountry) => getContactByCountry(country.id)))
       } catch (err) {
         console.error({ err })
       } finally {
         isLoading.value = false
       }
     }
+    const countries = computed(() => store.getters['contacts/GETTER_CONTACTS'])
+    onMounted(() => {
+      getContactsByCountries()
+    })
 
-    watch(() => country.value, getCountries, { immediate: true })
 
-    return { md, country, isLoading, contacts }
+
+    const getCurrentCountry = async () => {
+      if (!country.value) return
+      // isLoading.value = true
+      try {
+        await store.dispatch('contacts/GET_CONTACT_BY_COUNTRY', country.value)
+      } catch (err) {
+        console.error({ err })
+      } finally {
+        // isLoading.value = false
+      }
+    }
+
+    const contacts = computed(() => {
+      const contacts = store.getters['contacts/GETTER_CONTACT_BY_ID'](country.value)
+      return contacts
+    })
+
+
+    watch(() => country.value, getCurrentCountry, { immediate: true })
+
+    return { md, country, isLoading, contacts, countries }
   },
 });
 </script>

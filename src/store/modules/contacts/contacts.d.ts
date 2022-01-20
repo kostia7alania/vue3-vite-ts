@@ -19,5 +19,7 @@ export interface IContactsResponse {
 }
 
 export interface IContacts {
-  CONTACTS?: Array<IContact>;
+  CONTACTS: {
+    [key: string]: Array<IContact>
+  };
 }
