@@ -1,6 +1,6 @@
 <template>
     <section
-        class="tw-relative bg-where-we-located"
+        class="tw-relative bg-where-we-located tw-overflow-hidden md:tw-overflow-auto"
         :class="{
             'bg-where-we-located-xl': !sm,
             'bg-where-we-located-sm': sm,

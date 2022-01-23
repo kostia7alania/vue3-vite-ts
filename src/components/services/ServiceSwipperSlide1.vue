@@ -20,7 +20,7 @@
     <div
       class="tw-flex tw-justify-center tw-w-full tw-px-1 md:tw-px-6 lg:tw-px-0 tw-mt-10 lg:tw-mt-0"
     >
-      <ServiceSwipperSlide1Cartoon />
+      <!-- <ServiceSwipperSlide1Cartoon /> -->
     </div>
   </div>
 </template>
