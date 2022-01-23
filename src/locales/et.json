@@ -175,7 +175,7 @@
   "Works more closely with client team members and owns a particular stream": "Teeb tihedamat koostööd kliendimeeskonna liikmetega ja omab projektis konkreetset voogu, näiteks tegevusanalüüsi, turu-uuringu, finantsmudeli jms teostamine.",
   "Your form has been successfully send": "Teie vorm on edukalt saadetud",
   "Your message": "Sinu sõnum",
-  "address": "",
+  "address": "Tallinn, Lasnamäe linnaosa,",
   "and": "ja",
   "button": {
     "apply now": "Kandideeri kohe",
@@ -196,14 +196,14 @@
     "company": "Ettevõte",
     "contact": "Võtke ühendust",
     "services": "Teenused",
-    "team": ""
+    "team": "Meeskond"
   },
   "placeholder": {
     "email": "Meil",
     "name": "Nimi",
     "phone": "Telefon",
     "surname": "Perekonnanimi",
-    "company name": ""
+    "company name": "Ettevõtte nimi"
   },
   "registry-code": "Primelight OU – registrikood 11954642",
   "services": {
