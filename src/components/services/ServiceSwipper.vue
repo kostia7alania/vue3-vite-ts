@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-relative tw-overflow-hidden md:tw-overflow-auto">
+  <div class="tw-relative tw-overflow-hidden">
     <!-- bg left -->
     <div class="tw-absolute tw-z-10">
       <BgPatternBottomLeft />
