@@ -21,8 +21,8 @@
       @Section #1
       --------
     -->
-    <section class="tw-relative tw-bg-gray-4">
-      <div class="px-16px-48px-80px py-80px-120px-120px tw-gap-10 tw-z-10 tw-relative">
+    <section class="bg-opportunities tw-relative tw-bg-gray-4">
+      <div class="px-16px-48px-80px py-80px-120px-120px tw-gap-10">
         <!-- title -->
         <div class="max-layout-width-overflow-auto">
           <div class="topic-title">
@@ -39,9 +39,6 @@
               :description="opportunity.description"
             />
           </div>
-        </div>
-        <div class="tw-absolute tw-right-0 tw-bottom-0 tw-z-0">
-          <BgPatternServicesProvide />
         </div>
       </div>
     </section>
@@ -136,7 +133,6 @@ export default defineComponent({
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     NationalCard: defineAsyncComponent(() => import("@/components/financing/NationalCard.vue")),
     CardInfoDynamicHorizontal,
-    BgPatternServicesProvide: defineAsyncComponent(() => import("@/components/patterns/BgPatternServicesProvide.vue")),
     Cooperation: defineAsyncComponent(() => import("@/components/services/Cooperation.vue")),
     LatestArticles: defineAsyncComponent(() => import("@/components/services/LatestArticles.vue")),
   },
@@ -163,3 +159,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.bg-opportunities {
+  background-image: url("@/assets/images/financing/bg-opportunities.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+</style>
