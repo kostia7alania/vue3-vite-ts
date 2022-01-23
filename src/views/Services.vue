@@ -63,7 +63,7 @@
       What we do?
     -->
     <section class="my-120-80 tw-relative">
-      <div class="max-layout-width gap-40px-16px px-16px-48px-80px">
+      <div class="max-layout-width-overflow-auto gap-40px-16px px-16px-48px-80px">
         <!-- top -->
         <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
           <div class="basis-full-full-half tw-flex-1 topic-title">{{ $t('What we do') }}</div>

@@ -163,7 +163,7 @@
         'bg-contacts-xl': !md,
       }"
     >
-      <div class="max-layout-width">
+      <div class="max-layout-width-overflow-auto">
         <div class="pt-80px-120px-120px">
           <div class="topic-title tw-flex tw-justify-center tw-mb-6">
             <h2

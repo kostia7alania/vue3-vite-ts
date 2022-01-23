@@ -31,7 +31,7 @@
     <section class="px-16px-48px-80px tw-pt-20 xl:tw-pt-24 xl:tw-pb-30 tw-pb-40">
       <div
         v-if="articles.length"
-        class="max-layout-width tw-flex tw-flex-wrap tw-gap-10 tw-justify-start"
+        class="max-layout-width-overflow-auto tw-flex tw-flex-wrap tw-gap-10 tw-justify-start"
       >
         <div
           v-for="article of articles"

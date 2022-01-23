@@ -24,7 +24,7 @@
     <section class="tw-relative tw-bg-gray-4">
       <div class="px-16px-48px-80px py-80px-120px-120px tw-gap-10 tw-z-10 tw-relative">
         <!-- title -->
-        <div class="max-layout-width">
+        <div class="max-layout-width-overflow-auto">
           <div class="topic-title">
             <h2
               class="tw-font-semibold tw-text-5xl tw-leading-tight tw-max-w-3xl"
@@ -54,7 +54,7 @@
       --------
     -->
     <section class="my-80px-160px-240px px-16px-48px-80px">
-      <div class="max-layout-width">
+      <div class="max-layout-width-overflow-auto">
         <div class="tw-flex tw-justify-center tw-mb-20">
           <h2
             class="topic-title tw-max-w-3xl tw-text-center"
