@@ -1,0 +1,1 @@
+import{_ as e}from"./index.79c47c6d.js";import{d as t,h as n,j as o}from"./vendor.4cfaf0ae.js";const s=t({name:"VSkeleton"}),a={class:"tw-bg-indigo-300 tw-h-4 tw-animate-pulse tw-mt-2 tw-w-32 tw-inline-flex tw-items-center md:tw-mb-2 lg:tw-mb-0"};function c(r,i,m,d,f,l){return n(),o("a",a)}var w=e(s,[["render",c]]);export{w as default};
