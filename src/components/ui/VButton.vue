@@ -1,7 +1,8 @@
 <template>
+  <!-- hover:tw-hue-rotate-[130deg]  -->
   <button
     :class="buttonClass"
-    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit hover:tw-hue-rotate-[130deg] active:tw-sepia tw-transition tw-ease-in-out tw-duration-1000"
+    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit tw-transition tw-ease-in-out tw-duration-300 active:tw-scale-95 active:tw-duration-300"
     :style="{
       width,
       height,
@@ -26,9 +27,9 @@ import {
 import { useI18n } from 'vue-i18n'
 
 const variantsMap: { [key: string]: string } = {
-  'orange-1': 'tw-text-orange-1 tw-border-orange-1 ',
-  'orange-2': 'tw-bg-orange-1 tw-text-white tw-border-orange-2',
-  'blue': 'tw-text-white tw-bg-blue-1',
+  'orange-1': 'tw-text-orange-1 tw-border-orange-1 hover:tw-bg-orange-400 hover:tw-text-white hover:tw-border-orange-400 active:tw-sepia',
+  'orange-2': 'tw-bg-orange-1 tw-text-white tw-border-orange-2 hover:tw-bg-orange-400 hover:tw-text-white hover:tw-border-orange-400 active:tw-sepia',
+  'blue': 'tw-text-white tw-bg-blue-1 hover:tw-bg-blue-400 hover:tw-border-blue-400 ',
 }
 
 export default defineComponent({

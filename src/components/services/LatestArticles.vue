@@ -1,5 +1,5 @@
 <template>
-  <div class="max-layout-width">
+  <div class="max-layout-width-overflow-auto">
     <h2 class="topic-title max-w-400px my-120-80">{{ title ? title : $t('Our latest articles') }}</h2>
     <div v-if="latestArticles.length">
       <div v-if="!md" class="gap-40px-16px tw-flex">

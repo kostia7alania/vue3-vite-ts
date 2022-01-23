@@ -22,18 +22,20 @@
     <section class="px-16px-48px-80px py-80px-104px-120px">
       <div class="max-layout-width">
         <!-- top -->
-        <VCountries
-          v-model:country="country"
-          key-label="title"
-          key-value="id"
-          :init-countries="countries"
-        />
+          <VIconSpinner v-if="isLoading" spin class="tw-h-[40px] tw-flex tw-justify-center tw-w-full" />
+          <VCountries
+            v-else
+            v-model:country="country"
+            key-label="title"
+            key-value="id"
+            :init-countries="countries"
+          />
 
         <!-- bottom  -->
         <div class="topic-title tw-flex tw-justify-center tw-my-20">
-          <h2 class="tw-flex  tw-items-center tw-max-w-3xl lg:tw-text-center tw-relative">
+          <h2 class="tw-flex tw-items-center tw-max-w-3xl lg:tw-text-center tw-relative">
             {{ $t('Primelight OÜ International') }}
-            <VIconSpinner v-if="isLoading" spin class="tw-h-10 tw-absolute tw--right-14"/>
+            <!-- <VIconSpinner v-if="isLoading" spin class="tw-h-10 tw-absolute tw--right-14" /> -->
           </h2>
         </div>
 
@@ -72,7 +74,7 @@
                 </div>
               </div>
               <div class="link">
-                <a href="#">{{ $t('Send a message') }} &gt;</a>
+                <a href="#request-proposal">{{ $t('Send a message') }} &gt;</a>
               </div>
               <!--
                 <div class="link">
@@ -101,6 +103,7 @@
       --------
     -->
     <section
+      id="request-proposal"
       class="tw-bg-gray-4 px-16px-48px-80px"
       :class="{
         'bg-contacts-sm': md,
@@ -234,4 +237,5 @@ a[href] {
   background-repeat: no-repeat;
   background-position: top left;
 }
+
 </style>

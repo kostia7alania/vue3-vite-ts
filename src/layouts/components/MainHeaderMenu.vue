@@ -1,6 +1,6 @@
 <template>
   <nav class="main-menu tw-hidden lg:tw-block navbar tw-font-medium tw-text-sm tw-text-gray-2">
-    <ul class="tw-flex md:tw-gap-2 lg:tw-gap-4 xlg:tw-gap-12">
+    <ul class="tw-flex md:tw-gap-2 lg:tw-gap-10 xlg:tw-gap-12">
       <li v-for="{ title, routeName } of linksMap" :key="routeName" class="link-item">
         <router-link
           class="anim-batch-once hover:tw-text-black"
