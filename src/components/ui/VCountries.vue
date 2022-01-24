@@ -6,7 +6,7 @@
         key-label="title"
         :is-select="isSelect"
         :key-value="keyValue"
-        :placeholder="$t('Preferred location') + '*'"
+        :placeholder="placeholder || $t('Preferred location') + '*'"
         :items="countries"
         @update:model-value="$emit('update:country', $event)"
     />
@@ -32,6 +32,7 @@ export default defineComponent({
         keyValue: { type: String, default: undefined },
         isSelect: { type: Boolean, default: false },
         initCountries: { type: Array, default: undefined },
+        placeholder: { type: String, default: undefined },
     },
     emits: ['ready', 'update:country'],
     setup(props, { emit }) {

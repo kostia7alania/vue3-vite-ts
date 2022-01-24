@@ -10,7 +10,7 @@
         theme="blue"
         class="min-h-400px tw-flex tw-flex-col tw-justify-end lg:tw-justify-center"
       >
-        <div class="max-layout-width">
+        <div class="max-layout-width-overflow-auto">
           <div class="tw-text-gray-1 tw-font-medium">
             <div
               class="tw-text-base xl:tw-text-lg tw-mt-15 lg:tw-mt-0"
@@ -38,7 +38,7 @@
     -->
 
     <section class="px-16px-48px-80px tw-pt-16 tw-pb-20 xl:tw-pb-30 tw-flex tw-flex-col tw-gap-y-4">
-      <div class="max-layout-width">
+      <div class="-overflow-auto-overflow-auto">
         <!--  -->
         <div v-if="article?.content?.length" class="tw-flex tw-flex-col tw-gap-y-4">
           <div v-for="(item, i) of article.content" :key="i" class="tw-flex">

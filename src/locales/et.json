@@ -267,5 +267,11 @@
   "over 18 countries throughout europe": "Üle 18 riigi üle Euroopa",
   "We have no articles in the selected category": "Meil pole valitud kategoorias artikleid",
   "Learn more about": "Lisateavet",
-  "Back": "Tagasi"
+  "Back": "Tagasi",
+  "Please fill required fields": "Palun täitke nõutud väljad",
+  "Company name": "Ettevõtte nimi",
+  "Phone": "Telefon",
+  "Surname": "Perekonnanimi",
+  "Name": "Nimi",
+  "Email": "Meil"
 }

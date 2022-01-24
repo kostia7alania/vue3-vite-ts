@@ -242,7 +242,9 @@
       Where we are located? 
       --------
     -->
-    <WhereWeLocated class="tw-bg-gray-4 py-80px-104px-120px" />
+    <div class="tw-w-full tw-overflow-hidden">
+      <WhereWeLocated class="tw-bg-gray-4 py-80px-104px-120px" />
+    </div>
 
     <!--
       --------

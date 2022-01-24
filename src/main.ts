@@ -1,7 +1,9 @@
 import { createApp } from 'vue';
 import { START_LOCATION } from 'vue-router';
+import Toast from 'vue-toastification';
 import VueUniversalModal from 'vue-universal-modal';
 import 'vue-universal-modal/dist/index.css';
+
 
 import { i18n } from './plugins/i18n';
 import { router } from './router/router';
@@ -11,6 +13,7 @@ import App from '@/App.vue';
 import { vClickOutside } from '@/directives/vClickOutside';
 import '@/assets/scss/global.scss';
 
+import "vue-toastification/dist/index.css";
 import 'vite-plugin-svg-icons/register';
 
 router.beforeEach(async (to, from, next) => {
@@ -42,6 +45,8 @@ app.use(VueUniversalModal, {
 });
 
 app.directive('click-outside', vClickOutside);
+
+app.use(Toast, {});
 
 app.mount('#app');
 

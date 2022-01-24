@@ -1,7 +1,7 @@
 <template>
   <div class="px-16px-48px-80px">
     <div
-      class="max-layout-width tw-flex tw-justify-center tw-flex-wrap tw-gap-x-6 tw-gap-y-10 tw-relative"
+      class="max-layout-width-overflow-auto tw-flex tw-justify-center tw-flex-wrap tw-gap-x-6 tw-gap-y-10 tw-relative"
     >
       <!-- card #1 -->
       <div

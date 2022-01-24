@@ -6,7 +6,7 @@ type Context = ActionContext<IContacts, IRootState>;
 
 import { IContact, IContacts, IContactsResponse } from './contacts.d';
 
-import { GET } from '@/http';
+import { GET, POST } from '@/http';
 interface ISetContact {
   data: IContact;
   countryId: number;
@@ -40,6 +40,11 @@ export const contacts = {
         `api/contacts/?country_id=${countryId}`,
       );
       if (res.data.length) commit('SET_CONTACT', { countryId, data: res.data });
+      return res.data;
+    },
+    // @ts-ignore
+    POST_CONTACTS: async (_, data): Promise<Array<IContact>> => {
+      const res: IContactsResponse = await POST(`api/feedback`, data);
       return res.data;
     },
   },

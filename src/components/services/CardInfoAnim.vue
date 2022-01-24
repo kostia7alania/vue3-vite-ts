@@ -88,6 +88,32 @@
           src="@/assets/images/careers/fun.jpg"
           alt="fun"
         />
+        
+        <img
+          v-else-if="image === '1-fast-based.png'"
+          class="front-img"
+          src="@/assets/images/company/1-fast-based.png"
+          alt="fun"
+        />
+
+        <img
+          v-else-if="image === '3-practical.png'"
+          class="front-img"
+          src="@/assets/images/company/3-practical.png"
+          alt="fun"
+        />
+        <img
+          v-else-if="image === '4-bold-and-innovative.png'"
+          class="front-img"
+          src="@/assets/images/company/4-bold-and-innovative.png"
+          alt="fun"
+        />
+        <img
+          v-else-if="image === '5-flexible.png'"
+          class="front-img"
+          src="@/assets/images/company/5-flexible.png"
+          alt="fun"
+        />
 
         <div
           class="front-img tw-absolute tw-z-10 tw-top-0"

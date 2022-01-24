@@ -34,7 +34,7 @@
             <CardInfoAnim
               :title="$t('Fact-Based management consultig')"
               :description="$t('We are always looking for young talents from our local markets who want to develop professionally')"
-              image="students-and-graduates"
+              image="1-fast-based.png"
               theme="orange"
             />
           </div>
@@ -52,7 +52,7 @@
             <CardInfoAnim
               :title="$t('Practical and Iimpact-Oriented')"
               :description="$t('We truly believe that anyone can become a management consultant')"
-              image="experienced-professionals"
+              image="3-practical.png"
               theme="orange"
             />
           </div>
@@ -62,7 +62,7 @@
             <CardInfoAnim
               :title="$t('Bold And Innovative')"
               :description="$t('We are always looking for young talents from our local markets who want to develop professionally')"
-              image="students-and-graduates"
+              image="4-bold-and-innovative.png"
               theme="blue"
             />
           </div>
@@ -73,7 +73,7 @@
             <CardInfoAnim
               :title="$t('Flexible And Efficient Model')"
               :description="$t('We use methodologies and approaches of the traditional consulting toolkit')"
-              image="experienced-professionals"
+              image="5-flexible.png"
               theme="orange"
             />
           </div>

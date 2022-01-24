@@ -51,6 +51,10 @@
 </template>
 
 <script lang="ts">
+import { useI18n } from 'vue-i18n'
+import { useToast } from "vue-toastification";
+
+const allowedExts = ['doc', 'docx', 'txt', 'pdf', 'jpg', 'jpeg', 'png']
 
 import {
   defineComponent, getCurrentInstance, ref
@@ -69,10 +73,13 @@ export default defineComponent({
   props: {
     modelValue: { type: null, default: undefined },
     label: { type: String, default: '' },
-    accept: { type: null, default: undefined },
+    accept: { type: null, default: ".doc, .docx, .xml, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
   },
   emits: ['update:modelValue'],
   setup(_, { emit }) {
+    const toast = useToast();
+    const { t } = useI18n({ useScope: 'global' });
+
     const formFile = ref(null)
 
     const uid = `${getCurrentInstance()?.uid}`
@@ -84,11 +91,17 @@ export default defineComponent({
 
       // @ts-ignore
       formFile.value.value = ''
+      if (!file) return
+      const isAllowedExts = allowedExts.some(ext => file?.name?.toLowerCase().endsWith(ext))
+      if (!isAllowedExts) {
+        toast.error("Unsupported file type", { timeout: 2000 });
+      }
 
       emit('update:modelValue', file)
     }
     const remove = () => {
-      changeHandler(null)
+      emit('update:modelValue', null)
+
     }
     return {
       uid,

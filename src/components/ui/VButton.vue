@@ -1,8 +1,9 @@
 <template>
   <!-- hover:tw-hue-rotate-[130deg]  -->
   <button
+    class="v-button tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit tw-transition tw-ease-in-out tw-duration-300 active:tw-scale-95 active:tw-duration-300"
     :class="buttonClass"
-    class="tw-font-semibold tw-rounded-full tw-border-2 tw-border-gray-3 tw-h-12 tw-px-3 tw-min-w-fit tw-transition tw-ease-in-out tw-duration-300 active:tw-scale-95 active:tw-duration-300"
+    :disabled="disabled"
     :style="{
       width,
       height,
@@ -44,6 +45,7 @@ export default defineComponent({
     text: { type: String, default: '' },
     width: { type: String, default: undefined },
     height: { type: String, default: undefined },
+    disabled: { type: Boolean, default: false },
     // to: { type: [String, Object,], default: undefined } // link
   },
   setup(props) {
@@ -72,3 +74,10 @@ export default defineComponent({
 
 })
 </script>
+
+
+<style lang="scss" scoped>
+.v-button:disabled {
+  @apply tw-bg-gray-100 tw-text-gray-300 tw-cursor-not-allowed tw-border-none;
+}
+</style>

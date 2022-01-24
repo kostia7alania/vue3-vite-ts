@@ -9,29 +9,39 @@
         <!-- form inputs -->
         <div class="tw-mt-8 md:tw-mt-15 xl:tw-mt-17">
             <div class="tw-flex tw-items-center tw-gap-x-10 tw-flex-col xl:tw-flex-row tw-gap-y-4">
-                <VInput v-model.trim="form.name" placeholder="Name" required />
-                <VInput v-model.trim="form.surname" placeholder="Surname" required />
+                <VInput v-model.trim="form.name" :placeholder="$t('Name')" required />
+                <VInput v-model.trim="form.surname" :placeholder="$t('Surname')" required />
             </div>
 
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
-                <VInput v-model.trim="form.phone" placeholder="Phone" />
-                <VInput v-model.trim="form.email" placeholder="Email" required />
+                <VInput v-model.trim="form.phone" :placeholder="$t('Phone')" />
+                <VInput v-model.trim="form.email" :placeholder="$t('Email')" required />
             </div>
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
                 <VInput
-                    v-model.trim="form.companyName"
+                    v-model.trim="form.company"
                     class="tw-basis-1/2"
-                    placeholder="Company name"
+                    :placeholder="$t('Company name')"
                 />
-                <VSelect
-                    v-model="form.office"
-                    class="tw-basis-1/2"
+                <!--
+                  <VSelect
+                  v-model="form.office"
+                  class="tw-basis-1/2"
+                  :placeholder="$t('Offices you want to contact') + '*'"
+                  :items="['Office 1', 'Office 2', 'Office 3']"
+                  />
+                -->
+                <VCountries
+                    v-model:country="form.country_id"
+                    class="tw-basis-1/2 tw-w-full"
+                    key-label="title"
+                    key-value="id"
                     :placeholder="$t('Offices you want to contact') + '*'"
-                    :items="['Office 1', 'Office 2', 'Office 3']"
+                    is-select
                 />
             </div>
             <div class="tw-mt-4 xl:tw-mt-6">
@@ -40,16 +50,13 @@
         </div>
         <!-- upload doc -->
         <div class="tw-my-6">
-            <VButton
-                class="tw-rounded-3xl tw-h-[80px] lg:tw-h-[60px] tw-w-full tw-text-base"
-                variant="orange-1"
-            >
-                <div>
-                    {{ $t('Upload documents') }}
+            <div class="tw-my-6">
+                <VFilePicker v-model="form.cv_document">
+                    {{ $t('Upload other documents') }}
                     <br class="lg:tw-hidden" />
-                    ({{ $t('eg brief project description') }})
-                </div>
-            </VButton>
+                    ({{ $t('eg portfolio references') }})
+                </VFilePicker>
+            </div>
         </div>
         <!-- checks -->
         <div
@@ -75,13 +82,14 @@
                     text="Send"
                     variant="blue"
                     class="tw-w-[311px] lg:tw-w-[244px]"
-                    @click="submitHandler"
+                    @click="postContactForm"
                 />
                 <div
                     class="topic-description tw-text-center tw-mt-4 tw-block md:tw-hidden"
                 >*{{ $t('Required fields') }}</div>
             </div>
         </div>
+
         <VCustomModal v-if="isSent" @close="isSent = false">
             <div
                 class="alert-modal bg-contact-alert tw-relative tw-bg-white tw-m-auto tw-rounded-3xl"
@@ -121,7 +129,12 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, ref, } from 'vue';
+import { computed, defineAsyncComponent, defineComponent, onMounted, ref, toRefs, } from 'vue';
+import { useI18n } from 'vue-i18n'
+import { useToast } from "vue-toastification";
+
+import { useVuex } from '@/store/store'
+
 
 export default defineComponent({
     name: "ContactForm",
@@ -130,34 +143,64 @@ export default defineComponent({
         VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
         VInput: defineAsyncComponent(() => import("@/components/ui/VInput.vue")),
         VTextarea: defineAsyncComponent(() => import("@/components/ui/VTextarea.vue")),
-        VSelect: defineAsyncComponent(() => import("@/components/ui/VSelect.vue")),
+        // VSelect: defineAsyncComponent(() => import("@/components/ui/VSelect.vue")),
         VCustomModal: defineAsyncComponent(() => import("@/components/ui/VCustomModal.vue")),
+        VCountries: defineAsyncComponent(() => import("@/components/ui/VCountries.vue")),
+        VFilePicker: defineAsyncComponent(() => import("@/components/ui/VFilePicker.vue")),
     },
     setup() {
+        const store = useVuex()
+        const toast = useToast();
+        const { t } = useI18n({ useScope: 'global' });
 
         const agreement1 = ref(false)
         const agreement2 = ref(false)
         const form = ref({
-            office: undefined,
-            name: undefined,
-            surname: undefined,
-            phone: undefined,
-            email: undefined,
-            companyName: undefined,
-            message: undefined,
+            name: '',
+            surname: '',
+            email: '',
+            phone: '',
+            company: '',
+            country_id: '',
+            message: '',
+            cv_document: '',
         })
         const isSent = ref(false)
 
-        const submitHandler = () => {
-            isSent.value = true
+        const getFormToSubmit = () => {
+            const data = new FormData();
+            Object.entries(form.value).forEach(([key, value]) => {
+                data.append(key, value);
+            })
+            return data
         }
+
+        const postContactForm = async () => {
+            if (!isValid.value) return toast.info(t('Please fill required fields'), { timeout: 2000 });
+            try {
+                (await store.dispatch('contacts/POST_CONTACTS', getFormToSubmit()))
+                isSent.value = true
+            } catch (err) {
+                // @ts-ignore
+                toast.error(Object.values(err?.response?.data?.errors)?.[0]?.[0] || "Something went wrong...", { timeout: 2000 });
+                console.error({ err })
+            }
+        }
+
+        const isValid = computed(() => {
+            const propsExept = ['phone', 'company']
+            return Object.values(form.value).filter(e => !propsExept.includes(e)).every(e => e) && agreement1.value
+        })
+
+
 
         return {
             form,
             agreement1,
             agreement2,
             isSent,
-            submitHandler
+            isValid,
+            postContactForm
         }
     }
 
