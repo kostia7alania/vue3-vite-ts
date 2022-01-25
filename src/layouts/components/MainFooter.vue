@@ -31,6 +31,11 @@
                   href="mailTo:info@primelightou.com"
                 >info@primelightou.com</a>
               </div>
+              <!--
+                <div class="tw-pt-3">
+                <a class="hover:tw-text-black" href="tel:+372 609 3450">+372 609 3450</a>
+                </div>
+              -->
             </div>
           </div>
 
@@ -41,7 +46,7 @@
               <div
                 class="tw-flex tw-flex-wrap tw-flex-col tw-h-68 tw-gap-x-3 tw-gap-y-3 tw-text-xs2 xl:tw-text-base"
               >
-                <div v-for="(country, i) of countries" :key="country.id" class="tw-max-w-xs">
+                <div v-for="country of countries" :key="country.id" class="tw-max-w-xs">
                   <router-link
                     :to="{ name: 'team', query: { countryId: country.id, countryTitle: country.title } }"
                   >{{ country.title }}</router-link>

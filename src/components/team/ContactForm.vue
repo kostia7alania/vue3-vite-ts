@@ -129,7 +129,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineAsyncComponent, defineComponent, onMounted, ref, toRefs, } from 'vue';
+import { computed, defineAsyncComponent, defineComponent, ref, } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useToast } from "vue-toastification";
 
@@ -155,7 +155,8 @@ export default defineComponent({
 
         const agreement1 = ref(false)
         const agreement2 = ref(false)
-        const form = ref({
+
+        const getNewForm = () => ({
             name: '',
             surname: '',
             email: '',
@@ -165,6 +166,8 @@ export default defineComponent({
             message: '',
             cv_document: '',
         })
+
+        const form = ref(getNewForm())
         const isSent = ref(false)
 
         const getFormToSubmit = () => {
@@ -180,6 +183,7 @@ export default defineComponent({
             try {
                 (await store.dispatch('contacts/POST_CONTACTS', getFormToSubmit()))
                 isSent.value = true
+                form.value = getNewForm()
             } catch (err) {
                 // @ts-ignore
                 toast.error(Object.values(err?.response?.data?.errors)?.[0]?.[0] || "Something went wrong...", { timeout: 2000 });

@@ -53,7 +53,7 @@
             </div>
         </div>
         <!-- past link -->
-        <div v-if="0" class="tw-my-6">
+        <div class="tw-my-6">
             <VCVPicker v-model.trim="form.cv_document" />
         </div>
         <!-- upload doc -->
@@ -171,7 +171,7 @@ export default defineComponent({
         const agreement2 = ref(false)
         const agreement3 = ref(false)
 
-        const form = ref({
+        const getNewForm = () => ({
             name: '',
             surname: '',
             email: '',
@@ -182,6 +182,8 @@ export default defineComponent({
             cv_document: '',
             // other_document: '',
         })
+
+        const form = ref(getNewForm())
         const isSent = ref(false)
 
         const isValid = computed(() => {
@@ -203,6 +205,7 @@ export default defineComponent({
             try {
                 (await store.dispatch('contacts/POST_CONTACTS', getFormToSubmit()))
                 isSent.value = true
+                form.value = getNewForm()
             } catch (err) {
                 // @ts-ignore
                 toast.error(Object.values(err?.response?.data?.errors)?.[0]?.[0] || "Something went wrong...", { timeout: 2000 });
