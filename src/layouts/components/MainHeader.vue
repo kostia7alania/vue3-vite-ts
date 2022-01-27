@@ -1,9 +1,9 @@
 <template>
   <header
-    class="app-header tw-flex tw-items-center tw-justify-center dark:tw-bg-black dark:tw-text-gray-300"
+    class="app-header tw-flex tw-items-center tw-justify-center dark:tw-bg-black dark:tw-text-gray-300 tw-w-full"
   >
-    <div class="max-layout-width">
-      <div class="app-header__child px-16px-48px-80px tw-flex tw-items-center tw-justify-between">
+    <div class="tw-w-full">
+      <div class="app-header__child px-16px-48px-80px tw-flex tw-items-center tw-justify-between tw-w-full">
         <!-- left -->
         <div class="tw-ml-2 lg:tw-ml-0 tw-order-2 lg:tw-order-1">
           <Logo :white="false" />
