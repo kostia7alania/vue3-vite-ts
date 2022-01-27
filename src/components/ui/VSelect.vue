@@ -4,6 +4,9 @@
     :aria-label="placeholder"
     :placeholder="placeholder"
     v-bind="$attrs"
+    :class="{
+      'tw-border-red-500': showError && required && !modelValue
+    }"
     v-on="$attrs"
     @change="changeHandler($event)"
   >
@@ -41,6 +44,8 @@ export default defineComponent({
 
     placeholder: { type: null, default: undefined },
 
+    required: { type: Boolean, default: false },
+    showError: { type: Boolean, default: false }
   },
   setup(props, { emit }) {
     const changeHandler = (event: Event | null) => {

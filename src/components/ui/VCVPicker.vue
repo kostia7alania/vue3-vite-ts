@@ -4,7 +4,7 @@
   <component
     :is="!md ? 'VInput' : 'VTextarea'"
     rows="6"
-    :placeholder="$t('Paste link to your online profile') + '*'"
+    :placeholder="placeholder"
     :model-value="modelValue"
     v-bind="$attrs"
     @update:model-value="setModelValue($event)"
@@ -18,7 +18,7 @@
       <div class="tw-mx-2 tw-mb-6">
         <VButton
           class="tw-rounded-lg tw-w-full tw-text-base truncate tw-bg-white md:tw-w-[200px]"
-          :text="$t('Upload CV')"
+          :text="buttonLabel"
           variant="orange-1"
           height="42px"
         />
@@ -28,7 +28,7 @@
     <template v-if="!modelValue" #append>
       <VButton
         class="tw-rounded-lg tw-w-full tw-text-base truncate tw-bg-white md:tw-w-[200px]"
-        :text="$t('Upload CV')"
+        :text="buttonLabel"
         variant="orange-1"
         height="42px"
       />
@@ -58,6 +58,8 @@ export default defineComponent({
   props: {
     modelValue: { type: null, default: undefined },
     label: { type: String, default: '' },
+    placeholder: { type: String, default: '' },
+    buttonLabel: { type: String, default: '' },
     accept: { type: null, default: undefined },
   },
 

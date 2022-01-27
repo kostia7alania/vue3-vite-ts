@@ -28,28 +28,31 @@
       Our latest articles
       --------
     -->
-    <section class="px-16px-48px-80px tw-pt-20 xl:tw-pt-24 xl:tw-pb-30 tw-pb-40">
-      <div
-        v-if="articles.length"
-        class="max-layout-width-overflow-auto tw-flex tw-flex-wrap tw-gap-10 tw-justify-start"
-      >
-        <div
-          v-for="article of articles"
-          :key="article.id"
-          class="md:tw-basis-[400px] tw-max-w-[555px] tw-grow-1 tw-shrink-1 tw-w-full"
-        >
-          <ArticleCard
-            :id="article.id"
-            :img="article.cover"
-            :date="article.publish_at"
-            :title="article.title"
-          />
+    <section class="max-layout-width-overflow-auto tw-pt-20 xl:tw-pt-24 xl:tw-pb-30 tw-pb-40">
+      <div class="px-16px-48px-80px">
+        <div v-if="articles.length" class="tw-flex tw-flex-wrap tw-gap-10 tw-justify-start">
+          <div
+            v-for="article of articles"
+            :key="article.id"
+            class="tw-basis-[380px] tw-flex-1 tw-max-w-[755px] tw-grow-1 tw-shrink-1 tw-w-full"
+            :class="{
+              'md:tw-max-w-[450px]': articles.length === 1,
+              'md:tw-max-w-[755px]': articles.length !== 1
+            }"
+          >
+            <ArticleCard
+              :id="article.id"
+              :img="article.cover"
+              :date="article.publish_at"
+              :title="article.title"
+            />
+          </div>
         </div>
+        <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
+          <VIconSpinner class="tw-h-20" spin />
+        </div>
+        <div v-else>{{ $t('We have no articles in the selected category') }}</div>
       </div>
-      <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
-        <VIconSpinner class="tw-h-20" spin />
-      </div>
-      <div v-else>{{ $t('We have no articles in the selected category') }}</div>
     </section>
   </div>
 </template>

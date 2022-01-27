@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import { APP_TITLE } from '@/runtimeEnv';
+import setTitle from '@/utils/setTitle';
 
 import { routes } from './routes';
 
 import { i18n } from '@/plugins/i18n';
 import spinner from '@/plugins/spinner';
+
 
 const history = createWebHistory();
 
@@ -23,7 +24,7 @@ router.beforeEach((to, from, next) => {
   if (to.path) spinner.start();
 
   const title = i18n.global.t(`title.${String(to.name)}`).replace('title.', '');
-  document.title = (title ? title + ' | ' : title) + APP_TITLE;
+  setTitle(title)
 
   next();
 });

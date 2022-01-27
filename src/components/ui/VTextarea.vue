@@ -7,10 +7,13 @@
       :placeholder="placeholder"
       :value="modelValue"
       v-bind="$attrs"
+      :class="{
+        'tw-border-red-500': showError && required && !modelValue,
+      }"
       @input="setModel"
       v-on="$attrs"
     />
-    <div v-if="$slots.bottom" class="tw-absolute tw-right-0 tw-left-0 tw-bottom-0 ">
+    <div v-if="$slots.bottom" class="tw-absolute tw-right-0 tw-left-0 tw-bottom-0">
       <slot name="bottom" />
     </div>
   </label>
@@ -33,12 +36,14 @@ export default defineComponent({
   props: {
     modelValue: { type: null, default: undefined },
     placeholder: { type: null, default: undefined },
-    rows: { type: [Number, String], default: 3 }
+    rows: { type: [Number, String], default: 3 },
+    required: { type: Boolean, default: false },
+    showError: { type: Boolean, default: false }
   },
   emits: ['update:modelValue'],
   setup(_, { emit }) {
     const uid = `${getCurrentInstance()?.uid}`
-      // @ts-ignore
+    // @ts-ignore
     const setModel = ($event) => {
       emit('update:modelValue', $event.target.value)
     }

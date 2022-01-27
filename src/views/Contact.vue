@@ -122,7 +122,7 @@
         </div>
 
         <div class="tw-pt-20 tw-pb-35">
-          <ContactFormCareer class="tw-bg-white" />
+          <ContactFormCareerAndContact class="tw-bg-white" is-contact-page/>
         </div>
       </div>
     </section>
@@ -144,7 +144,7 @@ export default defineComponent({
   components: {
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     VCountries,
-    ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
+    ContactFormCareerAndContact: defineAsyncComponent(() => import("@/components/careers/ContactFormCareerAndContact.vue")),
     VSkeleton: defineAsyncComponent(() => import("@/components/ui/VSkeleton.vue")),
     VIconSpinner
   },

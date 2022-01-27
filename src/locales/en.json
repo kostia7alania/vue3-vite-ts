@@ -1,6 +1,6 @@
 {
   "title": {
-    "main-page": "Main Page",
+    "main-page": "Primelight OÜ - Management Consulting",
     "services": "Services",
     "company": "Company",
     "team": "Team",
@@ -273,5 +273,8 @@
   "Phone": "Phone",
   "Surname": "Surname",
   "Name": "Name",
-  "Email": "Email"
+  "Email": "Email",
+  "Experience level": "Experience level",
+  "Upload": "Upload",
+  "Upload documents placeholder": "Upload documents (e.g. brief, project description)"
 }

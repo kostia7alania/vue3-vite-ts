@@ -8,13 +8,13 @@
             theme="blue"
             active-class="tw-bg-white tw-text-orange-1 active-class"
             inactive-class="inactive-class"
-        /> 
+        />
     </div>
 </template>
 
 <script lang="ts">
 import { watchOnce } from '@vueuse/core';
-import { defineComponent, defineAsyncComponent, ref, Ref, watch, computed } from 'vue';
+import { defineComponent, defineAsyncComponent, ref, Ref, watch, computed, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 // import { useI18n } from 'vue-i18n'
@@ -43,9 +43,9 @@ export default defineComponent({
 
         const categories = computed(() => store.getters['news/GETTER_CATEGORIES'].map((e: INew) => ({ ...e, id: String(e.id) })))
 
-        const isLoading = computed(() => store.state.news.IS_LOADING)
+        // const isLoading = computed(() => store.state.news.IS_LOADING)
 
-        const category: Ref<string> = ref(String(route.query?.category))
+        const category: Ref<string> = ref(String(route.query?.category || 0))
 
         const updateQueryCategory = () => {
             const categoryValue = hasCategoriesCategory(category.value) ? category.value : categories.value[0]?.id
@@ -56,26 +56,33 @@ export default defineComponent({
             updateQueryCategory()
         })
 
-        const initCategory = () => {
-            const categoryQuery = String(route.query?.category)
-            const hasCategory = hasCategoriesCategory(categoryQuery) ? categoryQuery : categories.value[0].id
-            if (hasCategory) category.value = categoryQuery
-        }
+        // const initCategory = () => {
+        //     const categoryQuery = String(route.query?.category)
+        //     const hasCategory = hasCategoriesCategory(categoryQuery) ? categoryQuery : categories.value[0].id
+        //     if (hasCategory) category.value = categoryQuery
+        //     else category.value = '0'
+        // }
 
         // after loading the news, we can set category
-        watchOnce(() => isLoading.value, initCategory)
- 
+        // watchOnce(() => isLoading.value, initCategory)
+
+        // onMounted(() => () => {
+        //     const categoryQuery = route.query?.category
+        //     if (!categoryQuery) return category.value = '0'
+        // })
+
+
         const articleCategories = computed(() => {
             const uniq = new Set()
             const teams = store.state.news?.ARTICLES || []
             return teams.reduce((acc, el) => {
                 if (uniq.size !== uniq.add(el.category.id).size) {
-                    acc.push(el.category)
+                    acc.push({ ...el.category, id: String(el.category.id) })
                 }
                 return acc
-            }, [{ id: 0, title: i18n.global.t('All') }])
+            }, [{ id: '0', title: i18n.global.t('All') }])
         })
-        
+
         return { category, articleCategories }
     }
 });

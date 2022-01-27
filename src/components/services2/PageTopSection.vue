@@ -8,7 +8,7 @@
         }"
         class="tw-text-gray-1 dark:tw-bg-black tw-relative tw-flex"
     >
-        <div class="px-16px-48px-80px tw-flex tw-flex-col">
+        <div class="tw-flex tw-flex-col">
             <slot />
             <!--
               <div class="tw-font-semibold tw-text-6xl tw-leading-tight">Services</div>

@@ -9,39 +9,65 @@
         <!-- form inputs -->
         <div class="tw-mt-8 md:tw-mt-15 xl:tw-mt-17">
             <div class="tw-flex tw-items-center tw-gap-x-10 tw-flex-col xl:tw-flex-row tw-gap-y-4">
-                <VInput v-model.trim="form.name" :placeholder="$t('Name')" required />
-                <VInput v-model.trim="form.surname" :placeholder="$t('Surname')" required />
+                <VInput
+                    v-model.trim="form.name"
+                    :placeholder="$t('Name')"
+                    required
+                    :show-error="isShownErrors"
+                />
+                <VInput
+                    v-model.trim="form.surname"
+                    :placeholder="$t('Surname')"
+                    required
+                    :show-error="isShownErrors"
+                />
             </div>
 
-            <div
-                class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
-            >
-                <VInput v-model.trim="form.phone" :placeholder="$t('Phone')" />
-                <VInput v-model.trim="form.email" :placeholder="$t('Email')" required />
-            </div>
             <div
                 class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
             >
                 <VInput
+                    v-model.trim="form.phone"
+                    :placeholder="$t('Phone')"
+                    :show-error="isShownErrors"
+                />
+                <VInput
+                    v-model.trim="form.email"
+                    :placeholder="$t('Email')"
+                    required
+                    :show-error="isShownErrors"
+                />
+            </div>
+            <div
+                class="tw-flex tw-items-center tw-gap-x-10 tw-mt-4 xl:tw-mt-6 tw-flex-col xl:tw-flex-row tw-gap-y-4"
+            >
+                <!-- Ток на странице contact -->
+                <VInput
+                    v-if="isContactPage"
                     v-model.trim="form.company"
                     class="tw-basis-1/2"
                     :placeholder="$t('Company name')"
+                    :show-error="isShownErrors"
                 />
-                <!--
-                  <VSelect
-                  v-model="form.office"
-                  :placeholder="$t('Preferred location') + '*'"
-                  :items="['Office 1', 'Office 2', 'Office 3']"
-                  />
-                -->
-
+                <!-- Ток на странице career -->
+                <VSelect
+                    v-else
+                    v-model="form.experience"
+                    class="tw-basis-1/2"
+                    :placeholder="$t('Experience level') + '*'"
+                    :items="['Junior', 'Middle', 'Senior']"
+                    required
+                    :show-error="isShownErrors"
+                />
                 <VCountries
                     v-model:country="form.country_id"
                     class="tw-basis-1/2 tw-w-full"
                     key-label="title"
                     key-value="id"
-                    :placeholder="$t('Offices you want to contact') + '*'"
+                    :placeholder="$t('Preferred location') + '*'"
                     is-select
+                    required
+                    :show-error="isShownErrors"
                 />
             </div>
             <div class="tw-mt-4 xl:tw-mt-6">
@@ -49,16 +75,23 @@
                     v-model.trim="form.message"
                     rows="3"
                     :placeholder="$t('Your message') + '*'"
+                    required
+                    :show-error="isShownErrors"
                 />
             </div>
         </div>
         <!-- past link -->
         <div class="tw-my-6">
-            <VCVPicker v-model.trim="form.cv_document" />
+            <VCVPicker
+                v-model.trim="form.cv_document"
+                :button-label="isContactPage ? $t('Upload') : $t('Upload CV')"
+                :placeholder="isContactPage ? $t('Upload documents placeholder') + '*' : $t('Paste link to your online profile') + '*'"
+                :show-error="isShownErrors"
+            />
         </div>
         <!-- upload doc -->
         <div class="tw-my-6">
-            <VFilePicker v-model="form.cv_document">
+            <VFilePicker v-model="form.other_document" required :show-error="isShownErrors">
                 {{ $t('Upload other documents') }}
                 <br class="lg:tw-hidden" />
                 ({{ $t('eg portfolio references') }})
@@ -69,7 +102,7 @@
             class="tw-flex tw-justify-between tw-flex-col lg:tw-flex-row tw-items-center tw-gap-15 tw-mt-4 md:tw-mt-12 lg:tw-mt-12"
         >
             <div class="tw-text-sm tw-max-w-3xl">
-                <VCheckbox v-model="agreement1">
+                <VCheckbox v-model="agreement1" required :show-error="isShownErrors">
                     <span>
                         *{{ $t('I have read and understood that my personal data will be processed for the ongoing recruitment processpe') }}
                         <span
@@ -150,17 +183,22 @@ import { useToast } from "vue-toastification";
 import { useVuex } from '@/store/store'
 
 export default defineComponent({
-    name: "ContactFormCareer",
+    name: "ContactFormCareerAndContact",
     components: {
         VCheckbox: defineAsyncComponent(() => import("@/components/ui/VCheckbox.vue")),
         VButton: defineAsyncComponent(() => import("@/components/ui/VButton.vue")),
         VInput: defineAsyncComponent(() => import("@/components/ui/VInput.vue")),
         VTextarea: defineAsyncComponent(() => import("@/components/ui/VTextarea.vue")),
-        // VSelect: defineAsyncComponent(() => import("@/components/ui/VSelect.vue")),
+        VSelect: defineAsyncComponent(() => import("@/components/ui/VSelect.vue")),
         VCustomModal: defineAsyncComponent(() => import("@/components/ui/VCustomModal.vue")),
         VFilePicker: defineAsyncComponent(() => import("@/components/ui/VFilePicker.vue")),
         VCVPicker: defineAsyncComponent(() => import("@/components/ui/VCVPicker.vue")),
         VCountries: defineAsyncComponent(() => import("@/components/ui/VCountries.vue")),
+    },
+    props: {
+        isContactPage: {
+            type: Boolean, default: false,
+        }
     },
     setup() {
         const store = useVuex()
@@ -179,9 +217,12 @@ export default defineComponent({
             company: '',
             country_id: '',
             message: '',
+            experience: '',
             cv_document: '',
-            // other_document: '',
+            other_document: '',
         })
+
+        const isShownErrors = ref(false)
 
         const form = ref(getNewForm())
         const isSent = ref(false)
@@ -201,6 +242,7 @@ export default defineComponent({
         }
 
         const postContactForm = async () => {
+            isShownErrors.value = true
             if (!isValid.value) return toast.info(t('Please fill required fields'), { timeout: 2000 });
             try {
                 (await store.dispatch('contacts/POST_CONTACTS', getFormToSubmit()))
@@ -220,7 +262,8 @@ export default defineComponent({
             agreement2,
             agreement3,
             isSent,
-            postContactForm
+            postContactForm,
+            isShownErrors
         }
     }
 

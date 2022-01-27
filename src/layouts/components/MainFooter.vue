@@ -31,11 +31,10 @@
                   href="mailTo:info@primelightou.com"
                 >info@primelightou.com</a>
               </div>
-              <!--
-                <div class="tw-pt-3">
+              <div class="tw-pt-3">
+                <!-- TODO from constants -->
                 <a class="hover:tw-text-black" href="tel:+372 609 3450">+372 609 3450</a>
-                </div>
-              -->
+              </div>
             </div>
           </div>
 

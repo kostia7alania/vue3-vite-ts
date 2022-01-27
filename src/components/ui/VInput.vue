@@ -6,6 +6,9 @@
       type="input"
       :placeholder="placeholderLocalized"
       :value="modelValue"
+      :class="{
+        'tw-border-red-500': showError && required && !modelValue
+      }"
       @input="setModel"
     />
     <div v-if="$slots.append" class="tw-absolute tw-right-2 tw-top-1/2 tw--translate-y-1/2">
@@ -31,7 +34,8 @@ export default defineComponent({
   props: {
     modelValue: { type: null, default: undefined },
     placeholder: { type: null, default: undefined },
-    required: { type: Boolean, default: false }
+    required: { type: Boolean, default: false },
+    showError: { type: Boolean, default: false }
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {

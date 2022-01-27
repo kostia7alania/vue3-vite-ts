@@ -182,7 +182,7 @@
         </div>
 
         <div class="tw-pt-20 tw-pb-35">
-          <ContactFormCareer class="tw-bg-white" />
+          <ContactFormCareerAndContact class="tw-bg-white" />
         </div>
       </div>
     </section>
@@ -202,7 +202,7 @@ export default defineComponent({
     // PageTopSection: defineAsyncComponent(() => import("@/components/services2/PageTopSection.vue")),
     CardInfoAnim,
     WhoJoinToTeam: defineAsyncComponent(() => import("@/components/services/WhoJoinToTeam.vue")),
-    ContactFormCareer: defineAsyncComponent(() => import("@/components/careers/ContactFormCareer.vue")),
+    ContactFormCareerAndContact: defineAsyncComponent(() => import("@/components/careers/ContactFormCareerAndContact.vue")),
     LatestArticles: defineAsyncComponent(() => import("@/components/services/LatestArticles.vue")),
   },
   emits: ['ready'],

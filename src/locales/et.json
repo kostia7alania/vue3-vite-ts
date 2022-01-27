@@ -221,7 +221,7 @@
     "company": "Ettevõte",
     "contact": "võta ühendust",
     "financing": "Finantseerimine",
-    "main-page": "Pealeht",
+    "main-page": "Primelight OÜ - Juhtimisnõustamine",
     "services": "Teismelised",
     "team": "Meeskond"
   },
@@ -273,5 +273,8 @@
   "Phone": "Telefon",
   "Surname": "Perekonnanimi",
   "Name": "Nimi",
-  "Email": "Meil"
+  "Email": "Meil",
+  "Experience level": "Kogemuse tase",
+  "Upload": "Laadi üles",
+  "Upload documents placeholder": "Laadige üles dokumendid (nt lühikirjeldus, projekti kirjeldus)"
 }

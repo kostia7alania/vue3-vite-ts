@@ -5,7 +5,7 @@
     >
       <!-- Add margin if you want to see some of the overlay behind the modal -->
       <!-- <Contacts class="tw-modal-content tw-py-4 tw-text-left tw-px-6" /> -->
-      <div class="tw-flex tw-flex-col tw-justify-between tw-h-full tw-w-full tw-z-10 tw-mt-5">
+      <div class="tw-flex tw-flex-col tw-justify-between tw-h-[98%] tw-w-full tw-z-10 tw-mt-5">
         <div>
           <slot class="tw-modal-content" />
         </div>
