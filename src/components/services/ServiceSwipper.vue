@@ -18,16 +18,16 @@
         @slide-change="onSlideChange"
       >
         <SwiperSlide>
-          <ServiceSwipperSlide1 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
+          <ServiceSwipperSlide1 class="px-16px-48px-80px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
         <SwiperSlide>
-          <ServiceSwipperSlide2 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
+          <ServiceSwipperSlide2 class="px-16px-48px-80px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
         <SwiperSlide>
-          <ServiceSwipperSlide3 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
+          <ServiceSwipperSlide3 class="px-16px-48px-80px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
         <SwiperSlide>
-          <ServiceSwipperSlide4 class="px-160px tw-flex-wrap lg:tw-flex-nowrap" />
+          <ServiceSwipperSlide4 class="px-16px-48px-80px tw-flex-wrap lg:tw-flex-nowrap" />
         </SwiperSlide>
       </Swiper>
     </div>

@@ -5,7 +5,7 @@
     <div class="max-layout-width">
       <div class="app-header__child px-16px-48px-80px tw-flex tw-items-center tw-justify-between">
         <!-- left -->
-        <div class="tw-ml-2 tw-order-2 lg:tw-order-1">
+        <div class="tw-ml-2 lg:tw-ml-0 tw-order-2 lg:tw-order-1">
           <Logo :white="false" />
         </div>
         <!-- center -->
