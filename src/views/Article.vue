@@ -171,4 +171,14 @@ export default defineComponent({
 .content-container :deep(p) {
   @apply tw-mb-6;
 }
+
+::v-deep {
+  ol,
+  ul,
+  menu {
+    list-style: unset;
+    margin: 0px;
+    padding: 15px;
+  }
+}
 </style>
