@@ -68,7 +68,7 @@
         <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
           <div class="basis-full-full-half tw-flex-1 topic-title">{{ $t('What we do') }}</div>
           <div class="mt-16px-24px-0 basis-full-full-half tw-flex-1 topic-description">
-            <div>{{ $t('OU Primeligt provides management consulting and data analytic services to companies') }}.</div>
+            <div>{{ $t('Primelight OU provides management consulting and data analytic services to companies') }}.</div>
             <div class="tw-mt-2">{{ $t('Our services include strategy development') }}.</div>
             <div
               class="tw-mt-2"
@@ -84,7 +84,7 @@
               <CardInfoDynamic
                 class="tw-rounded-4xl border-gray-card-gray-1"
                 :title="$t('Strategy')"
-                :description="$t('OU Primeligt Provides methodological expertise to help its clients capture growth opportunity')"
+                :description="$t('Primelight OU Provides methodological expertise to help its clients capture growth opportunity')"
                 icon="circle-strategy"
                 icon-class="tw-text-orange-1"
               />
@@ -171,7 +171,7 @@
             <CardInfoDynamic
               class="dynamic-info-card"
               :title="$t('Strategy')"
-              :description="$t('OU Primeligt Provides methodological expertise to help its clients capture growth opportunity')"
+              :description="$t('Primelight OU Provides methodological expertise to help its clients capture growth opportunity')"
               icon="circle-strategy"
               icon-class="tw-text-orange-1"
             />

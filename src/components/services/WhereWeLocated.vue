@@ -13,7 +13,7 @@
             <div class="tw-flex-1 tw-basis-1/2">
                 <h2 class="topic-title tw-max-w-[380px]" v-html="$t('Where we are located')"></h2>
                 <div class="mt-16px-24px-24px topic-description">
-                    <div>{{ $t('OU Primeligt was founded in 2012 and has been in continuous operation for more than 9 years') }}</div>
+                    <div>{{ $t('Primelight OU was founded') }}</div>
                     <div class="tw-mt-2">
                         {{ $t('The companys corporate headquarters are located') }}
                         <span
