@@ -174,11 +174,15 @@ export default defineComponent({
 
 ::v-deep {
   ol,
-  ul,
-  menu {
-    list-style: unset;
+  ul {
     margin: 0px;
     padding: 15px;
+  }
+  ol {
+    list-style: decimal;
+  }
+  ul {
+    list-style: square;
   }
 }
 </style>
