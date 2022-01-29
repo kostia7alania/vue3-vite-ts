@@ -39,10 +39,12 @@
                 </div>
             </div>
             <!-- right -->
-            <div class="tw-flex tw-basis-1/2 tw-flex-1 tw-mt-10 xl:tw-mt-0 xl:tw--translate-y-7 tw-relative tw-h-full">
+            <div
+                class="tw-flex tw-basis-1/2 tw-flex-1 tw-mt-30 tw-my-20 sm:tw-my-10 xl:tw-my-0 xl:tw--translate-y-7 tw-relative tw-h-full"
+            >
                 <img
                     src="@/assets/images/company/world-map.png"
-                    class="world-map tw-w-full tw-top-0 tw--right-10 tw-h-100 md:tw-absolute xl:tw-translate-x-40"
+                    class="world-map tw-w-full md:tw-h-100 tw-top-0 tw--right-10 md:tw-absolute tw-scale-150 sm:tw-scale-110 tw-translate-x-4 xl:tw-translate-x-20"
                 />
             </div>
         </div>

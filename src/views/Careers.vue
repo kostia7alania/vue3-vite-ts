@@ -109,7 +109,7 @@
       --------
     -->
     <section
-      class="px-16px-48px-80px tw-pb-20 md:tw-pb-20 xl:tw-pb-60"
+      class="tw-pb-20 md:tw-pb-20 xl:tw-pb-60"
       :class="{
         'bg-stories-of-our-people-xl': !sm
       }"
@@ -175,8 +175,8 @@
               {{ $t('Apply now and build your career in Primelight OÜ') }}
               <a
                 class="tw-text-blue-1"
-                href="mailto:adventure@Primelight OU.com"
-              >adventure@Primelight OU.com</a>
+                href="mailto:adventure@PrimelightOU.com"
+              >adventure@PrimelightOU.com</a>
             </div>
           </div>
         </div>

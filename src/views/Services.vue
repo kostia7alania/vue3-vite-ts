@@ -63,9 +63,9 @@
       What we do?
     -->
     <section class="my-120-80 tw-relative">
-      <div class="max-layout-width-overflow-auto gap-40px-16px px-16px-48px-80px">
+      <div class="max-layout-width-overflow-auto gap-40px-16px">
         <!-- top -->
-        <div class="wrap-wrap-nowrap tw-flex tw-justify-between">
+        <div class="px-16px-48px-80px wrap-wrap-nowrap tw-flex tw-justify-between">
           <div class="basis-full-full-half tw-flex-1 topic-title">{{ $t('What we do') }}</div>
           <div class="mt-16px-24px-0 basis-full-full-half tw-flex-1 topic-description">
             <div>{{ $t('Primelight OU provides management consulting and data analytic services to companies') }}.</div>
@@ -76,7 +76,7 @@
           </div>
         </div>
         <!-- bottom -->
-        <div v-if="!sm" class="gap-40px-16px">
+        <div v-if="!sm" class="px-16px-48px-80px gap-40px-16px">
           <!-- row 1 -->
           <div class="gap-40px-16px tw-flex tw-flex-wrap tw-mt-20">
             <div class="tw-flex-1 xl:tw-flex-none xl:tw-basis-auto">
@@ -242,7 +242,7 @@
       Where we are located? 
       --------
     -->
-    <div class="tw-w-full tw-overflow-hidden">
+    <div class="tw-w-full ">
       <WhereWeLocated class="tw-bg-gray-4 py-80px-104px-120px" />
     </div>
 
@@ -277,7 +277,7 @@
       Our latest articles
       --------
     -->
-    <section class="my-160px-240px-240px px-16px-48px-80px">
+    <section class="my-160px-240px-240px">
       <LatestArticles />
     </section>
   </div>
@@ -330,5 +330,9 @@ export default defineComponent({
 
 .border-gray-card-gray-1 {
   border: solid 1px #f4f4f4;
+}
+
+.dynamic-info-card {
+  // @apply px-16px-48px-80px;
 }
 </style>

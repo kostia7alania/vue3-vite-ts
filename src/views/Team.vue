@@ -21,8 +21,8 @@
       @Section #1
       --------
     -->
-    <section class="px-16px-48px-80px py-80px-104px-120px">
-      <div class="max-layout-width tw-w-full">
+    <section class="max-layout-width-overflow-auto py-80px-104px-120px">
+      <div class="px-16px-48px-80px">
         <!-- top -->
         <div class="topic-title tw-flex tw-justify-center tw-mb-20">
           <h2

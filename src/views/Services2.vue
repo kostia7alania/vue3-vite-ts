@@ -134,7 +134,7 @@
       Case studies
       --------
     -->
-    <section class="my-160px-240px-240px px-16px-48px-80px">
+    <section class="my-160px-240px-240px">
       <LatestArticles :title="$t('Case studies')" category="Case studies" />
     </section>
   </div>

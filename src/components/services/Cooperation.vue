@@ -12,7 +12,7 @@
         <div
             class="tw-flex tw-flex-col tw-items-center xl:tw-items-start tw-justify-center tw-flex-1 tw-relative tw-z-20 tw-basis-full"
         >
-            <div class="topic-title tw-w-1/2 xl:tw-w-4/5 tw-text-center xl:tw-text-left">{{ title }}</div>
+            <div class="topic-title md:tw-w-3/4 lg:tw-w-1/2 xl:tw-w-4/5 tw-text-center xl:tw-text-left">{{ title }}</div>
             <router-link :to="{ name: 'contact' }">
                 <VButton
                     class="tw-mt-10 h-56px-48px-48px"

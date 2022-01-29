@@ -100,7 +100,7 @@
           'bg-challenge-bottom-sm': sm,
         }">
           <div
-            class="max-layout-width tw-flex tw-justify-between tw-flex-col xl:tw-flex-row tw-gap-10 md:tw-gap-20 xl:tw-gap-36"
+            class="max-layout-width-overflow-auto tw-flex tw-justify-between tw-flex-col xl:tw-flex-row tw-gap-10 md:tw-gap-20 xl:tw-gap-36"
           >
             <!-- left -->
             <div class="tw-basis-2/3 tw-grow-0 tw-shrink-1">
@@ -157,8 +157,8 @@
       --------
     -->
     <section class="py-80px-120px-120px tw-bg-gray-4 tw-pt-7 tw-relative">
-      <div class="tw-px-20 tw-gap-10">
-        <div class="max-layout-width">
+      <div class="px-16px-48px-80px tw-gap-10">
+        <div class="max-layout-width-overflow-auto">
           <!-- top -->
           <div class="gap-16px-24px-24px tw-flex tw-justify-between tw-flex-col xl:tw-flex-row">
             <div class="tw-flex-1 topic-title">{{ $t('Our history') }}</div>

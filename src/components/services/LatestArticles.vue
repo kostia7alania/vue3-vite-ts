@@ -1,39 +1,47 @@
 <template>
   <div class="max-layout-width-overflow-auto">
-    <h2 class="topic-title max-w-400px my-120-80">{{ title ? title : $t('Our latest articles') }}</h2>
-    <div v-if="latestArticles.length">
-      <div v-if="!md" class="gap-40px-16px tw-flex">
-        <!-- DESKTOP -->
-
-        <ArticleCard
-          v-for="article of latestArticles"
-          :id="article.id"
-          :key="article.id"
-          :img="article.cover"
-          :date="article.publish_at"
-          :title="article.title"
-          class="md:tw-basis-[400px] tw-grow-1 tw-shrink-1"
-        />
+    <div class>
+      <div class="px-16px-48px-80px">
+        <h2
+          class="topic-title max-w-400px my-120-80"
+        >{{ title ? title : $t('Our latest articles') }}</h2>
       </div>
-      <CardsSwiper v-else>
-        <!-- MOBILE -->
+      <div v-if="latestArticles.length">
+        <div v-if="!md" class="px-16px-48px-80px gap-40px-16px tw-flex">
+          <!-- DESKTOP -->
 
-        <!-- @vue-ignore -->
-        <template v-for="(article, i) of latestArticles" :id="article.id" #[i] :key="article.id">
           <ArticleCard
+            v-for="article of latestArticles"
             :id="article.id"
-            class="article-card-swiper"
+            :key="article.id"
             :img="article.cover"
             :date="article.publish_at"
             :title="article.title"
+            class="md:tw-basis-[400px] tw-grow-1 tw-shrink-1"
           />
-        </template>
-      </CardsSwiper>
+        </div>
+        <CardsSwiper v-else>
+          <!-- MOBILE -->
+
+          <!-- @vue-ignore -->
+          <template v-for="(article, i) of latestArticles" :id="article.id" #[i] :key="article.id">
+            <div class="px-16px-48px-80px">
+              <ArticleCard
+                :id="article.id"
+                class="article-card-swiper"
+                :img="article.cover"
+                :date="article.publish_at"
+                :title="article.title"
+              />
+            </div>
+          </template>
+        </CardsSwiper>
+      </div>
+      <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
+        <VIconSpinner class="tw-h-20" spin />
+      </div>
+      <div v-else>{{ $t('We have no latest articles at the time') }}</div>
     </div>
-    <div v-else-if="isLoading" class="tw-flex tw-items-center tw-justify-center">
-      <VIconSpinner class="tw-h-20" spin />
-    </div>
-    <div v-else>{{ $t('We have no latest articles at the time') }}</div>
   </div>
 </template>
 

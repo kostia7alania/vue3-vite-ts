@@ -15,7 +15,7 @@
             :key-value="keyValue"
             :key-label="keyLabel"
             :class="{
-                'tw-w-[343px]': !isSelect,
+                'tw-w-full sm:tw-w-[343px]': !isSelect,
                 'tw-w-full': isSelect,
             }"
             :placeholder="placeholder"

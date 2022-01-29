@@ -1,7 +1,7 @@
 <template>
-  <div class="px-16px-48px-80px">
+  <div class="max-layout-width-overflow-auto">
     <div
-      class="max-layout-width-overflow-auto tw-flex tw-justify-center tw-flex-wrap tw-gap-x-6 tw-gap-y-10 tw-relative"
+      class="px-16px-48px-80px tw-flex tw-justify-center tw-flex-wrap tw-gap-x-6 tw-gap-y-10 tw-relative"
     >
       <!-- card #1 -->
       <div
@@ -32,7 +32,7 @@
 
       <!-- card #3 -->
       <div
-        class="tw-flex-1 tw-grow-1 tw--my-4 tw-pl-8 tw-rounded-4xl tw-order-1 xl:tw-order-3 tw-basis-full xl:tw-basis-5/12 tw-relative tw-z-10"
+        class="tw-flex-1 tw-grow-1 tw--my-4 xl:tw-pl-8 tw-rounded-4xl tw-order-1 xl:tw-order-3 tw-basis-full xl:tw-basis-5/12 tw-relative tw-z-10"
       >
         <div class="tw-font-semibold tw-text-2xl tw-leading-6 tw-rounded-4xl">
           <h2 class="topic-title xl:tw-mt-5">{{ $t('Join us') }}</h2>
@@ -70,7 +70,7 @@
     <CardsSwiper v-if="sm" class="tw-mt-20">
       <!-- MOBILE -->
       <template #test1>
-        <div class="tw-h-[444px]">
+        <div class="tw-h-[444px] tw-ml-4">
           <CardInfoAnim
             :title="$t('Students and graduates')"
             :description="$t('We are always looking for young talents from our local markets who want to develop professionally')"
@@ -80,7 +80,7 @@
         </div>
       </template>
       <template #test2>
-        <div class="tw-h-[444px]">
+        <div class="tw-h-[444px] ">
           <CardInfoAnim
             :title="$t('Experienced professionals')"
             :description="$t('We truly believe that anyone can become a management consultant')"

@@ -22,9 +22,9 @@
       --------
     -->
     <section class="bg-opportunities tw-relative tw-bg-gray-4">
-      <div class="px-16px-48px-80px py-80px-120px-120px tw-gap-10">
+      <div class="max-layout-width-overflow-auto py-80px-120px-120px">
         <!-- title -->
-        <div class="max-layout-width-overflow-auto">
+        <div class="px-16px-48px-80px tw-gap-10">
           <div class="topic-title">
             <h2
               class="tw-font-semibold tw-text-5xl tw-leading-tight tw-max-w-3xl"
@@ -50,8 +50,8 @@
       National financing opportunities
       --------
     -->
-    <section class="my-80px-160px-240px px-16px-48px-80px">
-      <div class="max-layout-width-overflow-auto">
+    <section class="max-layout-width-overflow-auto my-80px-160px-240px ">
+      <div class="px-16px-48px-80px">
         <div class="tw-flex tw-justify-center tw-mb-20">
           <h2
             class="topic-title tw-max-w-3xl tw-text-center"
@@ -114,7 +114,7 @@
       Case studies
       --------
     -->
-    <section class="my-160px-240px-240px px-16px-48px-80px">
+    <section class="my-160px-240px-240px">
       <LatestArticles :title="$t('Case studies')" category="Case studies" />
     </section>
   </div>
