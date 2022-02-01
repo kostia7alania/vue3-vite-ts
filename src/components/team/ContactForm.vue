@@ -74,7 +74,7 @@
                 <VCheckbox
                     v-model="agreement2"
                     class="tw-mt-6"
-                    :label="$t('I agree to receive from CIVITTA information related to the services it offers')"
+                    :label="$t('I agree to receive from Primelight OU information related to the services it offers')"
                 />
             </div>
             <div>

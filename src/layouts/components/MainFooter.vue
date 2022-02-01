@@ -24,16 +24,14 @@
               <div class="tw-pt-3">{{ $t('Registry code') }} 11954642</div>
               <div class="tw-pt-3">{{ $t('Registered 14.06.2010') }}</div>
               <div class="tw-pt-3">{{ $t('address') }}</div>
+              <div class="tw-pt-3">{{ $t('address_second_row') }}</div>
               <div class="tw-pt-3">{{ $t('address 2') }}</div>
               <div class="tw-pt-3">
-                <a
-                  class="hover:tw-text-black"
-                  href="mailTo:info@primelightou.com"
-                >info@primelightou.com</a>
+                <a class="hover:tw-text-black" :href="`mailTo:${EMAIL}`">{{ EMAIL }}</a>
               </div>
               <div class="tw-pt-3">
                 <!-- TODO from constants -->
-                <a class="hover:tw-text-black" href="tel:+372 609 3450">+372 609 3450</a>
+                <a class="hover:tw-text-black" :href="`tel:${PHONE}`">{{ PHONE }}</a>
               </div>
             </div>
           </div>
@@ -136,6 +134,7 @@ import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
 import { useVuex } from '@/store/store'
 
+import { PHONE, EMAIL } from '@/runtimeEnv';
 
 
 export default defineComponent({
@@ -172,7 +171,8 @@ export default defineComponent({
     onMounted(getCountries)
 
     return {
-      countries
+      countries,
+      PHONE, EMAIL
     }
   },
 });

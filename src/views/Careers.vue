@@ -21,7 +21,7 @@
     <section class="my-80px-104px-120px px-16px-48px-80px">
       <div class="max-layout-width">
         <div class="topic-title tw-flex tw-justify-center">
-          <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at Primelight OÜ') }}</h2>
+          <h2 class="tw-max-w-3xl lg:tw-text-center">{{ $t('Working at Primelight OU') }}</h2>
         </div>
 
         <div
@@ -73,7 +73,7 @@
             <div class="work-card-secondary">
               <CardInfoAnim
                 :title="$t('Fun')"
-                :description="$t('At Primelight OÜ we provide an enjoyable working atmosphere')"
+                :description="$t('At Primelight OU we provide an enjoyable working atmosphere')"
                 image="fun"
                 theme="blue"
                 title-class="tw-text-2xl"
@@ -127,7 +127,7 @@
         <div class="topic-title tw-flex tw-justify-center tw-mb-6">
           <h2
             class="tw-max-w-3xl lg:tw-text-center"
-          >{{ $t('Consulting career path at Primelight OÜ') }}</h2>
+          >{{ $t('Consulting career path at Primelight OU') }}</h2>
         </div>
         <div class="topic-description tw-flex tw-justify-center tw-mb-20">
           <div
@@ -172,7 +172,7 @@
           </div>
           <div class="topic-description tw-flex tw-justify-center">
             <div class="tw-max-w-3xl tw-text-center">
-              {{ $t('Apply now and build your career in Primelight OÜ') }}
+              {{ $t('Apply now and build your career in Primelight OU') }}
               <a
                 class="tw-text-blue-1"
                 href="mailto:adventure@PrimelightOU.com"

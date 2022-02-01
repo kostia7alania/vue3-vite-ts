@@ -34,7 +34,7 @@
         <!-- bottom  -->
         <div class="topic-title tw-flex tw-justify-center tw-my-20">
           <h2 class="tw-flex tw-items-center tw-max-w-3xl lg:tw-text-center tw-relative">
-            {{ $t('Primelight OÜ International') }}
+            {{ $t('Primelight OU International') }}
             <!-- <VIconSpinner v-if="isLoading" spin class="tw-h-10 tw-absolute tw--right-14" /> -->
           </h2>
         </div>

@@ -164,7 +164,7 @@
             <div class="tw-flex-1 topic-title">{{ $t('Our history') }}</div>
             <div
               class="tw-flex-1 topic-description"
-            >{{ $t('Primelight OÜ was established as an alliance of consulting companies in the Baltic States') }}</div>
+            >{{ $t('Primelight OU was established as an alliance of consulting companies in the Baltic States') }}</div>
           </div>
           <!-- bottom -->
           <div class="pt-40px-120px-80px">
