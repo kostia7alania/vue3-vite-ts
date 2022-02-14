@@ -47,7 +47,7 @@
             </div>
             <div class="gap-40px-16px tw-flex tw-flex-col">
               <CardInfo number="350+" :label="$t('Consultants')" icon="offices" />
-              <CardInfo number="150+" :label="$t('Software Developers')" icon="softGroup" />
+              <CardInfo number="11" :label="$t('Years of experience')" icon="softGroup" />
             </div>
           </div>
         </div>
